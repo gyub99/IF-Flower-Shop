@@ -44,12 +44,6 @@
     margin-bottom: 12px;
 }
 
-
-/* .product-item .overlay .content {
-    text-align: center;
-    color: #000;
-} */
-
 .product-item .overlay .content .price {
     font-size: 17px;
     margin-bottom: 12px;
@@ -79,13 +73,6 @@
     display: flex;
 }
 
-/* .product-item .overlay .content .button .product-item .overlay .content a {
-    color: #000;
-    padding: 5px 10px;
-    font-size: 16px;
-    text-decoration: none;
-    border: 1px solid #000;
-} */
 
 .button{
   color: #000;
@@ -127,3 +114,46 @@
 .form-control{
   margin:10px 20px 10px 20px;
 }
+
+.bg-login{
+padding-top:5px;
+padding-bottom:20px;
+align-auto:center;
+}
+
+.login-container{
+align-auto:center;
+border-radius:20px;
+padding:20px 0px 20px 20px;
+}
+
+.form-login{
+align-auto:center;
+width:100%;
+}
+
+.btn-login{
+width:400px;
+background-color:white;
+border: 1px solid grey;
+}
+
+.input1{
+width:400px;
+height:50px;
+outline:none;
+border-top:none;
+border-left:none;
+border-right:none;
+border-bottom: 1px solid black;
+}
+
+#log-container{
+display: inline-block;
+text-align: center;
+}
+
+
+
+
+			
