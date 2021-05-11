@@ -1,0 +1,32 @@
+.title {
+    margin-top:20px;
+    margin-bottom:10px;
+}
+.contents{
+    padding:20px;
+}
+.product{
+    margin:10px;
+}
+#MakingBouquet{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.choosing{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.thumbnail {
+    margin:10px;
+    height:80px;
+    width:100px;
+}
+.color{
+    margin:10px;
+    height:50px;
+    width:50px;
+}
+.buy{
+    padding:30px;
+
+}
