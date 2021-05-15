@@ -1,0 +1,54 @@
+.header .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header_authmenu {
+    list-style: none;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    color: #000;
+    font-size: 13px;
+    padding: 10px 0 0;
+    margin: 0 0 0 auto;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.bg-main-footer{
+  background-color: #96ae7f;
+}
+
+.img{
+    width:1100px;
+    margin-top:20px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline;
+  }
+
+  #title{
+    margin-top:50px;
+    margin-bottom: 50px;
+  }
+
+  .bg-event{
+    margin-top:20px;
+    margin-bottom: 50px;
+  }
