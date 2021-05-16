@@ -13,12 +13,38 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
 #logo_style{
-  height: 102px;
-  width: 192px;
+  height: 92px;
+  width: 152px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
 }
+
+.bg-aboutus{
+  padding-top: 70px;
+  padding-bottom: 70px;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right:150px;
+}
+
+.img{
+  display: inline;
+  margin-bottom: 0px;
+}
+
+.nav-li{
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.container{
+  margin-left: 500px;
+}
+
+
 </style>
   </head>
 
@@ -34,7 +60,7 @@
             </ul>
           </div>
         </div>
-        <img src="picture/logo/logo1.png" class="img-responsive" id="logo_style">
+          <p style="text-align:center;"><a href="main.html"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
       </div>
     </div>
 
@@ -49,17 +75,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="main.html">Dinga Flower</a>
+          <!-- <a class="navbar-brand" href="main.html">Dinga Flower</a> -->
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="best.html">베스트</a></li>
-              <li><a href="makeBouquet.html">꽃제작</a></li>
-              <li><a href="product.html">꽃상품</a></li>
-              <li><a href="#">이모저모</a></li>
-              <li><a href="#">기부현황</a></li>
-              <li><a href="event.html">이벤트</a></li>
-              <li><a href="mypage.html">마이페이지</a></li>
+            <ul class="nav navbar-nav">
+              <li class="nav-li"><a href="makeBouquet.html">꽃제작</a></li>
+              <li class="nav-li"><a href="product.html">꽃상품</a></li>
+              <li class="nav-li"><a href="about.html">이모저모</a></li>
+              <li class="nav-li"><a href="donation.html">기부현황</a></li>
+              <li class="nav-li"><a href="event.html">이벤트</a></li>
+              <li class="nav-li"><a href="mypage.html">마이페이지</a></li>
             </ul>
           </div>
         </div>
@@ -69,6 +94,7 @@
         <ol class="carousel-indicators">
           <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
           <li data-target="#mycarousel" data-slide-to="1"></li>
+          <li data-target="#mycarousel" data-slide-to="2"></li>
         </ol>
       <div class="carousel-inner">
         <div class="item active">
@@ -77,21 +103,41 @@
         <div class="item">
           <img src="picture/slide2.jpg" class="img-responsive" alt="slide2" style="margin-left: auto; margin-right: auto;">
         </div>
+        <div class="item">
+          <img src="picture/slide3.jpg" class="img-responsive" alt="slide3" style="margin-left: auto; margin-right: auto;">
+        </div>
       </div>
-      <a class="left carousel-control" href="#mycarusel" role="button" data-slide="prev">
+      <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">previous</span>
       </a>
-      <a class="right carousel-control" href="#mycarusel" role="button" data-slide="prev">
+      <a class="right carousel-control" href="#mycarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
       </div>
 
+      <div class="container-fluid bg-aboutus">
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="picture/logo/logo_mainver.png" alt="딩가꽃집 로고" class="img-responsive" style="margin-left: auto; margin-right: auto;">
+          </div>
+          <div class="col-sm-6">
+            <h3><strong>About Dinga</strong></h3><br>
+            <p>딩가꽃집에 오신것을 환영합니다.<br>
+              딩가꽃집은 일상에서 느낄 수 있는 행복을 주는것을 목표로 시작되었습니다.<br>
+              평범한 날에도, 특별한 날에도 여러분의 일상에 행복을 선물해드립니다.<br>
+              특별한 날에만 즐기던 꽃을 일상에서도 쉽고 합리적인 가격으로 만날 수 있도록<br>
+              당신을 위해 오늘 가장 신선한 꽃을 수확합니다.<br>
+            </p>
+          </div>
+        </div>
+      </div>
+
 
       <div class="container-fluid bg-main-best text-center">
         <h3><a href="best.html" id="best"><strong>딩가 꽃샵의 베스트 상품</a></strong></h3>
-        <p> 소중한 인연에게 꽃을 선물해보세요 어쩌구 저쩌구</p><br>
+        <p> 소중한 사람에게 꽃을 선물해보세요</p><br>
         <div class="row">
           <div class="col-sm-3">
             <img src="picture/f1.png" alt="flower1" class="img-responsive">
@@ -110,7 +156,7 @@
 
         <div class="container-fluid bg-main-suggest text-center">
           <h3><strong>오늘의 추천상품</strong></h3>
-          <p>5월의 추천꽃  라일락, 수련, 어쩌구</p><br>
+          <p>5월의 추천꽃  라일락, 수련</p><br>
           <div class="row">
             <div class="col-sm-3 product-item">
               <div class="wrapper">
@@ -144,7 +190,7 @@
               <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
             </div>
             <div class="col-sm-6 form-group">
-              <input class="form-control" id="email" name="email" placeholder="email" type="text" required>
+               <input class="form-control" id="email" name="email" placeholder="email" type="text" required>
             </div>
           </div>
            <textarea class="form-control" id="comments" name="comments" placeholder="문의할 내용을 입력하세요" rows="7"></textarea><br>
