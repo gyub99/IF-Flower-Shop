@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Dinga Dinga flower Shop</title>
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/makeBouquet.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <style></style>
+
+  <body>
+    <div class="header">
+      <div class="container-fluid">
+        <div class="rows">
+          <div class="row">
+            <ul class="header_authmenu">
+              <li><a href="#register">회원가입</a></li>
+              <li><a href="login.html">로그인</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -------------------------- 네비게이션 --------------------------- -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-togle="collaspe"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="main.html">Dinga Flower</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="best.html">베스트</a></li>
+            <li><a href="makeBouquet.html">꽃제작</a></li>
+            <li><a href="product.html">꽃상품</a></li>
+            <li><a href="#">이모저모</a></li>
+            <li><a href="#">기부현황</a></li>
+            <li><a href="event.html">이벤트</a></li>
+            <li><a href="mypage.html">마이페이지</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="container contents">
+      <div class="product row">
+        <div class="col-sm-1"></div>
+        <div class="preview col-sm-5">
+          <img class="img-responsive" src="picture/f2.PNG" alt="bouquet" id="MakingBouquet" />
+        </div>
+        <div class="col-sm-5 choosing">
+          <h3>딩가 주인장 초이스(제품 제목)</h3>
+          <hr>
+          <h4>29000원</h4>
+          <hr>
+          <div class="image-gallery-thumbnails-wrapper row">
+            <div class="col-sm-3 choose-flower">
+              <img
+                class="thumbnail img-responsive"
+                src="picture/makingFlower/flower5.jpg"
+                alt="flower1"
+              />
+            </div>
+            <div class="col-sm-3 choose-flower">
+              <img
+                class="thumbnail img-responsive"
+                src="picture/makingFlower/flower6.jpg"
+                alt="flower1"
+              />
+            </div>
+            <div class="col-sm-3 choose-flower">
+              <img
+                class="thumbnail img-responsive"
+                src="picture/makingFlower/flower7.jpg"
+                alt="flower1"
+              />
+            </div>
+            <div class="col-sm-3 choose-flower">
+              <img
+                class="thumbnail img-responsive"
+                src="picture/makingFlower/flower8.jpg"
+                alt="flower1"
+              />
+            </div>
+          </div>
+          <div class="row choose-wrapper">
+            <h6 style="text-align: center;">포장지 색 선택</h6>
+            <div class="color col-sm-1" style="background-color: aqua;"> </div>
+            <div class="color col-sm-1" style="background-color: #7b68ee;"> </div>
+            <div class="color col-sm-1" style="background-color: #e6e6fe;"> </div>
+            <div class="color col-sm-1" style="background-color: #CEF6D8"> </div>
+            <div class="color col-sm-1" style="background-color: #F5F6CE;"> </div>
+            <div class="color col-sm-1" style="background-color: #FE2E64;"> </div>
+          </div>
+          <div class="row choose-ribbon">
+            <h6 style="text-align: center;">리본 색 선택</h6>
+            <div class="color col-sm-1" style="background-color: #2E9AFE;"> </div>
+            <div class="color col-sm-1" style="background-color: #380B61;"> </div>
+            <div class="color col-sm-1" style="background-color: #08298A;"> </div>
+            <div class="color col-sm-1" style="background-color: #04B404"> </div>
+            <div class="color col-sm-1" style="background-color: #ff0000;"> </div>
+            <div class="color col-sm-1" style="background-color: #FBEFF2;"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="buy container text-center">
+        <button id="makingBuy">
+          구매하기
+        </button>
+      </div>
+    </div>
+
+    <footer class="container-fluid bg-main-footer">
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+          <h3>딩가 행복센터</h3>
+          <h3>1644-1777</h3>
+          <input
+            type="button"
+            class="btndesign"
+            value="카카오톡 문의"
+          /><br /><br />
+          <input type="button" class="btndesign" value="1:1 문의" />
+        </div>
+        <div class="col-sm-4">
+          <br />
+          <p><strong>365 고객센터</strong></p>
+          <p style="color: #787878">오전 7시 - 오후 7시</p>
+          <br /><br /><br />
+          <p><strong>24시간 접수가능</strong></p>
+          <p style="color: #787878">
+            고객센터 운영시간에 순차적으로 답변해드리겠습니다.
+          </p>
+          <br />
+        </div>
+        <div class="col-sm-4">
+          <br /><br /><br />
+          <p>
+            사업자 등록번호 : 371-06-0707<br />
+            통신판매업 신고번호 : 2021-서울 삼성동-77775<br />
+            주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br />
+            COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
