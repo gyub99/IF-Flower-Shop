@@ -6,57 +6,83 @@
     <meta charset="utf-8">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="css/event.css">
+  <link rel="stylesheet" href="css/footer.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+/* .nanumsquare {
+    font-family: 'NanumSquare', sans-serif !important;
+} */
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
 
+#eventtitle{
+    font-family: 'NanumSquare', sans-serif;
+  text-align:center;
+  font-weight: bold;
+  background: linear-gradient(to right, #A7A3FF,#FFA7A3, #671cc4, #5673bd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>
 
   </head>
   <body>
 
+    <!-- 헤더부분 -->
     <div class="header">
       <div class="container-fluid">
-        <div class="rows">
           <div class="row">
-            <ul class="header_authmenu">
-              <li><a href="register.html">회원가입</a></li>
-              <li><a href="login.html">로그인</a></li>
-            </ul>
+            <div class="col-sm-10">
+            </div>
+            <div class="col-sm-2 register">
+              <a href="register.html" style="margin-right:10px; color:black;">회원가입</a>
+              <span>|</span>
+              <a href="login.html" style="margin-left:10px; color:black;">로그인</a>
+            </div>
           </div>
         </div>
+          <p style="text-align:center;"><a href="main.html"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
       </div>
-    </div>
 
-    <!-- -------------------------- 네비게이션 --------------------------- -->
+
+
+      <!-- 네비게이션 -->
+    <!-- 네비게이션 부분 -->
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-togle="collaspe" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="main.html">Dinga Flower</a>
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="nav-li"><a href="makeBouquet.html">꽃제작</a></li>
+                <li class="nav-li"><a href="product.html">꽃상품</a></li>
+                <li class="nav-li"><a href="about.html">이모저모</a></li>
+                <li class="nav-li"><a href="donation.html">기부현황</a></li>
+                <li class="nav-li"><a href="event.html">이벤트</a></li>
+                <li class="nav-li"><a href="mypage.html">마이페이지</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="best.html">베스트</a></li>
-              <li><a href="makeBouquet.html">꽃제작</a></li>
-              <li><a href="product.html">꽃상품</a></li>
-              <li><a href="#">이모저모</a></li>
-              <li><a href="#">기부현황</a></li>
-              <li><a href="event.html">이벤트</a></li>
-              <li><a href="mypage.html">마이페이지</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        </nav>
 
       <div class="container-fluid bg-event">
         <div id="title">
-        <h3 style="text-align:center; font-weight: bold; background: linear-gradient(to right, #A7A3FF,#FFA7A3, #671cc4, #5673bd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">이달의 이벤트</h3>
+        <h3 id="eventtitle">이달의 이벤트</h3>
         </div>
         <p style="text-align:center;">
           <a href="event1.html"><img src="picture/event/first.png" alt="5월의 이벤트" class="img-responsive img"></a>

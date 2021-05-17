@@ -1,0 +1,13 @@
+.bg-main-footer{
+  background-color: #c4d4d0;
+/* 원래 96ae7f */
+}
+
+.btndesign{
+  color: #000;
+  padding: 7px 10px;
+  font-size: 16px;
+  text-decoration: none;
+  border: 1px solid #000;
+  background: transparent;
+}

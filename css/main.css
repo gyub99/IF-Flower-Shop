@@ -4,38 +4,33 @@
     align-items: center;
 }
 
-.header_authmenu {
-    list-style: none;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    color: #000;
-    font-size: 13px;
-    padding: 10px 0 0;
-    margin: 0 0 0 auto;
-}
-
 .carousel-control.left, .carousel-control.right {
     background-image: none
 }
 
 .bg-main-best{
   margin-top:10px;
+  maring-bottom:10px;
   padding:70px 150px 70px 150px;
-  margin-bottom:10px;
+background-color:#e9c778;
+/* c4d4d0도 나쁘지 않음 */
 }
 
 .bg-main-suggest{
   margin-top:10px;
+  maring-bottom:10px;
   padding:70px 150px 70px 150px;
-  background-color:#e5d4bd;
-  margin-bottom:10px;
 }
 
 .bg-main-context{
   margin-top:10px;
   padding:70px 250px 70px 250px;
   margin-bottom:10px;
+}
+
+.pic-container{
+  margin-left:100px;
+  margin-right:100px;
 }
 
 .product-item .overlay .content .name {
@@ -84,7 +79,8 @@
 }
 
 .bg-main-footer{
-  background-color: #96ae7f;
+  background-color: #c4d4d0;
+/* 원래 96ae7f */
 }
 
 #best{
@@ -110,6 +106,8 @@
   margin-bottom: 0;
   font-size: 12px;
   letter-spacing: 5px;
+  background-color:#e9c778;
+/* 원래 #b2c773 */
 }
 
 .form-control{
@@ -152,6 +150,75 @@ border-bottom: 1px solid black;
 #log-container{
 display: inline-block;
 text-align: center;
+}
+
+#logo_style{
+  height: 78px;
+  width: 122px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.bg-aboutus{
+  padding-top: 70px;
+  padding-bottom: 70px;
+  margin-bottom: 85px;
+  margin-top: 85px;
+  margin-left: 150px;
+  margin-right:150px;
+}
+
+.img{
+  display: inline;
+  margin-bottom: 0px;
+}
+
+.nav-li{
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+font-family: 'Nanum Gothic', sans-serif;
+}
+
+.container{
+  margin-left: 500px;
+}
+
+.register{
+  margin-top: 15px;
+  font-family: 'S-CoreDream-3Light';
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.title{
+  margin-top: 10px;
+  text-align: left;
+  font-size: 18px;
+  font-family: 'S-CoreDream-3Light';
+}
+
+.bestprice{
+  font-weight: bold;
+  text-align: left;
+  font-size: 15px;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+#about{
+  font-family: 'S-CoreDream-3Light';
+}
+
+.name{
+  font-family: 'S-CoreDream-3Light';
+  font-weight: bold;
+}
+
+.price{
+font-family: 'Nanum Gothic', sans-serif;
 }
 
 

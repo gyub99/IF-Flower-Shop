@@ -55,22 +55,3 @@ font-family: 'Nanum Gothic', sans-serif;
 .container{
   margin-left: 500px;
 }
-
-.img{
-    width:1100px;
-    margin-top:20px;
-    margin-bottom: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline;
-  }
-
-  #title{
-    margin-top:50px;
-    margin-bottom: 50px;
-  }
-
-  .bg-event{
-    margin-top:20px;
-    margin-bottom: 50px;
-  }

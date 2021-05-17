@@ -6,91 +6,106 @@
     <meta charset="utf-8">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- 폰트 -->
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+<!-- 위에 2개가 폰트 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
-#logo_style{
-  height: 92px;
-  width: 152px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.bg-aboutus{
-  padding-top: 70px;
-  padding-bottom: 70px;
-  margin-bottom: 30px;
-  margin-top: 50px;
-  margin-left: 150px;
-  margin-right:150px;
+@font-face {
+    font-family: 'GongGothicLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.img{
-  display: inline;
-  margin-bottom: 0px;
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.nav-li{
-  text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
 }
 
-.container{
-  margin-left: 500px;
-}
+/* 폰트 사용법 : 위에 @font-face 복사하기 &위에 2개가 폰트라고 써져있는 부분 링크 복사해서 추가
 
+주로 제목이나 타이틀에 적용하는 폰트 (깔끔한 폰트)
+에스코어드림 ->  font-family: 'S-CoreDream-3Light';
+나눔스퀘어 -> font-family: 'NanumSquare', sans-serif;
+나눔고딕 -> font-family: 'Nanum Gothic', sans-serif;
+
+튀는 폰트
+카페 24-> font-family: 'Cafe24Oneprettynight';
+공고딕 -> font-family: 'GongGothicLight';
+넥슨 폰트 -> font-family: 'NEXON Lv1 Gothic OTF'; */
 
 </style>
   </head>
 
   <body>
 
+    <!-- 헤더부분 -->
     <div class="header">
       <div class="container-fluid">
-        <div class="rows">
           <div class="row">
-            <ul class="header_authmenu">
-              <li><a href="#register">회원가입</a></li>
-              <li><a href="login.html">로그인</a></li>
-            </ul>
+            <div class="col-sm-10">
+            </div>
+            <div class="col-sm-2 register">
+              <a href="register.html" style="margin-right:10px; color:black;">회원가입</a>
+              <span>|</span>
+              <a href="login.html" style="margin-left:10px; color:black;">로그인</a>
+            </div>
           </div>
         </div>
           <p style="text-align:center;"><a href="main.html"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
       </div>
-    </div>
 
 
 
-    <!-- -------------------------- 네비게이션 --------------------------- -->
+      <!-- 네비게이션 -->
+    <!-- 네비게이션 부분 -->
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-togle="collaspe" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- <a class="navbar-brand" href="main.html">Dinga Flower</a> -->
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="nav-li"><a href="makeBouquet.html">꽃제작</a></li>
+                <li class="nav-li"><a href="product.html">꽃상품</a></li>
+                <li class="nav-li"><a href="about.html">이모저모</a></li>
+                <li class="nav-li"><a href="donation.html">기부현황</a></li>
+                <li class="nav-li"><a href="event.html">이벤트</a></li>
+                <li class="nav-li"><a href="mypage.html">마이페이지</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-              <li class="nav-li"><a href="makeBouquet.html">꽃제작</a></li>
-              <li class="nav-li"><a href="product.html">꽃상품</a></li>
-              <li class="nav-li"><a href="about.html">이모저모</a></li>
-              <li class="nav-li"><a href="donation.html">기부현황</a></li>
-              <li class="nav-li"><a href="event.html">이벤트</a></li>
-              <li class="nav-li"><a href="mypage.html">마이페이지</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        </nav>
 
-      <div id="mycarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- 사진 슬라이드 -->
+    <div id="mycarousel" class="carousel slide text-center" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
           <li data-target="#mycarousel" data-slide-to="1"></li>
@@ -115,16 +130,17 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-      </div>
+    </div>
 
+    <!-- 딩가꽃집 소개 -->
       <div class="container-fluid bg-aboutus">
         <div class="row">
           <div class="col-sm-6">
             <img src="picture/logo/logo_mainver.png" alt="딩가꽃집 로고" class="img-responsive" style="margin-left: auto; margin-right: auto;">
           </div>
           <div class="col-sm-6">
-            <h3><strong>About Dinga</strong></h3><br>
-            <p>딩가꽃집에 오신것을 환영합니다.<br>
+            <h3 style="font-family: 'Nanum Gothic', sans-serif;"><strong>About Dinga</strong></h3><br>
+            <p id="about">딩가꽃집에 오신것을 환영합니다.<br>
               딩가꽃집은 일상에서 느낄 수 있는 행복을 주는것을 목표로 시작되었습니다.<br>
               평범한 날에도, 특별한 날에도 여러분의 일상에 행복을 선물해드립니다.<br>
               특별한 날에만 즐기던 꽃을 일상에서도 쉽고 합리적인 가격으로 만날 수 있도록<br>
@@ -134,63 +150,100 @@
         </div>
       </div>
 
-
+      <!-- 베스트상품 -->
       <div class="container-fluid bg-main-best text-center">
-        <h3><a href="best.html" id="best"><strong>딩가 꽃샵의 베스트 상품</a></strong></h3>
-        <p> 소중한 사람에게 꽃을 선물해보세요</p><br>
-        <div class="row">
+        <h3 style="font-family: 'NanumSquare', sans-serif;"><strong>딩가 꽃집의 베스트 상품</strong></h3>
+        <p style="font-family: 'Nanum Gothic', sans-serif;"> 소중한 사람에게 꽃을 선물해보세요</p><br>
+        <div class="row pic-container">
           <div class="col-sm-3">
             <img src="picture/f1.png" alt="flower1" class="img-responsive">
+            <p class="title">[파머스] 제철 꽃 랜덤믹스</p>
+            <p class="bestprice">29,000원</p>
           </div>
           <div class="col-sm-3">
             <img src="picture/f2.png" alt="flower2" class="img-responsive">
+            <p class="title">[이달의 꽃] 작약 수국믹스</p>
+            <p class="bestprice">31,000원</p>
           </div>
           <div class="col-sm-3">
-            <img src="picture/f3.png" alt="flower3" class="img-responsive">
+            <img src="picture/f9.png" alt="flower3" class="img-responsive">
+            <p class="title">[딩가초이스] 옥시페탈룸</p>
+            <p class="bestprice">15,000원</p>
           </div>
           <div class="col-sm-3">
-            <img src="picture/f4.png" alt="flower4" class="img-responsive">
+            <img src="picture/f10.png" alt="flower4" class="img-responsive">
+            <p class="title">[파머스] 해바라기 믹스</p>
+            <p class="bestprice">29,000원</p>
           </div>
         </div>
       </div>
 
+        <!-- 추천상품 -->
         <div class="container-fluid bg-main-suggest text-center">
-          <h3><strong>오늘의 추천상품</strong></h3>
-          <p>5월의 추천꽃  라일락, 수련</p><br>
-          <div class="row">
+          <h3 style="font-family: 'NanumSquare', sans-serif;"><strong>오늘의 추천상품</strong></h3>
+          <p style="font-family: 'Nanum Gothic', sans-serif;">5월의 추천꽃  라일락, 수련</p><br>
+          <div class="row pic-container">
             <div class="col-sm-3 product-item">
               <div class="wrapper">
                 <img src="picture/f5.png" alt="flower1" class="img-responsive">
                 <div class="overlay">
                   <div class="content">
-                    <div class="name"> 딩가 주인장 김규빈 초이스</div>
-                    <div class="price">29,000원</div>
+                    <p class="name">김규빈 파머 초이스</p>
+                    <p class="price">29,000원</p>
                     <button class="button">구매하기</button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-sm-3">
-              <img src="picture/f6.png" alt="flower2" class="img-responsive">
+            <div class="col-sm-3 product-item">
+              <div class="wrapper">
+                <img src="picture/f6.png" alt="flower1" class="img-responsive">
+                <div class="overlay">
+                  <div class="content">
+                    <p class="name">이성규 파머 초이스</p>
+                    <p class="price">29,000원</p>
+                    <button class="button">구매하기</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-sm-3">
-              <img src="picture/f7.png" alt="flower3" class="img-responsive">
+            <div class="col-sm-3 product-item">
+              <div class="wrapper">
+                <img src="picture/f7.png" alt="flower1" class="img-responsive">
+                <div class="overlay">
+                  <div class="content">
+                    <p class="name">신지혜 파머 초이스</p>
+                    <p class="price">29,000원</p>
+                    <button class="button">구매하기</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-sm-3">
-              <img src="picture/f8.png" alt="flower4" class="img-responsive">
+            <div class="col-sm-3 product-item">
+              <div class="wrapper">
+                <img src="picture/f8.png" alt="flower1" class="img-responsive">
+                <div class="overlay">
+                  <div class="content">
+                    <p class="name">딩가 초이스</p>
+                    <p class="price">29,000원</p>
+                    <button class="button">구매하기</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
+        <!-- 문의사항 -->
         <div class="container-fluid bg-main-context text-center">
-          <h3><strong>문의하기</strong></h3>
-          <p>문의하세용</p>
+          <h3 style="font-family: 'Nanum Gothic', sans-serif;"><strong>문의하기</strong></h3>
+          <p style="font-family: 'Nanum Gothic', sans-serif;">빠르고 신속하게 답변해드리겠습니다</p>
           <div class="row">
             <div class="col-sm-6 form-group">
-              <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
             </div>
             <div class="col-sm-6 form-group">
-               <input class="form-control" id="email" name="email" placeholder="email" type="text" required>
+            <input class="form-control" id="email" name="email" placeholder="email" type="text" required>
             </div>
           </div>
            <textarea class="form-control" id="comments" name="comments" placeholder="문의할 내용을 입력하세요" rows="7"></textarea><br>
@@ -201,18 +254,18 @@
           </div>
         </div>
 
+        <!-- footer -->
         <footer class="container-fluid bg-main-footer">
           <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-2">
-              <h3>딩가 행복센터</h3>
+              <h3>딩가 고객센터</h3>
               <h3>1644-1777</h3>
-              <input type="button" class="btndesign" value="카카오톡 문의"><br><br>
-              <input type="button" class="btndesign" value="1:1 문의">
+              <input type="button" class="btndesign" value="카카오톡 문의">
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
               <br><p><strong>365 고객센터</strong></p>
-              <p style="color:#787878">오전 7시 - 오후 7시</p><br><br><br>
+              <p style="color:#787878">오전 7시 - 오후 7시</p><br><br>
               <p><strong>24시간 접수가능</strong></p>
               <p style="color:#787878">고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p><br>
             </div>
@@ -225,7 +278,6 @@
             </div>
           </div>
         </footer>
-
 
   </body>
 </html>
