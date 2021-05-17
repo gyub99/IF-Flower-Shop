@@ -1,62 +1,4 @@
-.header .row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.navbar {
-  text-align:center;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border: 0;
-  border-radius: 0;
-  margin-bottom: 0;
-  font-size: 12px;
-  letter-spacing: 5px;
-  background-color:#e9c778;
-/* 원래 #b2c773 */
-}
-
-
-.register{
-  margin-top: 15px;
-  font-family: 'S-CoreDream-3Light';
-}
-
-a:hover{
-  text-decoration: none;
-}
-
-#log-container{
-display: inline-block;
-text-align: center;
-}
-
-#logo_style{
-  height: 78px;
-  width: 122px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-}
-
-.nav-li{
-  text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-font-family: 'Nanum Gothic', sans-serif;
-}
-
-.img{
-  display: inline;
-  margin-bottom: 0px;
-}
-
-.container{
-  margin-left: 500px;
-}
-
-.img{
+.eventimg{
     width:1100px;
     margin-top:20px;
     margin-bottom: 40px;
@@ -74,3 +16,12 @@ font-family: 'Nanum Gothic', sans-serif;
     margin-top:20px;
     margin-bottom: 50px;
   }
+
+#eventtitle{
+    font-family: 'NanumSquare', sans-serif;
+  text-align:center;
+  font-weight: bold;
+  background: linear-gradient(to right, #A7A3FF,#FFA7A3, #671cc4, #5673bd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
