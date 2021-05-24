@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>Dinga Dinga flower Shop</title>
     <meta charset="utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/product.css" />
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+      function Flower_product(name, price, comment) {
+        this.name = name;
+        this.price = price;
+        this.comment = comment;
+      }
+      var product_list = new Array();
+      product_list[0] = new Flower_product("캄파눌라(초롱꽃)", "20,000원", "종을 닮은 BELL FLOWER");
+      product_list[1] = new Flower_product("스윗핑크 장미", "25,000원", "선명한 핑크색상의 캔디");
+      product_list[2] = new Flower_product("신지혜 파머 초이스", "29,000원", "고민 많은 당신을 위한 제철 꽃 믹스");
+      product_list[3] = new Flower_product("김규빈 파머 초이스", "25,000원", "변함없는 사랑의 리시안셔스");
+      product_list[4] = new Flower_product("옥시페탈룸", "15,000원", "별을 닮은 꽃");
+      product_list[5] = new Flower_product("이성규 파머 초이스", "29,000원", "들꽃의 소박한 정취");
+      product_list[6] = new Flower_product("딩가 파머 초이스", "29,000원", "청초한 느낌의 제철 꽃 믹스");
+      product_list[7] = new Flower_product("골든볼 쏠리 믹스", "19,000원", "옐로우로 즐기는 초여름 믹스");
+      product_list[8] = new Flower_product("핑크 장미 믹스 2종", "17,000원", "연인에게 장미로 전하는 마음");
+      product_list[9] = new Flower_product("스프레이 델피늄", "22,000원", "돌고래를 닮은 꽃잎");
+      product_list[10] = new Flower_product("마가렛", "22,000원", "진실한 사랑을 알고싶을 때");
+      product_list[11] = new Flower_product("레인댄스 장미", "28,000원", "연보라빛 첫사랑의 기억");
+      product_list[12] = new Flower_product("알스트로메리아 믹스", "13,000원", "남아메리카를 닮은 아름다움");
+      product_list[13] = new Flower_product("해바라기", "15,000원", "태양이 생각나는 꽃");
+      product_list[14] = new Flower_product("수국", "9,900원", "솜사탕같은 귀여운 모습");
+      product_list[15] = new Flower_product("마트리카리아 캄파뉴", "22,000원", "귀여운 들꽃느낌의 청초함");
+      product_list[16] = new Flower_product("알륨", "19,000원", "보라빛 꽃들의 둥근 모임");
+      product_list[17] = new Flower_product("나르샤 장미", "15,000원", "다크레드의 부드러운 벨벳 느낌");
+      product_list[18] = new Flower_product("트롤리우스", "19,000원", "섬세한 나비의 날개짓");
+      product_list[19] = new Flower_product("옐로우 백합", "15,000원", "순결, 변함없는 사랑");
+      product_list[20] = new Flower_product("니겔라 컬러믹스", "19,000원", "꿈길의 애정");
+      product_list[21] = new Flower_product("우리타워 백합", "15,000원", "순결, 변함없는 사랑");
+      product_list[22] = new Flower_product("알스트로메리아", "13,000원", "남아메리카를 닮은 아름다움");
+      function img_mouseover(m){
+        m.style.transform = "scale(1.1)";
+        m.style.zIndex = 1;
+        m.style.transition = "all 0.5s";
+      }
+      function img_mouseout(m){
+        m.style.transform = "scale(1)";
+        m.style.zIndex = 0;
+        m.style.transition = "all 0.5s";
+      }
+    </script>
   </head>
   <style>
     @font-face {
@@ -70,119 +104,105 @@
         </nav>
 
     <div class="container-fluid best-product text-center">
-      <h3><strong>딩가 꽃샵의 베스트 상품</strong></h3>
-      <p>요즘 잘 나가는 인기 상품을 보고 가세요!</p>
+      <h3><strong>딩가 꽃샵 베스트 상품</strong></h3>
+      <p>요즘 잘 나가는 이 상품은 어떠세요?</p>
       <br />
       <div class="row">
         <div class="col-sm-3">
-          <img src="picture/f1.png" alt="flower1" class="img-responsive" />
+          <img src="picture/product/2.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best1" class="img-responsive" />
+          <script>
+            document.write('<div class="best-comment">' + product_list[2].comment + '</div>');
+            document.write('<div class="best-name">' + product_list[2].name + '</div>');
+            document.write('<div class="best-price">' + product_list[2].price + '</div>');
+          </script>
         </div>
         <div class="col-sm-3">
-          <img src="picture/f2.png" alt="flower2" class="img-responsive" />
+          <img src="picture/product/3.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best2" class="img-responsive" />
+          <script>
+            document.write('<div class="best-comment">' + product_list[3].comment + '</div>');
+            document.write('<div class="best-name">' + product_list[3].name + '</div>');
+            document.write('<div class="best-price">' + product_list[3].price + '</div>');
+          </script>
         </div>
         <div class="col-sm-3">
-          <img src="picture/f3.png" alt="flower3" class="img-responsive" />
+          <img src="picture/product/5.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best3" class="img-responsive" />
+          <script>
+            document.write('<div class="best-comment">' + product_list[5].comment + '</div>');
+            document.write('<div class="best-name">' + product_list[5].name + '</div>');
+            document.write('<div class="best-price">' + product_list[5].price + '</div>');
+          </script>
         </div>
         <div class="col-sm-3">
-          <img src="picture/f4.png" alt="flower4" class="img-responsive" />
+          <img src="picture/product/6.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best4" class="img-responsive" />
+          <script>
+            document.write('<div class="best-comment">' + product_list[6].comment + '</div>');
+            document.write('<div class="best-name">' + product_list[6].name + '</div>');
+            document.write('<div class="best-price">' + product_list[6].price + '</div>');
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid sale-product text-center">
+      <h3><strong>딩가 꽃샵 할인 상품</strong></h3>
+      <p>아름다운 꽃을 저렴한 가격으로 구매하세요!</p>
+      <br />
+      <div class="row">
+        <div class="col-sm-3">
+          <img src="picture/product/0.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale1" class="img-responsive" />
+          <script>
+            document.write('<div class="sale-comment">' + product_list[0].comment + '</div>');
+            document.write('<div class="sale-name">' + product_list[0].name + '</div>');
+            document.write('<div class="sale-price"><span class="original">20,000원</span> ' + product_list[0].price + '</div>');
+          </script>
+        </div>
+        <div class="col-sm-3">
+          <img src="picture/product/7.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale2" class="img-responsive" />
+          <script>
+            document.write('<div class="sale-comment">' + product_list[7].comment + '</div>');
+            document.write('<div class="sale-name">' + product_list[7].name + '</div>');
+            document.write('<div class="sale-price"><span class="original">25,000원</span> ' + product_list[7].price + '</div>');
+          </script>
+        </div>
+        <div class="col-sm-3">
+          <img src="picture/product/9.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale3" class="img-responsive" />
+          <script>
+            document.write('<div class="sale-comment">' + product_list[9].comment + '</div>');
+            document.write('<div class="sale-name">' + product_list[9].name + '</div>');
+            document.write('<div class="sale-price"><span class="original">24,000원</span> ' + product_list[9].price + '</div>');
+          </script>
+        </div>
+        <div class="col-sm-3">
+          <img src="picture/product/14.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale4" class="img-responsive" />
+          <script>
+            document.write('<div class="sale-comment">' + product_list[14].comment + '</div>');
+            document.write('<div class="sale-name">' + product_list[14].name + '</div>');
+            document.write('<div class="sale-price"><span class="original">11,000원</span> ' + product_list[14].price + '</div>');
+          </script>
         </div>
       </div>
     </div>
 
     <div class="container-fluid product-list text-center">
       <h3><strong>오늘같은 날, 꽃 선물은 어떠세요?</strong></h3>
-      <p>5월의 추천꽃 라일락, 수련, 어쩌구</p>
-      <br />
-      <div class="row product-item">
-         <div class="col-sm-3">
-           <a href="product_detail.html">
-          <img src="picture/f5.png" alt="flower1" class="img-responsive" />
-          <div class="name"><strong>딩가 주인장 김규빈 초이스</strong></div>
-          <div class="price">29,000원</div>
-          <button class="button">구매하기</button>
-        </a>
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f6.png" alt="flower2" class="img-responsive" />
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f7.png" alt="flower3" class="img-responsive" />
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f8.png" alt="flower4" class="img-responsive" />
-        </div>
-      </div>
-      <div class="row product-item">
-        <div class="col-sm-3">
-          <div class="wrapper">
-            <img src="picture/f5.png" alt="flower1" class="img-responsive" />
-            <div class="overlay">
-              <div class="content">
-                <div class="name">딩가 주인장 김규빈 초이스</div>
-                <div class="price">29,000원</div>
-                <button class="button">구매하기</a></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f6.png" alt="flower2" class="img-responsive" />
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f7.png" alt="flower3" class="img-responsive" />
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f8.png" alt="flower4" class="img-responsive" />
-        </div>
-      </div>
-      <div class="row product-item">
-        <div class="col-sm-3">
-          <div class="wrapper">
-            <img src="picture/f5.png" alt="flower1" class="img-responsive" />
-            <div class="overlay">
-              <div class="content">
-                <div class="name">딩가 주인장 김규빈 초이스</div>
-                <div class="price">29,000원</div>
-                <button class="button">구매하기</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f6.png" alt="flower2" class="img-responsive" />
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f7.png" alt="flower3" class="img-responsive" />
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f8.png" alt="flower4" class="img-responsive" />
-        </div>
-      </div>
-      <div class="row product-item">
-        <div class="col-sm-3">
-          <div class="wrapper">
-            <img src="picture/f5.png" alt="flower1" class="img-responsive" />
-            <div class="overlay">
-              <div class="content">
-                <div class="name">딩가 주인장 김규빈 초이스</div>
-                <div class="price">29,000원</div>
-                <button class="button">구매하기</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f6.png" alt="flower2" class="img-responsive" />
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f7.png" alt="flower3" class="img-responsive" />
-        </div>
-        <div class="col-sm-3">
-          <img src="picture/f8.png" alt="flower4" class="img-responsive" />
-        </div>
+      <p>5월의 추천꽃 <strong>"장미"</strong></p>
+      <div class="item_list">
+        <script>
+          for (var i=0;i<4;i++){
+            document.write('<div class="row product-item">');
+            for (var j=0; j<4; j++){
+              document.write('<div class="col-sm-3">');
+              document.write('<a href="product_detail.html">');
+              document.write('<img src="picture/product/' + (i*4+j) + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale' + (i*4+j) + '" class="img-responsive" />');
+              document.write('<div class="comment">' + product_list[4*i+j].comment + '</div>');
+              document.write('<div class="name">' + product_list[4*i+j].name + '</div>');
+              document.write('<div class="price">' + product_list[4*i+j].price + '</div></a></div>');
+            }
+            document.write('</div>');
+          }
+        </script>
       </div>
     </div>
-
     <footer class="container-fluid bg-main-footer">
       <div class="row">
         <div class="col-sm-2"></div>

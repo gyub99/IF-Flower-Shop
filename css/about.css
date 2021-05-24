@@ -1,7 +1,11 @@
 .month-flower{
-    padding: 10px;
+    padding: 5px;
 }
 .about1-title{
     padding:20px;
     text-align:center;
+}
+.container {
+    padding-left: 10%;
+    padding-right: 10%;
 }
