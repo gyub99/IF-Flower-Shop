@@ -60,3 +60,9 @@ a .name{
 a .price{
     font-size: 13px;
 }
+a[id=right]:hover{
+    color: #BEC773;
+}
+a[id=left]:hover{
+    color: #BEC773;
+}

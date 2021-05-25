@@ -1,0 +1,30 @@
+function Flower_product(name, price, comment, original) {
+    this.name = name;
+    this.price = price;
+    this.comment = comment;
+    this.original = original;
+  }
+  var product_list = new Array();
+  product_list[0] = new Flower_product("캄파눌라(초롱꽃)", "20,000원", "종을 닮은 BELL FLOWER", "20,000원");
+  product_list[1] = new Flower_product("스윗핑크 장미", "25,000원", "선명한 핑크색상의 캔디");
+  product_list[2] = new Flower_product("신지혜 파머 초이스", "29,000원", "고민 많은 당신을 위한 제철 꽃 믹스");
+  product_list[3] = new Flower_product("김규빈 파머 초이스", "25,000원", "변함없는 사랑의 리시안셔스");
+  product_list[4] = new Flower_product("옥시페탈룸", "15,000원", "별을 닮은 꽃");
+  product_list[5] = new Flower_product("이성규 파머 초이스", "29,000원", "들꽃의 소박한 정취");
+  product_list[6] = new Flower_product("딩가 파머 초이스", "29,000원", "청초한 느낌의 제철 꽃 믹스");
+  product_list[7] = new Flower_product("골든볼 쏠리 믹스", "19,000원", "옐로우로 즐기는 초여름 믹스", "25,000원");
+  product_list[8] = new Flower_product("핑크 장미 믹스 2종", "17,000원", "연인에게 장미로 전하는 마음");
+  product_list[9] = new Flower_product("스프레이 델피늄", "22,000원", "돌고래를 닮은 꽃잎", "24,000원");
+  product_list[10] = new Flower_product("마가렛", "22,000원", "진실한 사랑을 알고싶을 때");
+  product_list[11] = new Flower_product("레인댄스 장미", "28,000원", "연보라빛 첫사랑의 기억");
+  product_list[12] = new Flower_product("알스트로메리아 믹스", "13,000원", "남아메리카를 닮은 아름다움");
+  product_list[13] = new Flower_product("해바라기", "15,000원", "태양이 생각나는 꽃");
+  product_list[14] = new Flower_product("수국", "9,900원", "솜사탕같은 귀여운 모습", "11,000원");
+  product_list[15] = new Flower_product("마트리카리아 캄파뉴", "22,000원", "귀여운 들꽃느낌의 청초함");
+  product_list[16] = new Flower_product("알륨", "19,000원", "보라빛 꽃들의 둥근 모임");
+  product_list[17] = new Flower_product("나르샤 장미", "15,000원", "다크레드의 부드러운 벨벳 느낌");
+  product_list[18] = new Flower_product("트롤리우스", "19,000원", "섬세한 나비의 날개짓");
+  product_list[19] = new Flower_product("옐로우 백합", "15,000원", "순결, 변함없는 사랑");
+  product_list[20] = new Flower_product("니겔라 컬러믹스", "19,000원", "꿈길의 애정");
+  product_list[21] = new Flower_product("우리타워 백합", "15,000원", "순결, 변함없는 사랑");
+  product_list[22] = new Flower_product("알스트로메리아", "13,000원", "남아메리카를 닮은 아름다움");

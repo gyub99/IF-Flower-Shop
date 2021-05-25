@@ -122,7 +122,7 @@
       <p>5월의 추천꽃 <strong>"장미"</strong></p>
       <div class="item_list">
         <script>
-          for (var i=0;i<4;i++){
+          for (var i=4;i<5;i++){
             document.write('<div class="row product-item">');
             for (var j=0; j<4; j++){
               document.write('<div class="col-sm-3">');
@@ -138,15 +138,30 @@
               }
             }
             document.write('</div>');
+            if (4*i+j+1<product_list.length){
+                document.write('<div class="row product-item">');
+                for (var k=4*i+j;k<product_list.length;k++){
+                    document.write('<div class="col-sm-3">');
+                    document.write('<a href="product_detail.html">');
+                    document.write('<img src="picture/product/' + k + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale' + k + '" class="img-responsive" />');
+                    document.write('<div class="comment">' + product_list[k].comment + '</div>');
+                    document.write('<div class="name">' + product_list[k].name + '</div>');
+                    if (k==0 || k==7 || k==9 || k==14){
+                        document.write('<div class="sale-price"><span class="original">' + product_list[k].original + '</span> ' + product_list[k].price + '</div></a></div>');
+                    }
+                    else {
+                        document.write('<div class="price">' + product_list[k].price + '</div></a></div>');
+                    }
+                }
+                document.write('</div>');
+            }
           }
         </script>
       </div>
       <div class="page-control">
         <p>
-          <span href="product2.html" class="glyphicon glyphicon-chevron-left" id="left"></span>
-          <span>
-            <a href="product2.html" class="glyphicon glyphicon-chevron-right" id="right"></a>
-          </span>
+          <a href="product.html" class="glyphicon glyphicon-chevron-left" id="left"></a>
+          <span class="glyphicon glyphicon-chevron-right" id="right"></span>
         </p>
       </div>
     </div>
