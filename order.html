@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> Dinga Dinga flower Shop </title>
+    <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/order.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    function mailcheck(){
+      i=document.join.mail_sel.selectedIndex
+      var mail=document.join.mail_sel.options[i].value
+      document.join.mail.value=mail
+  }
+  </script>
+  <style>
+  @font-face {
+       font-family: 'S-CoreDream-3Light';
+       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+       font-weight: normal;
+       font-style: normal;z-index:
+  }
+
+</style>
+  </head>
+  <body  style="overflow-x:hidden;">
+
+    <!-- 헤더부분 -->
+    <div class="header">
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-10">
+            </div>
+            <div class="col-sm-2 register">
+              <a href="register.html" style="margin-right:10px; color:black;">회원가입</a>
+              <span>|</span>
+              <a href="login.html" style="margin-left:10px; color:black;">로그인</a>
+            </div>
+          </div>
+        </div>
+          <p style="text-align:center;"><a href="main.html"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
+      </div>
+
+
+      <!-- 네비게이션 -->
+      <!-- 네비게이션 부분 -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="nav-li"><a href="makeBouquet.html">꽃제작</a></li>
+                <li class="nav-li"><a href="product.html">꽃상품</a></li>
+                <li class="nav-li"><a href="about.html">이모저모</a></li>
+                <li class="nav-li"><a href="donation.html">기부현황</a></li>
+                <li class="nav-li"><a href="event.html">이벤트</a></li>
+                <li class="nav-li"><a href="mypage.html">마이페이지</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+          <!-- 배송정보 -->
+          <div class="bigbox">
+            <div class="title">
+                <h3>배송지 정보</h3>
+                    <span class="star"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /> 필수입력사항</span>
+            </div>
+            <div class="tb_box">
+                <table border="1">
+                <caption>배송지 정보 입력</caption>
+                <tbody>
+                    <tr>
+                        <th scope="row">배송지 선택</th>
+                          <td>
+                            <div class="address">
+                              <input name="addr1"  type="radio" class="rd_btn">
+                              <label>회원 정보와 동일</label>
+                              <input name="addr1"  type="radio" class="rd_btn">
+                              <label>새로운 배송</label>
+                              <a href=#><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/btn_address.gif" alt="주소록 보기" /></a>
+                            </div>
+                          </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">받으시는 분 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
+                            <td>
+                              <div class="re_box">
+                              <input type="text" class="re_name">
+                              </div>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">주소 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
+                          <td>
+                            <div class="addr">
+                            <input type="text" class="zip_code">
+                            <a href="#"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/btn_zipcode.gif" alt="우편번호" /></a><br/>
+                            <input type="text" class="addr1" >
+                            <span class="grid">기본 주소</span><br>
+                            <input type="text" class="addr1" >
+                            <span class="grid">나머지 주소</span>
+                            </div>
+                          </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">휴대전화 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
+                          <td>
+                            <div class="ph_box">
+                            <input type="text" class="ph_num">
+                            -
+                            <input type="text" class="ph_num2">
+                            -
+                            <input type="text" class="ph_num2">
+                            </div>
+                          </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">이메일 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
+                          <td>
+                            <div class="email_box">
+                            <input type="text" class="email">
+                            @
+                            <form name="join" action="join_post.php" method="post" class="email_form">
+                            <input type="text" name="mail" class="email">
+                            <select name="mail_sel" onChange="mailcheck()">
+                            <option selected>직접입력</option>
+                            <option value=google.com>google.com</option>
+                            <option value=naver.com>naver.com</option>
+                            <option value=nate.com>nate.com</option>
+                            <option value=daum.net>daum.net</option>
+                            </select>
+                            </form>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">배송메시지</th>
+                          <td>
+                            <div class="de_box">
+                            <textarea  class="de_message" name="message" rows="4" cols="80"></textarea>
+                            </div>
+                          </td>
+                    </tr>
+                </tbody>
+                </table>
+                <dic class="order_box">
+                <input type="button" value="입력 완료" class="order_fn">
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="container-fluid bg-main-footer">
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+              <h3>딩가 행복센터</h3>
+              <h3>1644-1777</h3>
+              <input type="button" class="btndesign" value="카카오톡 문의"><br><br>
+              <input type="button" class="btndesign" value="1:1 문의">
+            </div>
+            <div class="col-sm-4">
+              <br><p><strong>365 고객센터</strong></p>
+              <p style="color:#787878">오전 7시 - 오후 7시</p><br><br><br>
+              <p><strong>24시간 접수가능</strong></p>
+              <p style="color:#787878">고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p><br>
+            </div>
+            <div class="col-sm-4">
+              <br><br><br>
+              <p>사업자 등록번호 : 371-06-0707<br>
+                통신판매업 신고번호 : 2021-서울 삼성동-77775<br>
+                주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br>
+                COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED</p>
+            </div>
+          </div>
+        </footer>
+
+
+  </body>
+</html>
