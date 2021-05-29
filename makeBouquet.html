@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascript/makingFlower.js"></script>
   </head>
   <style>
   @font-face {
@@ -27,8 +28,20 @@
        font-weight: normal;
        font-style: normal;
   }
-</style>
 
+  .preview{
+            width:400px;
+            height:400px;
+            border:1px solid silver;
+  }
+
+  .preview img {
+            position: absolute;
+            width:100px;
+        }
+</style>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="javascript/makeflower.js"></script>
   <body>
     <!-- 헤더부분 -->
     <div class="header">
@@ -77,97 +90,78 @@
     </div>
     <div class="container contents">
       <div class="product row">
-        <div class="col-sm-1"></div>
-        <div class="preview col-sm-5">
-          <img class="img-responsive" src="picture/f2.PNG" alt="bouquet" id="MakingBouquet" />
-        </div>
+        <div class="col-sm-1 select"></div>
+          <div class="preview col-sm-5">
+                <img src="picture/f1.png" >
+                <img src="picture/f2.png" >
+                <img src="picture/f3.png" >
+                <img src="picture/f4.png" >
+                <img src="picture/f5.png" >
+          </div>
+
+
         <div class="col-sm-5 choosing">
           <h5 style="text-align:center;">이곳에서 원하는 색상, 꽃 종류, 스타일을 선택해보세요!</h5>
-          <div class="image-gallery-thumbnails-wrapper row">
-            <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower1.jpg"
-                alt="flower1"
-              />
-            </div>
-            <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower2.jpg"
-                alt="flower1"
-              />
-            </div>
-            <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower3.jpg"
-                alt="flower1"
-              />
-            </div>
-            <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower4.jpg"
-                alt="flower1"
-              />
 
-            </div>
-          </div>
           <div class="image-gallery-thumbnails-wrapper row">
             <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower5.jpg"
-                alt="flower1"
-              />
+              <img class="thumbnail img-responsive" src="picture/makingFlower/flower1.jpg" alt="flower1"/>
             </div>
             <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower6.jpg"
-                alt="flower1"
-              />
+              <img class="thumbnail img-responsive" src="picture/makingFlower/flower2.jpg" alt="flower1"/>
             </div>
             <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower7.jpg"
-                alt="flower1"
-              />
+              <img class="thumbnail img-responsive" src="picture/makingFlower/flower3.jpg" alt="flower1"/>
             </div>
             <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower8.jpg"
-                alt="flower1"
-              />
+              <img class="thumbnail img-responsive" src="picture/makingFlower/flower4.jpg" alt="flower1"/>
             </div>
           </div>
+
+          <!-- // 구분선 -->
+          <div class="image-gallery-thumbnails-wrapper row">
+            <div class="col-sm-3 choose-flower">
+              <img class="thumbnail img-responsive" src="picture/makingFlower/flower5.jpg" alt="flower1"/>
+            </div>
+            <div class="col-sm-3 choose-flower">
+              <img class="thumbnail img-responsive" src="picture/makingFlower/flower6.jpg" alt="flower1"/>
+            </div>
+            <div class="col-sm-3 choose-flower">
+              <img class="thumbnail img-responsive" src="picture/makingFlower/flower7.jpg" alt="flower1"/>
+            </div>
+            <div class="col-sm-3 choose-flower">
+              <img class="thumbnail img-responsive" src="picture/makingFlower/flower8.jpg" alt="flower1"/>
+            </div>
+          </div>
+
           <div class="row choose-wrapper">
             <h6 style="text-align: center;">포장지 색 선택</h6>
-            <div class="color col-sm-1" style="background-color: aqua;"> </div>
-            <div class="color col-sm-1" style="background-color: #7b68ee;"> </div>
-            <div class="color col-sm-1" style="background-color: #e6e6fe;"> </div>
-            <div class="color col-sm-1" style="background-color: #CEF6D8"> </div>
-            <div class="color col-sm-1" style="background-color: #F5F6CE;"> </div>
-            <div class="color col-sm-1" style="background-color: #FE2E64;"> </div>
+            <div class="color col-sm-1 img-circle" id="img1" style="background-color: #ecdfcf;" onclick="change();"> </div>
+            <div class="color col-sm-1 img-circle" id="img2" style="background-color: #c4d4e0;"  onclick="change();"> </div>
+            <div class="color col-sm-1 img-circle" id="img3" style="background-color: #9aabb9;"  onclick="change();"> </div>
+            <div class="color col-sm-1 img-circle" id="img4" style="background-color: #e2b49a;"> </div>
+            <div class="color col-sm-1 img-circle" id="img5" style="background-color: #e9c77b;"> </div>
+            <div class="color col-sm-1 img-circle" id="img6" style="background-color: #8cd790;"> </div>
           </div>
+
           <div class="row choose-ribbon">
             <h6 style="text-align: center;">리본 색 선택</h6>
-            <div class="color col-sm-1" style="background-color: #2E9AFE;"> </div>
-            <div class="color col-sm-1" style="background-color: #380B61;"> </div>
-            <div class="color col-sm-1" style="background-color: #08298A;"> </div>
-            <div class="color col-sm-1" style="background-color: #04B404"> </div>
-            <div class="color col-sm-1" style="background-color: #ff0000;"> </div>
-            <div class="color col-sm-1" style="background-color: #FBEFF2;"> </div>
+            <div class="color col-sm-1 img-circle" style="background-color: #ecdfcf;"> </div>
+            <div class="color col-sm-1 img-circle" style="background-color: #c4d4e0;"> </div>
+            <div class="color col-sm-1 img-circle" style="background-color: #9aabb9;"> </div>
+            <div class="color col-sm-1 img-circle" style="background-color: #e2b49a;"> </div>
+            <div class="color col-sm-1 img-circle" style="background-color: #e9c77b;"> </div>
+            <div class="color col-sm-1 img-circle" style="background-color: #8cd790;"> </div>
           </div>
         </div>
+
+
       </div>
+
       <div class="buy container text-center">
-        <button id="makingBuy">
-          구매하기
-        </button>
+        <button id="reset">초기화</button>
+        <button id="makingBuy">구매하기</button>
+
       </div>
     </div>
 
