@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    font-family: S-CoreDream-3Light;
+}
 .best-product{
     background-color:#F4EBF5;
     padding:30px 200px 30px 200px;

@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascript/product.js"></script> 
+    <script type="text/javascript" src="javascript/send.js"></script>
     <script>
       function img_mouseover(m){
         m.style.transform = "scale(1.1)";
@@ -26,14 +27,6 @@
       }
     </script>
   </head>
-  <style>
-    @font-face {
-         font-family: 'S-CoreDream-3Light';
-         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
-         font-weight: normal;
-         font-style: normal;
-    }
-  </style>
   <body>
     <!-- 헤더부분 -->
     <div class="header">
@@ -75,7 +68,7 @@
           </div>
         </nav>
 
-    <div class="container-fluid best-product text-center">
+    <div class="container-fluid best-product text-center" style="font-family:'S-CoreDream-3Light';">
       <h3><strong>딩가 꽃샵 베스트 상품</strong></h3>
       <p>요즘 잘 나가는 이 상품은 어떠세요?</p>
       <br />
@@ -85,7 +78,7 @@
             if (i==2 || i==3 || i==5 || i==6){
               document.write('<div class="col-sm-3">');
               document.write('<a href="product_detail.html">');
-              document.write('<img src="picture/product/' + i + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />');
+              document.write('<img src="picture/product/' + i + '.PNG" onclick="sending_Data('+i+')" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />');
               document.write('<div class="best-comment">' + product_list[i].comment + '</div>');
               document.write('<div class="best-name">' + product_list[i].name + '</div>');
               document.write('<div class="best-price">' + product_list[i].price + '</div>');

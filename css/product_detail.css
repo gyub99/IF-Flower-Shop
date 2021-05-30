@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    font-family: S-CoreDream-3Light;
+}
+.pro-comment{
+    font-size:13px;
+    color: #5C6365;
+    margin-bottom:0px;
+    padding-left:5px;
+}
+.pro-name{
+    margin-top:5px;
+    font-weight: bold;
+}
+.pro-price{
+    padding-left:5px;
+}
+.pro-det-title{
+    padding-bottom:20px;
+    padding-left:20px;
+    /*원래 색 #5C6365*/
+}
+.pro-thumbnail{
+    margin-top: 15px;
+    text-align: center;
+
+}
+.del-comment{
+    font-weight: bold;
+}
+td{
+    padding : 15px;
+}
+.color{
+    margin:10px;
+    height: 28px;
+}
+.glyphicon{
+    margin: 10px;
+    color: #5C6365;
+}
+.contents{
+    padding:20px;
+}
+.buy-item{
+    background-color:#AABBE5;
+    color:white;
+    margin: 10px;
+    padding: 10px;
+    font-weight:bolder;
+    border: 0px;
+}
+.choosing{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.buy{
+    padding:30px;
+
+}
