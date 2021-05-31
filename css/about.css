@@ -10,13 +10,19 @@
 .month-flower{
     padding: 5px;
 }
-.about1-title{
+.about-title{
     padding:20px;
+    margin-top:30px;
+    margin-bottom: 30px;
     text-align:center;
 }
-.about-title{
-    margin-top:50px;
-    margin-bottom: 50px;
+.about-comment{
+    margin-bottom:0px;
+    color:#5C6365;
+}
+.about-main-title{
+    font-weight: bolder;
+    font-size: 30px;
 }
 .contents {
     padding-left: 10%;
@@ -25,4 +31,17 @@
 .about-img{
     margin-bottom: 50px;
 }
-
+.explain{
+    padding-top:30px;
+}
+.festival{
+    margin-bottom: 30px;
+}
+.line {
+    border:0.5px solid #5C6365;
+    background-color:black;
+    margin-top:10px;
+    margin-bottom:30px;
+    margin-left:5%;
+    margin-right: 5%;
+}

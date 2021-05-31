@@ -23,6 +23,17 @@
         }
         mythumbnail[data].style.border='2px solid #AABBE5';
       }
+      function plus(){
+        document.getElementById('count').innerHTML = document.getElementById('count').innerHTML/1 + 1;
+      }
+      function minus(){
+        if (document.getElementById('count').innerHTML > 1 ) {
+          document.getElementById('count').innerHTML = document.getElementById('count').innerHTML/1 - 1;
+        }
+        else {
+
+        }
+      }
     </script>
   </head>
   <style>
@@ -113,10 +124,10 @@
         </div>
         <div class="pro-thumbnail row">
           <span class="col-sm-2"></span>
-          <a role="button" data-target="#pro-carousel" data-slide-to="0"><img class="col-sm-2 thumbnail img-responsive" src="picture/f1.PNG" alt="prod1" onclick="check_click(0)" style="border:2px solid #aabbe5;"/></a>
-          <a role="button" data-target="#pro-carousel" data-slide-to="1"><img class="col-sm-2 thumbnail img-responsive" src="picture/f2.PNG" alt="prod2" onclick="check_click(1)"/></a>
-          <a role="button" data-target="#pro-carousel" data-slide-to="2"><img class="col-sm-2 thumbnail img-responsive" src="picture/f3.PNG" alt="prod3" onclick="check_click(2)"/></a>
-          <a role="button" data-target="#pro-carousel" data-slide-to="3"><img class="col-sm-2 thumbnail img-responsive" src="picture/f4.PNG" alt="prod4" onclick="check_click(3)"/></a>
+          <a role="button" data-target="#pro-carousel" data-slide-to="0"><img class="col-sm-2 thumbnail img-responsive" src="picture/f1.PNG" alt="prod1" onclick="check_click(0)" style = "border:2px solid #aabbe5;"/></a>
+          <a role="button" data-target="#pro-carousel" data-slide-to="1"><img class="col-sm-2 thumbnail img-responsive" src="picture/f2.PNG" alt="prod2" onclick="check_click(1)" style = "border:2px solid #aabbe5;"/></a>
+          <a role="button" data-target="#pro-carousel" data-slide-to="2"><img class="col-sm-2 thumbnail img-responsive" src="picture/f3.PNG" alt="prod3" onclick="check_click(2)" style = "border:2px solid #aabbe5;"/></a>
+          <a role="button" data-target="#pro-carousel" data-slide-to="3"><img class="col-sm-2 thumbnail img-responsive" src="picture/f4.PNG" alt="prod4" onclick="check_click(3)" style = "border:2px solid #aabbe5;"/></a>
           <span class="col-sm-2"></span>
         </div>
         </div>
@@ -152,19 +163,15 @@
                 </td>
               </tr>
               <tr>
-                <td><strong>배송 예정일</strong></td>
-                <td></td>
-              </tr>
-              <tr>
                 <td><strong>포장지 색 선택</strong></td>
                 <td>
                   <div class="row choose-wrapper">
-                  <span class="color col-sm-1" style="background-color: aqua;"> </span>
-                  <span class="color col-sm-1" style="background-color: #7b68ee;"> </span>
-                  <span class="color col-sm-1" style="background-color: #e6e6fe;"> </span>
-                  <span class="color col-sm-1" style="background-color: #CEF6D8"> </span>
-                  <span class="color col-sm-1" style="background-color: #F5F6CE;"> </span>
-                  <span class="color col-sm-1" style="background-color: #FE2E64;"> </span>
+                  <span class="color col-sm-1 img-circle" style="background-color: #ecdfcf;"> </span>
+                  <span class="color col-sm-1 img-circle" style="background-color: #b9a9c9;"> </span>
+                  <span class="color col-sm-1 img-circle" style="background-color: #e6e6fe;"> </span>
+                  <span class="color col-sm-1 img-circle" style="background-color: #CEF6D8"> </span>
+                  <span class="color col-sm-1 img-circle" style="background-color: #F5F6CE;"> </span>
+                  <span class="color col-sm-1 img-circle" style="background-color: #9aabb9;"> </span>
                 </div>
                 </td>
               </tr>
@@ -172,12 +179,12 @@
                 <td><strong>리본 색 선택</strong></td>
                 <td>
                   <div class="row choose-ribbon">
-                    <span class="color col-sm-1" style="background-color: #2E9AFE;"> </span>
-                    <span class="color col-sm-1" style="background-color: #380B61;"> </span>
-                    <span class="color col-sm-1" style="background-color: #08298A;"> </span>
-                    <span class="color col-sm-1" style="background-color: #04B404"> </span>
-                    <span class="color col-sm-1" style="background-color: #ff0000;"> </span>
-                    <span class="color col-sm-1" style="background-color: #FBEFF2;"> </span>
+                    <span class="color col-sm-1 img-circle" style="background-color: #7ea8cc;"> </span>
+                    <span class="color col-sm-1 img-circle" style="background-color: #ff8fab;"> </span>
+                    <span class="color col-sm-1 img-circle" style="background-color: #f7c934;"> </span>
+                    <span class="color col-sm-1 img-circle" style="background-color: #8cd790"> </span>
+                    <span class="color col-sm-1 img-circle" style="background-color: #b6b5f5;"> </span>
+                    <span class="color col-sm-1 img-circle" style="background-color: #9f65fc;"> </span>
                   </div>
                 </td>
               </tr>
