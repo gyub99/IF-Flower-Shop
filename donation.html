@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="css/footer.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src='http://www.google.com/jsapi'></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <style>
 /* .nanumsquare {
     font-family: 'NanumSquare', sans-serif;
@@ -46,6 +48,42 @@
      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
      font-weight: normal;
      font-style: normal;
+}
+#eventtitle{
+    font-family: 'NanumSquare', sans-serif;
+  text-align:center;
+  font-weight: bold;
+  background: linear-gradient(to right, #A7A3FF,#FFA7A3, #671cc4, #5673bd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-donation{
+    height: 100%;
+    background-image:url(picture/donation_bg.png);
+    background-repeat: no-repeat;
+    background-size : cover;
+}
+
+.contain1{
+  background-color: white;
+  display:inline-block;
+  padding-bottom: 30px;
+  border-radius: 30px;
+}
+
+.contain2{
+  background-color: white;
+  display:inline-block;
+  padding: 30px 50px 30px 50px;
+  border-radius: 30px;
+}
+
+.contain3{
+  background-color: white;
+  display:inline-block;
+  padding: 30px 50px 30px 50px;
+  border-radius: 30px;
 }
 </style>
 </head>
@@ -90,6 +128,93 @@
           </div>
         </div>
       </nav>
+
+      <div class="container-fluid bg-donation">
+        <br><br><br>
+        <p style="text-align:center;"><img src="picture/donation_pic.png" alt="dontaion_pic" style="width:400px; height:550px;"></p>
+        <div class="contain1">
+          <h3 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center;">지구 지킴이 프로젝트</h3>
+          <p style="font-family: 'GongGothicLight'; text-align:center;"> 해당 차트는 딩가 꽃집이 산림청과 협력하여 나무를 심은 곳을 나타낸 차트입니다.<br>
+            나무를 많이 심은 곳은 더 짙은 초록색이 표시되고, <br>
+            나무를 적게 심은 곳이나 산불로 피해를 입은 지역은 분홍색 또는 연한 초록색으로 표시됩니다.</p>
+
+            <script type='text/javascript' src=javascript/donation.js></script>
+            <script type='text/javascript'>
+            google.load('visualization', '1', {'packages': ['geochart']});
+            google.setOnLoadCallback(drawVisualization);
+            </script>
+         <div id='visualization'></div>
+       </div>
+
+
+       <div class="contain2">
+         <script type="text/javascript">
+         google.charts.load('current', {'packages':['table']});
+         google.charts.setOnLoadCallback(drawTable);
+
+                 function drawTable() {
+                   var data = new google.visualization.DataTable();
+                   data.addColumn('string', '기부한 재단');
+                   data.addColumn('number', '금액');
+                   data.addColumn('string', '후원명');
+                   data.addRows([
+                     ['초록우산 어린이 재단',  {v: 10000000, f: '10,000,000원'}, '해외 아동 결연'],
+                     ['기아대책',   {v:8000000,   f: '8,000,000원'},  '아프리카 학교 설립 지원금'],
+                     ['유니세프', {v: 7700000, f: '7,700,000원'}, '식수 지원 사업'],
+                     ['세이브더칠드런',   {v: 7000000,  f: '7,000,000원'},  '한부모 가정 교육비 지원'],
+                     ['굿네이버스',   {v: 8500000,  f: '8,500,000원'},  '조부모 가정 생활비 지원']
+                   ]);
+
+                   var table = new google.visualization.Table(document.getElementById('table_div'));
+
+                   table.draw(data, {showRowNumber: true, width: '500px', height: '700px;'});
+                 }
+         </script>
+         <h3 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center;">2021 기부 현황</h3>
+         <p style="font-family: 'GongGothicLight'; text-align:center;">
+           해당 차트는 올해 딩가꽃집이 기부를 한 곳의 재단이름과 액수를 나타낸 표입니다.<br><br></p>
+         <div id="table_div"></div>
+       </div>
+
+      <div class="contain3">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        google.charts.load('current', {'packages':['line']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Year');
+        data.addColumn('number', '금액');
+
+        data.addRows([
+          [16,  11.8],
+          [17,  9.8],
+          [18,  20.8],
+          [19,  25.9],
+          [20,  27.4],
+          [21,  35.7]
+        ]);
+
+        var options = {
+          width: 900,
+          height: 400
+        };
+
+        var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+        chart.draw(data, google.charts.Line.convertOptions(options));
+        }
+         </script>
+        <h3 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center;">YEAR 기부 현황</h3>
+        <p style="font-family: 'GongGothicLight'; text-align:center;">
+          해당 차트는 그동안 매년 기부를 해왔던 총액을 나타낸 표입니다.<br></p>
+         <div id="linechart_material"></div>
+     </div>
+   </div>
+
+
 
 
       <footer class="container-fluid bg-main-footer">

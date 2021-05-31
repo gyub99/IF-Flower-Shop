@@ -1,3 +1,60 @@
+var button1; //전역변수 선언
+var button2; //전역변수 선언
+var button3; //전역변수 선언
+var button4; //전역변수 선언
+
+window.onload=function(){
+  button1=document.getElementById("button1"); //초기화
+  button2=document.getElementById("button2"); //초기화
+  button3=document.getElementById("button3"); //초기화
+  button4=document.getElementById("button4"); //초기화
+
+  m1=function makeImg1(){
+    img=document.createElement("img");
+    img.src="picture/f1.png"
+    $("#preview").append(img);
+  }
+
+  m2=function makeImg2(){
+    img=document.createElement("img");
+    img.src="picture/f2.png"
+    $("#preview").append(img);
+  }
+
+  m3=function makeImg3(){
+    img=document.createElement("img");
+    img.src="picture/f3.png"
+    $("#preview").append(img);
+  }
+
+  m4=function makeImg4(){
+    img=document.createElement("img");
+    img.src="picture/f4.png"
+    $("#preview").append(img);
+  }
+
+
+  t1=function(){
+    setTimeout(m1,100);	//0.5초뒤 m을 실행
+  }
+  t2=function(){
+    setTimeout(m2,100);	//0.5초뒤 m을 실행
+  }
+  t3=function(){
+    setTimeout(m3,100);	//0.5초뒤 m을 실행
+  }
+  t4=function(){
+    setTimeout(m4,100);	//0.5초뒤 m을 실행
+  }
+
+
+  button1.onclick=t1; //클릭하면 t 실행
+  button2.onclick=t2; //클릭하면 t 실행
+  button3.onclick=t3; //클릭하면 t 실행
+  button4.onclick=t4; //클릭하면 t 실행
+
+}
+
 // 이미지 목록을 저장할 변수
         var $imgs = null;
         // 드래그 되는 이미지
@@ -27,7 +84,8 @@
 
         // 전역에서 사용할 요소 찾기
         function init(){
-            $imgs = $(".preview img");
+            $imgs = $("#preview img");
+
             // 선택 영역 패널
             $selectPanel = $(".select");
             // 선택 영역 위치 정보 구하기(값은 변하지 않기 때문에 시작 전에 구한다.)
@@ -76,7 +134,6 @@
             })
         }
 
-        // step #02-04 추가
         // 이벤트 활성화
         function activeDragEvent(){
             // 문서에 mousemove 이벤트 등록
@@ -99,18 +156,14 @@
 
             // 문서에 mouseup 이벤트 등록
             $(document).on("mouseup",function(e){
-
                 // 드랍 위치 처리
                 checkSelectArea(e.pageX, e.pageY);
-
-                // step #02-04 추가
                 // 이벤트 비활성화
                 $(document).off();
 
                 // 드래그 초기화
                 dragSW=false;
                 $dragTarget=null;
-
             });
         }
 

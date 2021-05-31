@@ -42,6 +42,7 @@
 </style>
   <script src="jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="javascript/makeflower.js"></script>
+
   <body>
     <!-- 헤더부분 -->
     <div class="header">
@@ -91,12 +92,11 @@
     <div class="container contents">
       <div class="product row">
         <div class="col-sm-1 select"></div>
-          <div class="preview col-sm-5">
+          <div id="preview" class="preview col-sm-5">
                 <img src="picture/f1.png" >
                 <img src="picture/f2.png" >
                 <img src="picture/f3.png" >
-                <img src="picture/f4.png" >
-                <img src="picture/f5.png" >
+                <script type="text/javascript" src="javascript/clickflower.js"></script>
           </div>
 
 
@@ -105,16 +105,16 @@
 
           <div class="image-gallery-thumbnails-wrapper row">
             <div class="col-sm-3 choose-flower">
-              <img class="thumbnail img-responsive" src="picture/makingFlower/flower1.jpg" alt="flower1"/>
+              <button type="button" id="button1"><img class="thumbnail img-responsive" src="picture/makingFlower/flower1.jpg" alt="flower1"/></button>
             </div>
             <div class="col-sm-3 choose-flower">
-              <img class="thumbnail img-responsive" src="picture/makingFlower/flower2.jpg" alt="flower1"/>
+              <button type="button" id="button2"><img class="thumbnail img-responsive" src="picture/makingFlower/flower2.jpg" alt="flower1"/></button>
             </div>
             <div class="col-sm-3 choose-flower">
-              <img class="thumbnail img-responsive" src="picture/makingFlower/flower3.jpg" alt="flower1"/>
+              <button type="button" id="button3"><img class="thumbnail img-responsive" src="picture/makingFlower/flower3.jpg" alt="flower1"/></button>
             </div>
             <div class="col-sm-3 choose-flower">
-              <img class="thumbnail img-responsive" src="picture/makingFlower/flower4.jpg" alt="flower1"/>
+              <button type="button" id="button4"><img class="thumbnail img-responsive" src="picture/makingFlower/flower4.jpg" alt="flower1"/></button>
             </div>
           </div>
 
