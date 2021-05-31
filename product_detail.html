@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>Dinga Dinga flower Shop</title>
     <meta charset="utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/makeBouquet.css" />
+    <link rel="stylesheet" href="css/product_detail.css" />
     <link rel="stylesheet" href="css/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script rel="javascript" src="javascript/product.js"></script>
+    <script>
+      function check_click(data){
+        mythumbnail=document.getElementsByClassName('thumbnail');
+        for (var i=0; i<4; i++){
+          if (mythumbnail[i].style.border === '2px solid #AABBE5') {
+            mythumbnail[i].style.border = 'none';
+          }
+        }
+        mythumbnail[data].style.border='2px solid #AABBE5';
+      }
+    </script>
   </head>
   <style>
   @font-face {
@@ -27,7 +32,7 @@
        font-weight: normal;
        font-style: normal;
   }
-</style>
+  </style>
 
   <body>
     <!-- 헤더부분 -->
@@ -71,70 +76,118 @@
         </nav>
 
     <div class="container contents">
-      <div class="product row">
-        <div class="col-sm-1"></div>
-        <div class="preview col-sm-5">
-          <img class="img-responsive" src="picture/f2.PNG" alt="bouquet" id="MakingBouquet" />
-        </div>
-        <div class="col-sm-5 choosing">
-          <h3>딩가 주인장 초이스(제품 제목)</h3>
-          <hr>
-          <h4>29000원</h4>
-          <hr>
-          <div class="image-gallery-thumbnails-wrapper row">
-            <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower5.jpg"
-                alt="flower1"
-              />
-            </div>
-            <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower6.jpg"
-                alt="flower1"
-              />
-            </div>
-            <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower7.jpg"
-                alt="flower1"
-              />
-            </div>
-            <div class="col-sm-3 choose-flower">
-              <img
-                class="thumbnail img-responsive"
-                src="picture/makingFlower/flower8.jpg"
-                alt="flower1"
-              />
-            </div>
-          </div>
-          <div class="row choose-wrapper">
-            <h6 style="text-align: center;">포장지 색 선택</h6>
-            <div class="color col-sm-1" style="background-color: aqua;"> </div>
-            <div class="color col-sm-1" style="background-color: #7b68ee;"> </div>
-            <div class="color col-sm-1" style="background-color: #e6e6fe;"> </div>
-            <div class="color col-sm-1" style="background-color: #CEF6D8"> </div>
-            <div class="color col-sm-1" style="background-color: #F5F6CE;"> </div>
-            <div class="color col-sm-1" style="background-color: #FE2E64;"> </div>
-          </div>
-          <div class="row choose-ribbon">
-            <h6 style="text-align: center;">리본 색 선택</h6>
-            <div class="color col-sm-1" style="background-color: #2E9AFE;"> </div>
-            <div class="color col-sm-1" style="background-color: #380B61;"> </div>
-            <div class="color col-sm-1" style="background-color: #08298A;"> </div>
-            <div class="color col-sm-1" style="background-color: #04B404"> </div>
-            <div class="color col-sm-1" style="background-color: #ff0000;"> </div>
-            <div class="color col-sm-1" style="background-color: #FBEFF2;"> </div>
-          </div>
-        </div>
+      <div class="row">
+        <h3 class="pro-det-title col-sm-6">Detail</h3>
       </div>
-      <div class="buy container text-center">
-        <button id="makingBuy">
-          구매하기
-        </button>
+      <div class="product row">  
+        <div class="preview col-sm-6">
+          <div id="pro-carousel" class="carousel slide text-center">
+            <ol class="carousel-indicators">
+              <li data-target="#pro-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#pro-carousel" data-slide-to="1"></li>
+              <li data-target="#pro-carousel" data-slide-to="2"></li>
+              <li data-target="#pro-carousel" data-slide-to="3"></li>
+            </ol>
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="picture/f1.PNG" class="img-responsive" alt="pro-slide1" style="margin-left: auto; margin-right: auto;">
+            </div>
+            <div class="item">
+              <img src="picture/f2.PNG" class="img-responsive" alt="pro-slide2" style="margin-left: auto; margin-right: auto;">
+            </div>
+            <div class="item">
+              <img src="picture/f3.PNG" class="img-responsive" alt="pro-slide3" style="margin-left: auto; margin-right: auto;">
+            </div>
+            <div class="item">
+              <img src="picture/f4.PNG" class="img-responsive" alt="pro-slide4" style="margin-left: auto; margin-right: auto;">
+            </div>
+          </div>
+          <a class="left carousel-control" href="#pro-carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">previous</span>
+          </a>
+          <a class="right carousel-control" href="#pro-carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div class="pro-thumbnail row">
+          <span class="col-sm-2"></span>
+          <a role="button" data-target="#pro-carousel" data-slide-to="0"><img class="col-sm-2 thumbnail img-responsive" src="picture/f1.PNG" alt="prod1" onclick="check_click(0)" style="border:2px solid #aabbe5;"/></a>
+          <a role="button" data-target="#pro-carousel" data-slide-to="1"><img class="col-sm-2 thumbnail img-responsive" src="picture/f2.PNG" alt="prod2" onclick="check_click(1)"/></a>
+          <a role="button" data-target="#pro-carousel" data-slide-to="2"><img class="col-sm-2 thumbnail img-responsive" src="picture/f3.PNG" alt="prod3" onclick="check_click(2)"/></a>
+          <a role="button" data-target="#pro-carousel" data-slide-to="3"><img class="col-sm-2 thumbnail img-responsive" src="picture/f4.PNG" alt="prod4" onclick="check_click(3)"/></a>
+          <span class="col-sm-2"></span>
+        </div>
+        </div>
+        <div class="col-sm-5 product-img">
+          <div class pro-info>
+            <p class="pro-comment">
+              <script>document.write(product_list[2].comment);</script>
+            </p>
+           <h2 class="pro-name">
+              <script>document.write(product_list[2].name);</script>
+            </h3>
+            <hr>
+            <h4 class="pro-price"><script>document.write(product_list[2].price);</script></h4>
+            <hr>
+          </div>
+          <div class="del-comment">
+            <p>5만원 이상 구매시, <strong style="color: #DFCBE1">무료 배송!</strong></p>
+            <p><strong style="color:#B2C773">충북 지역</strong>은 특히 빠르게 배송됩니다</p>
+          </div>
+          <hr>
+          <div class="input-form">
+            <table>
+              <tr>
+                <td><strong>수량</strong></td>
+                <td>
+                  <a role="button" onclick="minus()">
+                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                  </a>
+                  <span id="count">1</span>
+                  <a role="button" onclick="plus()">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>배송 예정일</strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><strong>포장지 색 선택</strong></td>
+                <td>
+                  <div class="row choose-wrapper">
+                  <span class="color col-sm-1" style="background-color: aqua;"> </span>
+                  <span class="color col-sm-1" style="background-color: #7b68ee;"> </span>
+                  <span class="color col-sm-1" style="background-color: #e6e6fe;"> </span>
+                  <span class="color col-sm-1" style="background-color: #CEF6D8"> </span>
+                  <span class="color col-sm-1" style="background-color: #F5F6CE;"> </span>
+                  <span class="color col-sm-1" style="background-color: #FE2E64;"> </span>
+                </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>리본 색 선택</strong></td>
+                <td>
+                  <div class="row choose-ribbon">
+                    <span class="color col-sm-1" style="background-color: #2E9AFE;"> </span>
+                    <span class="color col-sm-1" style="background-color: #380B61;"> </span>
+                    <span class="color col-sm-1" style="background-color: #08298A;"> </span>
+                    <span class="color col-sm-1" style="background-color: #04B404"> </span>
+                    <span class="color col-sm-1" style="background-color: #ff0000;"> </span>
+                    <span class="color col-sm-1" style="background-color: #FBEFF2;"> </span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="buy row">
+            <button class="buy-item col-sm-5">장바구니</button>
+            <button class="buy-item col-sm-5">구매하기</button>
+          </div>
+        </div>
       </div>
     </div>
 
