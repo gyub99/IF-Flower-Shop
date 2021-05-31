@@ -1,4 +1,6 @@
-function drawVisualization() {var data = new google.visualization.DataTable();
+function draw() {
+
+  var data = new google.visualization.DataTable();
 
  data.addColumn('string', 'Country');
  data.addColumn('number', 'Value');
@@ -67,7 +69,6 @@ function drawVisualization() {var data = new google.visualization.DataTable();
  var options = {
 region:'KR',
  backgroundColor: {fill:'transparent',stroke:'#FFFFFF' ,strokeWidth:0 },
- // colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
  colorAxis:  {minValue: 0, maxValue: 26,  colors: ['#E5F5E0','#E5F5E0','#E5F5E0','#E5F5E0','#E5F5E0','#E5F5E0','#E5F5E0','#E5F5E0','#A1D99B','#A1D99B','#A1D99B','#A1D99B','#A1D99B','#A1D99B','#A1D99B','#A1D99B','#A1D99B','#31A354','#31A354','#31A354','#31A354','#31A354','#31A354','#31A354','#31A354','#31A354','#31A354',]},
  legend: 'none',
  backgroundColor: {fill:'transparent',stroke:'#FFFFFF' ,strokeWidth:0 },
@@ -83,5 +84,24 @@ region:'KR',
  };
 
   var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
- chart.draw(data, options);
+
+  google.visualization.events.addListener(chart, 'ready', function () {
+      throw new Error('Test Google Error');
+    });
+
+    // listen for error
+    google.visualization.events.addListener(chart, 'error', function (err) {
+      // check error
+      console.log(err.id, err.message);
+
+      // remove error
+      google.visualization.errors.removeError(err.id);
+
+      // remove all errors
+      google.visualization.errors.removeAll('visualization');
+    });
+
+
+  chart.draw(data, options);
+
  }

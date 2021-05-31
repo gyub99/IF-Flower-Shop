@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="css/footer.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script type='text/javascript' src='http://www.google.com/jsapi'></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <style>
 /* .nanumsquare {
@@ -137,11 +136,11 @@
           <p style="font-family: 'GongGothicLight'; text-align:center;"> 해당 차트는 딩가 꽃집이 산림청과 협력하여 나무를 심은 곳을 나타낸 차트입니다.<br>
             나무를 많이 심은 곳은 더 짙은 초록색이 표시되고, <br>
             나무를 적게 심은 곳이나 산불로 피해를 입은 지역은 분홍색 또는 연한 초록색으로 표시됩니다.</p>
-
+              <script type='text/javascript' src='http://www.google.com/jsapi'></script>
             <script type='text/javascript' src=javascript/donation.js></script>
             <script type='text/javascript'>
             google.load('visualization', '1', {'packages': ['geochart']});
-            google.setOnLoadCallback(drawVisualization);
+            google.setOnLoadCallback(draw);
             </script>
          <div id='visualization'></div>
        </div>
@@ -177,7 +176,6 @@
        </div>
 
       <div class="contain3">
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
         google.charts.load('current', {'packages':['line']});
         google.charts.setOnLoadCallback(drawChart);
@@ -212,6 +210,7 @@
           해당 차트는 그동안 매년 기부를 해왔던 총액을 나타낸 표입니다.<br></p>
          <div id="linechart_material"></div>
      </div>
+
    </div>
 
 
