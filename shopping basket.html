@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> Dinga Dinga flower Shop </title>
+    <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/shopping basket.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+      function plus(){
+        document.getElementById('count').innerHTML = document.getElementById('count').innerHTML/1 + 1;
+      }
+      function minus(){
+        if (document.getElementById('count').innerHTML > 1 ) {
+          document.getElementById('count').innerHTML = document.getElementById('count').innerHTML/1 - 1;
+        }
+        else {
+        }
+      }
+  </script>
+  <style>
+  @font-face {
+       font-family: 'S-CoreDream-3Light';
+       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+       font-weight: normal;
+       font-style: normal;z-index:
+  }
+
+</style>
+  </head>
+  <body style="overflow-x:hidden;" class="sh_body">
+
+    <!-- 헤더부분 -->
+    <div class="header">
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-10">
+            </div>
+            <div class="col-sm-2 register">
+              <a href="register.html" style="margin-right:10px; color:black;">회원가입</a>
+              <span>|</span>
+              <a href="login.html" style="margin-left:10px; color:black;">로그인</a>
+            </div>
+          </div>
+        </div>
+          <p style="text-align:center;"><a href="main.html"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
+      </div>
+
+
+      <!-- 네비게이션 -->
+      <!-- 네비게이션 부분 -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="nav-li"><a href="makeBouquet.html">꽃제작</a></li>
+                <li class="nav-li"><a href="product.html">꽃상품</a></li>
+                <li class="nav-li"><a href="about.html">이모저모</a></li>
+                <li class="nav-li"><a href="donation.html">기부현황</a></li>
+                <li class="nav-li"><a href="event.html">이벤트</a></li>
+                <li class="nav-li"><a href="mypage.html">마이페이지</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- 장바구니 -->
+        <div class="sh_bigbox">
+          <div class="sh_title">
+            <span class="title"> 장바구니 </span>
+          </div>
+          <div>
+            <table class="sh_main">
+              <thead>
+                <tr>
+                  <th class="sh_box_title">꽃 상품</th>
+                </tr>
+
+                <tr>
+                  <th><input type="checkbox" name="checkbox" id="check"></th>
+                  <th><span>이미지</span></th>
+                  <th><span>상품정보</span></th>
+                  <th>가격</th>
+                  <th>수량</th>
+                  <th>적립금</th>
+                  <th>배송비</th>
+                  <th>합계</th>
+                  <th>선택</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr class="inbox_tr">
+                  <td class="inbox_td"><input type="checkbox" name="checkbox"/></td>
+                  <td class="inbox_td2"><img src="picture/f1.png" alt="f1" class="sh_img"></td>
+                  <td class="inbox_td3">딩가딩가 베스트 꽃</td>
+                  <td>0 <span style="padding-left:10px;">원</span></td>
+                  <td>
+                  <a role="button" onclick="minus()">
+                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                  </a>
+                  <span id="count">1</span>
+                  <a role="button" onclick="plus()">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  </a>
+                  </td>
+                  <td>-</td>
+                  <td>2500원</td>
+                  <td><span></span>0원</td>
+                  <td>
+                    <button class="btn default">주문하기</button>
+                    <button class="btn default">삭제</button>
+                  </td>
+                </tr>
+
+                <tr class="inbox_tr">
+                  <td class="inbox_td"><input type="checkbox" name="checkbox"/></td>
+                  <td class="inbox_td2"><img src="picture/f2.png" alt="f2" class="sh_img"></td>
+                  <td class="inbox_td3">딩가딩가 베스트 꽃2</td>
+                  <td>0 <span style="padding-left:10px;">원</span></td>
+                  <td style="width:80px;">
+                    <a role="button" onclick="minus()">
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                    </a>
+                    <span id="count">1</span>
+                    <a role="button" onclick="plus()">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </a>
+                  </td>
+                  <td>-</td>
+                  <td>2500원</td>
+                  <td><span></span>0원</td>
+                  <td>
+                    <button class="btn default">주문하기</button>
+                    <button class="btn default">삭제</button>
+                  </td>
+                </tr>
+              </tbody>
+
+              <tfoot>
+                <tr style="height:60px;">
+                  <td colspan="10" class="foot_bt">상품금액 <span>0원</span>+ <span>배송비 2,500원 = 합계</span>&nbsp;<span>2,500원</span></td>
+                </tr>
+              </tfoot>
+            </table> <br><br>
+
+            <table class="sh_bottom">
+              <tr style="background-color: #f5f5f0;">
+                <th>총 상품금액</th>
+                <th>총 배송비</th>
+                <th class="sh_btn"><span>결제예정금액</span></th>
+              </tr>
+
+              <tr>
+                <td style="height:50px;"><span class="price" style="padding: 22px 0;">0</span>원</td>
+                <td>+<span class="price">0원</span></td>
+                <td>+<span class="price">5,000원</span></td>
+              </tr>
+            </table><br><br>
+
+            <div class="bt_btn" align="center">
+              <button class="btn default" id="al_pd">전체상품주문</button>
+              <button class="btn default" id="al_pd2">선택상품주문</button>
+              <button class="btn default" id="al_pd3">쇼핑계속하기</button>
+            </div>
+          </div>
+        </div>
+
+        <footer class="container-fluid bg-main-footer">
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+              <h3>딩가 행복센터</h3>
+              <h3>1644-1777</h3>
+              <input type="button" class="btndesign" value="카카오톡 문의"><br><br>
+              <input type="button" class="btndesign" value="1:1 문의">
+            </div>
+            <div class="col-sm-4">
+              <br><p><strong>365 고객센터</strong></p>
+              <p style="color:#787878">오전 7시 - 오후 7시</p><br><br><br>
+              <p><strong>24시간 접수가능</strong></p>
+              <p style="color:#787878">고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p><br>
+            </div>
+            <div class="col-sm-4">
+              <br><br><br>
+              <p>사업자 등록번호 : 371-06-0707<br>
+                통신판매업 신고번호 : 2021-서울 삼성동-77775<br>
+                주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br>
+                COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED</p>
+            </div>
+          </div>
+        </footer>
+
+
+  </body>
+</html>

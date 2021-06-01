@@ -42,7 +42,7 @@ th{
 td{
   border-width: 1px;
   border-style: solid;
-  width:1000px;
+  width:800px;
   margin: 5px 5px 5px 5px;
 }
 h5{
@@ -57,7 +57,7 @@ h3{
   display: inline-block;
   float: right;
   margin-top: -30px;
-  margin-right: 100px;
+  margin-right: 280px;
 }
 
 #add1{
@@ -70,8 +70,9 @@ label{
   display: inline-block;
 }
 .bigbox{
-  margin-left: 40px;
+  margin-left: 200px;
   margin-bottom: 40px;
+  margin-top: 50px;
 }
 
 
