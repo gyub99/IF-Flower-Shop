@@ -84,7 +84,7 @@
           for (var i=0;i<product_list.length; i++){
             if (i==2 || i==3 || i==5 || i==6){
               document.write('<div class="col-sm-3">');
-              document.write('<a href="product_detail.html">');
+              document.write('<a onclick="linking('+i+')">');
               document.write('<img src="picture/product/' + i + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />');
               document.write('<div class="best-comment">' + product_list[i].comment + '</div>');
               document.write('<div class="best-name">' + product_list[i].name + '</div>');
@@ -105,7 +105,7 @@
           for (var i=0;i<product_list.length; i++){
             if (i==0 || i==7 || i==9 || i==14){
               document.write('<div class="col-sm-3">');
-              document.write('<a href="product_detail.html">');
+              document.write('<a onclick="linking('+i+')">');
               document.write('<img src="picture/product/' + i + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale" class="img-responsive" />');
               document.write('<div class="sale-comment">' + product_list[i].comment + '</div>');
               document.write('<div class="sale-name">' + product_list[i].name + '</div>');
@@ -126,7 +126,7 @@
             document.write('<div class="row product-item">');
             for (var j=0; j<4; j++){
               document.write('<div class="col-sm-3">');
-              document.write('<a href="product_detail.html">');
+              document.write('<a onclick="linking('+(i*4+j)+')">');
               document.write('<img src="picture/product/' + (i*4+j) + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale' + (i*4+j) + '" class="img-responsive" />');
               document.write('<div class="comment">' + product_list[4*i+j].comment + '</div>');
               document.write('<div class="name">' + product_list[4*i+j].name + '</div>');
@@ -142,7 +142,7 @@
                 document.write('<div class="row product-item">');
                 for (var k=4*i+j;k<product_list.length;k++){
                     document.write('<div class="col-sm-3">');
-                    document.write('<a href="product_detail.html">');
+                    document.write('<a onclick="linking('+k+')">');
                     document.write('<img src="picture/product/' + k + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale' + k + '" class="img-responsive" />');
                     document.write('<div class="comment">' + product_list[k].comment + '</div>');
                     document.write('<div class="name">' + product_list[k].name + '</div>');

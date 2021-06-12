@@ -13,45 +13,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script rel="javascript" src="javascript/product.js"></script>
+    <script rel="javascript" src="javascript/get_index.js"></script>
     <script>
-      function check_click(data){
+      var data=getParameterByName('index');
+      function check_click(check_click_thumbnail){
         mythumbnail=document.getElementsByClassName('thumbnail');
         for (var i=0; i<4; i++){
           if (mythumbnail[i].style.border === '2px solid rgb(170, 187, 229)') {
             mythumbnail[i].style.border = 'none';
           }
         }
-        mythumbnail[data].style.border='2px solid rgb(170, 187, 229)';
+        mythumbnail[check_click_thumbnail].style.border='2px solid rgb(170, 187, 229)';
       }
-      function choose_bouquet(data){
+      function choose_bouquet(check_click_thumbnail){
         mybouquet=document.getElementsByClassName('bouquet');
         for (var i=0; i<6; i++){
           if (mybouquet[i].style.border === '2px solid black') {
             mybouquet[i].style.border = 'none';
           }
         }
-        mybouquet[data].style.border='2px solid black';
+        mybouquet[check_click_thumbnail].style.border='2px solid black';
       }
-      function choose_ribbon(data){
+      function choose_ribbon(check_click_thumbnail){
         myribbon=document.getElementsByClassName('ribbon');
         for (var i=0; i<6; i++){
           if (myribbon[i].style.border === '2px solid black') {
             myribbon[i].style.border = 'none';
           }
         }
-        myribbon[data].style.border='2px solid black';
+        myribbon[check_click_thumbnail].style.border='2px solid black';
       }
-      function plus(){
-        document.getElementById('count').innerHTML = document.getElementById('count').innerHTML/1 + 1;
-      }
-      function minus(){
-        if (document.getElementById('count').innerHTML > 1 ) {
-          document.getElementById('count').innerHTML = document.getElementById('count').innerHTML/1 - 1;
-        }
-        else {
-
-        }
-      }
+      
     </script>
   </head>
   <style>
@@ -112,14 +104,15 @@
         <div class="preview col-sm-6">
           <div id="pro-carousel" class="carousel slide text-center">
             <ol class="carousel-indicators">
-              <li data-target="#pro-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#pro-carousel" data-slide-to="0"></li>
               <li data-target="#pro-carousel" data-slide-to="1"></li>
               <li data-target="#pro-carousel" data-slide-to="2"></li>
               <li data-target="#pro-carousel" data-slide-to="3"></li>
             </ol>
           <div class="carousel-inner">
             <div class="item active">
-              <img src="picture/f1.PNG" class="img-responsive" alt="pro-slide1" style="margin-left: auto; margin-right: auto;">
+              <script>document.write('<img src="picture/product/'+data+'.PNG" class="img-responsive" alt="pro-slide1" style="margin-left: auto; margin-right: auto;">')</script>
+
             </div>
             <div class="item">
               <img src="picture/f2.PNG" class="img-responsive" alt="pro-slide2" style="margin-left: auto; margin-right: auto;">
@@ -142,7 +135,7 @@
         </div>
         <div class="pro-thumbnail row">
           <span class="col-sm-2"></span>
-          <a role="button" data-target="#pro-carousel" data-slide-to="0"><img class="col-sm-2 thumbnail img-responsive" src="picture/f1.PNG" alt="prod1" onclick="check_click(0)" style = "border:2px solid #aabbe5;"/></a>
+          <script>document.write('<a role="button" data-target="#pro-carousel" data-slide-to="0"><img class="col-sm-2 thumbnail img-responsive" src="picture/product/'+data+'.PNG" alt="prod1" onclick="check_click(0)" style = "border:2px solid #aabbe5;"/></a>')</script>
           <a role="button" data-target="#pro-carousel" data-slide-to="1"><img class="col-sm-2 thumbnail img-responsive" src="picture/f2.PNG" alt="prod2" onclick="check_click(1)"/></a>
           <a role="button" data-target="#pro-carousel" data-slide-to="2"><img class="col-sm-2 thumbnail img-responsive" src="picture/f3.PNG" alt="prod3" onclick="check_click(2)"/></a>
           <a role="button" data-target="#pro-carousel" data-slide-to="3"><img class="col-sm-2 thumbnail img-responsive" src="picture/f4.PNG" alt="prod4" onclick="check_click(3)"/></a>
@@ -152,13 +145,13 @@
         <div class="col-sm-5 product-img">
           <div class pro-info>
             <p class="pro-comment">
-              <script>document.write(product_list[2].comment);</script>
+              <script>document.write(product_list[data].comment);</script>
             </p>
            <h2 class="pro-name">
-              <script>document.write(product_list[2].name);</script>
+              <script>document.write(product_list[data].name);</script>
             </h3>
             <hr>
-            <h4 class="pro-price"><script>document.write(product_list[2].price);</script></h4>
+            <h4 class="pro-price"><script>document.write(product_list[data].price);</script></h4>
             <hr>
           </div>
           <div class="del-comment">
@@ -168,18 +161,6 @@
           <hr>
           <div class="input-form">
             <table>
-              <tr>
-                <td><strong>수량</strong></td>
-                <td>
-                  <a role="button" onclick="minus()">
-                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                  </a>
-                  <span id="count">1</span>
-                  <a role="button" onclick="plus()">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                  </a>
-                </td>
-              </tr>
               <tr>
                 <td><strong>포장지 색 선택</strong></td>
                 <td>
@@ -209,8 +190,8 @@
             </table>
           </div>
           <div class="buy row">
-            <button class="buy-item col-sm-5">장바구니</button>
-            <button class="buy-item col-sm-5">구매하기</button>
+            <script>document.write('<button class="buy-item col-sm-5" onclick="linking_basket('+data+')">장바구니</button>')</script>
+            <script>document.write('<button class="buy-item col-sm-5" onclick="linking_basket('+data+')">구매하기</button>')</script>
           </div>
         </div>
       </div>

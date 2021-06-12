@@ -40,7 +40,7 @@ th{
 td{
   border-width: 1px;
   border-style: solid;
-  width:1000px;
+  width:800px;
   margin: 5px 5px 5px 5px;
 }
 h5{
@@ -53,6 +53,12 @@ h3{
 }
 .star{
   display: inline-block;
+<<<<<<< HEAD
+=======
+  float: right;
+  margin-top: -30px;
+  margin-right: 280px;
+>>>>>>> 14b02790ae2070086d07ea4d0c81645677074a36
 }
 
 #add1{
@@ -66,9 +72,16 @@ label{
 }
 
 .bigbox{
+<<<<<<< HEAD
   width:1000px;
   margin-left: auto;
   margin-right: auto;
+=======
+  margin-left: 200px;
+  margin-bottom: 40px;
+  margin-top: 50px;
+}
+>>>>>>> 14b02790ae2070086d07ea4d0c81645677074a36
 
 }
 
