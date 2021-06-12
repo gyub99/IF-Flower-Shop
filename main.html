@@ -57,6 +57,8 @@
 공고딕 -> font-family: 'GongGothicLight';
 넥슨 폰트 -> font-family: 'NEXON Lv1 Gothic OTF'; */
 
+
+
 </style>
   </head>
 
@@ -156,17 +158,17 @@
         <p style="font-family: 'Nanum Gothic', sans-serif;"> 소중한 사람에게 꽃을 선물해보세요</p><br>
         <div class="row pic-container">
           <div class="col-sm-3">
-            <img src="picture/f1.png" alt="flower1" class="img-responsive">
+            <img src="picture/f1.PNG" alt="flower1" class="img-responsive">
             <p class="title">[파머스] 제철 꽃 랜덤믹스</p>
             <p class="bestprice">29,000원</p>
           </div>
           <div class="col-sm-3">
-            <img src="picture/f2.png" alt="flower2" class="img-responsive">
+            <img src="picture/f2.PNG" alt="flower2" class="img-responsive">
             <p class="title">[이달의 꽃] 작약 수국믹스</p>
             <p class="bestprice">31,000원</p>
           </div>
           <div class="col-sm-3">
-            <img src="picture/f9.png" alt="flower3" class="img-responsive">
+            <img src="picture/f9.PNG" alt="flower3" class="img-responsive">
             <p class="title">[딩가초이스] 옥시페탈룸</p>
             <p class="bestprice">15,000원</p>
           </div>
@@ -185,7 +187,7 @@
           <div class="row pic-container">
             <div class="col-sm-3 product-item">
               <div class="wrapper">
-                <img src="picture/f5.png" alt="flower1" class="img-responsive">
+                <img src="picture/f5.PNG" alt="flower1" class="img-responsive">
                 <div class="overlay">
                   <div class="content">
                     <p class="name">김규빈 파머 초이스</p>
@@ -197,7 +199,7 @@
             </div>
             <div class="col-sm-3 product-item">
               <div class="wrapper">
-                <img src="picture/f6.png" alt="flower1" class="img-responsive">
+                <img src="picture/f6.PNG" alt="flower1" class="img-responsive">
                 <div class="overlay">
                   <div class="content">
                     <p class="name">이성규 파머 초이스</p>
@@ -209,7 +211,7 @@
             </div>
             <div class="col-sm-3 product-item">
               <div class="wrapper">
-                <img src="picture/f7.png" alt="flower1" class="img-responsive">
+                <img src="picture/f7.PNG" alt="flower1" class="img-responsive">
                 <div class="overlay">
                   <div class="content">
                     <p class="name">신지혜 파머 초이스</p>
@@ -221,7 +223,7 @@
             </div>
             <div class="col-sm-3 product-item">
               <div class="wrapper">
-                <img src="picture/f8.png" alt="flower1" class="img-responsive">
+                <img src="picture/f8.PNG" alt="flower1" class="img-responsive">
                 <div class="overlay">
                   <div class="content">
                     <p class="name">딩가 초이스</p>
@@ -234,8 +236,45 @@
           </div>
         </div>
 
+      <div class="map_box">
+        <div id="map" class="col-sm-6" style="width:450px; height: 390px; margin-left:50px;"></div>
+
+        <script>
+        function myMap() {
+          var mapCanvas = document.getElementById("map");
+          var myCenter = new google.maps.LatLng(36.626264552472776, 127.45476683668544);
+          var mapOptions = {
+          	center: myCenter,
+            zoom: 17
+          };
+          var map = new google.maps.Map(mapCanvas, mapOptions);
+          var marker = new google.maps.Marker({
+        	position:myCenter,
+
+          });
+          marker.setMap(map);
+
+          var myPath = new google.maps.Marker({
+            strokeColor: "#0000FF",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#0000FF",
+            fillOpacity: 0.4
+          });
+          myPath.setMap(map);
+
+        }
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAlOjojzJqN5CEy7iGWtTTiWgCMiPUhXI&callback=myMap"></script>
+        <!--
+        To use this code on your website, get a free API key from Google.
+        Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp-->
+
         <!-- 문의사항 -->
+
         <div class="container-fluid bg-main-context text-center">
+          <div class="col-sm-6">
           <h3 style="font-family: 'Nanum Gothic', sans-serif;"><strong>문의하기</strong></h3>
           <p style="font-family: 'Nanum Gothic', sans-serif;">빠르고 신속하게 답변해드리겠습니다</p>
           <div class="row">
@@ -252,8 +291,9 @@
               <button class="btn btn-default pull-center" style="font-size:16px;" type="submit">Send</button>
             </div>
           </div>
+          </div>
         </div>
-
+      </div>
         <!-- footer -->
         <footer class="container-fluid bg-main-footer">
           <div class="row">
