@@ -38,7 +38,6 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'GmarketSansLight';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
@@ -46,9 +45,10 @@
     font-style: normal;
 }
 
+
 body{
        height: 100vh;
-       background-image:url(picture/intro2.png);
+       background-image:url(picture/intro1.png);
        background-repeat: no-repeat;
        background-size : cover;
      }
@@ -60,6 +60,12 @@ body{
  -webkit-text-fill-color: transparent;
     font-size:80px;
     margin-top:250px;
+}
+
+.subtitle{
+  font-family: 'GmarketSansLight';
+    color:white;
+    font-size:70px;
 }
 
   .log{
@@ -74,7 +80,6 @@ body{
     width:300px;
     height:60px;
 }
-
 
 .input1{
 width:300px;
@@ -102,36 +107,29 @@ border-bottom:none;
     font-family: 'S-CoreDream-3Light';
   }
 
-  a:hover{
-    color:green;
-  }
-
-  a:link{
-    color:black;
-  }
-
   .introduce{
     margin-left: 100px;
   }
 
-
 </style>
 <script>
-      function register(){
-        var name=document.getElementById("NAME").value;
+      function login(){
         var id=document.getElementById("ID").value;
         var pw=document.getElementById("PW").value;
-        var email=document.getElementById("EMAIL").value;
 
-        if(name==null||id==null||pw==null||email==null)
+        if(id=='admin')
         {
-          alert("이름 : "+name+"\n아이디 : "+id+"\n비밀번호 : "+pw+"\n이메일 : "+email+"\n\n입력하신 정보가 맞습니까? ");
-          document.location.href="intro.html";
+          if(pw=='web')
+          {
+            alert("Login Sucess!");
+            document.location.href="main.html";
+          }
+
+          else {alert("아이디 또는 비밀번호가 맞지 않습니다. 다시 시도해주세요");}
         }
+        else {alert("아이디 또는 비밀번호가 맞지 않습니다. 다시 시도해주세요");}
 
-        else{alert("정보를 모두 입력해주세요");}
-
-    }
+      }
 
     </script>
 </head>
@@ -143,22 +141,18 @@ border-bottom:none;
             <div class="introduce">
              <h1 class="title"> 딩가꽃집</h1>
              <h3 style="font-family: 'GmarketSansLight';"> 딩가꽃집에 오신 걸 환영합니다.</h4>
-             <h3 style="font-family: 'GmarketSansLight';"> 회원가입을 하시고 더 많은 혜택을 누려보세요!</h4>
+             <h3 style="font-family: 'GmarketSansLight';"> 로그인을 하시고 더 많은 혜택을 누려보세요!</h4>
+            </div>
           </div>
-        </div>
-
           <div class="col-sm-6 formstyle">
             <form>
-              <label style="font-family: 'S-CoreDream-3Light'; font-size:18px;">이름</label><br>
-              <input id="NAME" type="text" class="input1" placeholder=" 이름을 입력해주세요" required><br><br>
-              <label style="font-family: 'S-CoreDream-3Light'; font-size:18px;">아이디</label><br>
-              <input id="ID" type="id" class="input1"  placeholder=" 아이디를 입력해주세요" required><br><br>
-              <label style="font-family: 'S-CoreDream-3Light'; font-size:18px;">비밀번호</label><br>
-              <input id="PW" type="password" class="input1"  placeholder="  비밀번호를 입력해주세요" required><br><br>
-              <label style="font-family: 'S-CoreDream-3Light'; font-size:18px;">이메일</label><br>
-              <input id="EMAIL" type="email" class="input1"  placeholder="  이메일을 입력해주세요" required><br>
-              <input type="button" class="log" value="가입하기" onclick="register();"/></a><br><br>
-              <a href="intro.html" style="font-size:17px; font-family:'S-CoreDream-3Light'; margin-left:25px;">로그인으로 돌아가기</p></a><br>
+            <label style="font-family: 'S-CoreDream-3Light'; font-size:18px;">아이디</label><br>
+            <input type="id" class="input1" id="ID" placeholder="  아이디를 입력하세요" required autofocus><br><br><br>
+            <label style="font-family: 'S-CoreDream-3Light'; font-size:18px;">패스워드</label><br>
+            <input class="input1" type="password" id="PW" placeholder="  비밀번호를 입력하세요" required><br><br>
+            <input type="button" class="log" value="로그인" onclick="login();"/><br>
+            <a href="register.html" style="color:black;"><input type="button" class="log" value="회원가입"/></a>
+            </form>
           </div>
         </div>
 
