@@ -12,29 +12,35 @@
   <link rel="stylesheet" href="css/shopping basket.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
+  <script type="text/javascript" src="javascript/get_index.js"></script> 
+  <script type="text/javascript" src="javascript/product.js"></script> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script>
+    var data=getParameterByName('index');
       function plus(){
         document.getElementById('count').innerHTML = document.getElementById('count').innerHTML/1 + 1;
+        total=get_total();
       }
       function minus(){
         if (document.getElementById('count').innerHTML > 1 ) {
           document.getElementById('count').innerHTML = document.getElementById('count').innerHTML/1 - 1;
+          total = get_total();
         }
         else {
         }
       }
+      function get_total(){
+        var count_product=document.getElementById('count').innerHTML;
+        var price=product_list[data].price.replace(",","").replace("원","")/1 * count_product;
+        var total = price + 2500;
+        document.getElementById('product_info_total').innerHTML=total.toLocaleString()+'원';
+        document.getElementById('foot_price').innerHTML=price.toLocaleString()+'원';
+        document.getElementById('foot_total').innerHTML=total.toLocaleString()+'원';
+        return price;
+      }
+      funcs
   </script>
-  <style>
-  @font-face {
-       font-family: 'S-CoreDream-3Light';
-       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
-       font-weight: normal;
-       font-style: normal;z-index:
-  }
-
-</style>
   </head>
   <body style="overflow-x:hidden;" class="sh_body">
 
@@ -80,24 +86,22 @@
         </nav>
 
         <!-- 장바구니 -->
-        <div class="sh_bigbox">
+        <div class="sh_bigbox row">
           <div class="sh_title">
-            <span class="title"> 장바구니 </span>
+            <p class="title"> 장바구니 </p>
           </div>
           <div>
             <table class="sh_main">
               <thead>
                 <tr>
-                  <th class="sh_box_title">꽃 상품</th>
+                  <th colspan='9' class="sh_box_title">상품 정보</th>
                 </tr>
-
                 <tr>
-                  <th><input type="checkbox" name="checkbox" id="check"></th>
+                  <th><span>상품 번호</span></th>
                   <th><span>이미지</span></th>
-                  <th><span>상품정보</span></th>
+                  <th><span>상품 정보</span></th>
                   <th>가격</th>
                   <th>수량</th>
-                  <th>적립금</th>
                   <th>배송비</th>
                   <th>합계</th>
                   <th>선택</th>
@@ -106,11 +110,17 @@
 
               <tbody>
                 <tr class="inbox_tr">
-                  <td class="inbox_td"><input type="checkbox" name="checkbox"/></td>
-                  <td class="inbox_td2"><img src="picture/f1.png" alt="f1" class="sh_img"></td>
-                  <td class="inbox_td3">딩가딩가 베스트 꽃</td>
-                  <td>0 <span style="padding-left:10px;">원</span></td>
-                  <td>
+                  <td class="inbox_td">
+                  <script>
+                    document.write(data);
+                  </script>
+                  </td>
+                  <script>
+                    document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/product/'+data+'.png" alt="f1" class="sh_img"></td>');
+                    document.write('<td class="inbox_td3">'+product_list[data].name+'</td>');
+                    document.write('<td>'+product_list[data].price+'</td>');
+                  </script>
+                    <td>
                   <a role="button" onclick="minus()">
                     <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
                   </a>
@@ -119,64 +129,38 @@
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                   </a>
                   </td>
-                  <td>-</td>
-                  <td>2500원</td>
-                  <td><span></span>0원</td>
+                  <td>2,500원</td>
                   <td>
-                    <button class="btn default">주문하기</button>
-                    <button class="btn default">삭제</button>
-                  </td>
-                </tr>
-
-                <tr class="inbox_tr">
-                  <td class="inbox_td"><input type="checkbox" name="checkbox"/></td>
-                  <td class="inbox_td2"><img src="picture/f2.png" alt="f2" class="sh_img"></td>
-                  <td class="inbox_td3">딩가딩가 베스트 꽃2</td>
-                  <td>0 <span style="padding-left:10px;">원</span></td>
-                  <td style="width:80px;">
-                    <a role="button" onclick="minus()">
-                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                    </a>
-                    <span id="count">1</span>
-                    <a role="button" onclick="plus()">
-                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    </a>
-                  </td>
-                  <td>-</td>
-                  <td>2500원</td>
-                  <td><span></span>0원</td>
+                    <span id="product_info_total">
+                    <script>
+                      get_total();
+                    </script>
+                    </span></td>
                   <td>
-                    <button class="btn default">주문하기</button>
-                    <button class="btn default">삭제</button>
+                    <button class="btn default" onclick=''>주문하기</button>
                   </td>
+                
                 </tr>
               </tbody>
 
               <tfoot>
                 <tr style="height:60px;">
-                  <td colspan="10" class="foot_bt">상품금액 <span>0원</span>+ <span>배송비 2,500원 = 합계</span>&nbsp;<span>2,500원</span></td>
+                  <td colspan="9" class="foot_bt" style="text-align:center;">상품금액 <span id="foot_price">
+                    <script>
+                       total = get_total();
+                       document.write(total.toLocaleString() + '원');
+                    </script>
+                  </span>+ <span>배송비 2,500원 = 합계</span>&nbsp;<span id="foot_total">
+                    <script>
+                      total=get_total()/1+2500;
+                    </script>
+                  </span></td>
                 </tr>
               </tfoot>
             </table> <br><br>
 
-            <table class="sh_bottom">
-              <tr style="background-color: #f5f5f0;">
-                <th>총 상품금액</th>
-                <th>총 배송비</th>
-                <th class="sh_btn"><span>결제예정금액</span></th>
-              </tr>
-
-              <tr>
-                <td style="height:50px;"><span class="price" style="padding: 22px 0;">0</span>원</td>
-                <td>+<span class="price">0원</span></td>
-                <td>+<span class="price">5,000원</span></td>
-              </tr>
-            </table><br><br>
-
-            <div class="bt_btn" align="center">
-              <button class="btn default" id="al_pd">전체상품주문</button>
-              <button class="btn default" id="al_pd2">선택상품주문</button>
-              <button class="btn default" id="al_pd3">쇼핑계속하기</button>
+            <div class="bt_btn">
+              <button class="btn" id="return-buy" onClick="location.href='product.html'">다시 쇼핑하기</button>
             </div>
           </div>
         </div>
