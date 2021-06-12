@@ -137,8 +137,8 @@ td,th{
   width:1000px;
   margin-left: auto;
  margin-right: auto;
- margin-top: 50px;
- margin-bottom: 50px;
+ margin-top: 100px;
+ margin-bottom: 100px;
 }
 
 </style>
@@ -298,18 +298,15 @@ td,th{
             </div>
         </div>
 
-        <hr>
 
         <div class="bigbox">
           <h2 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center; margin-bottom:50px;">결제수단</h2>
           <table border="1">
-            <tr>
               <form name="credit">
-              <th rowspan="2"><input type="checkbox" id="card">신용카드</th>
-            </tr>
-            <tr>
+              <th rowspan="2"><input type="checkbox" id="card" style="margin-right:5px;">신용카드</th>
+            <tr style="height:90px;">
               <td>
-                <select style="width:210px; padding-right:7px; padding-left:7px;" id="card_type" name="cards" required autofocus>
+                <select style="width:210px; padding-right:7px; margin-left:7px; font-size:15px;" id="card_type" name="cards" required autofocus>
                     <option value="카드" selected>카드를 선택해주세요</option>
                     <option value="현대">현대</option>
                     <option value="신한">신한</option>
@@ -324,24 +321,23 @@ td,th{
                   </select>
 
 
-                  <select style="width:210px; padding-right:auto; padding-left:auto; display:inline-block;" name="months" required autofocus>
+                  <select style="width:160px; padding-right:auto; padding-left:auto; display:inline-block; font-size:15px;" name="months" required autofocus>
                       <option value="일시불" selected>일시불</option>
                       <option value="2개월">2개월</option>
                       <option value="3개월">3개월</option>
                     </select>
-                    </form><br>
+                  </form><br><br>
 
-
-                  <input type="text" id="card_num" placeholder="카드번호를 입력하세요" required>
+                  <input style="width:210px; margin-left:7px; font-size:15px;" type="text" id="card_num" placeholder="카드번호를 입력하세요" required>
                   <input type="month" placeholder="카드 유효번호를 입력하세요" required>
                   <input type="text" id="cvc" placeholder="CVC 번호를 입력하세요" required>
                 </td>
             </tr>
 
-            <tr>
+            <tr style="height:50px;">
               <form name="bank_type">
-              <th><input type="checkbox" id="bankbook">무통장 입금</th>
-              <td><label style="font-family: 'GmarketSansLight'; font-size:17px; margin-left:5px;">
+              <th><input type="checkbox" id="bankbook" style="margin-right:5px;">무통장 입금</th>
+              <td><label style="font-family: 'GmarketSansLight'; font-size:15px; margin-left:5px;">
                 <select style="width:210px; padding-right:7px; padding-left:7px;" name="banks" required autofocus>
                     <option value="은행" selected>은행을 선택해주세요</option>
                     <option value="신한">신한</option>
@@ -357,11 +353,11 @@ td,th{
               </td>
             </tr>
 
-            <tr>
+            <tr style="height:50px;">
               <form name="account_type">
-              <th><input type="checkbox" id="account">계좌이체</th>
-              <td><label style="font-family: 'GmarketSansLight'; font-size:17px; margin-left:5px;">
-                <select style="width:210px; padding-right:7px; padding-left:7px;" name="banks2" required autofocus>
+              <th><input type="checkbox" id="account" style="margin-right:5px;">계좌이체</th>
+              <td><label style=" font-family: 'GmarketSansLight';font-size:15px; margin-left:5px;">
+                <select style=" width:210px; padding-right:7px; padding-left:7px;" name="banks2" required autofocus>
                     <option value="은행" selected>은행을 선택해주세요</option>
                     <option value="신한">신한</option>
                     <option value="KB국민">KB국민</option>
@@ -376,10 +372,10 @@ td,th{
               </td>
             </tr>
 
-            <tr>
+            <tr style="height:50px;">
               <form name="phone_type">
-              <th><input type="checkbox" id="cellphone">휴대폰 결제</th>
-              <td><label style="font-family: 'GmarketSansLight'; font-size:17px; margin-left:5px;">
+              <th><input type="checkbox" id="cellphone" style="margin-right:5px;">휴대폰 결제</th>
+              <td><label style="font-family: 'GmarketSansLight'; font-size:15px; margin-left:5px;">
                 <select style="width:210px; padding-right:7px; padding-left:7px;" id="phone" name="phones" required autofocus>
                     <option value="통신사" selected>통신사를 선택해주세요</option>
                     <option value="SKT">SKT</option>
@@ -392,10 +388,11 @@ td,th{
 
               </td>
             </tr>
-
-
         </table>
+
+        <div class="container text-center">
         <button class="btn btn-lg btn-login" type="submit" onclick="order();">결제하기</button>
+      </div>
       </div>
 
 

@@ -39,8 +39,13 @@ button{
           width:400px;
           height:400px;
           border:1px solid silver;
-        
 }
+
+.preview img {
+          position: absolute;
+          width:100px;
+}
+
 .buy-item{
     background-color:#AABBE5;
     color:white;

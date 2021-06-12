@@ -22,6 +22,7 @@
     <script type="text/javascript" src="javascript/makingFlower.js"></script>
     <script rel="javascript" src="javascript/product.js"></script>
     <script rel="javascript" src="javascript/get_index.js"></script>
+
     <script>
       var data=getParameterByName('index');
       function check_click(check_click_thumbnail){
@@ -152,23 +153,25 @@
 
           <div class="image-gallery-thumbnails-wrapper row">
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button1" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/white.png" alt="flower1"/></button>
+
+                <button type="button" id="button1" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/yellow1.png" alt="flower1"/></button>
               </div>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button2" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/yellow.png" alt="flower2"/></button>
+                <button type="button" id="button2" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/pink.png" alt="flower2"/></button>
               </div>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button3" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/blue.png" alt="flower3"/></button>
+                <button type="button" id="button3" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/white1.png" alt="flower3"/></button>
               </div>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button4" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/red.png" alt="flower4"/></button>
+                <button type="button" id="button4" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/red1.png" alt="flower4"/></button>
               </div>
             </div>
 
             <!-- // 구분선 -->
             <div class="image-gallery-thumbnails-wrapper row" style="margin-top:10px;">
               <div class="col-sm-3 choose-flower">
-              <button type="button" id="button5" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/purple.png" alt="flower5"/>
+
+              <button type="button" id="button5" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/purple1.png" alt="flower5"/>
               </div>
               <div class="col-sm-3 choose-flower">
                 <button type="button" id="button6" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/orange.png" alt="flower6"/>
@@ -177,7 +180,7 @@
                 <button type="button" id="button7" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/skyblue.png" alt="flower7"/>
               </div>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button8" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/ravender.png" alt="flower8"/>
+                <button type="button" id="button8" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/blue2.png" alt="flower8"/>
               </div>
             </div>
 
@@ -189,12 +192,14 @@
                     <td><strong>포장지 색 선택&nbsp&nbsp&nbsp</strong></td>
                     <td>
                       <div class="row choose-wrapper">
-                      <a role='button' onclick="choose_bouquet(0)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #ecdfcf;"> </span></a>
-                      <a role='button' onclick="choose_bouquet(1)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #b9a9c9;"> </span></a>
-                      <a role='button' onclick="choose_bouquet(2)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #e6e6fe;"> </span></a>
-                      <a role='button' onclick="choose_bouquet(3)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #CEF6D8"> </span></a>
-                      <a role='button' onclick="choose_bouquet(4)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #F5F6CE;"> </span></a>
-                      <a role='button' onclick="choose_bouquet(5)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #9aabb9;"> </span></a>
+
+                      <a role='button' onclick="choose_bouquet(0)"><span id="c1" class="color col-sm-1 img-circle bouquet" style="background-color: #ecdfcf;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(1)"><span id="c2" class="color col-sm-1 img-circle bouquet" style="background-color: #b9a9c9;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(2)"><span id="c3" class="color col-sm-1 img-circle bouquet" style="background-color: #e6e6fe;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(3)"><span id="c4" class="color col-sm-1 img-circle bouquet" style="background-color: #CEF6D8"> </span></a>
+                      <a role='button' onclick="choose_bouquet(4)"><span id="c5" class="color col-sm-1 img-circle bouquet" style="background-color: #F5F6CE;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(5)"><span id="c6" class="color col-sm-1 img-circle bouquet" style="background-color: #9aabb9;"> </span></a>
+
                     </div>
                     </td>
                   </tr>
@@ -202,12 +207,13 @@
                     <td><strong>리본 색 선택&nbsp&nbsp&nbsp&nbsp</strong></td>
                     <td>
                       <div class="row choose-ribbon">
-                        <a role='button' onclick="choose_ribbon(0)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #7ea8cc;"> </span></a>
-                        <a role='button' onclick="choose_ribbon(1)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #ff8fab;"> </span></a>
-                        <a role='button' onclick="choose_ribbon(2)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #f7c934;"> </span></a>
-                        <a role='button' onclick="choose_ribbon(3)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #8cd790"> </span></a>
-                        <a role='button' onclick="choose_ribbon(4)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #b6b5f5;"> </span></a>
-                        <a role='button' onclick="choose_ribbon(5)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #9f65fc;"> </span></a>
+
+                        <a role='button' onclick="choose_ribbon(0)"><span id="r1" class="color col-sm-1 img-circle ribbon" style="background-color: #7ea8cc;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(1)"><span id="r2" class="color col-sm-1 img-circle ribbon" style="background-color: #ff8fab;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(2)"><span id="r3" class="color col-sm-1 img-circle ribbon" style="background-color: #f7c934;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(3)"><span id="r4" class="color col-sm-1 img-circle ribbon" style="background-color: #8cd790"> </span></a>
+                        <a role='button' onclick="choose_ribbon(4)"><span id="r5" class="color col-sm-1 img-circle ribbon" style="background-color: #b6b5f5;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(5)"><span id="r6" class="color col-sm-1 img-circle ribbon" style="background-color: #9f65fc;"> </span></a>
                       </div>
                     </td>
                   </tr>
@@ -218,7 +224,7 @@
 
             <div class="buy row">
               <div class="col-sm-5"></div>
-              <script>document.write('<button class="buy-item col-sm-5" linking_basket('+data+'); onclick="check_order(); ">장바구니</button>')</script>
+              <script>document.write('<button class="buy-item col-sm-5" onclick="linking_basket('+data+'); check_order();">장바구니</button>')</script>
             </div>
           </div>
         </div>
