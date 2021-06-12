@@ -91,11 +91,40 @@
           </div>
         </nav>
 
+        <div class="container outbox">
+          <div style="text-align:center; margin-bottom:40px;">
+          <h3><strong>마이 페이지</strong></h3>
+          </div>
+          <div class="row title">
+              <p class="col-sm-12 font_title">나의 주문 현황 <span class="desc">(최근 <b>3개월</b> 기준)</span></p> 
+          </div>
+          <div class="row state">
+                <span class="col-sm-3 order_list">
+                    <span class="glyphicon glyphicon-shopping-cart mypage-icon"></span><br>
+                    <p><strong>장바구니</strong></p>
+                    <a href="/myshop/order/list.html?order_status=shipped_before" class="count"><span class="state-count">0</span></a>
+                </span>
+                <span class="col-sm-3 order_list">
+                  <span class="glyphicon glyphicon-list-alt mypage-icon"></span><br>
+                  <p><strong>구매한 상품</strong></p>
+                  <a href="/myshop/order/list.html?order_status=shipped_standby" class="count"><span class="state-count">0</span></a>
+                </span>
+                <span class="col-sm-3 order_list">
+                  <span class="glyphicon glyphicon-send mypage-icon"></span><br>
+                  <p><strong>배송중</strong></p>
+                  <a href="/myshop/order/list.html?order_status=shipped_begin" class="count"><span class="state-count">0</span></a>
+                </span>
+                <span class="col-sm-3 order_list">
+                  <span class="glyphicon glyphicon-ok mypage-icon"></span><br>
+                  <p><strong>배송완료</strong></p>
+                  <a href="/myshop/order/list.html?order_status=shipped_complate" class="count"><span class="state-count">0</span></a>
+                </span>
+            </ul>
+          </div>
+        </div>
+
         <!-- 장바구니 -->
         <div class="sh_bigbox row">
-          <div class="sh_title">
-            <p class="title"> 장바구니 </p>
-          </div>
           <div>
             <table class="sh_main">
               <thead>
@@ -115,10 +144,12 @@
               </thead>
 
               <tbody>
-                <tr class="inbox_tr">
+                <tr class="inbox_tr" id="flexible">
                   <td class="inbox_td">
                   <script>
-                    document.write(data/1+1);
+                     if (data==""){
+                      document.getElementById('flexible').style.display="none";
+                      }
                   </script>
                   </td>
                   <script>
@@ -143,7 +174,7 @@
                     </script>
                     </span></td>
                   <td>
-                    <button class="btn default" onclick='buy_confirm();'>주문하기</button>
+                    <button class="btn default" onclick="location.href='product.html'">취소하기</button>
                   </td>
 
                 </tr>
@@ -166,9 +197,39 @@
             </table> <br><br>
 
             <div class="bt_btn">
-              <button class="btn" id="return-buy" onClick="location.href='product.html'">다시 쇼핑하기</button>
+              <button class="btn" id="return-buy" onClick="buy_confirm();">구매하기</button>
             </div>
           </div>
+        </div>
+          <hr style="margin:50px 100px 50px 100px; border: 1px dotted">
+        <div class="container-fluid contact-form text-center ">
+          <form>
+          <h3><strong>문의하기</strong></h3>
+          <p>빠르고 신속하게 답변해드리겠습니다</p>
+          <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+            </div>
+            <div class="col-sm-3 form-group">
+            <input class="form-control" id="email" name="email" placeholder="email" type="text" required>
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 form-group">
+              <textarea class="form-control" id="contact-contents" name="comments" placeholder="문의할 내용을 입력하세요" rows="7"></textarea><br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 form-group">
+              <button class="btn btn-default pull-center" style="font-size:16px;" type="submit">Send</button>
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+        </form>
         </div>
 
         <footer class="container-fluid bg-main-footer">

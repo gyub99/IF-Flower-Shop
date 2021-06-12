@@ -20,6 +20,66 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascript/makingFlower.js"></script>
+    <script rel="javascript" src="javascript/product.js"></script>
+    <script rel="javascript" src="javascript/get_index.js"></script>
+    <script>
+      var data=getParameterByName('index');
+      function check_click(check_click_thumbnail){
+        mythumbnail=document.getElementsByClassName('thumbnail');
+        for (var i=0; i<4; i++){
+          if (mythumbnail[i].style.border === '2px solid rgb(170, 187, 229)') {
+            mythumbnail[i].style.border = 'none';
+          }
+        }
+        mythumbnail[check_click_thumbnail].style.border='2px solid rgb(170, 187, 229)';
+      }
+      function choose_bouquet(check_click_thumbnail){
+        mybouquet=document.getElementsByClassName('bouquet');
+        for (var i=0; i<6; i++){
+          if (mybouquet[i].style.border === '2px solid black') {
+            mybouquet[i].style.border = 'none';
+          }
+        }
+        mybouquet[check_click_thumbnail].style.border='2px solid black';
+      }
+      function choose_ribbon(check_click_thumbnail){
+        myribbon=document.getElementsByClassName('ribbon');
+        for (var i=0; i<6; i++){
+          if (myribbon[i].style.border === '2px solid black') {
+            myribbon[i].style.border = 'none';
+          }
+        }
+        myribbon[check_click_thumbnail].style.border='2px solid black';
+        return check_click_thumbnail;
+      }
+      function check_order(){
+        var myribbon;
+        var mybouquet;
+        var i;
+        var k;
+        var ribbon=document.getElementsByClassName('ribbon');
+        var bouquet=document.getElementsByClassName('bouquet');
+        for (i=0;i<6; i++){
+          if (ribbon[i].style.border === '2px solid black'){
+            myribbon=i;
+            break;
+          }
+        }
+        for (k=0; k<6; k++){
+          if (bouquet[k].style.border === '2px solid black'){
+            mybouquet=k;
+            break;
+          }
+        }
+        if ((i==6)||(k==6)){
+          alert("포장지 색과 리본 색을 모두 선택해주세요!");
+          location.href="makeBouquet.html";
+        }
+        else {
+          alert('직접 제작하신 꽃다발을 ' + (mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.");
+        }
+      }
+    </script>
   </head>
   <style>
   @font-face {
@@ -29,19 +89,8 @@
        font-style: normal;
   }
 
-  .preview{
-            width:400px;
-            height:400px;
-            border:1px solid silver;
-  }
-
-  .preview img {
-            position: absolute;
-            width:100px;
-        }
 </style>
-  <script src="jquery-3.6.0.min.js"></script>
-  <script type="text/javascript" src="javascript/makeflower.js"></script>
+
 
   <body>
     <!-- 헤더부분 -->
@@ -86,84 +135,94 @@
           </div>
         </nav>
 
+
     <div class="container title text-center">
       <h2>나만의 꽃다발을 만들어봐요!</h2>
     </div>
+
     <div class="container contents">
       <div class="product row">
         <div class="col-sm-1 select"></div>
           <div id="preview" class="preview col-sm-5">
-                <img src="blue_silk1.png" >
-                <img src="blue_silk1.png" >
-                <img src="picture/f3.png" >
-                <script type="text/javascript" src="javascript/clickflower.js"></script>
           </div>
 
 
-        <div class="col-sm-5 choosing">
+        <div class="col-sm-6 choosing">
           <h5 style="text-align:center;">이곳에서 원하는 색상, 꽃 종류, 스타일을 선택해보세요!</h5>
 
           <div class="image-gallery-thumbnails-wrapper row">
-            <div class="col-sm-3 choose-flower">
-              <button type="button" id="button1"><img class="thumbnail img-responsive" src="picture/makingFlower/flower1.jpg" alt="flower1"/></button>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button1" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/white.png" alt="flower1"/></button>
+              </div>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button2" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/yellow.png" alt="flower2"/></button>
+              </div>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button3" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/blue.png" alt="flower3"/></button>
+              </div>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button4" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/red.png" alt="flower4"/></button>
+              </div>
             </div>
-            <div class="col-sm-3 choose-flower">
-              <button type="button" id="button2"><img class="thumbnail img-responsive" src="picture/makingFlower/flower2.jpg" alt="flower1"/></button>
+
+            <!-- // 구분선 -->
+            <div class="image-gallery-thumbnails-wrapper row" style="margin-top:10px;">
+              <div class="col-sm-3 choose-flower">
+              <button type="button" id="button5" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/purple.png" alt="flower5"/>
+              </div>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button6" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/orange.png" alt="flower6"/>
+              </div>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button7" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/skyblue.png" alt="flower7"/>
+              </div>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button8" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/ravender.png" alt="flower8"/>
+              </div>
             </div>
-            <div class="col-sm-3 choose-flower">
-              <button type="button" id="button3"><img class="thumbnail img-responsive" src="picture/makingFlower/flower3.jpg" alt="flower1"/></button>
-            </div>
-            <div class="col-sm-3 choose-flower">
-              <button type="button" id="button4"><img class="thumbnail img-responsive" src="picture/makingFlower/flower4.jpg" alt="flower1"/></button>
-            </div>
+
+            <hr>
+            <div class="big_box">
+              <div class="input-form">
+                <table>
+                  <tr>
+                    <td><strong>포장지 색 선택&nbsp&nbsp&nbsp</strong></td>
+                    <td>
+                      <div class="row choose-wrapper">
+                      <a role='button' onclick="choose_bouquet(0)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #ecdfcf;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(1)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #b9a9c9;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(2)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #e6e6fe;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(3)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #CEF6D8"> </span></a>
+                      <a role='button' onclick="choose_bouquet(4)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #F5F6CE;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(5)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #9aabb9;"> </span></a>
+                    </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>리본 색 선택&nbsp&nbsp&nbsp&nbsp</strong></td>
+                    <td>
+                      <div class="row choose-ribbon">
+                        <a role='button' onclick="choose_ribbon(0)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #7ea8cc;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(1)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #ff8fab;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(2)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #f7c934;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(3)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #8cd790"> </span></a>
+                        <a role='button' onclick="choose_ribbon(4)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #b6b5f5;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(5)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #9f65fc;"> </span></a>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
           </div>
 
-          <!-- // 구분선 -->
-          <div class="image-gallery-thumbnails-wrapper row">
-            <div class="col-sm-3 choose-flower">
-              <img class="thumbnail img-responsive" src="picture/makingFlower/flower5.jpg" alt="flower1"/>
-            </div>
-            <div class="col-sm-3 choose-flower">
-              <img class="thumbnail img-responsive" src="picture/makingFlower/flower6.jpg" alt="flower1"/>
-            </div>
-            <div class="col-sm-3 choose-flower">
-              <img class="thumbnail img-responsive" src="picture/makingFlower/flower7.jpg" alt="flower1"/>
-            </div>
-            <div class="col-sm-3 choose-flower">
-              <img class="thumbnail img-responsive" src="picture/makingFlower/flower8.jpg" alt="flower1"/>
-            </div>
-          </div>
 
-          <div class="row choose-wrapper">
-            <h6 style="text-align: center;">포장지 색 선택</h6>
-            <div class="color col-sm-1 img-circle" id="img1" style="background-color: #ecdfcf;" onclick="change();"> </div>
-            <div class="color col-sm-1 img-circle" id="img2" style="background-color: #c4d4e0;"  onclick="change();"> </div>
-            <div class="color col-sm-1 img-circle" id="img3" style="background-color: #9aabb9;"  onclick="change();"> </div>
-            <div class="color col-sm-1 img-circle" id="img4" style="background-color: #e2b49a;"> </div>
-            <div class="color col-sm-1 img-circle" id="img5" style="background-color: #e9c77b;"> </div>
-            <div class="color col-sm-1 img-circle" id="img6" style="background-color: #8cd790;"> </div>
-          </div>
-
-          <div class="row choose-ribbon">
-            <h6 style="text-align: center;">리본 색 선택</h6>
-            <div class="color col-sm-1 img-circle" style="background-color: #ecdfcf;"> </div>
-            <div class="color col-sm-1 img-circle" style="background-color: #c4d4e0;"> </div>
-            <div class="color col-sm-1 img-circle" style="background-color: #9aabb9;"> </div>
-            <div class="color col-sm-1 img-circle" style="background-color: #e2b49a;"> </div>
-            <div class="color col-sm-1 img-circle" style="background-color: #e9c77b;"> </div>
-            <div class="color col-sm-1 img-circle" style="background-color: #8cd790;"> </div>
+            <div class="buy row">
+              <div class="col-sm-5"></div>
+              <script>document.write('<button class="buy-item col-sm-5" linking_basket('+data+'); onclick="check_order(); ">장바구니</button>')</script>
+            </div>
           </div>
         </div>
-
-
       </div>
-
-      <div class="buy container text-center">
-        <button id="reset">초기화</button>
-        <button id="makingBuy">구매하기</button>
-
-      </div>
-    </div>
 
     <footer class="container-fluid bg-main-footer">
       <div class="row">

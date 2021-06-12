@@ -30,3 +30,22 @@
     padding:30px;
 
 }
+button{
+  background-color: white;
+  border: 1px solid grey;
+}
+
+.preview{
+          width:400px;
+          height:400px;
+          border:1px solid silver;
+        
+}
+.buy-item{
+    background-color:#AABBE5;
+    color:white;
+    margin: 10px;
+    padding: 10px;
+    font-weight:bolder;
+    border: 0px;
+}

@@ -7,15 +7,6 @@
 *{
   font-family: S-CoreDream-3Light;
 }
-.delivery_title{
-  font-size: 12px;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-.delivery_btn{
-  background-color: #fff;
-  cursor: pointer;
-}
 .sh_body{
   font-size: 13pt;
   width: 100%;
@@ -74,7 +65,7 @@ table.sh_main{
   clear:both;
 
   border-collapse: collapse;
-  background-color: #f4ebf5;
+  background-color: #F2F5CE;
   width: 100%;
   font-size: 10pt;
 }
@@ -84,7 +75,7 @@ table.sh_main th{
     text-align: center;
 }
 table.sh_main td{
-  border: 1px solid #f4ebf5;
+  border: 1px solid #F2F5CE;
   text-align: center;
 }
 
@@ -114,11 +105,11 @@ table.sh_bottom td{
 }
 
 .default{
-  background-color: #eadce9;
+  background-color: #F2F5CE;
   border-radius: 3px;
 }
 .default:hover{
-  background: #dfcbe1;
+  background: #e3e7b4;
   color:white;
   font-weight:bold;
 }
@@ -134,5 +125,47 @@ table.sh_bottom td{
 }
 .bt_btn{
   text-align:center;
+  margin-bottom:50px;
+}
+.outbox {
+  width:80%;
+  margin:0 auto;
+  padding-left:50px 50px;
+  background-color: #fff;
+  margin-top:50px;
+}
+
+.title{
+  background-color: #F2F5CE;
+  font-size:25px;
+  padding-top: 15px;
+  text-align:center;
+}
+
+ .state{
+   border: 2px solid #F2F5CE;
+   font-size:15px;
+   padding:20px;
+ }
+
+.state-count{
+  font-size:20px;
+  font-weight:bolder;
+  color: #aabbe5;
+}
+
+.order_list{
+  text-align: center;
+}
+
+.mypage-icon{
+  font-size:30px;
+}
+
+.mypage-title{
+  font-size:25px;
+  font-weight:bold;
+}
+.contact-form{
   margin-bottom:50px;
 }
