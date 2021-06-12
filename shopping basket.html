@@ -39,7 +39,13 @@
         document.getElementById('foot_total').innerHTML=total.toLocaleString()+'원';
         return price;
       }
-      funcs
+      function buy_confirm(){
+        var name=product_list[data].name;
+        var total=document.getElementById('foot_total').innerHTML.replace(/ /g,"").replace("\n","");
+        var count=document.getElementById('count').innerHTML;
+        alert("주문하신 상품 : "+name+" "+count+"개\n 총 " +total+ " 입니다.");
+        location.href="order.html";
+      }
   </script>
   </head>
   <body style="overflow-x:hidden;" class="sh_body">
@@ -112,7 +118,7 @@
                 <tr class="inbox_tr">
                   <td class="inbox_td">
                   <script>
-                    document.write(data);
+                    document.write(data/1+1);
                   </script>
                   </td>
                   <script>
@@ -137,7 +143,7 @@
                     </script>
                     </span></td>
                   <td>
-                    <button class="btn default" onclick=''>주문하기</button>
+                    <button class="btn default" onclick='buy_confirm();'>주문하기</button>
                   </td>
                 
                 </tr>
