@@ -20,6 +20,52 @@
       var mail=document.join.mail_sel.options[i].value
       document.join.mail.value=mail
   }
+
+  function order(){
+    var p_number = document.getElementById("p_tel");
+    var c_num = document.getElementById("card_num");
+    var chk1 = document.getElementById("card").checked;
+    var chk2 = document.getElementById("bankbook").checked;
+    var chk3 = document.getElementById("account").checked;
+    var chk4 = document.getElementById("cellphone").checked;
+
+    j=document.credit.cards.selectedIndex
+    var card_type=document.credit.cards.options[j].value
+
+    k=document.credit.months.selectedIndex
+    var month_type=document.credit.months.options[k].value
+
+    m=document.bank_type.banks.selectedIndex
+    var bank_type=document.bank_type.banks.options[m].value
+
+    n=document.account_type.banks2.selectedIndex
+    var account_type=document.account_type.banks2.options[n].value
+
+    l=document.phone_type.phones.selectedIndex
+    var phone_type=document.phone_type.phones.options[l].value
+
+    if(chk1)
+    {
+      alert(card_type+" 신용카드를 선택하셨습니다. 할부 개월수는 "+month_type+" 입니다.\n" +"카드번호 : "+c_num.value+"로 결제됩니다.");
+    }
+
+    else if(chk2)
+    {
+      alert("무통장입금을 선택하셨습니다.\n"+bank_type+" 계좌 : 8813512-562-54122 로 입금해주세요");
+    }
+
+    else if(chk3)
+    {
+      alert("실시간 계좌이체를 선택하셨습니다.\n"+account_type+" 계좌 : 8813512-562-54122 로 입금해주세요");
+    }
+
+    else if(chk4)
+    {
+      alert(phone_type+" 통신사 휴대폰결제를 선택하셨습니다\n"+p_number.value+"번호로 결제금액이 청구됩니다.");
+    }
+
+}
+
   </script>
   <style>
   @font-face {
@@ -28,10 +74,76 @@
        font-weight: normal;
        font-style: normal;z-index:
   }
+  @font-face {
+      font-family: 'Cafe24Oneprettynight';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'GongGothicLight';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'NEXON Lv1 Gothic OTF';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'GmarketSansBold';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'GmarketSansLight';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+td,th{
+  font-family: 'S-CoreDream-3Light';
+  font-size: 14px;
+
+}
+
+.bg-info{
+  background-color:#f6f6f6;
+  padding-bottom: 20px;
+  padding-top:10px;
+  width:1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.none-border{
+  border-style: hidden;
+}
+
+.tb_box{
+  width:1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bigbox{
+  width:1000px;
+  margin-left: auto;
+ margin-right: auto;
+ margin-top: 50px;
+ margin-bottom: 50px;
+}
 
 </style>
   </head>
-  <body  style="overflow-x:hidden;">
+  <!-- <body  style="overflow-x:hidden;"> -->
 
     <!-- 헤더부분 -->
     <div class="header">
@@ -75,32 +187,61 @@
         </nav>
 
           <!-- 배송정보 -->
-          <div class="bigbox">
-            <div class="title">
-                <h3>배송지 정보</h3>
-                    <span class="star"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /> 필수입력사항</span>
-            </div>
-            <div class="tb_box" style="margin-top:10px;">
-                <table border="1">
 
+    <div class="container-fluid">
+      <h2 style=" text-align:center; font-weight:bold; margin-top:50px; margin-bottom:30px;"> 주문서</h2>
+    </div>
+
+    <div class="bg-info">
+      <h3 style=" font-weight: bold; margin-bottom: 20px; text-align:center; font-family: 'S-CoreDream-3Light'; font-size:20px;"> 주문 지역(대전/충청 일부)에 신선배송 서비스가 시작됩니다!</h3>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+          <table class="none-border">
+            <tr>
+              <td style="width:80px;">
+                <img src="picture/order/pic2.jpg" alt="delivery" class="img-circle" width="70px" height="70px">
+              </td>
+              <td style="border-style: hidden; padding-left:20px;">
+                <h3 style="margin-left: 0px; margin-top:10px; font-family: 'S-CoreDream-3Light';"> <b>이제부터 새벽에 배송됩니다.</b><br><br>
+             매일 23시까지 주문하시면 <br>다음날 7시까지 배송됩니다.</h3>
+           </td>
+         </tr>
+       </table>
+        </div>
+
+        <div class="col-sm-5">
+          <table class="none-border">
+            <tr>
+              <td style="width:80px;">
+                <img src="picture/order/pic1.jpg" alt="lock" class="img-circle" width="70px" height="70px">
+              </td>
+              <td style="border-style: hidden; padding-left:20px;">
+                <h3 style="margin-left: 0px; margin-top:10px; font-family: 'S-CoreDream-3Light';"><b>공동현관 비밀번호를 입력해주세요</b><br><br>
+                새벽 시간 공동 현관 출입이 불가할 경우,<br>공동현관 앞에 배송될 수 있습니다.</h3>
+           </td>
+         </tr>
+       </table>
+       </div>
+     </div>
+   </div>
+
+   <div class="bigbox">
+        <h2 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center;">배송지 입력</h2>
+          <div class="title">
+            <h3 style="font-family: 'NEXON Lv1 Gothic OTF'; display: inline-block; text-align:center;">배송 정보</h3>
+              <span class="star"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"/>필수입력사항</span>
+            </div>
+
+          <div class="tb_box">
+            <form>
+              <table border="1">
                 <tbody>
                     <tr>
-                        <th scope="row">배송지 선택</th>
-                          <td>
-                            <div class="address">
-                              <input name="addr1"  type="radio" class="rd_btn">
-                              <label>회원 정보와 동일</label>
-                              <input name="addr1"  type="radio" class="rd_btn">
-                              <label>새로운 배송</label>
-                              <a href=#><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/btn_address.gif" alt="주소록 보기" /></a>
-                            </div>
-                          </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">받으시는 분 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
+                        <th scope="row">수령자 이름 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
                             <td>
                               <div class="re_box">
-                              <input type="text" class="re_name">
+                              <input type="text" class="re_name" placeholder="이름을 입력하세요" required>
                               </div>
                             </td>
                     </tr>
@@ -108,12 +249,11 @@
                         <th scope="row">주소 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
                           <td>
                             <div class="addr">
-                            <input type="text" class="zip_code">
-                            <a href="#"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/btn_zipcode.gif" alt="우편번호" /></a><br/>
-                            <input type="text" class="addr1" >
-                            <span class="grid">기본 주소</span><br>
-                            <input type="text" class="addr1" >
-                            <span class="grid">나머지 주소</span>
+                            <input type="text" class="zip_code" placeholder="우편번호" required><br>
+                            <input type="text" class="addr1" placeholder="주소" required>
+                            <span style="font-size: 14px;" class="grid">기본 주소</span><br>
+                            <input type="text" class="addr1" placeholder="상세주소" required>
+                            <span style="font-size: 14px;" class="grid">나머지 주소</span>
                             </div>
                           </td>
                     </tr>
@@ -121,11 +261,7 @@
                         <th scope="row">휴대전화 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
                           <td>
                             <div class="ph_box">
-                            <input type="text" class="ph_num">
-                            -
-                            <input type="text" class="ph_num2">
-                            -
-                            <input type="text" class="ph_num2">
+                            <input type="text" class="ph_num" placeholder="전화번호를 입력하세요" required>
                             </div>
                           </td>
                     </tr>
@@ -133,16 +269,16 @@
                         <th scope="row">이메일 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
                           <td>
                             <div class="email_box">
-                            <input type="text" class="email">
+                            <input type="text" class="email" placeholder="이메일을 입력하세요">
                             @
                             <form name="join" action="join_post.php" method="post" class="email_form">
                             <input type="text" name="mail" class="email">
                             <select name="mail_sel" onChange="mailcheck()">
                             <option selected>직접입력</option>
-                            <option value=google.com>google.com</option>
-                            <option value=naver.com>naver.com</option>
-                            <option value=nate.com>nate.com</option>
-                            <option value=daum.net>daum.net</option>
+                            <option style="font-size: 15px;" value=google.com>google.com</option>
+                            <option style="font-size: 15px;" value=naver.com>naver.com</option>
+                            <option style="font-size: 15px;" value=nate.com>nate.com</option>
+                            <option style="font-size: 15px;" value=daum.net>daum.net</option>
                             </select>
                             </form>
                           </div>
@@ -158,11 +294,114 @@
                     </tr>
                 </tbody>
                 </table>
-                <dic class="order_box">
-                <input type="button" value="입력 완료" class="order_fn">
-                </div>
+              </form>
             </div>
         </div>
+
+        <hr>
+
+        <div class="bigbox">
+          <h2 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center; margin-bottom:50px;">결제수단</h2>
+          <table border="1">
+            <tr>
+              <form name="credit">
+              <th rowspan="2"><input type="checkbox" id="card">신용카드</th>
+            </tr>
+            <tr>
+              <td>
+                <select style="width:210px; padding-right:7px; padding-left:7px;" id="card_type" name="cards" required autofocus>
+                    <option value="카드" selected>카드를 선택해주세요</option>
+                    <option value="현대">현대</option>
+                    <option value="신한">신한</option>
+                    <option value="비씨">비씨</option>
+                    <option value="KB국민">KB국민</option>
+                    <option value="NH채움">NH채움</option>
+                    <option value="삼성">삼성</option>
+                    <option value="롯데">롯데</option>
+                    <option value="하나">하나</option>
+                    <option value="우리">우리</option>
+                    <option value="우체국카드">우체국카드</option>
+                  </select>
+
+
+                  <select style="width:210px; padding-right:auto; padding-left:auto; display:inline-block;" name="months" required autofocus>
+                      <option value="일시불" selected>일시불</option>
+                      <option value="2개월">2개월</option>
+                      <option value="3개월">3개월</option>
+                    </select>
+                    </form><br>
+
+
+                  <input type="text" id="card_num" placeholder="카드번호를 입력하세요" required>
+                  <input type="month" placeholder="카드 유효번호를 입력하세요" required>
+                  <input type="text" id="cvc" placeholder="CVC 번호를 입력하세요" required>
+                </td>
+            </tr>
+
+            <tr>
+              <form name="bank_type">
+              <th><input type="checkbox" id="bankbook">무통장 입금</th>
+              <td><label style="font-family: 'GmarketSansLight'; font-size:17px; margin-left:5px;">
+                <select style="width:210px; padding-right:7px; padding-left:7px;" name="banks" required autofocus>
+                    <option value="은행" selected>은행을 선택해주세요</option>
+                    <option value="신한">신한</option>
+                    <option value="KB국민">KB국민</option>
+                    <option value="NH농협">NH채움</option>
+                    <option value="하나">하나</option>
+                    <option value="신협">신협</option>
+                    <option value="수협">수협</option>
+                    <option value="우리">우리</option>
+                    <option value="우체국">우체국카드</option>
+                  </select>
+                </form>
+              </td>
+            </tr>
+
+            <tr>
+              <form name="account_type">
+              <th><input type="checkbox" id="account">계좌이체</th>
+              <td><label style="font-family: 'GmarketSansLight'; font-size:17px; margin-left:5px;">
+                <select style="width:210px; padding-right:7px; padding-left:7px;" name="banks2" required autofocus>
+                    <option value="은행" selected>은행을 선택해주세요</option>
+                    <option value="신한">신한</option>
+                    <option value="KB국민">KB국민</option>
+                    <option value="NH농협">NH채움</option>
+                    <option value="하나">하나</option>
+                    <option value="신협">신협</option>
+                    <option value="수협">수협</option>
+                    <option value="우리">우리</option>
+                    <option value="우체국">우체국카드</option>
+                  </select>
+                </form>
+              </td>
+            </tr>
+
+            <tr>
+              <form name="phone_type">
+              <th><input type="checkbox" id="cellphone">휴대폰 결제</th>
+              <td><label style="font-family: 'GmarketSansLight'; font-size:17px; margin-left:5px;">
+                <select style="width:210px; padding-right:7px; padding-left:7px;" id="phone" name="phones" required autofocus>
+                    <option value="통신사" selected>통신사를 선택해주세요</option>
+                    <option value="SKT">SKT</option>
+                    <option value="KT">KT</option>
+                    <option value="LG U+">LG U+</option>
+                    <option value="알뜰폰">알뜰폰</option>
+                  </select>
+                    <input type="tel" id="p_tel" placeholder="휴대폰 번호 입력">
+                </form>
+
+              </td>
+            </tr>
+
+
+        </table>
+        <button class="btn btn-lg btn-login" type="submit" onclick="order();">결제하기</button>
+      </div>
+
+
+
+
+
 
 
         <footer class="container-fluid bg-main-footer">

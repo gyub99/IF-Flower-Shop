@@ -25,15 +25,13 @@ select{
 table{
     border-width: 1px;
     border-style: solid;
-
-
 }
 
 th{
   font-size: 10px;
   border-width: 1px;
   border-style: solid;
-  background-color: #E6E6E6;
+  background-color:#f6f6f6;
   width: 120px;
   height: 30px;
   padding-left: 10px;
@@ -55,9 +53,12 @@ h3{
 }
 .star{
   display: inline-block;
+<<<<<<< HEAD
+=======
   float: right;
   margin-top: -30px;
   margin-right: 280px;
+>>>>>>> 14b02790ae2070086d07ea4d0c81645677074a36
 }
 
 #add1{
@@ -69,12 +70,20 @@ label{
 .required{
   display: inline-block;
 }
+
 .bigbox{
+<<<<<<< HEAD
+  width:1000px;
+  margin-left: auto;
+  margin-right: auto;
+=======
   margin-left: 200px;
   margin-bottom: 40px;
   margin-top: 50px;
 }
+>>>>>>> 14b02790ae2070086d07ea4d0c81645677074a36
 
+}
 
 .address{
   margin: 5px 0px 5px 5px;
@@ -83,8 +92,8 @@ label{
   vertical-align: text-top;
 }
 .re_name{
-  width: 100px;
-  height: 20px;
+  width: 180px;
+  height: 30px;
 }
 .re_box{
     margin: 5px 0px 5px 5px;
@@ -93,35 +102,32 @@ label{
     margin: 5px 0px 5px 5px;
 }
 .zip_code{
-  width: 70px;
-  height: 23px;
+  width: 180px;
+  height: 30px;
 }
 .grid{
   font-size: 11px;
 }
 .addr1{
   width: 400px;
-  height: 23px;
+  height: 30px;
   margin-top: 5px;
 }
 .ph_box{
     margin: 5px 0px 5px 5px;
 }
 .ph_num{
-  width: 50px;
-  height: 23px;
+  width: 180px;
+  height: 30px;
 
 }
-.ph_num2{
-  width: 60px;
-  height: 23px;
-}
+
 .email_box{
   margin: 5px 0px 5px 5px;
 }
 .email{
-  width: 150px;
-  height: 23px;
+  width: 180px;
+  height: 30px;
 }
 .de_box{
   margin: 5px 0px 5px 5px;
@@ -136,4 +142,11 @@ label{
 .order_fn{
   margin-top: 20px;
   margin-left: 500px;
+}
+
+.btn-login{
+width:200px;
+height:40px;
+background-color:white;
+border: 1px solid gray;
 }

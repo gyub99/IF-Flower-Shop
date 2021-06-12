@@ -180,58 +180,34 @@
         </div>
       </div>
 
-        <!-- 추천상품 -->
-        <div class="container-fluid bg-main-suggest text-center">
-          <h3 style="font-family: 'NanumSquare', sans-serif;"><strong>오늘의 추천상품</strong></h3>
-          <p style="font-family: 'Nanum Gothic', sans-serif;">5월의 추천꽃  라일락, 수련</p><br>
-          <div class="row pic-container">
-            <div class="col-sm-3 product-item">
-              <div class="wrapper">
-                <img src="picture/f5.PNG" alt="flower1" class="img-responsive">
-                <div class="overlay">
-                  <div class="content">
-                    <p class="name">김규빈 파머 초이스</p>
-                    <p class="price">29,000원</p>
-                    <button class="button">구매하기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3 product-item">
-              <div class="wrapper">
-                <img src="picture/f6.PNG" alt="flower1" class="img-responsive">
-                <div class="overlay">
-                  <div class="content">
-                    <p class="name">이성규 파머 초이스</p>
-                    <p class="price">29,000원</p>
-                    <button class="button">구매하기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3 product-item">
-              <div class="wrapper">
-                <img src="picture/f7.PNG" alt="flower1" class="img-responsive">
-                <div class="overlay">
-                  <div class="content">
-                    <p class="name">신지혜 파머 초이스</p>
-                    <p class="price">29,000원</p>
-                    <button class="button">구매하기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3 product-item">
-              <div class="wrapper">
-                <img src="picture/f8.PNG" alt="flower1" class="img-responsive">
-                <div class="overlay">
-                  <div class="content">
-                    <p class="name">딩가 초이스</p>
-                    <p class="price">29,000원</p>
-                    <button class="button">구매하기</button>
-                  </div>
-                </div>
-              </div>
+      <!-- 추천상품 -->
+      <div class="container-fluid bg-main-suggest text-center">
+        <h3 style="font-family: 'NanumSquare', sans-serif;"><strong>오늘의 추천상품</strong></h3>
+        <p style="font-family: 'Nanum Gothic', sans-serif;">6월의 추천꽃  라일락, 수련</p><br>
+        <div class="row pic-container">
+          <div class="col-sm-3 ">
+              <img src="picture/f5.png" alt="flower1" class="img-responsive">
+              <p class="title">[Farmer's] 신지혜 파머 초이스</p>
+              <p class="bestprice">25,000원</p>
+          </div>
+
+          <div class="col-sm-3 product-item">
+              <img src="picture/f6.png" alt="flower1" class="img-responsive">
+              <p class="title">[Farmer's] 이성규 파머 초이스</p>
+              <p class="bestprice">29,000원</p>
+          </div>
+
+          <div class="col-sm-3 product-item">
+              <img src="picture/f7.png" alt="flower1" class="img-responsive">
+              <p class="title">[Farmer's] 김규빈 파머 초이스</p>
+              <p class="bestprice">25,000원</p>
+          </div>
+
+
+          <div class="col-sm-3 product-item">
+              <img src="picture/f8.png" alt="flower1" class="img-responsive">
+              <p class="title">[Farmer's] 김규빈 파머 초이스</p>
+              <p class="bestprice">25,000원</p>
             </div>
           </div>
         </div>
@@ -244,12 +220,12 @@
           var mapCanvas = document.getElementById("map");
           var myCenter = new google.maps.LatLng(36.626264552472776, 127.45476683668544);
           var mapOptions = {
-          	center: myCenter,
+             center: myCenter,
             zoom: 17
           };
           var map = new google.maps.Map(mapCanvas, mapOptions);
           var marker = new google.maps.Marker({
-        	position:myCenter,
+           position:myCenter,
 
           });
           marker.setMap(map);
@@ -294,29 +270,27 @@
           </div>
         </div>
       </div>
-        <!-- footer -->
+
+      
+      <!-- footer -->
         <footer class="container-fluid bg-main-footer">
           <div class="row">
             <div class="col-sm-2"></div>
-            <div class="col-sm-2">
-              <h3>딩가 고객센터</h3>
-              <h3>1644-1777</h3>
-              <input type="button" class="btndesign" value="카카오톡 문의">
-            </div>
-            <div class="col-sm-3">
-              <br><p><strong>365 고객센터</strong></p>
-              <p style="color:#787878">오전 7시 - 오후 7시</p><br><br>
-              <p><strong>24시간 접수가능</strong></p>
-              <p style="color:#787878">고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p><br>
-            </div>
             <div class="col-sm-4">
-              <br><br><br>
-              <p>사업자 등록번호 : 371-06-0707<br>
+              <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 고객센터</h2><h4>&#128222; 1644-1777</h4>
+              <p><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
+              <p><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
+              <a href="contact.html" target="_blank"><input type="button" class="btndesign" value="1:1 문의"></a><br>
+            </div>
+
+            <div class="col-sm-5">
+              <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 꽃집</h2><br>
+              <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 371-06-0707<br>
                 통신판매업 신고번호 : 2021-서울 삼성동-77775<br>
                 주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br>
                 COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED</p>
             </div>
-          </div>
+            </div>
         </footer>
 
   </body>
