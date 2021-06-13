@@ -19,10 +19,7 @@
     <link rel="stylesheet" href="css/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="javascript/makeFlower.js"></script>
-    <script rel="javascript" src="javascript/product.js"></script>
-    <script rel="javascript" src="javascript/get_index.js"></script>
-
+    <script type="text/javascript" src="javascript/makingFlower.js"></script>
     <script>
       var data=getParameterByName('index');
       function check_click(check_click_thumbnail){
@@ -74,10 +71,10 @@
         }
         if ((i==6)||(k==6)){
           alert("포장지 색과 리본 색을 모두 선택해주세요!");
-          location.href="makeBouquet.html";
+          location.href="product_detail.html?index="+data;
         }
         else {
-          alert('직접 제작하신 꽃다발을 ' + (mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.");
+          alert('"'+product_list[data].name + '"을(를) ' + (mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.");
         }
       }
     </script>
@@ -91,7 +88,8 @@
   }
 
 </style>
-
+  <script src="jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="javascript/makeflower.js"></script>
 
   <body>
     <!-- 헤더부분 -->
@@ -144,7 +142,14 @@
     <div class="container contents">
       <div class="product row">
         <div class="col-sm-1 select"></div>
-          <div id="preview" class="preview col-sm-5">
+
+          <div class="col-sm-5">
+            <div id="preview" class="preview">
+              </div>
+              <div class="col-sm-3"></div>
+              <div class="col-sm-4"> <button type="button" id="cancel"  class="btn glyphicon glyphicon-arrow-left"> 되돌리기</button></div>
+              <div class="col-sm-4"> <button type="button" id="refresh" class="btn glyphicon glyphicon-refresh"> 초기화</button></div>
+
           </div>
 
 
@@ -153,9 +158,7 @@
 
           <div class="image-gallery-thumbnails-wrapper row">
               <div class="col-sm-3 choose-flower">
-
                 <button type="button" id="button1" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/yellow1.png" alt="flower1"/></button>
-                <p> 8,000원<p>
               </div>
               <div class="col-sm-3 choose-flower">
                 <button type="button" id="button2" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/pink.png" alt="flower2"/></button>
@@ -171,7 +174,6 @@
             <!-- // 구분선 -->
             <div class="image-gallery-thumbnails-wrapper row" style="margin-top:10px;">
               <div class="col-sm-3 choose-flower">
-
               <button type="button" id="button5" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/purple1.png" alt="flower5"/>
               </div>
               <div class="col-sm-3 choose-flower">
@@ -193,14 +195,12 @@
                     <td><strong>포장지 색 선택&nbsp&nbsp&nbsp</strong></td>
                     <td>
                       <div class="row choose-wrapper">
-
                       <a role='button' onclick="choose_bouquet(0)"><span id="c1" class="color col-sm-1 img-circle bouquet" style="background-color: #ecdfcf;"> </span></a>
                       <a role='button' onclick="choose_bouquet(1)"><span id="c2" class="color col-sm-1 img-circle bouquet" style="background-color: #b9a9c9;"> </span></a>
                       <a role='button' onclick="choose_bouquet(2)"><span id="c3" class="color col-sm-1 img-circle bouquet" style="background-color: #e6e6fe;"> </span></a>
                       <a role='button' onclick="choose_bouquet(3)"><span id="c4" class="color col-sm-1 img-circle bouquet" style="background-color: #CEF6D8"> </span></a>
                       <a role='button' onclick="choose_bouquet(4)"><span id="c5" class="color col-sm-1 img-circle bouquet" style="background-color: #F5F6CE;"> </span></a>
                       <a role='button' onclick="choose_bouquet(5)"><span id="c6" class="color col-sm-1 img-circle bouquet" style="background-color: #9aabb9;"> </span></a>
-
                     </div>
                     </td>
                   </tr>
@@ -208,7 +208,6 @@
                     <td><strong>리본 색 선택&nbsp&nbsp&nbsp&nbsp</strong></td>
                     <td>
                       <div class="row choose-ribbon">
-
                         <a role='button' onclick="choose_ribbon(0)"><span id="r1" class="color col-sm-1 img-circle ribbon" style="background-color: #7ea8cc;"> </span></a>
                         <a role='button' onclick="choose_ribbon(1)"><span id="r2" class="color col-sm-1 img-circle ribbon" style="background-color: #ff8fab;"> </span></a>
                         <a role='button' onclick="choose_ribbon(2)"><span id="r3" class="color col-sm-1 img-circle ribbon" style="background-color: #f7c934;"> </span></a>
@@ -224,8 +223,9 @@
 
 
             <div class="buy row">
-              <div class="col-sm-5"></div>
-              <script>document.write('<button class="buy-item col-sm-5" onclick=" linking_basket('+data+'); check_order();">장바구니</button>')</script>
+              <script>document.write('<button class="buy-item col-sm-6" onclick="linking_basket('+data+'); check_order();">장바구니</button>')</script>
+            </div>
+
             </div>
           </div>
         </div>
