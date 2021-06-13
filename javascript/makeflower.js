@@ -3,6 +3,8 @@ var button2; //전역변수 선언
 var button3; //전역변수 선언
 var button4; //전역변수 선언
 
+var total_price=0;
+
 window.onload=function(){
   main_button = document.getElementById("preivew");
   button1=document.getElementById("button1"); //초기화
@@ -11,10 +13,12 @@ window.onload=function(){
   button4=document.getElementById("button4"); //초기화
 
   m1=function makeImg1(){
+    total_price=total_price+document.getElementById('flower1').innerHTML.replace(',',"").replace('원',"")/1;
     img=document.createElement("img");
     img.src="picture/makingFlower/yellow1.png"
     img.style="position: absloute; bottom: 10px; right:30px; width:300px; height:400px;";
     $("#preview").append(img);
+    
   }
 
   m2=function makeImg2(){
@@ -22,6 +26,7 @@ window.onload=function(){
     img.src="picture/makingFlower/pink.png"
     img.style="position: absloute; bottom: 20px; right:30px; width:250px; height:350px;";
     $("#preview").append(img);
+    total_price=total_price+document.getElementById('flower2').innerHTML.replace(',',"").replace('원',"")/1;
   }
 
   m3=function makeImg3(){
@@ -29,6 +34,7 @@ window.onload=function(){
     img.src="picture/makingFlower/white1.png"
     img.style="position: absloute; bottom: 10px; right:30px;; width:300px; height:400px;";
     $("#preview").append(img);
+    total_price=total_price+document.getElementById('flower3').innerHTML.replace(',',"").replace('원',"")/1;
   }
 
   m4=function makeImg4(){
@@ -36,6 +42,7 @@ window.onload=function(){
     img.src="picture/makingFlower/red1.png"
     img.style="position: absloute; bottom: 10px; right:30px; width:250px; height:370px;";
     $("#preview").append(img);
+    total_price=total_price+document.getElementById('flower4').innerHTML.replace(',',"").replace('원',"")/1;
   }
 
   m5=function makeImg5(){
@@ -43,6 +50,7 @@ window.onload=function(){
     img.src="picture/makingFlower/purple1.png"
     img.style="position: absloute; bottom: 10px; right:30px; width:300px; height:400px;"
     $("#preview").append(img);
+    total_price=total_price+document.getElementById('flower5').innerHTML.replace(',',"").replace('원',"")/1;
   }
 
   m6=function makeImg6(){
@@ -50,6 +58,7 @@ window.onload=function(){
     img.src="picture/makingFlower/orange.png"
     img.style="position: absloute; bottom: 10px; right:30px; width:300px; height:400px;"
     $("#preview").append(img);
+    total_price=total_price+document.getElementById('flower6').innerHTML.replace(',',"").replace('원',"")/1;
   }
 
   m7=function makeImg7(){
@@ -57,6 +66,7 @@ window.onload=function(){
     img.src="picture/makingFlower/skyblue.png"
     img.style="position: absloute; bottom: 15px; right:40px; width:300px; height:400px;"
     $("#preview").append(img);
+    total_price=total_price+document.getElementById('flower7').innerHTML.replace(',',"").replace('원',"")/1;
   }
 
   m8=function makeImg8(){
@@ -64,6 +74,7 @@ window.onload=function(){
     img.src="picture/makingFlower/blue2.png"
     img.style="position: absloute; bottom: 20px; right:20px; width:260px; height:370px;"
     $("#preview").append(img);
+    total_price=total_price+document.getElementById('flower8').innerHTML.replace(',',"").replace('원',"")/1;
   }
 
   t1=function(){

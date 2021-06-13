@@ -65,10 +65,10 @@
         }
         if ((i==6)||(k==6)){
           alert("포장지 색과 리본 색을 모두 선택해주세요!");
-          location.href="product_detail.html?index="+data;
         }
         else {
           alert('"'+product_list[data].name + '"을(를) ' + (mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.");
+          linking_basket(data);
         }
       }
     </script>
@@ -218,7 +218,7 @@
           </div>
           <div class="buy row">
             <div class="col-sm-3"></div>
-            <script>document.write('<button class="buy-item col-sm-5" onclick="linking_basket('+data+'); check_order();">장바구니</button>')</script>
+            <script>document.write('<button class="buy-item col-sm-5" onclick="check_order();">장바구니</button>')</script>
            </div>
         </div>
       </div>
