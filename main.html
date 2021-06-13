@@ -29,6 +29,9 @@
       m.style.zIndex = 0;
       m.style.transition = "all 0.5s";
     }
+    function send_page(){
+    alert("문의가 접수 되었습니다.");
+  }
   </script>
 <style>
 @font-face {
@@ -256,7 +259,7 @@
            <textarea class="form-control" id="comments" name="comments" placeholder="문의할 내용을 입력하세요" rows="7"></textarea><br>
           <div class="row">
             <div class="col-sm-12 form-group">
-              <button class="btn btn-default pull-center" style="font-size:16px;" type="submit">Send</button>
+              <button class="btn btn-default pull-center" style="font-size:16px;" type="submit" onclick="send_page();">Send</button>
             </div>
           </div>
           </div>
