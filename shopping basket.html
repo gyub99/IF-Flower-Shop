@@ -43,7 +43,13 @@
         return price;
       }
       function buy_confirm(){
-        var name=product_list[data].name;
+        var name;
+        if (data>30){
+          name="DIY 꽃다발";
+        }
+        else {
+          name=product_list[data].name;
+        }
         var total=document.getElementById('foot_total').innerHTML.replace(/ /g,"").replace("\n","");
         var count=document.getElementById('count').innerHTML;
         alert("주문하신 상품 : "+name+" "+count+"개\n 총 " +total+ " 입니다.");

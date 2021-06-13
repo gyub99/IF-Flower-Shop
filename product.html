@@ -74,11 +74,14 @@
           </div>
         </nav>
 
-    <div class="container-fluid best-product text-center" style="font-family:'S-CoreDream-3Light';">
+    <div class="container-fluid best-product text-center">
       <h3><strong>딩가 꽃샵 베스트 상품</strong></h3>
       <p>요즘 잘 나가는 이 상품은 어떠세요?</p>
       <br />
       <div class="row">
+        <div class="col-sm-1"></div>
+          <div class ="col-sm-10">
+          <div class="row">
         <script>
           for (var i=0;i<product_list.length; i++){
             if (i==2 || i==3 || i==5 || i==6){
@@ -92,6 +95,9 @@
             }
           }
         </script>
+        </div>
+          </div>
+        <div class="col-sm-2"></div>
       </div>
     </div>
 
@@ -100,6 +106,9 @@
       <p>아름다운 꽃을 저렴한 가격으로 구매하세요!</p>
       <br />
       <div class="row">
+        <div class="col-sm-1"></div>
+        <div class ="col-sm-10">
+        <div class="row">
         <script>
           for (var i=0;i<product_list.length; i++){
             if (i==0 || i==7 || i==9 || i==14){
@@ -113,6 +122,8 @@
             }
           }
         </script>
+        </div>
+      </div>
       </div>
     </div>
 
@@ -123,6 +134,7 @@
         <script>
           for (var i=0;i<4;i++){
             document.write('<div class="row product-item">');
+              document.write('<div class="col-sm-1"></div><div class ="col-sm-10"><div class="row">');
             for (var j=0; j<4; j++){
               document.write('<div class="col-sm-3">');
               document.write('<a onclick="linking('+(i*4+j)+')">');
@@ -136,7 +148,7 @@
                 document.write('<div class="price">' + product_list[4*i+j].price + '</div></a></div>');
               }
             }
-            document.write('</div>');
+            document.write('</div></div></div>');
           }
         </script>
       </div>

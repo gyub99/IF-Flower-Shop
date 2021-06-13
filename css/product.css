@@ -9,7 +9,7 @@
 }
 .best-product{
     background-color:#F4EBF5;
-    padding:30px 200px 30px 200px;
+    padding:30px 100px 30px 100px;
 }
 .best-product .best-comment{
     color: #5C6365;
@@ -24,7 +24,7 @@
 }
 .sale-product{
     background-color:#DFCBE1;
-    padding:30px 200px 30px 200px;
+    padding:30px 100px 30px 100px;
 }
 .sale-product .sale-comment{
     color: #5C6365;
@@ -41,7 +41,7 @@ img{
     margin-bottom: 15px;
 }
 .product-list{
-    padding:30px 200px 30px 200px;
+    padding:30px 100px 30px 100px;
 }
 .product-item {
     padding:20px;

@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascript/product.js"></script>
+    <script type="text/javascript" src="javascript/get_index.js"></script>
     <script>
       function img_mouseover(m){
         m.style.transform = "scale(1.1)";
@@ -85,6 +86,9 @@
       <p>요즘 잘 나가는 이 상품은 어떠세요?</p>
       <br />
       <div class="row">
+        <div class="col-sm-1"></div>
+        <div class ="col-sm-10">
+        <div class="row">
         <script>
           for (var i=0;i<product_list.length; i++){
             if (i==2 || i==3 || i==5 || i==6){
@@ -98,6 +102,7 @@
             }
           }
         </script>
+        </div></div>
       </div>
     </div>
 
@@ -106,6 +111,9 @@
       <p>아름다운 꽃을 저렴한 가격으로 구매하세요!</p>
       <br />
       <div class="row">
+        <div class="col-sm-1"></div>
+        <div class ="col-sm-10">
+        <div class="row">
         <script>
           for (var i=0;i<product_list.length; i++){
             if (i==0 || i==7 || i==9 || i==14){
@@ -119,6 +127,7 @@
             }
           }
         </script>
+        </div></div>
       </div>
     </div>
 
@@ -129,6 +138,7 @@
         <script>
           for (var i=4;i<5;i++){
             document.write('<div class="row product-item">');
+              document.write('<div class="col-sm-1"></div><div class ="col-sm-10"><div class="row">');
             for (var j=0; j<4; j++){
               document.write('<div class="col-sm-3">');
               document.write('<a onclick="linking('+(i*4+j)+')">');
@@ -158,7 +168,7 @@
                         document.write('<div class="price">' + product_list[k].price + '</div></a></div>');
                     }
                 }
-                document.write('</div>');
+                document.write('</div></div></div>');
             }
           }
         </script>
