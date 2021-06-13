@@ -58,6 +58,11 @@
         alert("주문하신 상품 : "+name+" "+count+"개\n 총 " +total+ " 입니다.");
         location.href="order.html";
       }
+
+        function send_page(){
+        alert("문의가 접수 되었습니다.");
+      }
+
   </script>
   <style>
   @font-face {
@@ -262,7 +267,7 @@
           <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6 form-group">
-              <button class="btn btn-default pull-center" style="font-size:16px;" type="submit">Send</button>
+              <button class="btn btn-default pull-center" style="font-size:16px;" type="submit" onclick="send_page();">Send</button>
             </div>
             <div class="col-sm-3"></div>
           </div>
