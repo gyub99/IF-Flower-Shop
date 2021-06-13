@@ -67,8 +67,8 @@ datalessRegionColor: '#f5f5f5',
 enableRegionInteractivity: 'true',
 resolution: 'provinces',
 sizeAxis: {minValue: 1, maxValue:1,minSize:10,  maxSize: 10},
-width:500,
-height:400,
+// width:500,
+// height:400,
 tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}
 };
 

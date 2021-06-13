@@ -74,6 +74,7 @@
         <p style="text-align:center;"><img src="picture/donation.png" alt="dontaion_pic" style="width:400px; height:570px;"></p>
 
       <div class="row" style="text-align:center;">
+        <div class="col-sm-12">
         <div class="contain1">
           <h3 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center;">지구 지킴이 프로젝트</h3>
           <p style="font-family: 'GongGothicLight'; text-align:center;"> 해당 차트는 딩가 꽃집이 산림청과 협력하여 나무를 심은 곳을 나타낸 차트입니다.<br>
@@ -82,6 +83,7 @@
          <div id='visualization'></div>
        </div>
      </div>
+   </div>
 
 
      <div class="row" style="text-align:center;">
@@ -106,7 +108,7 @@
 
                    var table = new google.visualization.Table(document.getElementById('table_div'));
 
-                   table.draw(data, {showRowNumber: true, width: '500px', height: '700px;'});
+                   table.draw(data, {showRowNumber: true});
                  }
          </script>
          <h3 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center;">2021 기부 현황</h3>
@@ -118,7 +120,7 @@
    </div>
 
      <div class="row" style="text-align:center;">
-        <div class="col-sm-12">
+      <div class="col-sm-12">
       <div class="contain3">
         <script type="text/javascript">
         google.charts.load('current', {'packages':['line']});
@@ -140,8 +142,8 @@
           ]);
 
         var options = {
-          width: 700,
-          height: 500,
+          width: 600,
+          height: 400,
           backgroundColor:'#F3E4CD',
         };
 
