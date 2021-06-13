@@ -58,9 +58,9 @@
 
     if(chk1)
     {
-      if(card_type==null||month_type==null||c_num==null)
+      if(card_type=="카드"||c_num==null)
       {
-        alert("정보를 모두 입력해주세요.");
+        alert(document.write(c_num));
       }
       else{
         alert(card_type+" 신용카드를 선택하셨습니다. 할부 개월수는 "+month_type+" 입니다.\n" +"카드번호 : "+c_num.value+"로 결제됩니다.");
@@ -71,7 +71,7 @@
 
     else if(chk2)
     {
-      if(bank_type==null)
+      if(bank_type=="은행")
       {
         alert("정보를 모두 입력해주세요.");
       }
@@ -84,7 +84,7 @@
 
     else if(chk3)
     {
-      if(account_type==null)
+      if(account_type=="은행")
       {
         alert("정보를 모두 입력해주세요.");
       }
@@ -96,9 +96,9 @@
 
     else if(chk4)
     {
-      if(p_number.value==null)
+      if(phone_type=="통신사"||p_number==null)
       {
-        alert("정보를 모두 입력해주세요.");
+        alert(document.write(p_number.value));
       }
       else{
         alert(phone_type+" 통신사 휴대폰결제를 선택하셨습니다\n"+p_number.value+"번호로 결제금액이 청구됩니다.");
@@ -370,11 +370,12 @@ td,th{
                       <option value="2개월">2개월</option>
                       <option value="3개월">3개월</option>
                     </select>
-                  </form><br><br>
+                <br><br>
 
                   <input style="width:210px; margin-left:7px; font-size:15px;" type="text" id="card_num" placeholder="카드번호를 입력하세요" required>
                   <input type="month" placeholder="카드 유효번호를 입력하세요" required>
                   <input type="text" id="cvc" placeholder="CVC 번호를 입력하세요" required>
+                    </form>
                 </td>
             </tr>
 
