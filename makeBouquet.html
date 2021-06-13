@@ -19,10 +19,10 @@
     <link rel="stylesheet" href="css/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="javascript/makingFlower.js"></script>
+    <script type="text/javascript" src="javascript/makeflower.js"></script>
+    <script type="text/javascript" src="javascript/get_index.js"></script>
     <script>
       var data=getParameterByName('index');
-      var total_price=0;
       function choose_bouquet(check_click_thumbnail){
         mybouquet=document.getElementsByClassName('bouquet');
         for (var i=0; i<6; i++){
@@ -65,8 +65,13 @@
           alert("포장지 색과 리본 색을 모두 선택해주세요!");
         }
         else {
-          alert('DIY 꽃다발을 ' + (mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.\n총 "+total_price.toLocaleString()+'원 입니다.');
-          linking_basket(total_price);
+          if (total_price==0){
+            alert('꽃을 선택해주세요!');
+          }
+          else {
+            alert('DIY 꽃다발을 ' + (mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.\n총 "+total_price.toLocaleString()+'원 입니다.');
+            linking_basket(total_price);
+          }
         }
       }
       function plus_price(m){
@@ -228,7 +233,6 @@
 
 
             <div class="buy row">
-<<<<<<< HEAD
               <div class="col-sm-5"></div>
               <script>document.write('<button class="buy-item col-sm-5" onclick="check_order();">장바구니</button>')</script>
             </div>
