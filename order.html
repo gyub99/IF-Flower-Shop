@@ -46,22 +46,56 @@
 
     if(chk1)
     {
-      alert(card_type+" 신용카드를 선택하셨습니다. 할부 개월수는 "+month_type+" 입니다.\n" +"카드번호 : "+c_num.value+"로 결제됩니다.");
+      if(card_type==null||month_type==null||c_num==null)
+      {
+        alert("정보를 모두 입력해주세요.");
+      }
+      else{
+        alert(card_type+" 신용카드를 선택하셨습니다. 할부 개월수는 "+month_type+" 입니다.\n" +"카드번호 : "+c_num.value+"로 결제됩니다.");
+        document.location.href="main.html";
+      }
+
     }
 
     else if(chk2)
     {
-      alert("무통장입금을 선택하셨습니다.\n"+bank_type+" 계좌 : 8813512-562-54122 로 입금해주세요");
+      if(bank_type==null)
+      {
+        alert("정보를 모두 입력해주세요.");
+      }
+      else{
+        alert("무통장입금을 선택하셨습니다.\n"+bank_type+" 계좌 : 8813512-562-54122 로 입금해주세요");
+        document.location.href="main.html";
+      }
+
     }
 
     else if(chk3)
     {
-      alert("실시간 계좌이체를 선택하셨습니다.\n"+account_type+" 계좌 : 8813512-562-54122 로 입금해주세요");
+      if(account_type==null)
+      {
+        alert("정보를 모두 입력해주세요.");
+      }
+      else{
+        alert("실시간 계좌이체를 선택하셨습니다.\n"+account_type+" 계좌 : 8813512-562-54122 로 입금해주세요");
+        document.location.href="main.html";
+      }
     }
 
     else if(chk4)
     {
-      alert(phone_type+" 통신사 휴대폰결제를 선택하셨습니다\n"+p_number.value+"번호로 결제금액이 청구됩니다.");
+      if(p_number.value==null)
+      {
+        alert("정보를 모두 입력해주세요.");
+      }
+      else{
+        alert(phone_type+" 통신사 휴대폰결제를 선택하셨습니다\n"+p_number.value+"번호로 결제금액이 청구됩니다.");
+        document.location.href="main.html";
+      }
+
+    }
+    else{
+      alert("정보를 모두 입력해주세요.");
     }
 
 }
@@ -305,7 +339,7 @@ td,th{
             <tr style="height:90px;">
               <td>
                 <select style="width:210px; padding-right:7px; margin-left:7px; font-size:15px;" id="card_type" name="cards" required autofocus>
-                    <option value="카드" selected>카드를 선택해주세요</option>
+                    <option value="카드">카드를 선택해주세요</option>
                     <option value="현대">현대</option>
                     <option value="신한">신한</option>
                     <option value="비씨">비씨</option>
@@ -320,7 +354,7 @@ td,th{
 
 
                   <select style="width:160px; padding-right:auto; padding-left:auto; display:inline-block; font-size:15px;" name="months" required autofocus>
-                      <option value="일시불" selected>일시불</option>
+                      <option value="일시불">일시불</option>
                       <option value="2개월">2개월</option>
                       <option value="3개월">3개월</option>
                     </select>
@@ -337,7 +371,7 @@ td,th{
               <th><input type="checkbox" id="bankbook" style="margin-right:5px;">무통장 입금</th>
               <td><label style="font-family: 'GmarketSansLight'; font-size:15px; margin-left:5px;">
                 <select style="width:210px; padding-right:7px; padding-left:7px;" name="banks" required autofocus>
-                    <option value="은행" selected>은행을 선택해주세요</option>
+                    <option value="은행">은행을 선택해주세요</option>
                     <option value="신한">신한</option>
                     <option value="KB국민">KB국민</option>
                     <option value="NH농협">NH채움</option>
@@ -356,7 +390,7 @@ td,th{
               <th><input type="checkbox" id="account" style="margin-right:5px;">계좌이체</th>
               <td><label style=" font-family: 'GmarketSansLight';font-size:15px; margin-left:5px;">
                 <select style=" width:210px; padding-right:7px; padding-left:7px;" name="banks2" required autofocus>
-                    <option value="은행" selected>은행을 선택해주세요</option>
+                    <option value="은행">은행을 선택해주세요</option>
                     <option value="신한">신한</option>
                     <option value="KB국민">KB국민</option>
                     <option value="NH농협">NH채움</option>
@@ -375,7 +409,7 @@ td,th{
               <th><input type="checkbox" id="cellphone" style="margin-right:5px;">휴대폰 결제</th>
               <td><label style="font-family: 'GmarketSansLight'; font-size:15px; margin-left:5px;">
                 <select style="width:210px; padding-right:7px; padding-left:7px;" id="phone" name="phones" required autofocus>
-                    <option value="통신사" selected>통신사를 선택해주세요</option>
+                    <option value="통신사">통신사를 선택해주세요</option>
                     <option value="SKT">SKT</option>
                     <option value="KT">KT</option>
                     <option value="LG U+">LG U+</option>

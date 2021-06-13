@@ -86,12 +86,12 @@ window.onload=function(){
 
   refresh_f=function refreshImg(){
     $("#preview").empty();
-    total_price=0;
+    total_price=0; 
   }
 
-  cancel_f=function cancelImg(){
-    $("#preview").children().last().detach();
-  }
+  // cancel_f=function cancelImg(){
+  //   $("#preview").children().last().detach();
+  // }
 
   t1=function(){
     setTimeout(m1,100);	//0.5초뒤 m을 실행
@@ -118,9 +118,6 @@ window.onload=function(){
     setTimeout(m8,100);	//0.5초뒤 m을 실행
   }
 
-  t9=function(){
-    setTimeout(cancel_f,100);	//0.5초뒤 m을 실행
-  }
 
   t10=function(){
     setTimeout(refresh_f,100);	//0.5초뒤 m을 실행
@@ -135,7 +132,6 @@ window.onload=function(){
   button6.onclick=t6; //클릭하면 t 실행
   button7.onclick=t7; //클릭하면 t 실행
   button8.onclick=t8; //클릭하면 t 실행
-  cancel_btn.onclick=t9; //클릭하면 t 실행
   refresh_btn.onclick=t10; //클릭하면 t 실행
 
 }

@@ -14,105 +14,16 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/register.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
-@font-face {
-    font-family: 'Cafe24Oneprettynight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-     font-family: 'S-CoreDream-3Light';
-     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
-     font-weight: normal;
-     font-style: normal;
-}
-
-@font-face {
-    font-family: 'GmarketSansBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: 'GmarketSansLight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body{
        height: 100vh;
        background-image:url(picture/intro2.png);
        background-repeat: no-repeat;
        background-size : cover;
      }
-
-.title{
-    font-family: 'GmarketSansBold';
-    background: linear-gradient(to right, #DCE35B, #45b649);
- -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
-    font-size:80px;
-    margin-top:250px;
-}
-
-  .log{
-    font-family: 'GmarketSansBold';
-    font-size:18px;
-    background-color:#c4d4e0;
-    margin-top:10px;
-    padding-top:5px;
-    padding-bottom:5px;
-    border:none;
-    outline:0;
-    width:300px;
-    height:60px;
-}
-
-
-.input1{
-width:300px;
-height:50px;
-outline:none;
-border-top:none;
-border-left:none;
-border-right:none;
-border-bottom:none;
-}
-
-  .formstyle{
-      padding-left:350px;
-      margin-top:250px;
-    }
-
-  .btn-login{
-  width:400px;
-  height:60px;
-  background-color:white;
-  border: 1px solid grey;
-  }
-
-  input::placeholder {
-    font-family: 'S-CoreDream-3Light';
-  }
-
-  a:hover{
-    color:green;
-  }
-
-  a:link{
-    color:black;
-  }
-
-  .introduce{
-    margin-left: 100px;
-  }
 
 
 </style>
@@ -123,7 +34,7 @@ border-bottom:none;
         var pw=document.getElementById("PW").value;
         var email=document.getElementById("EMAIL").value;
 
-        if(name==null||id==null||pw==null||email==null)
+        if(name!=null||id!=null||pw!=null||email!=null)
         {
           alert("이름 : "+name+"\n아이디 : "+id+"\n비밀번호 : "+pw+"\n이메일 : "+email+"\n\n입력하신 정보가 맞습니까? ");
           document.location.href="intro.html";
