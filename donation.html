@@ -7,91 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <script type='text/javascript' src='http://www.google.com/jsapi'></script>
-      <script type='text/javascript'>
-      google.load('visualization', '1', {'packages': ['geochart']});
-      google.setOnLoadCallback(draw);
-
-      function draw() {
-
-      var data = new google.visualization.DataTable();
-
-     data.addColumn('string', 'Country');
-     data.addColumn('number', 'Value');
-     data.addColumn({type:'string', role:'tooltip'});var ivalue = new Array();
-
-     data.addRows([[{v:'KR-11', f:'서울특별시'},0,'10']]);
-     ivalue['KR-11'] = '';
-
-     data.addRows([[{v:'KR-26', f:'부산광역시'},6,'0']]);
-     ivalue['KR-26'] = '';
-
-     data.addRows([[{v:'KR-27',f:'대구광역시'},4,'대구광역시']]);
-     ivalue['KR-27'] = '';
-
-     data.addRows([[{v:'KR-30',f:'대전광역시'},3,'대전광역시']]);
-     ivalue['KR-30'] = '';
-
-     data.addRows([[{v:'KR-29',f:'광주광역시'},5,'광주광역시']]);
-     ivalue['KR-29'] = '';
-
-     data.addRows([[{v:'KR-28',f:'인천광역시'},9,'인천광역시']]);
-     ivalue['KR-28'] = '';
-
-     data.addRows([[{v:'KR-31',f:'울산광역시'},6,'울산광역시']]);
-     ivalue['KR-31'] = '';
-
-     data.addRows([[{v:'KR-43',f:'충청북도'},10,'충청북도']]);
-     ivalue['KR-43'] = '';
-
-     data.addRows([[{v:'KR-44',f:'충청남도'},8,'충청남도']]);
-     ivalue['KR-44'] = '';
-
-     data.addRows([[{v:'KR-42',f:'강원도'},9,'강원도']]);
-     ivalue['KR-42'] = '';
-
-     data.addRows([[{v:'KR-41',f:'경기도'},10,'경기도']]);
-     ivalue['KR-41'] = '';
-
-     data.addRows([[{v:'KR-47',f:'경상북도'},1,'경상북도']]);
-     ivalue['KR-47'] = '';
-
-     data.addRows([[{v:'KR-48',f:'경상남도'},5,'경상남도']]);
-     ivalue['KR-48'] = '';
-
-     data.addRows([[{v:'KR-49',f:'제주도'},3,'제주도']]);
-     ivalue['KR-49'] = '';
-
-     data.addRows([[{v:'KR-45',f:'전라북도'},8,'전라북도']]);
-     ivalue['KR-45'] = '';
-
-     data.addRows([[{v:'KR-46',f:'전라남도'},5,'전라남도']]);
-     ivalue['KR-46'] = '';
-
-     data.addRows([[{v:'KR-50',f:'세종특별시'},0,'세종특별시']]);
-     ivalue['KR-50'] = '';
-
-     var options = {
-     region:'KR',
-     backgroundColor: {fill:'transparent',stroke:'#FFFFFF' ,strokeWidth:0 },
-     colorAxis:  {minValue: 0, maxValue: 10,  colors: ['#E2b49a','#e9c77b','#E5F5E0','#E5F5E0','#E5F5E0','#E5F5E0','#35b22d','#E5F5E0','#A1D99B','#A1D99B','#71906e']},
-     legend: 'none',
-     backgroundColor: {fill:'transparent',stroke:'#FFFFFF' ,strokeWidth:0 },
-     datalessRegionColor: '#f5f5f5',
-     displayMode: 'regions',
-     enableRegionInteractivity: 'true',
-     resolution: 'provinces',
-     sizeAxis: {minValue: 1, maxValue:1,minSize:10,  maxSize: 10},
-     keepAspectRatio: true,
-     width:500,
-     height:400,
-     tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}
-     };
-
-      var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
-      chart.draw(data, options);
-
- }
-  </script>
+      <script type="text/javascript" src="javascript/donation.js"></script>
   <!-- 폰트 -->
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
@@ -100,79 +16,14 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/donation.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
 <style>
-
-@font-face {
-    font-family: 'Cafe24Oneprettynight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'GongGothicLight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'NEXON Lv1 Gothic OTF';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-     font-family: 'S-CoreDream-3Light';
-     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
-     font-weight: normal;
-     font-style: normal;
-}
-#eventtitle{
-    font-family: 'NanumSquare', sans-serif;
-  text-align:center;
-  font-weight: bold;
-  background: linear-gradient(to right, #A7A3FF,#FFA7A3, #671cc4, #5673bd);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .bg-donation{
     height: 100%;
     background-image:url(picture/donation_bg.png);
     background-repeat: no-repeat;
     background-size : cover;
-}
-
-.contain1{
-  background-color: none;
-  display:inline-table;
-  padding: 30px 50px 30px 50px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  border-radius: 30px;
-}
-
-.contain2{
-  background-color: none;
-  display:inline-block;
-  padding: 30px 50px 30px 50px;
-  border-radius: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.contain3{
-  background-color: none;
-  display:inline-block;
-  padding: 30px 50px 30px 50px;
-  border-radius: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 </style>
 </head>
@@ -226,8 +77,8 @@
         <div class="contain1">
           <h3 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center;">지구 지킴이 프로젝트</h3>
           <p style="font-family: 'GongGothicLight'; text-align:center;"> 해당 차트는 딩가 꽃집이 산림청과 협력하여 나무를 심은 곳을 나타낸 차트입니다.<br>
-            나무를 많이 심은 곳은 더 짙은 초록색이 표시되고, <br>
-            나무를 적게 심은 곳이나 산불로 피해를 입은 지역은 분홍색 또는 연한 초록색으로 표시됩니다.</p>
+            저희 회사가 나무를 많이 심은 지역은 더 짙은 초록색이 표시되고, <br>
+            나무를 적게 심은 지역은 노란색 또는 분홍색으로 표시됩니다.</p>
          <div id='visualization'></div>
        </div>
      </div>
@@ -272,22 +123,22 @@
 
         function drawChart() {
 
-        var data = new google.visualization.DataTable();
-        data.addColumn('number', '년도');
-        data.addColumn('number', '금액');
+          var data = new google.visualization.DataTable();
+          data.addColumn('number', '년도');
+          data.addColumn('number', '금액');
 
-        data.addRows([
-          [16,  11.8],
-          [17,  9.8],
-          [18,  20.8],
-          [19,  25.9],
-          [20,  27.4],
-          [21,  35.7]
-        ]);
+          data.addRows([
+            [16,  70],
+            [17,  100],
+            [18,  500],
+            [19,  750],
+            [20,  900],
+            [21,  1100]
+          ]);
 
         var options = {
           width: 700,
-          height: 400,
+          height: 500,
           backgroundColor:'#F3E4CD',
         };
 
@@ -298,7 +149,8 @@
          </script>
         <h3 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center;">YEAR 기부 현황</h3>
         <p style="font-family: 'GongGothicLight'; text-align:center;">
-          해당 차트는 그동안 딩가꽃집이 매년 기부를 해왔던 총액을 나타낸 표입니다.<br></p>
+          해당 차트는 그동안 딩가꽃집이 매년 기부를 해왔던 총액을 나타낸 표입니다.<br>
+        금액의 단위는 만원입니다.</p>
          <div id="linechart_material"></div>
      </div>
    </div>

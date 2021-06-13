@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GongGothicLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+#eventtitle{
+    font-family: 'NanumSquare', sans-serif;
+  text-align:center;
+  font-weight: bold;
+  background: linear-gradient(to right, #A7A3FF,#FFA7A3, #671cc4, #5673bd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.contain1{
+  background-color: none;
+  display:inline-table;
+  padding: 30px 50px 30px 50px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+}
+
+.contain2{
+  background-color: none;
+  display:inline-block;
+  padding: 30px 50px 30px 50px;
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contain3{
+  background-color: none;
+  display:inline-block;
+  padding: 30px 50px 30px 50px;
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
