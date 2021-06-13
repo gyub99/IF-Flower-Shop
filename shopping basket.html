@@ -32,13 +32,7 @@
       }
       function get_total(){
         var count_product=document.getElementById('count').innerHTML;
-        var price;
-        if (data<30) {
-         price = product_list[data].price.replace(",","").replace("원","")/1 * count_product;
-        }
-        else {
-          price=data*count_product;
-        }
+        var price=product_list[data].price.replace(",","").replace("원","")/1 * count_product;
         var total = price + 2500;
         document.getElementById('product_info_total').innerHTML=total.toLocaleString()+'원';
         document.getElementById('foot_price').innerHTML=price.toLocaleString()+'원';
@@ -46,21 +40,25 @@
         return price;
       }
       function buy_confirm(){
-        var name;
-        if (data<30) {
-          name=product_list[data].name;
-        }
-        else{
-          name="DIY 꽃다발";
-        }
+        var name=product_list[data].name;
         var total=document.getElementById('foot_total').innerHTML.replace(/ /g,"").replace("\n","");
         var count=document.getElementById('count').innerHTML;
         alert("주문하신 상품 : "+name+" "+count+"개\n 총 " +total+ " 입니다.");
         location.href="order.html";
       }
   </script>
+  <style>
+  @font-face {
+      font-family: 'Cafe24Oneprettynight';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+  </style>
+
   </head>
-  <body style="overflow-x:hidden;" class="sh_body">
+  <body>
+
 
     <!-- 헤더부분 -->
     <div class="header">
@@ -69,20 +67,17 @@
             <div class="col-sm-10">
             </div>
             <div class="col-sm-2 register">
-              <a href="register.html" style="margin-right:10px; color:black;">회원가입</a>
-              <span>|</span>
-              <a href="login.html" style="margin-left:10px; color:black;">로그인</a>
+              <a href="intro.html" style="margin-right:10px; color:black;">로그아웃</a>
             </div>
           </div>
         </div>
           <p style="text-align:center;"><a href="main.html"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
       </div>
 
-
       <!-- 네비게이션 -->
-      <!-- 네비게이션 부분 -->
+    <!-- 네비게이션 부분 -->
     <nav class="navbar navbar-default">
-        <div class="container">
+        <div class="navcontainer">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
               <span class="icon-bar"></span>
@@ -95,9 +90,9 @@
                 <li class="nav-li"><a href="makeBouquet.html">꽃제작</a></li>
                 <li class="nav-li"><a href="product.html">꽃상품</a></li>
                 <li class="nav-li"><a href="about.html">이모저모</a></li>
-                <li class="nav-li"><a href="donation.html">기부현황</a></li>
                 <li class="nav-li"><a href="event.html">이벤트</a></li>
-                <li class="nav-li"><a href="mypage.html">마이페이지</a></li>
+                <li class="nav-li"><a href="donation.html">기부현황</a></li>
+                <li class="nav-li"><a href="shopping basket.html">마이페이지</a></li>
               </ul>
             </div>
           </div>
@@ -108,7 +103,7 @@
           <h3><strong>마이 페이지</strong></h3>
           </div>
           <div class="row title">
-              <p class="col-sm-12 font_title">나의 주문 현황 <span class="desc">(최근 <b>3개월</b> 기준)</span></p> 
+              <p class="col-sm-12 font_title">나의 주문 현황 <span class="desc">(최근 <b>3개월</b> 기준)</span></p>
           </div>
           <div class="row state">
                 <span class="col-sm-3 order_list">
@@ -162,19 +157,16 @@
                      if (data==""){
                       document.getElementById('flexible').style.display="none";
                       }
-                     if (data>30){
+                    if (data=="undefined"){
                       document.write('-');
-                     }
-                     else{
-                       document.write(data);
-                     }
+                    }
                   </script>
                   </td>
                   <script>
-                    if (data>30) {
-                      document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/f1.png" alt="f1" class="sh_img"></td>')
+                    if (data=="undefined") {
+                      document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/makingFlower/skyblue.png" alt="f1" class="sh_img"></td>')
                       document.write('<td class="inbox_td3">DIY 꽃다발</td>')
-                      document.write('<td>'+ String(data).toLocaleString() +'원</td>');
+                      document.write('<td>'+"20,000원"+'</td>');
                     }
                     else {
                       document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/product/'+data+'.png" alt="f1" class="sh_img"></td>');
@@ -257,30 +249,24 @@
         </form>
         </div>
 
-        <footer class="container-fluid bg-main-footer">
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2">
-              <h3>딩가 행복센터</h3>
-              <h3>1644-1777</h3>
-              <input type="button" class="btndesign" value="카카오톡 문의"><br><br>
-              <input type="button" class="btndesign" value="1:1 문의">
-            </div>
-            <div class="col-sm-4">
-              <br><p><strong>365 고객센터</strong></p>
-              <p style="color:#787878">오전 7시 - 오후 7시</p><br><br><br>
-              <p><strong>24시간 접수가능</strong></p>
-              <p style="color:#787878">고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p><br>
-            </div>
-            <div class="col-sm-4">
-              <br><br><br>
-              <p>사업자 등록번호 : 371-06-0707<br>
-                통신판매업 신고번호 : 2021-서울 삼성동-77775<br>
-                주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br>
-                COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED</p>
-            </div>
-          </div>
-        </footer>
+        <!-- footer -->
+          <footer class="container-fluid bg-main-footer">
+            <div class="row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-4">
+                <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
+                <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
+                <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
+              </div>
+              <div class="col-sm-5">
+                <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 꽃집</h2><br>
+                <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 371-06-0707<br>
+                  통신판매업 신고번호 : 2021-서울 삼성동-77775<br>
+                  주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br>
+                  COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED</p>
+              </div>
+              </div>
+          </footer>
 
 
   </body>

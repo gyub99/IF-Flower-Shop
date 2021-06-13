@@ -100,9 +100,7 @@
             <div class="col-sm-10">
             </div>
             <div class="col-sm-2 register">
-              <a href="register.html" style="margin-right:10px; color:black;">회원가입</a>
-              <span>|</span>
-              <a href="login.html" style="margin-left:10px; color:black;">로그인</a>
+              <a href="intro.html" style="margin-right:10px; color:black;">로그아웃</a>
             </div>
           </div>
         </div>
@@ -136,8 +134,8 @@
         </nav>
 
 
-    <div class="container title text-center">
-      <h2>나만의 꽃다발을 만들어봐요!</h2>
+    <div class="container title">
+      <h2 style="text-align:center;">나만의 꽃다발을 만들어봐요!</h2>
     </div>
 
     <div class="container contents">
@@ -147,8 +145,7 @@
           <div class="col-sm-5">
             <div id="preview" class="preview">
               </div>
-              <div class="col-sm-3"></div>
-              <div class="col-sm-4"> <button type="button" id="cancel"  class="btn glyphicon glyphicon-arrow-left"> 되돌리기</button></div>
+              <div class="col-sm-5"></div>
               <div class="col-sm-4"> <button type="button" id="refresh" class="btn glyphicon glyphicon-refresh"> 초기화</button></div>
 
           </div>
@@ -202,7 +199,7 @@
               <div class="input-form">
                 <table>
                   <tr>
-                    <td><strong>포장지 색 선택&nbsp&nbsp&nbsp</strong></td>
+                    <td style=" font-family: 'S-CoreDream-3Light';"><strong>포장지 색 선택&nbsp&nbsp&nbsp</strong></td>
                     <td>
                       <div class="row choose-wrapper">
                       <a role='button' onclick="choose_bouquet(0)"><span id="c1" class="color col-sm-1 img-circle bouquet" style="background-color: #ecdfcf;"> </span></a>
@@ -215,7 +212,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td><strong>리본 색 선택&nbsp&nbsp&nbsp&nbsp</strong></td>
+                    <td style=" font-family: 'S-CoreDream-3Light';"><strong>리본 색 선택&nbsp&nbsp&nbsp&nbsp</strong></td>
                     <td>
                       <div class="row choose-ribbon">
                         <a role='button' onclick="choose_ribbon(0)"><span id="r1" class="color col-sm-1 img-circle ribbon" style="background-color: #7ea8cc;"> </span></a>
@@ -240,40 +237,23 @@
         </div>
       </div>
 
-    <footer class="container-fluid bg-main-footer">
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">
-          <h3>딩가 행복센터</h3>
-          <h3>1644-1777</h3>
-          <input
-            type="button"
-            class="btndesign"
-            value="카카오톡 문의"
-          /><br /><br />
-          <input type="button" class="btndesign" value="1:1 문의" />
-        </div>
-        <div class="col-sm-4">
-          <br />
-          <p><strong>365 고객센터</strong></p>
-          <p style="color: #787878">오전 7시 - 오후 7시</p>
-          <br /><br /><br />
-          <p><strong>24시간 접수가능</strong></p>
-          <p style="color: #787878">
-            고객센터 운영시간에 순차적으로 답변해드리겠습니다.
-          </p>
-          <br />
-        </div>
-        <div class="col-sm-4">
-          <br /><br /><br />
-          <p>
-            사업자 등록번호 : 371-06-0707<br />
-            통신판매업 신고번호 : 2021-서울 삼성동-77775<br />
-            주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br />
-            COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED
-          </p>
-        </div>
-      </div>
-    </footer>
+      <!-- footer -->
+        <footer class="container-fluid bg-main-footer">
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+              <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
+              <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
+              <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
+            </div>
+            <div class="col-sm-5">
+              <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 꽃집</h2><br>
+              <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 371-06-0707<br>
+                통신판매업 신고번호 : 2021-서울 삼성동-77775<br>
+                주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br>
+                COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED</p>
+            </div>
+            </div>
+        </footer>
   </body>
 </html>

@@ -217,5 +217,16 @@ font-family: 'Nanum Gothic', sans-serif;
 }
 
 .map_box{
-  margin-left: 100px;
+  margin-left: 60px;
 }
+
+.line {
+    border:0.5px solid #5C6365;
+    background-color:black;
+    margin-top:10px;
+    margin-bottom:30px;
+    margin-left:5%;
+    margin-right: 5%;
+}
+
+a { color:black;}
