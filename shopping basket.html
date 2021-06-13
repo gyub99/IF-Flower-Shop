@@ -32,9 +32,12 @@
       }
       function get_total(){
         var count_product=document.getElementById('count').innerHTML;
-        var price = data/1;
+        var price;
         if (data<30) {
           price=product_list[data].price.replace(",","").replace("원","")/1 * count_product;
+        }
+        else {
+          price=data*count_product;
         }
         var total = price + 2500;
         document.getElementById('product_info_total').innerHTML=total.toLocaleString()+'원';
@@ -118,22 +121,29 @@
                 <span class="col-sm-3 order_list">
                     <span class="glyphicon glyphicon-shopping-cart mypage-icon"></span><br>
                     <p><strong>장바구니</strong></p>
-                    <a href="#" class="count"><span class="state-count">1</span></a>
+                    <script>
+                      if (data==""){
+                        document.write('<span class="state-count">0</span>')
+                      }
+                      else {
+                        document.write('<span class="state-count">1</span>')
+                      }
+                    </script>
                 </span>
                 <span class="col-sm-3 order_list">
                   <span class="glyphicon glyphicon-list-alt mypage-icon"></span><br>
                   <p><strong>구매한 상품</strong></p>
-                  <a href="#" class="count"><span class="state-count">0</span></a>
+                  <span class="state-count">0</span>
                 </span>
                 <span class="col-sm-3 order_list">
                   <span class="glyphicon glyphicon-send mypage-icon"></span><br>
                   <p><strong>배송중</strong></p>
-                  <a href="#" class="count"><span class="state-count">0</span></a>
+                  <span class="state-count">0</span>
                 </span>
                 <span class="col-sm-3 order_list">
                   <span class="glyphicon glyphicon-ok mypage-icon"></span><br>
                   <p><strong>배송완료</strong></p>
-                  <a href="#" class="count"><span class="state-count">2</span></a>
+                  <span class="state-count">2</span>
                 </span>
             </ul>
           </div>
@@ -213,7 +223,8 @@
                        total = get_total();
                        document.write(total.toLocaleString() + '원');
                     </script>
-                  </span>+ <span>배송비 2,500원 = 합계</span>&nbsp;<span id="foot_total">
+                  </span>
+                  <span> + 배송비 2,500원 = 합계</span>&nbsp;<span id="foot_total">
                     <script>
                       total=get_total()/1+2500;
                     </script>
