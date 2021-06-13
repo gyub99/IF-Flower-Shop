@@ -1,3 +1,10 @@
+@font-face {
+       font-family: 'S-CoreDream-3Light';
+       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+       font-weight: normal;
+       font-style: normal;
+  }
+
 .eventimg{
     width:1100px;
     margin-top:20px;
@@ -18,10 +25,10 @@
   }
 
 #eventtitle{
-    font-family: 'NanumSquare', sans-serif;
+     font-family: 'S-CoreDream-3Light';
   text-align:center;
   font-weight: bold;
-  background: linear-gradient(to right, #A7A3FF,#FFA7A3, #671cc4, #5673bd);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+font-weight: bolder;
+    font-size: 30px;
+
 }
