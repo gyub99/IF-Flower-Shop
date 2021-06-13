@@ -25,7 +25,7 @@ window.onload=function(){
     img.src="picture/makingFlower/yellow1.png"
     img.style="position: absloute; bottom: 45px; right:50px; width:300px; height:400px;";
     $("#preview").append(img);
-    
+
   }
 
   m2=function makeImg2(){
