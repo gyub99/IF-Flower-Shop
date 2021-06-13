@@ -233,10 +233,10 @@ td,th{
           <!-- 배송정보 -->
 
     <div class="container-fluid">
-      <h2 style=" text-align:center; font-weight:bold; margin-top:50px; margin-bottom:30px;"> 주문서</h2>
+      <h2 style=" text-align:center; font-weight:bold; margin-top:50px; margin-bottom:30px; font-family: 'S-CoreDream-3Light'; font-weight:bold;"> 주문서</h2>
     </div>
 
-    <div class="bg-info">
+    <div class="container-fluid bg-info">
       <h3 style=" font-weight: bold; margin-bottom: 20px; text-align:center; font-family: 'S-CoreDream-3Light'; font-size:20px;"> 주문 지역(대전/충청 일부)에 신선배송 서비스가 시작됩니다!</h3>
       <div class="row">
         <div class="col-sm-2"></div>
@@ -244,7 +244,7 @@ td,th{
           <table class="none-border">
             <tr>
               <td style="width:80px;">
-                <img src="picture/order/pic2.jpg" alt="delivery" class="img-circle" width="70px" height="70px">
+                <img src="picture/order/pic2.jpg" alt="delivery" class="img-circle img-responsive" width="70px" height="70px">
               </td>
               <td style="border-style: hidden; padding-left:20px;">
                 <h3 style="margin-left: 0px; margin-top:10px; font-family: 'S-CoreDream-3Light';"> <b>이제부터 새벽에 배송됩니다.</b><br><br>
@@ -275,12 +275,12 @@ td,th{
           <div class="title">
             <h3 style="font-family: 'NEXON Lv1 Gothic OTF'; display: inline-block; text-align:center;">배송 정보</h3>
               <span class="star"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"/>필수입력사항</span>
-            </div>
+          </div>
 
           <div class="tb_box">
             <form>
               <table border="1">
-                <tbody>
+                <thead>
                     <tr>
                         <th scope="row">수령자 이름 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
                             <td>
@@ -289,6 +289,8 @@ td,th{
                               </div>
                             </td>
                     </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <th scope="row">주소 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
                           <td>
@@ -336,12 +338,11 @@ td,th{
                             </div>
                           </td>
                     </tr>
-                </tbody>
+                <tbody>
                 </table>
               </form>
             </div>
         </div>
-
 
         <div class="bigbox">
           <h2 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center; margin-bottom:50px;">결제수단</h2>
