@@ -10,16 +10,16 @@
 
 .bg-main-best{
   margin-top:10px;
-  maring-bottom:10px;
-  padding:70px 150px 70px 150px;
+  margin-bottom:10px;
+  padding:50px 100px 50px 100px;
 background-color:#e9c778;
 /* c4d4d0도 나쁘지 않음 */
 }
 
 .bg-main-suggest{
   margin-top:10px;
-  maring-bottom:10px;
-  padding:70px 150px 70px 150px;
+  margin-bottom:10px;
+  padding:50px 100px 50px 100px;
 
 }
 
@@ -29,8 +29,8 @@ background-color:#e9c778;
 }
 
 .pic-container{
-  margin-left:100px;
-  margin-right:100px;
+  margin-left:50px;
+  margin-right:50px;
 }
 
 .product-item .overlay .content .name {
