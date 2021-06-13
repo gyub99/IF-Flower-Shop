@@ -29,8 +29,30 @@
       m.style.zIndex = 0;
       m.style.transition = "all 0.5s";
     }
+
     function send_page(){
-    alert("문의가 접수 되었습니다.");
+      var name_form = document.getElementById("name").value;
+      var email_form = document.getElementById("email").value;
+      var send_content =document.getElementById("comments").value;
+
+      if(name_form.length == 0){
+        alert("이름을 입력해 주세요.");
+      }
+
+      else if(email_form.length == 0){
+        alert("이메일을 입력해 주세요.");
+      }
+      else if(send_content.length == 0){
+        alert("내용을 입력해 주세요.");
+      }
+
+      else if(name_form.length == 0 && email_form.length == 0){
+        alert("이름과 이메일을 입력해 주세요.");
+      }
+      else{
+        alert("문의가 접수되었습니다.");
+        location.href=("main.html")
+      }
   }
   </script>
 <style>
