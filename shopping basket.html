@@ -60,7 +60,27 @@
       }
 
         function send_page(){
-        alert("문의가 접수 되었습니다.");
+          var name_form = document.getElementById("name").value;
+          var email_form = document.getElementById("email").value;
+          var send_content =document.getElementById("contact-contents").value;
+
+          if(name_form.length == 0){
+            alert("이름을 입력해 주세요.");
+          }
+
+          else if(email_form.length == 0){
+          alert("이메일을 입력해 주세요.");
+          }
+          else if(send_content.length == 0){
+          alert("내용을 입력해 주세요.");
+          }
+
+          else if(name_form.length == 0 && email_form.length == 0){
+          alert("이름과 이메일을 입력해 주세요.");
+          }
+          else{
+            alert("문의가 접수되었습니다.");
+          }
       }
 
   </script>
@@ -184,6 +204,9 @@
                     if (data>30){
                       document.write('-');
                     }
+                    else {
+                      document.write(data);
+                    }
                   </script>
                   </td>
                   <script>
@@ -251,10 +274,10 @@
           <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-3 form-group">
-            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text">
             </div>
             <div class="col-sm-3 form-group">
-            <input class="form-control" id="email" name="email" placeholder="email" type="text" required>
+            <input class="form-control" id="email" name="email" placeholder="email" type="text">
             </div>
             <div class="col-sm-3"></div>
           </div>
