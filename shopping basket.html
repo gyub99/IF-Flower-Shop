@@ -143,36 +143,36 @@
               <p class="col-sm-12 font_title">나의 주문 현황 <span class="desc">(최근 <b>3개월</b> 기준)</span></p>
           </div>
           <div class="row state">
-                <span class="col-sm-3 order_list">
-                    <span class="glyphicon glyphicon-shopping-cart mypage-icon"></span><br>
-                    <p><strong>장바구니</strong></p>
-                    <script>
-                      if (data==""){
-                        document.write('<span class="state-count">0</span>')
-                      }
-                      else {
-                        document.write('<span class="state-count">1</span>')
-                      }
-                    </script>
-                </span>
-                <span class="col-sm-3 order_list">
-                  <span class="glyphicon glyphicon-list-alt mypage-icon"></span><br>
-                  <p><strong>구매한 상품</strong></p>
-                  <span class="state-count">0</span>
-                </span>
-                <span class="col-sm-3 order_list">
-                  <span class="glyphicon glyphicon-send mypage-icon"></span><br>
-                  <p><strong>배송중</strong></p>
-                  <span class="state-count">0</span>
-                </span>
-                <span class="col-sm-3 order_list">
-                  <span class="glyphicon glyphicon-ok mypage-icon"></span><br>
-                  <p><strong>배송완료</strong></p>
-                  <span class="state-count">2</span>
-                </span>
-            </ul>
-          </div>
-        </div>
+            <div class="col-sm-3 order_list">
+                <span class="glyphicon glyphicon-shopping-cart mypage-icon"></span>
+                <p><strong>장바구니</strong></p>
+                <script>
+                  if (data==""){
+                    document.write('<div class="state-count">0</div>')
+                  }
+                  else {
+                    document.write('<div class="state-count">1</div>')
+                  }
+                </script>
+            </div>
+            <div class="col-sm-3 order_list">
+              <span class="glyphicon glyphicon-list-alt mypage-icon"></span>
+              <p><strong>구매한 상품</strong></p>
+              <div class="state-count">0</div>
+            </div>
+            <div class="col-sm-3 order_list">
+              <span class="glyphicon glyphicon-send mypage-icon"></span>
+              <p><strong>배송중</strong></p>
+              <div class="state-count">0</div>
+            </div>
+            <div class="col-sm-3 order_list">
+              <span class="glyphicon glyphicon-ok mypage-icon"></span>
+              <p><strong>배송완료</strong></p>
+              <div class="state-count">2</div>
+            </div>
+        </ul>
+      </div>
+    </div>
 
         <!-- 장바구니 -->
         <div class="sh_bigbox row">
