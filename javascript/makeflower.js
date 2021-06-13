@@ -86,6 +86,7 @@ window.onload=function(){
 
   refresh_f=function refreshImg(){
     $("#preview").empty();
+    total_price=0;
   }
 
   cancel_f=function cancelImg(){

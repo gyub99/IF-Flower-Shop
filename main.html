@@ -16,6 +16,20 @@
   <link rel="stylesheet" href="css/header.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascript/product.js"></script>
+  <script type="text/javascript" src="javascript/get_index.js"></script>
+  <script>
+    function img_mouseover(m){
+      m.style.transform = "scale(1.1)";
+      m.style.zIndex = 1;
+      m.style.transition = "all 0.5s";
+    }
+    function img_mouseout(m){
+      m.style.transform = "scale(1)";
+      m.style.zIndex = 0;
+      m.style.transition = "all 0.5s";
+    }
+  </script>
 <style>
 @font-face {
     font-family: 'Cafe24Oneprettynight';
@@ -157,26 +171,18 @@
         <h3 style="font-family: 'NanumSquare', sans-serif;"><strong>딩가 꽃집의 베스트 상품</strong></h3>
         <p style="font-family: 'Nanum Gothic', sans-serif;"> 소중한 사람에게 꽃을 선물해보세요</p><br>
         <div class="row pic-container">
-          <div class="col-sm-3">
-            <img src="picture/f1.PNG" alt="flower1" class="img-responsive">
-            <p class="title">[파머스] 제철 꽃 랜덤믹스</p>
-            <p class="bestprice">29,000원</p>
-          </div>
-          <div class="col-sm-3">
-            <img src="picture/f2.PNG" alt="flower2" class="img-responsive">
-            <p class="title">[이달의 꽃] 작약 수국믹스</p>
-            <p class="bestprice">31,000원</p>
-          </div>
-          <div class="col-sm-3">
-            <img src="picture/f9.PNG" alt="flower3" class="img-responsive">
-            <p class="title">[딩가초이스] 옥시페탈룸</p>
-            <p class="bestprice">15,000원</p>
-          </div>
-          <div class="col-sm-3">
-            <img src="picture/f10.PNG" alt="flower4" class="img-responsive">
-            <p class="title">[파머스] 해바라기 믹스</p>
-            <p class="bestprice">29,000원</p>
-          </div>
+          <script>
+            for (var i=0;i<product_list.length; i++){
+              if (i==2 || i==3 || i==5 || i==6){
+                document.write('<div class="col-sm-3">');
+                document.write('<a onclick="linking('+i+')">');
+                document.write('<img src="picture/product/' + i + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />');
+                document.write('<p class="title">[' + product_list[i].name + ']</p>');
+                document.write('<p class="bestprice">' + product_list[i].price + '</p>');
+                document.write('</a></div>');
+              }
+            }
+          </script>
         </div>
       </div>
 
@@ -185,33 +191,21 @@
         <h3 style="font-family: 'NanumSquare', sans-serif;"><strong>오늘의 추천상품</strong></h3>
         <p style="font-family: 'Nanum Gothic', sans-serif;">6월의 추천꽃  라일락, 수련</p><br>
         <div class="row pic-container">
-          <div class="col-sm-3 ">
-              <img src="picture/f5.png" alt="flower1" class="img-responsive">
-              <p class="title">[Farmer's] 신지혜 파머 초이스</p>
-              <p class="bestprice">25,000원</p>
-          </div>
-
-          <div class="col-sm-3 product-item">
-              <img src="picture/f6.png" alt="flower1" class="img-responsive">
-              <p class="title">[Farmer's] 이성규 파머 초이스</p>
-              <p class="bestprice">29,000원</p>
-          </div>
-
-          <div class="col-sm-3 product-item">
-              <img src="picture/f7.png" alt="flower1" class="img-responsive">
-              <p class="title">[Farmer's] 김규빈 파머 초이스</p>
-              <p class="bestprice">25,000원</p>
-          </div>
-
-
-          <div class="col-sm-3 product-item">
-              <img src="picture/f8.png" alt="flower1" class="img-responsive">
-              <p class="title">[Farmer's] 김규빈 파머 초이스</p>
-              <p class="bestprice">25,000원</p>
-            </div>
-          </div>
+          
+          <script>
+            for (var i=0;i<product_list.length; i++){
+              if (i==1 || i==8 || i==12 || i==17){
+                document.write('<div class="col-sm-3">');
+                document.write('<a onclick="linking('+i+')">');
+                document.write('<img src="picture/product/' + i + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="flower" class="img-responsive" />');
+                document.write('<p class="title">[' + product_list[i].name + ']</p>');
+                document.write('<p class="bestprice">' + product_list[i].price + '</p>');
+                document.write('</a></div>');
+              }
+            }
+          </script>
         </div>
-
+      </div>
       <div class="map_box">
         <div id="map" class="col-sm-6" style="width:450px; height: 390px; margin-left:50px;"></div>
 
