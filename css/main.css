@@ -220,11 +220,7 @@ font-family: 'Nanum Gothic', sans-serif;
   margin-left: 60px;
 }
 
-<<<<<<< HEAD
-a{
-  color: black;
-}
-=======
+
 .line {
     border:0.5px solid #5C6365;
     background-color:black;
@@ -235,4 +231,3 @@ a{
 }
 
 a { color:black;}
->>>>>>> 73cf0e2927e8e5a6aae0c89501f9fa5bbf5d0896

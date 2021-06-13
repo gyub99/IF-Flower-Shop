@@ -32,7 +32,10 @@
       }
       function get_total(){
         var count_product=document.getElementById('count').innerHTML;
-        var price=product_list[data].price.replace(",","").replace("원","")/1 * count_product;
+        var price = data/1;
+        if (data<30) {
+          price=product_list[data].price.replace(",","").replace("원","")/1 * count_product;
+        }
         var total = price + 2500;
         document.getElementById('product_info_total').innerHTML=total.toLocaleString()+'원';
         document.getElementById('foot_price').innerHTML=price.toLocaleString()+'원';
@@ -154,19 +157,19 @@
                 <tr class="inbox_tr" id="flexible">
                   <td class="inbox_td">
                   <script>
-                     if (data==""){
+                    if (data==""){
                       document.getElementById('flexible').style.display="none";
-                      }
-                    if (data=="undefined"){
+                    }
+                    if (data>30){
                       document.write('-');
                     }
                   </script>
                   </td>
                   <script>
-                    if (data=="undefined") {
-                      document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/makingFlower/skyblue.png" alt="f1" class="sh_img"></td>')
+                    if (data>30) {
+                      document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/product/6.PNG" alt="f1" class="sh_img"></td>')
                       document.write('<td class="inbox_td3">DIY 꽃다발</td>')
-                      document.write('<td>'+"20,000원"+'</td>');
+                      document.write('<td>'+data+'</td>');
                     }
                     else {
                       document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/product/'+data+'.png" alt="f1" class="sh_img"></td>');
