@@ -36,8 +36,8 @@ button{
 }
 
 .preview{
-          width:400px;
-          height:400px;
+          width:450px;
+          height:450px;
           border:1px solid silver;
 }
 
@@ -45,6 +45,7 @@ button{
           position: absolute;
           width:100px;
 }
+
 
 .buy-item{
     background-color:#AABBE5;
