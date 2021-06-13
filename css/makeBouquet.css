@@ -35,13 +35,13 @@ padding-bottom:10px;
 }
 button{
   background-color: white;
-  border: 1px solid grey;
+  border: 2px solid grey;
 }
 
 .preview{
           width:450px;
           height:450px;
-          border:1px solid silver;
+          border:2px solid silver;
 }
 
 .preview img {
@@ -58,4 +58,12 @@ button{
     padding: 10px;
     font-weight:bolder;
     border: 0px;
+}
+
+.img-responsive{
+  width: 100px;
+  height: 110px;
+}
+#flower1, #flower2,#flower3,#flower4,#flower5,#flower6,#flower7,#flower8{
+  text-align: center;
 }
