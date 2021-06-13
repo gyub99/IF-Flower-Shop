@@ -102,22 +102,22 @@
                 <span class="col-sm-3 order_list">
                     <span class="glyphicon glyphicon-shopping-cart mypage-icon"></span><br>
                     <p><strong>장바구니</strong></p>
-                    <a href="/myshop/order/list.html?order_status=shipped_before" class="count"><span class="state-count">0</span></a>
+                    <a href="#" class="count"><span class="state-count">1</span></a>
                 </span>
                 <span class="col-sm-3 order_list">
                   <span class="glyphicon glyphicon-list-alt mypage-icon"></span><br>
                   <p><strong>구매한 상품</strong></p>
-                  <a href="/myshop/order/list.html?order_status=shipped_standby" class="count"><span class="state-count">0</span></a>
+                  <a href="#" class="count"><span class="state-count">0</span></a>
                 </span>
                 <span class="col-sm-3 order_list">
                   <span class="glyphicon glyphicon-send mypage-icon"></span><br>
                   <p><strong>배송중</strong></p>
-                  <a href="/myshop/order/list.html?order_status=shipped_begin" class="count"><span class="state-count">0</span></a>
+                  <a href="#" class="count"><span class="state-count">0</span></a>
                 </span>
                 <span class="col-sm-3 order_list">
                   <span class="glyphicon glyphicon-ok mypage-icon"></span><br>
                   <p><strong>배송완료</strong></p>
-                  <a href="/myshop/order/list.html?order_status=shipped_complate" class="count"><span class="state-count">0</span></a>
+                  <a href="#" class="count"><span class="state-count">2</span></a>
                 </span>
             </ul>
           </div>
@@ -150,12 +150,22 @@
                      if (data==""){
                       document.getElementById('flexible').style.display="none";
                       }
+                    if (data=="undefined"){
+                      document.write('-');
+                    }
                   </script>
                   </td>
                   <script>
-                    document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/product/'+data+'.png" alt="f1" class="sh_img"></td>');
-                    document.write('<td class="inbox_td3">'+product_list[data].name+'</td>');
-                    document.write('<td>'+product_list[data].price+'</td>');
+                    if (data=="undefined") {
+                      document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/makingFlower/skyblue.png" alt="f1" class="sh_img"></td>')
+                      document.write('<td class="inbox_td3">DIY 꽃다발</td>')
+                      document.write('<td>'+"20,000원"+'</td>');
+                    }
+                    else {
+                      document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/product/'+data+'.png" alt="f1" class="sh_img"></td>');
+                      document.write('<td class="inbox_td3">'+product_list[data].name+'</td>');
+                      document.write('<td>'+product_list[data].price+'</td>');
+                    }
                   </script>
                     <td>
                   <a role="button" onclick="minus()">
