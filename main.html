@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Dinga Dinga flower Shop </title>
+    <title> IF Flower Shop </title>
     <meta charset="utf-8">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="javascript/product.js"></script>
@@ -106,42 +107,36 @@
     <!-- 헤더부분 -->
     <div class="header">
       <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-10">
-            </div>
-            <div class="col-sm-2 register">
-              <a href="intro.html" style="margin-right:10px; color:black;">로그아웃</a>
-            </div>
-          </div>
+        <div class="register">
+          <a href="intro.html" style="margin:10px; color:black;">Logout</a>
+          &nbsp;|&nbsp;
+          <a href="shopping basket.html" style="margin:10px; color:black;">My page</a>
+      <p style="text-align:center;"><a href="main.html"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
         </div>
-          <p style="text-align:center;"><a href="main.html"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
       </div>
+    </div>
 
 
 
       <!-- 네비게이션 -->
     <!-- 네비게이션 부분 -->
     <nav class="navbar navbar-default">
-        <div class="navcontainer">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
-                <li class="nav-li"><a href="makeBouquet.html">꽃제작</a></li>
-                <li class="nav-li"><a href="product.html">꽃상품</a></li>
-                <li class="nav-li"><a href="about.html">이모저모</a></li>
-                <li class="nav-li"><a href="event.html">이벤트</a></li>
-                <li class="nav-li"><a href="donation.html">기부현황</a></li>
-                <li class="nav-li"><a href="shopping basket.html">마이페이지</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+      <div class="navcontainer row">
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav" >
+            <li class="nav-li"><a href="main.html" >Home</a></li>
+            <li class="nav-li"><a href="makeBouquet.html" >Make Flower</a></li>
+            <li class="nav-li"><a href="product.html">Product</a></li>
+            <li class="nav-li"><a href="product.html" >Event</a></li>
+            <li class="nav-li"><a href="product.html" >Q & A</a></li>
+          </ul>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
 
     <!-- 사진 슬라이드 -->
     <div id="mycarousel" class="carousel slide text-center" data-ride="carousel">
@@ -163,7 +158,7 @@
       </div>
       <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">previous</span>
+        <span class="sr-only">Previous</span>
       </a>
       <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
@@ -171,16 +166,16 @@
       </a>
     </div>
 
-    <!-- 딩가꽃집 소개 -->
+    <!-- IF꽃집 소개 -->
       <div class="container-fluid bg-aboutus">
         <div class="row">
           <div class="col-sm-6">
-            <img src="picture/logo/logo_mainver.png" alt="딩가꽃집 로고" class="img-responsive" style="margin-left: auto; margin-right: auto;">
+            <img src="picture/logo/logo2.png" alt="IF꽃집 로고" class="img-responsive" style="max-height:250px;float:right;">
           </div>
           <div class="col-sm-6">
-            <h3 style="font-family: 'Nanum Gothic', sans-serif;"><strong>About Dinga</strong></h3><br>
-            <p id="about">딩가꽃집에 오신것을 환영합니다.<br>
-              딩가꽃집은 일상에서 느낄 수 있는 행복을 주는것을 목표로 시작되었습니다.<br>
+            <h3 style="font-family: 'Nanum Gothic', sans-serif;"><strong>About IF...</strong></h3><br>
+            <p id="about">IF Flower Shop에 오신것을 환영합니다.<br>
+              IF꽃집은 일상에서 느낄 수 있는 행복을 주는것을 목표로 시작되었습니다.<br>
               평범한 날에도, 특별한 날에도 여러분의 일상에 행복을 선물해드립니다.<br>
               특별한 날에만 즐기던 꽃을 일상에서도 쉽고 합리적인 가격으로 만날 수 있도록<br>
               당신을 위해 오늘 가장 신선한 꽃을 수확합니다.<br>
@@ -191,7 +186,7 @@
 
       <!-- 베스트상품 -->
       <div class="container-fluid bg-main-best text-center">
-        <h3 style="font-family: 'NanumSquare', sans-serif;"><strong>딩가 꽃집의 베스트 상품</strong></h3>
+        <h3 style="font-family: 'NanumSquare', sans-serif;"><strong>IF Flower Shop의 베스트 상품</strong></h3>
         <p style="font-family: 'Nanum Gothic', sans-serif;"> 소중한 사람에게 꽃을 선물해보세요</p><br>
         <div class="row pic-container">
           <script>
@@ -212,7 +207,7 @@
       <!-- 추천상품 -->
       <div class="container-fluid bg-main-suggest text-center">
         <h3 style="font-family: 'NanumSquare', sans-serif;"><strong>오늘의 추천상품</strong></h3>
-        <p style="font-family: 'Nanum Gothic', sans-serif;">6월의 추천꽃  라일락, 수련</p><br>
+        <p style="font-family: 'Nanum Gothic', sans-serif;">12월의 추천꽃 라일락, 수련</p><br>
         <div class="row pic-container">
           <script>
             for (var i=0;i<product_list.length; i++){
@@ -228,88 +223,26 @@
           </script>
         </div>
       </div>
-      <hr class="line"><br>
-        <div class="container" style="margin-left:auto; margin-right:auto;">
-      <div class="map_box">
-        <div id="map" class="col-sm-6" style="width:450px; height: 390px; margin-right:20px;"></div>
-
-        <script>
-        function myMap() {
-          var mapCanvas = document.getElementById("map");
-          var myCenter = new google.maps.LatLng(36.626264552472776, 127.45476683668544);
-          var mapOptions = {
-             center: myCenter,
-            zoom: 17
-          };
-          var map = new google.maps.Map(mapCanvas, mapOptions);
-          var marker = new google.maps.Marker({
-           position:myCenter,
-           animation: google.maps.Animation.BOUNCE
-
-          });
-          marker.setMap(map);
-
-          var myPath = new google.maps.Marker({
-            strokeColor: "#0000FF",
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: "#0000FF",
-            fillOpacity: 0.4
-          });
-          myPath.setMap(map);
-
-        }
-        </script>
-
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAlOjojzJqN5CEy7iGWtTTiWgCMiPUhXI&callback=myMap"></script>
-        <!--
-        To use this code on your website, get a free API key from Google.
-        Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp-->
-
-        <!-- 문의사항 -->
-        <div class="container bg-main-context text-center">
-          <div class="col-sm-6">
-          <h3 style="font-family: 'Nanum Gothic', sans-serif;"><strong>문의하기</strong></h3>
-          <p style="font-family: 'Nanum Gothic', sans-serif;">빠르고 신속하게 답변해드리겠습니다</p>
-          <div class="row">
-            <div class="col-sm-6 form-group">
-            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-            </div>
-            <div class="col-sm-6 form-group">
-            <input class="form-control" id="email" name="email" placeholder="email" type="text" required>
-            </div>
-          </div>
-           <textarea class="form-control" id="comments" name="comments" placeholder="문의할 내용을 입력하세요" rows="7"></textarea><br>
-          <div class="row">
-            <div class="col-sm-12 form-group">
-              <button class="btn btn-default pull-center" style="font-size:16px;" type="submit" onclick="send_page();">Send</button>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 
       <!-- footer -->
-          <footer class="container-fluid bg-main-footer">
-            <div class="row">
-              <div class="col-sm-2"></div>
-              <div class="col-sm-4">
-                <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
-                <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
-                <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
-              </div>
-              <div class="col-sm-5">
-                <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 꽃집</h2><br>
-                <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 371-06-0707<br>
-                  통신판매업 신고번호 : 2021-서울 삼성동-77775<br>
-                  주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br>
-                  COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED</p>
-              </div>
-              </div>
-          </footer>
+    <footer class="container-fluid bg-main-footer">
+      <div class="row footer-container">
+        <div class="col-sm-6">
+          <h2 style="font-family: 'Cafe24Oneprettynight';">IF 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
+          <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
+          <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
+        </div>
+        <div class="col-sm-6">
+          <h2 style="font-family: 'Cafe24Oneprettynight';">IF 꽃집</h2><br>
+          <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 123-45-6789<br>
+            통신판매업 신고번호 : 2022-청주 충북대-99999<br>
+            주소 : 충북 청주시 서원구 충대로 1, 전자정보대학 소프트웨어학부 S4-1동(전자정보 3관)<br>
+            COPYRIGHTⓒ 2022 IF FLOWER. ALL RIGHTS RESERVED</p>
+        </div>
+      </div>
+    </footer>
 
 
   </body>

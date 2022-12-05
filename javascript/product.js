@@ -10,7 +10,7 @@ function Flower_product(name, price, comment, original) {
   product_list[2] = new Flower_product("신지혜 파머 초이스", "29,000원", "고민 많은 당신을 위한 제철 꽃 믹스");
   product_list[3] = new Flower_product("김규빈 파머 초이스", "25,000원", "변함없는 사랑의 리시안셔스");
   product_list[4] = new Flower_product("옥시페탈룸", "15,000원", "별을 닮은 꽃");
-  product_list[5] = new Flower_product("이성규 파머 초이스", "29,000원", "들꽃의 소박한 정취");
+  product_list[5] = new Flower_product("양희진 파머 초이스", "29,000원", "들꽃의 소박한 정취");
   product_list[6] = new Flower_product("딩가 파머 초이스", "29,000원", "청초한 느낌의 제철 꽃 믹스");
   product_list[7] = new Flower_product("골든볼 쏠리 믹스", "19,000원", "옐로우로 즐기는 초여름 믹스", "25,000원");
   product_list[8] = new Flower_product("핑크 장미 믹스 2종", "17,000원", "연인에게 장미로 전하는 마음");

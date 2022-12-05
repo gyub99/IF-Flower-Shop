@@ -27,14 +27,17 @@
     font-style: normal;
 }
 
+.contents{
+  padding-top:200px;
+}
 
 .title{
     font-family: 'GmarketSansBold';
     background: linear-gradient(to right, #DCE35B, #45b649);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
+ padding:30px;
     font-size:80px;
-    margin-top:250px;
 }
 
   .log{
@@ -62,7 +65,8 @@ border-bottom:none;
 }
 
   .formstyle{
-      margin-top:250px;
+      padding : 10px;
+      padding-left:15%;
     }
 
   .btn-login{
@@ -85,5 +89,5 @@ border-bottom:none;
   }
 
   .introduce{
-    margin-left: 100px;
+    padding-left:7.5%;
   }

@@ -1,6 +1,11 @@
 .bg-main-footer{
-  background-color: #c4d4d0;
+  background-color: #c4dfaa;
+  color:black;
 /* 원래 96ae7f */
+}
+
+.footer-container{
+  padding: 40px 10% 40px 10%;
 }
 
 .btndesign{

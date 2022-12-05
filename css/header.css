@@ -1,29 +1,32 @@
-.navcontainer{
-width:50%;
-  margin-right:auto;
- margin-left:auto;
-}
+
 
 .navbar {
-  text-align:center;
-  padding-top: 15px;
-  padding-bottom: 15px;
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
-  font-size: 12px;
-  letter-spacing: 5px;
-  background-color:#e9c778;
+  padding: 5px 20px 5px 20px;
+  font-size: 17px;
+  letter-spacing: 3px;
+  border-top: 5px solid #c4dfaa;
+  border-bottom: 5px solid #c4dfaa;
+  /*display : flex;
+  justify-content:center;*/
 /* 원래 #b2c773 */
 }
 
+.form-inline{
+  text-align:right;
+  margin-right:20px;
+  font-size:30px;
+}
 
 .register{
-  margin-top: 15px;
+  text-align:right;
+  margin: 25px;
   font-family: 'S-CoreDream-3Light';
 }
 
-a:hover{
+.navbar a:hover{
   text-decoration: none;
 }
 
@@ -33,19 +36,18 @@ text-align: center;
 }
 
 #logo_style{
-  height: 78px;
-  width: 122px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
+  height: 100px;
+  width: 200px;
+  margin-left: 40px;
 }
 
 .nav-li{
-  text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-font-size:17px;  
-font-family: 'S-CoreDream-3Light';
+  margin-left: 7px;
+  margin-right: 7px;
+  font-size:17px;  
+  font-family: 'S-CoreDream-3Light';
+  color:black;
+
 }
 
 .drop{
