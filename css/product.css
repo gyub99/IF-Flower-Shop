@@ -8,70 +8,73 @@
     font-family: S-CoreDream-3Light;
 }
 .best-product{
-    background-color:#F4EBF5;
-    padding:30px 100px 30px 100px;
+    background-color:#c4dfaa;
+    padding:30px 50px 30px 50px;
 }
 .best-product .best-comment{
     color: #5C6365;
-    font-size: 10px;
+    font-size: 14px;
 }
 .best-product .best-name{
     font-weight: bolder;
-    font-size: 17px;
+    font-size: 20px;
 }
 .best-product .best-price{
-    font-size: 13px;
+    font-size: 14px;
 }
 .sale-product{
-    background-color:#DFCBE1;
-    padding:30px 100px 30px 100px;
+    background-color:#F5f0bb;
+    padding:30px 50px 30px 50px;
 }
 .sale-product .sale-comment{
     color: #5C6365;
-    font-size: 10px;
+    font-size: 14px;
 }
 .sale-product .sale-name{
     font-weight: bolder;
-    font-size: 17px;
+    font-size: 20px;
 }
 .sale-product .sale-price{
-    font-size: 13px;
+    font-size: 14px;
 }
 img{
     margin-bottom: 15px;
 }
 .product-list{
-    padding:30px 100px 30px 100px;
+    padding:30px 50px 30px 50px;
 }
 .product-item {
     padding:20px;
 }
 .original{
     color: #5C6365;
-    font-size: 8px;
+    font-size: 10px;
     text-decoration: line-through;
 }
 a{
     color: black;
 }
 a:hover{
-    color: #AABBE5;
+    color: #73a9ad;
     text-decoration: underline;
 }
 a .comment{
     color: #5C6365;
-    font-size: 10px;
+    font-size: 14px;
 }
+
 a .name{
     font-weight: bolder;
-    font-size: 17px;
+    font-size: 20px;
 }
 a .price{
-    font-size: 13px;
+    font-size: 15px;
 }
 a[id=right]:hover{
-    color: #BEC773;
+    color: #73a9ad;
+    text-decoration:none;
 }
 a[id=left]:hover{
-    color: #BEC773;
+    color: #73a9ad;
+    text-decoration:none;
 }

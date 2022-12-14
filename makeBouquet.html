@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Dinga Dinga flower Shop</title>
+    <title>IF Flower Shop</title>
     <meta charset="utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,7 +16,6 @@
     />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/makeBouquet.css" />
-    <link rel="stylesheet" href="css/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascript/makeflower.js"></script>
@@ -103,135 +102,123 @@
     <!-- 헤더부분 -->
     <div class="header">
       <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-10">
-            </div>
-            <div class="col-sm-2 register">
-              <a href="intro.html" style="margin-right:10px; color:black;">로그아웃</a>
-            </div>
-          </div>
+        <div class="register">
+          <a href="intro.html" style="margin:10px; color:black;">Logout</a>
+          &nbsp;|&nbsp;
+          <a href="shopping basket.html" style="margin:10px; color:black;">My page</a>
+      <p style="text-align:center;"><a href="main.html"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
         </div>
-          <p style="text-align:center;"><a href="main.html"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
       </div>
+    </div>
 
 
       <!-- 네비게이션 -->
     <!-- 네비게이션 부분 -->
     <nav class="navbar navbar-default">
-        <div class="navcontainer">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
-                <li class="nav-li"><a href="makeBouquet.html">꽃제작</a></li>
-                <li class="nav-li"><a href="product.html">꽃상품</a></li>
-                <li class="nav-li"><a href="about.html">이모저모</a></li>
-                <li class="nav-li"><a href="event.html">이벤트</a></li>
-                <li class="nav-li"><a href="donation.html">기부현황</a></li>
-                <li class="nav-li"><a href="shopping basket.html">마이페이지</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+      <div class="navcontainer row">
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav" >
+            <li class="nav-li"><a href="main.html" >Home</a></li>
+            <li class="nav-li"><a href="makeBouquet.html" >Make Flower</a></li>
+            <li class="nav-li"><a href="product.html">Product</a></li>
+            <li class="nav-li"><a href="product.html" >Event</a></li>
+            <li class="nav-li"><a href="product.html" >Q & A</a></li>
+          </ul>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
 
 
     <div class="container title">
-      <h2 style="text-align:center;">나만의 꽃다발을 만들어봐요!</h2>
+      <div class="title">
+      <h2 class="make-bouquet-title"><strong>나만의 꽃다발을 만들어봐요!</strong></h2>
+      <h5>이곳에서 원하는 색상, 꽃 종류, 스타일을 선택해보세요!</h5>
     </div>
 
-    <div class="container contents" >
+
+    <div class="contents" >
       <div class="product row">
-        <div class="col-sm-1 select"></div>
+        <div class="preview-container col-sm-6">
+          <div id="preview" class="preview"></div>
+          <div class="refresh-button" style="padding:10px;"><button id="refresh" class="btn" style="font-size:20px;"><i class="glyphicon glyphicon-refresh" style="color:#73a9ad;margin-right:15px;"></i>초기화</button></div>
+        </div>
 
-          <div class="col-sm-5">
-            <div id="preview" class="preview">
-              </div>
-              <div class="col-sm-5" ></div>
-              <div class="col-sm-4"> <button type="button" id="refresh" class="btn glyphicon glyphicon-refresh"> 초기화</button></div>
+        <div class="choosing col-sm-6">
 
-          </div>
-
-
-        <div class="col-sm-6 choosing">
-          <h5 style="text-align:center; margin-bottom:30px;">이곳에서 원하는 색상, 꽃 종류, 스타일을 선택해보세요!</h5>
-
-          <div class="image-gallery-thumbnails-wrapper row">
+          <div class="row">
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button1" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/yellow1.png" alt="flower1"/>
-                <p id="flower1"> 7,000원</p>
+                <button type="button" id="button1" class="select-flower"><img class="img-responsive" src="picture/makingFlower/yellow1.png" alt="flower1"/>
+                <div class="price" id="flower1"> 7,000원</div></button>
               </div>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button2" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/pink.png" alt="flower2"/>
-                <p id="flower2"> 9,000원</p>
+                <button type="button" id="button2" class="select-flower"><img class="img-responsive" src="picture/makingFlower/pink.png" alt="flower2"/>
+                <div class="price" id="flower2"> 9,000원</div></button>
               </div>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button3" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/white1.png" alt="flower3"/>
-                <p id="flower3"> 9,000원</p>
+                <button type="button" id="button3" class="select-flower"><img class="img-responsive" src="picture/makingFlower/white1.png" alt="flower3"/>
+                <div class="price" id="flower3"> 9,000원</div></button>
               </div>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button4" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/red1.png" alt="flower4"/>
-                <p id="flower4"> 7,000원</p>
+                <button type="button" id="button4" class="select-flower"><img class="img-responsive" src="picture/makingFlower/red1.png" alt="flower4"/>
+                <div class="price" id="flower4"> 7,000원</div></button>
               </div>
             </div>
 
             <!-- // 구분선 -->
             <div class="image-gallery-thumbnails-wrapper row" style="margin-top:10px;">
               <div class="col-sm-3 choose-flower">
-              <button type="button" id="button5" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/purple1.png" alt="flower5"/>
-                <p id="flower5"> 6,000원</p>
+              <button type="button" id="button5" class="select-flower"><img class="img-responsive" src="picture/makingFlower/purple1.png" alt="flower5"/>
+                <div class="price" id="flower5"> 6,000원</div></button>
               </div>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button6" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/orange.png" alt="flower6"/>
-                  <p id="flower6"> 5,000원</p>
+                <button type="button" id="button6" class="select-flower"><img class="img-responsive" src="picture/makingFlower/orange.png" alt="flower6"/>
+                  <div class="price" id="flower6"> 5,000원</div></button>
               </div>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button7" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/skyblue.png" alt="flower7"/>
-                  <p id="flower7"> 6,000원</p>
+                <button type="button" id="button7" class="select-flower"><img class="img-responsive" src="picture/makingFlower/skyblue.png" alt="flower7"/>
+                  <div class="price" id="flower7"> 6,000원</div></button>
                 </div>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button8" style="width:100px; height:110px;"><img class="img-responsive" src="picture/makingFlower/blue2.png" alt="flower8"/>
-                  <p id="flower8"> 5,000원</p>
+                <button type="button" id="button8" class="select-flower"><img class="img-responsive" src="picture/makingFlower/blue2.png" alt="flower8"/>
+                  <div class="price" id="flower8"> 5,000원</d></button>
               </div>
             </div>
 
             <hr>
-            <div class="big_box">
-              <div class="input-form">
-                <table>
-                  <tr>
-                    <td style=" font-family: 'S-CoreDream-3Light';"><strong>포장지 색 선택&nbsp&nbsp&nbsp</strong></td>
-                    <td>
-                      <div class="row choose-wrapper">
-                      <a role='button' onclick="choose_bouquet(0)"><span id="c1" class="color col-sm-1 img-circle bouquet" style="background-color: #ecdfcf;"> </span></a>
-                      <a role='button' onclick="choose_bouquet(1)"><span id="c2" class="color col-sm-1 img-circle bouquet" style="background-color: #b9a9c9;"> </span></a>
-                      <a role='button' onclick="choose_bouquet(2)"><span id="c3" class="color col-sm-1 img-circle bouquet" style="background-color: #e6e6fe;"> </span></a>
-                      <a role='button' onclick="choose_bouquet(3)"><span id="c4" class="color col-sm-1 img-circle bouquet" style="background-color: #CEF6D8"> </span></a>
-                      <a role='button' onclick="choose_bouquet(4)"><span id="c5" class="color col-sm-1 img-circle bouquet" style="background-color: #F5F6CE;"> </span></a>
-                      <a role='button' onclick="choose_bouquet(5)"><span id="c6" class="color col-sm-1 img-circle bouquet" style="background-color: #9aabb9;"> </span></a>
+            <div class="color-container">
+              <table>
+                <tr>
+                  <td style=" font-family: 'S-CoreDream-3Light';"><strong>포장지 색 선택</strong></td>
+                  <td>
+                    <div class="row choose-bouquet">
+                      <a role='button' onclick="choose_bouquet(0)"><span id="c1" class="color col-sm-2 img-circle bouquet" style="background-color: #7ea8cc;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(1)"><span id="c2" class="color col-sm-2 img-circle bouquet"  style="background-color: #E69A65"> </span></a>
+                      <a role='button' onclick="choose_bouquet(2)"><span id="c3" class="color col-sm-2 img-circle bouquet"  style="background-color: #D7E691"> </span></a>
+                      <a role='button' onclick="choose_bouquet(3)"><span id="c4" class="color col-sm-2 img-circle bouquet"  style="background-color: #87bdaa;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(4)"><span id="c5" class="color col-sm-2 img-circle bouquet"  style="background-color: #F5F6CE;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(5)"><span id="c6" class="color col-sm-2 img-circle bouquet"  style="background-color: #E65F4C"> </span></a>
                     </div>
-                    </td>
-                  </tr>
+                  </td>
+                </tr>
                   <tr>
                     <td style=" font-family: 'S-CoreDream-3Light';"><strong>리본 색 선택&nbsp&nbsp&nbsp&nbsp</strong></td>
                     <td>
                       <div class="row choose-ribbon">
-                        <a role='button' onclick="choose_ribbon(0)"><span id="r1" class="color col-sm-1 img-circle ribbon" style="background-color: #7ea8cc;"> </span></a>
-                        <a role='button' onclick="choose_ribbon(1)"><span id="r2" class="color col-sm-1 img-circle ribbon" style="background-color: #ff8fab;"> </span></a>
-                        <a role='button' onclick="choose_ribbon(2)"><span id="r3" class="color col-sm-1 img-circle ribbon" style="background-color: #f7c934;"> </span></a>
-                        <a role='button' onclick="choose_ribbon(3)"><span id="r4" class="color col-sm-1 img-circle ribbon" style="background-color: #8cd790"> </span></a>
-                        <a role='button' onclick="choose_ribbon(4)"><span id="r5" class="color col-sm-1 img-circle ribbon" style="background-color: #b6b5f5;"> </span></a>
-                        <a role='button' onclick="choose_ribbon(5)"><span id="r6" class="color col-sm-1 img-circle ribbon" style="background-color: #9f65fc;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(0)"><span id="r1" class="color col-sm-2 img-circle ribbon" style="background-color: #5767E6"> </span></a>
+                        <a role='button' onclick="choose_ribbon(1)"><span id="r2" class="color col-sm-2 img-circle ribbon" style="background-color: #E68393"> </span></a>
+                        <a role='button' onclick="choose_ribbon(2)"><span id="r3" class="color col-sm-2 img-circle ribbon" style="background-color: #f7c934;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(3)"><span id="r4" class="color col-sm-2 img-circle ribbon" style="background-color: #8BE67A"> </span></a>
+                        <a role='button' onclick="choose_ribbon(4)"><span id="r5" class="color col-sm-2 img-circle ribbon" style="background-color: #6CDEE6;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(5)"><span id="r6" class="color col-sm-2 img-circle ribbon" style="background-color: #9f65fc;"> </span></a>
                       </div>
                     </td>
                   </tr>
                 </table>
               </div>
-          </div>
 
 
             <div class="buy row">
@@ -241,24 +228,24 @@
           </div>
         </div>
       </div>
+        </div>
 
       <!-- footer -->
-        <footer class="container-fluid bg-main-footer">
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-              <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
-              <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
-              <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
-            </div>
-            <div class="col-sm-5">
-              <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 꽃집</h2><br>
-              <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 371-06-0707<br>
-                통신판매업 신고번호 : 2021-서울 삼성동-77775<br>
-                주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br>
-                COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED</p>
-            </div>
-            </div>
-        </footer>
+      <footer class="container-fluid bg-main-footer">
+        <div class="row footer-container">
+          <div class="col-sm-6">
+            <h2 style="font-family: 'Cafe24Oneprettynight';">IF 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
+            <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
+            <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
+          </div>
+          <div class="col-sm-6">
+            <h2 style="font-family: 'Cafe24Oneprettynight';">IF 꽃집</h2><br>
+            <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 123-45-6789<br>
+              통신판매업 신고번호 : 2022-청주 충북대-99999<br>
+              주소 : 충북 청주시 서원구 충대로 1, 전자정보대학 소프트웨어학부 S4-1동(전자정보 3관)<br>
+              COPYRIGHTⓒ 2022 IF FLOWER. ALL RIGHTS RESERVED</p>
+          </div>
+        </div>
+      </footer>
   </body>
 </html>
