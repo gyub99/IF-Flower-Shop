@@ -134,7 +134,7 @@ border-bottom:none;
         ?>
       </div>
       <?php
-      $_SESSION['signup_alert']==false;
+      $_SESSION['signup_alert']=false;
       $_SESSION = array();
       session_destroy();
     ?>
