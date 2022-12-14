@@ -24,6 +24,7 @@ $_SESSION['message']="회원가입에 성공했습니다!";
 $_SESSION['msg_type']='info';
 $_SESSION['signup_alert']=true;
 
+
 header("location:index.php");
 
  ?>

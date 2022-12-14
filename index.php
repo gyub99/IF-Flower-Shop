@@ -125,19 +125,20 @@ border-bottom:none;
   if(!session_id()) {
 	session_start();
   }
-  if (isset($_SESSION['message']) && $_SESSION['signup_alert']==true):
-   ?>
-   <div class="alert alert-<?=$_SESSION['msg_type']?>">
-     <?php
-      echo $_SESSION['message'];
+  if(isset($_SESSION['signup_alert'])){
+    if (isset($_SESSION['message']) && $_SESSION['signup_alert']==true):
       ?>
-    </div>
-    <?php
-    $_SESSION['signup_alert']==false;
-    $_SESSION = array();
-    session_destroy();
+      <div class="alert alert-<?=$_SESSION['msg_type']?>">
+        <?php
+        echo $_SESSION['message'];
+        ?>
+      </div>
+      <?php
+      $_SESSION['signup_alert']==false;
+      $_SESSION = array();
+      session_destroy();
     ?>
-  <?php endif ?>
+  <?php endif;} ?>
 
   <div class="container-fluid contents">
         <div class="row">
