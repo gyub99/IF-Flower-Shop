@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title> Dinga Dinga flower Shop </title>
+    <title>IF Flower Shop </title>
     <meta charset="utf-8">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/shopping basket.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/main.css">
   <script type="text/javascript" src="javascript/get_index.js"></script>
   <script type="text/javascript" src="javascript/product.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -99,18 +97,42 @@
 
 
     <!-- 헤더부분 -->
+    <?php
+    //세션 스타트 해주여야 session전역변수 사용할 수 있다.
+    if(!session_id()) {
+  	session_start();
+    }
+    if (isset($_SESSION['message']) && $_SESSION['is_login']==true && $_SESSION['login_alert']==true):
+     ?>
+     <div class="alert alert-<?=$_SESSION['msg_type']?>">
+       <?php
+        echo $_SESSION['message'];
+        echo "<br>".$_SESSION['user_name']."님 안녕하세요 딩가 꽃집입니다";
+        $_SESSION['login_alert']=false;
+        ?>
+
+      </div>
+    <?php endif ?>
+
+    <!-- 헤더부분 -->
     <div class="header">
       <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-10">
-            </div>
-            <div class="col-sm-2 register">
-              <a href="logout.php" style="margin-right:10px; color:black;">로그아웃</a>
-            </div>
-          </div>
+        <div class="register">
+            <?php
+            echo $_SESSION['user_name']."님"
+            ?>
+          &nbsp;|&nbsp;
+          <a href="shopping basket.php" style="margin:10px; color:black;">My page</a>
+          &nbsp;|&nbsp;
+          <a href="logout.php" style="margin:10px; color:black;">Logout</a>
+
+
+      <p style="text-align:center;"><a href="main.php"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
         </div>
-          <p style="text-align:center;"><a href="main.php"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
       </div>
+    </div>
+
+
 
       <!-- 네비게이션 -->
     <!-- 네비게이션 부분 -->
@@ -118,11 +140,11 @@
       <div class="navcontainer row">
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav" >
-            <li class="nav-li"><a href="main.html" >Home</a></li>
-            <li class="nav-li"><a href="makeBouquet.html" >Make Flower</a></li>
-            <li class="nav-li"><a href="product.html">Product</a></li>
-            <li class="nav-li"><a href="product.html" >Event</a></li>
-            <li class="nav-li"><a href="product.html" >Q & A</a></li>
+            <li class="nav-li"><a href="main.php" >Home</a></li>
+            <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
+            <li class="nav-li"><a href="product.php">Product</a></li>
+            <li class="nav-li"><a href="product.php" >Event</a></li>
+            <li class="nav-li"><a href="product.php" >Q & A</a></li>
           </ul>
           <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
@@ -295,23 +317,23 @@
         </div>
 
         <!-- footer -->
-          <footer class="container-fluid bg-main-footer">
-            <div class="row">
-              <div class="col-sm-2"></div>
-              <div class="col-sm-4">
-                <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
-                <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
-                <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
-              </div>
-              <div class="col-sm-5">
-                <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 꽃집</h2><br>
-                <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 371-06-0707<br>
-                  통신판매업 신고번호 : 2021-서울 삼성동-77775<br>
-                  주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br>
-                  COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED</p>
-              </div>
-              </div>
-          </footer>
+        <footer class="container-fluid bg-main-footer">
+      <div class="row footer-container">
+        <div class="col-sm-6">
+          <h2 style="font-family: 'Cafe24Oneprettynight';">IF 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
+          <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
+          <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
+        </div>
+        <div class="col-sm-6">
+          <h2 style="font-family: 'Cafe24Oneprettynight';">IF 꽃집</h2><br>
+          <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 123-45-6789<br>
+            통신판매업 신고번호 : 2022-청주 충북대-99999<br>
+            주소 : 충북 청주시 서원구 충대로 1, 전자정보대학 소프트웨어학부 S4-1동(전자정보 3관)<br>
+            COPYRIGHTⓒ 2022 IF FLOWER. ALL RIGHTS RESERVED</p>
+        </div>
+      </div>
+    </footer>
+
 
 
   </body>

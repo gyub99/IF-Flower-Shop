@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/product.css" />
     <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -27,34 +25,52 @@
         m.style.transition = "all 0.5s";
       }
     </script>
-  </head>
-  <style>
-    @font-face {
-         font-family: 'S-CoreDream-3Light';
-         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
-         font-weight: normal;
-         font-style: normal;
-    }
-
+    <style>
     @font-face {
         font-family: 'Cafe24Oneprettynight';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
-  </style>
+    </style>
+  </head>
   <body>
+    <!-- 헤더부분 -->
+    <?php
+    //세션 스타트 해주여야 session전역변수 사용할 수 있다.
+    if(!session_id()) {
+  	session_start();
+    }
+    if (isset($_SESSION['message']) && $_SESSION['is_login']==true && $_SESSION['login_alert']==true):
+     ?>
+     <div class="alert alert-<?=$_SESSION['msg_type']?>">
+       <?php
+        echo $_SESSION['message'];
+        echo "<br>".$_SESSION['user_name']."님 안녕하세요 IF 꽃집입니다";
+        $_SESSION['login_alert']=false;
+        ?>
+
+      </div>
+    <?php endif ?>
+
     <!-- 헤더부분 -->
     <div class="header">
       <div class="container-fluid">
         <div class="register">
-          <a href="intro.html" style="margin:10px; color:black;">Logout</a>
+            <?php
+            echo $_SESSION['user_name']."님"
+            ?>
           &nbsp;|&nbsp;
-          <a href="shopping basket.html" style="margin:10px; color:black;">My page</a>
+          <a href="shopping basket.php" style="margin:10px; color:black;">My page</a>
+          &nbsp;|&nbsp;
+          <a href="logout.php" style="margin:10px; color:black;">Logout</a>
+
+
       <p style="text-align:center;"><a href="main.php"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
         </div>
       </div>
     </div>
+
 
 
       <!-- 네비게이션 -->
@@ -63,11 +79,11 @@
       <div class="navcontainer row">
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav" >
-            <li class="nav-li"><a href="main.html" >Home</a></li>
-            <li class="nav-li"><a href="makeBouquet.html" >Make Flower</a></li>
-            <li class="nav-li"><a href="product.html">Product</a></li>
-            <li class="nav-li"><a href="product.html" >Event</a></li>
-            <li class="nav-li"><a href="product.html" >Q & A</a></li>
+            <li class="nav-li"><a href="main.php" >Home</a></li>
+            <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
+            <li class="nav-li"><a href="product.php">Product</a></li>
+            <li class="nav-li"><a href="product.php" >Event</a></li>
+            <li class="nav-li"><a href="product.php" >Q & A</a></li>
           </ul>
           <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
@@ -76,15 +92,15 @@
         </div>
       </div>
     </nav>
-
+    
     <div class="container-fluid best-product text-center">
-      <h3><strong>딩가 꽃샵 베스트 상품</strong></h3>
-      <p>요즘 잘 나가는 이 상품은 어떠세요?</p>
+      <h2><strong>IF 꽃집 베스트 상품</strong></h2>
+      <h4>요즘 잘 나가는 이 상품은 어떠세요?</h4>
       <br />
       <div class="row">
         <div class="col-sm-1"></div>
-        <div class ="col-sm-10">
-        <div class="row">
+          <div class ="col-sm-10">
+          <div class="row">
         <script>
           for (var i=0;i<product_list.length; i++){
             if (i==2 || i==3 || i==5 || i==6){
@@ -98,13 +114,15 @@
             }
           }
         </script>
-        </div></div>
+        </div>
+          </div>
+        <div class="col-sm-2"></div>
       </div>
     </div>
 
     <div class="container-fluid sale-product text-center">
-      <h3><strong>딩가 꽃샵 할인 상품</strong></h3>
-      <p>아름다운 꽃을 저렴한 가격으로 구매하세요!</p>
+      <h2><strong>IF 꽃집 할인 상품</strong></h2>
+      <h4>아름다운 꽃을 저렴한 가격으로 구매하세요!</h4>
       <br />
       <div class="row">
         <div class="col-sm-1"></div>
@@ -114,7 +132,7 @@
           for (var i=0;i<product_list.length; i++){
             if (i==0 || i==7 || i==9 || i==14){
               document.write('<div class="col-sm-3">');
-              document.write('<a onclick="linking('+i+')">');
+                document.write('<a onclick="linking('+i+')">');
               document.write('<img src="picture/product/' + i + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale" class="img-responsive" />');
               document.write('<div class="sale-comment">' + product_list[i].comment + '</div>');
               document.write('<div class="sale-name">' + product_list[i].name + '</div>');
@@ -123,16 +141,17 @@
             }
           }
         </script>
-        </div></div>
+        </div>
+      </div>
       </div>
     </div>
 
     <div class="container-fluid product-list text-center">
-      <h3><strong>오늘같은 날, 꽃 선물은 어떠세요?</strong></h3>
-      <p>12월의 추천꽃 <strong>"장미"</strong></p>
+      <h2><strong>오늘같은 날, 꽃 선물은 어떠세요?</strong></h2>
+      <h4>12월의 추천꽃 <strong>"장미"</strong></h4>
       <div class="item_list">
         <script>
-          for (var i=4;i<5;i++){
+          for (var i=0;i<4;i++){
             document.write('<div class="row product-item">');
               document.write('<div class="col-sm-1"></div><div class ="col-sm-10"><div class="row">');
             for (var j=0; j<4; j++){
@@ -148,31 +167,16 @@
                 document.write('<div class="price">' + product_list[4*i+j].price + '</div></a></div>');
               }
             }
-            document.write('</div>');
-            if (4*i+j+1<product_list.length){
-                document.write('<div class="row product-item">');
-                for (var k=4*i+j;k<product_list.length;k++){
-                    document.write('<div class="col-sm-3">');
-                    document.write('<a onclick="linking('+k+')">');
-                    document.write('<img src="picture/product/' + k + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale' + k + '" class="img-responsive" />');
-                    document.write('<div class="comment">' + product_list[k].comment + '</div>');
-                    document.write('<div class="name">' + product_list[k].name + '</div>');
-                    if (k==0 || k==7 || k==9 || k==14){
-                        document.write('<div class="sale-price"><span class="original">' + product_list[k].original + '</span> ' + product_list[k].price + '</div></a></div>');
-                    }
-                    else {
-                        document.write('<div class="price">' + product_list[k].price + '</div></a></div>');
-                    }
-                }
-                document.write('</div></div></div>');
-            }
+            document.write('</div></div></div>');
           }
         </script>
       </div>
       <div class="page-control">
         <p>
-          <a href="product.html" class="glyphicon glyphicon-chevron-left" id="left"></a>
-          <span class="glyphicon glyphicon-chevron-right" id="right"></span>
+          <span href="product2.php" class="glyphicon glyphicon-chevron-left" id="left"></span>
+          <span>
+            <a href="product2.php" class="glyphicon glyphicon-chevron-right" id="right"></a>
+          </span>
         </p>
       </div>
     </div>

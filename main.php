@@ -14,8 +14,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/footer.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="javascript/product.js"></script>
@@ -114,7 +112,7 @@
      <div class="alert alert-<?=$_SESSION['msg_type']?>">
        <?php
         echo $_SESSION['message'];
-        echo "<br>".$_SESSION['user_name']."님 안녕하세요 딩가 꽃집입니다";
+        echo "<br>".$_SESSION['user_name']."님 안녕하세요 IF 꽃집입니다";
         $_SESSION['login_alert']=false;
         ?>
 
@@ -129,7 +127,7 @@
             echo $_SESSION['user_name']."님"
             ?>
           &nbsp;|&nbsp;
-          <a href="shopping basket.html" style="margin:10px; color:black;">My page</a>
+          <a href="shopping basket.php" style="margin:10px; color:black;">My page</a>
           &nbsp;|&nbsp;
           <a href="logout.php" style="margin:10px; color:black;">Logout</a>
 
@@ -148,10 +146,10 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav" >
             <li class="nav-li"><a href="main.php" >Home</a></li>
-            <li class="nav-li"><a href="makeBouquet.html" >Make Flower</a></li>
-            <li class="nav-li"><a href="product.html">Product</a></li>
-            <li class="nav-li"><a href="product.html" >Event</a></li>
-            <li class="nav-li"><a href="product.html" >Q & A</a></li>
+            <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
+            <li class="nav-li"><a href="product.php">Product</a></li>
+            <li class="nav-li"><a href="product.php" >Event</a></li>
+            <li class="nav-li"><a href="product.php" >Q & A</a></li>
           </ul>
           <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">

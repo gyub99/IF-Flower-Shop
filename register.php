@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/register.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -38,7 +37,7 @@ body{
         if(name!=null||id!=null||pw!=null||email!=null)
         {
           alert("이름 : "+name+"\n아이디 : "+id+"\n비밀번호 : "+pw+"\n이메일 : "+email+"\n\n입력하신 정보가 맞습니까? ");
-          document.location.href="intro.html";
+          document.location.href="intro.php";
         }
 
         else{alert("정보를 모두 입력해주세요");}

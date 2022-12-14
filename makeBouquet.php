@@ -100,16 +100,41 @@
 
   <body>
     <!-- 헤더부분 -->
+    <?php
+    //세션 스타트 해주여야 session전역변수 사용할 수 있다.
+    if(!session_id()) {
+  	session_start();
+    }
+    if (isset($_SESSION['message']) && $_SESSION['is_login']==true && $_SESSION['login_alert']==true):
+     ?>
+     <div class="alert alert-<?=$_SESSION['msg_type']?>">
+       <?php
+        echo $_SESSION['message'];
+        echo "<br>".$_SESSION['user_name']."님 안녕하세요 IF 꽃집입니다";
+        $_SESSION['login_alert']=false;
+        ?>
+
+      </div>
+    <?php endif ?>
+
+    <!-- 헤더부분 -->
     <div class="header">
       <div class="container-fluid">
         <div class="register">
-          <a href="intro.html" style="margin:10px; color:black;">Logout</a>
+            <?php
+            echo $_SESSION['user_name']."님"
+            ?>
           &nbsp;|&nbsp;
-          <a href="shopping basket.html" style="margin:10px; color:black;">My page</a>
-          <p style="text-align:center;"><a href="main.php"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
+          <a href="shopping basket.php" style="margin:10px; color:black;">My page</a>
+          &nbsp;|&nbsp;
+          <a href="logout.php" style="margin:10px; color:black;">Logout</a>
+
+
+      <p style="text-align:center;"><a href="main.php"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
         </div>
       </div>
     </div>
+
 
 
       <!-- 네비게이션 -->
@@ -118,11 +143,11 @@
       <div class="navcontainer row">
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav" >
-            <li class="nav-li"><a href="main.html" >Home</a></li>
-            <li class="nav-li"><a href="makeBouquet.html" >Make Flower</a></li>
-            <li class="nav-li"><a href="product.html">Product</a></li>
-            <li class="nav-li"><a href="product.html" >Event</a></li>
-            <li class="nav-li"><a href="product.html" >Q & A</a></li>
+            <li class="nav-li"><a href="main.php" >Home</a></li>
+            <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
+            <li class="nav-li"><a href="product.php">Product</a></li>
+            <li class="nav-li"><a href="product.php" >Event</a></li>
+            <li class="nav-li"><a href="product.php" >Q & A</a></li>
           </ul>
           <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">

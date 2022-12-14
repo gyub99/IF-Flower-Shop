@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dinga Dinga flower Shop</title>
+    <title>IF Flower Shop</title>
     <meta charset="utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,8 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/product_detail.css" />
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script rel="javascript" src="javascript/product.js"></script>
     <script rel="javascript" src="javascript/get_index.js"></script>
@@ -65,7 +63,7 @@
         }
         if ((i==6)||(k==6)){
           alert("포장지 색과 리본 색을 모두 선택해주세요!");
-          location.href="product_detail.html?index="+data;
+          location.href="product_detail.php?index="+data;
         }
         else {
           alert('"'+product_list[data].name + '"을(를) ' + (mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.");
@@ -77,18 +75,42 @@
 
   <body>
     <!-- 헤더부분 -->
+    <?php
+    //세션 스타트 해주여야 session전역변수 사용할 수 있다.
+    if(!session_id()) {
+  	session_start();
+    }
+    if (isset($_SESSION['message']) && $_SESSION['is_login']==true && $_SESSION['login_alert']==true):
+     ?>
+     <div class="alert alert-<?=$_SESSION['msg_type']?>">
+       <?php
+        echo $_SESSION['message'];
+        echo "<br>".$_SESSION['user_name']."님 안녕하세요 IF 꽃집입니다";
+        $_SESSION['login_alert']=false;
+        ?>
+
+      </div>
+    <?php endif ?>
+
+    <!-- 헤더부분 -->
     <div class="header">
       <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-10">
-            </div>
-            <div class="col-sm-2 register">
-              <a href="intro.html" style="margin-right:10px; color:black;">로그아웃</a>
-            </div>
-          </div>
+        <div class="register">
+            <?php
+            echo $_SESSION['user_name']."님"
+            ?>
+          &nbsp;|&nbsp;
+          <a href="shopping basket.php" style="margin:10px; color:black;">My page</a>
+          &nbsp;|&nbsp;
+          <a href="logout.php" style="margin:10px; color:black;">Logout</a>
+
+
+      <p style="text-align:center;"><a href="main.php"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
         </div>
-          <p style="text-align:center;"><a href="main.php"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
       </div>
+    </div>
+
+
 
       <!-- 네비게이션 -->
     <!-- 네비게이션 부분 -->
@@ -96,11 +118,11 @@
       <div class="navcontainer row">
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav" >
-            <li class="nav-li"><a href="main.html" >Home</a></li>
-            <li class="nav-li"><a href="makeBouquet.html" >Make Flower</a></li>
-            <li class="nav-li"><a href="product.html">Product</a></li>
-            <li class="nav-li"><a href="product.html" >Event</a></li>
-            <li class="nav-li"><a href="product.html" >Q & A</a></li>
+            <li class="nav-li"><a href="main.php" >Home</a></li>
+            <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
+            <li class="nav-li"><a href="product.php">Product</a></li>
+            <li class="nav-li"><a href="product.php" >Event</a></li>
+            <li class="nav-li"><a href="product.php" >Q & A</a></li>
           </ul>
           <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
@@ -173,36 +195,37 @@
             <p><strong style="color:#B2C773">충북 지역</strong>은 특히 빠르게 배송됩니다</p>
           </div>
           <hr>
-          <div class="input-form">
+          <div class="color-container">
             <table>
               <tr>
-                <td><strong>포장지 색 선택</strong></td>
+                <td style=" font-family: 'S-CoreDream-3Light';"><strong>포장지 색 선택</strong></td>
                 <td>
-                  <div class="row choose-wrapper">
-                  <a role='button' onclick="choose_bouquet(0)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #ecdfcf;"> </span></a>
-                  <a role='button' onclick="choose_bouquet(1)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #b9a9c9;"> </span></a>
-                  <a role='button' onclick="choose_bouquet(2)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #e6e6fe;"> </span></a>
-                  <a role='button' onclick="choose_bouquet(3)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #CEF6D8"> </span></a>
-                  <a role='button' onclick="choose_bouquet(4)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #F5F6CE;"> </span></a>
-                  <a role='button' onclick="choose_bouquet(5)"><span class="color col-sm-1 img-circle bouquet" style="background-color: #9aabb9;"> </span></a>
-                </div>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>리본 색 선택</strong></td>
-                <td>
-                  <div class="row choose-ribbon">
-                    <a role='button' onclick="choose_ribbon(0)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #7ea8cc;"> </span></a>
-                    <a role='button' onclick="choose_ribbon(1)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #ff8fab;"> </span></a>
-                    <a role='button' onclick="choose_ribbon(2)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #f7c934;"> </span></a>
-                    <a role='button' onclick="choose_ribbon(3)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #8cd790"> </span></a>
-                    <a role='button' onclick="choose_ribbon(4)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #b6b5f5;"> </span></a>
-                    <a role='button' onclick="choose_ribbon(5)"><span class="color col-sm-1 img-circle ribbon" style="background-color: #9f65fc;"> </span></a>
+                  <div class="row choose-bouquet">
+                    <a role='button' onclick="choose_bouquet(0)"><span id="c1" class="color col-sm-2 img-circle bouquet" style="background-color: #7ea8cc;"> </span></a>
+                    <a role='button' onclick="choose_bouquet(1)"><span id="c2" class="color col-sm-2 img-circle bouquet"  style="background-color: #E69A65"> </span></a>
+                    <a role='button' onclick="choose_bouquet(2)"><span id="c3" class="color col-sm-2 img-circle bouquet"  style="background-color: #D7E691"> </span></a>
+                    <a role='button' onclick="choose_bouquet(3)"><span id="c4" class="color col-sm-2 img-circle bouquet"  style="background-color: #87bdaa;"> </span></a>
+                    <a role='button' onclick="choose_bouquet(4)"><span id="c5" class="color col-sm-2 img-circle bouquet"  style="background-color: #F5F6CE;"> </span></a>
+                    <a role='button' onclick="choose_bouquet(5)"><span id="c6" class="color col-sm-2 img-circle bouquet"  style="background-color: #E65F4C"> </span></a>
                   </div>
                 </td>
               </tr>
-            </table>
-          </div>
+                <tr>
+                  <td style=" font-family: 'S-CoreDream-3Light';"><strong>리본 색 선택&nbsp&nbsp&nbsp&nbsp</strong></td>
+                  <td>
+                    <div class="row choose-ribbon">
+                      <a role='button' onclick="choose_ribbon(0)"><span id="r1" class="color col-sm-2 img-circle ribbon" style="background-color: #5767E6"> </span></a>
+                      <a role='button' onclick="choose_ribbon(1)"><span id="r2" class="color col-sm-2 img-circle ribbon" style="background-color: #E68393"> </span></a>
+                      <a role='button' onclick="choose_ribbon(2)"><span id="r3" class="color col-sm-2 img-circle ribbon" style="background-color: #f7c934;"> </span></a>
+                      <a role='button' onclick="choose_ribbon(3)"><span id="r4" class="color col-sm-2 img-circle ribbon" style="background-color: #8BE67A"> </span></a>
+                      <a role='button' onclick="choose_ribbon(4)"><span id="r5" class="color col-sm-2 img-circle ribbon" style="background-color: #6CDEE6;"> </span></a>
+                      <a role='button' onclick="choose_ribbon(5)"><span id="r6" class="color col-sm-2 img-circle ribbon" style="background-color: #9f65fc;"> </span></a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
           <div class="buy row">
             <div class="col-sm-3"></div>
             <script>document.write('<button class="buy-item col-sm-5" onclick="linking_basket('+data+'); check_order();">장바구니</button>')</script>
@@ -212,22 +235,22 @@
     </div>
 
     <!-- footer -->
-      <footer class="container-fluid bg-main-footer">
-        <div class="row">
-          <div class="col-sm-2"></div>
-          <div class="col-sm-4">
-            <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
-            <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
-            <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
-          </div>
-          <div class="col-sm-5">
-            <h2 style="font-family: 'Cafe24Oneprettynight';">딩가 꽃집</h2><br>
-            <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 371-06-0707<br>
-              통신판매업 신고번호 : 2021-서울 삼성동-77775<br>
-              주소 : 서울 강남구 테해란로 7번길 딩가빌딩<br>
-              COPYRIGHTⓒ 2021 DINGAFLOWER. ALL RIGHTS RESERVED</p>
-          </div>
-          </div>
-      </footer>
+    <footer class="container-fluid bg-main-footer">
+      <div class="row footer-container">
+        <div class="col-sm-6">
+          <h2 style="font-family: 'Cafe24Oneprettynight';">IF 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
+          <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
+          <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
+        </div>
+        <div class="col-sm-6">
+          <h2 style="font-family: 'Cafe24Oneprettynight';">IF 꽃집</h2><br>
+          <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 123-45-6789<br>
+            통신판매업 신고번호 : 2022-청주 충북대-99999<br>
+            주소 : 충북 청주시 서원구 충대로 1, 전자정보대학 소프트웨어학부 S4-1동(전자정보 3관)<br>
+            COPYRIGHTⓒ 2022 IF FLOWER. ALL RIGHTS RESERVED</p>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>
