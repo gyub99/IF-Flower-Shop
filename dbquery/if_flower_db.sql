@@ -32,7 +32,7 @@ insert into product (product_name, product_price, product_description,product_im
   ("김규빈 파머 초이스",25000, "변함없는 사랑의 리시안셔스","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/3.PNG?raw=true"),
   ("옥시페탈룸",15000, "별을 닮은 꽃","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/4.PNG?raw=true"),
   ("양희진 파머 초이스",29000, "들꽃의 소박한 정취","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/5.PNG?raw=true"),
-  ("딩가 파머 초이스",2000, "청초한 느낌의 제철 꽃 믹스","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/6.PNG?raw=true"),
+  ("딩가 파머 초이스",20000, "청초한 느낌의 제철 꽃 믹스","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/6.PNG?raw=true"),
   ("골든볼 쏠리 믹스",19000, "옐로우로 즐기는 초여름 믹스","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/7.PNG?raw=true"),
   ("핑크 장미 믹스 2종",17000, "연인에게 장미로 전하는 마음","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/8.PNG?raw=true"),
   ("스프레이 델피늄",22000, "돌고래를 닮은 꽃잎","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/9.PNG?raw=true"),
@@ -51,6 +51,8 @@ insert into product (product_name, product_price, product_description,product_im
   ("알스트로메리아",13000, "남아메리카를 닮은 아름다움","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/22.PNG?raw=true");
 
 UPDATE product SET product_sale = true WHERE product_id in(1,8,10,15);
+UPDATE product SET product_best = true WHERE product_id in(3,4,6,7);
+
 
 drop table product;
 desc customer;
