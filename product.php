@@ -1,3 +1,7 @@
+<?php
+    include "connect.php";
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -53,6 +57,13 @@
       </div>
     <?php endif ?>
 
+    <?php
+
+      $best_products=$mysqli->query("SELECT * FROM product where product_best = true") or die($mysqli->error);
+      $sale_products=$mysqli->query("SELECT * FROM product where product_sale = true") or die($mysqli->error);
+      $all_products=$mysqli->query("SELECT * FROM product") or die($mysqli->error);
+    ?>
+
     <!-- 헤더부분 -->
     <div class="header">
       <div class="container-fluid">
@@ -92,7 +103,7 @@
         </div>
       </div>
     </nav>
-    
+
     <div class="container-fluid best-product text-center">
       <h2><strong>IF 꽃집 베스트 상품</strong></h2>
       <h4>요즘 잘 나가는 이 상품은 어떠세요?</h4>
@@ -101,19 +112,24 @@
         <div class="col-sm-1"></div>
           <div class ="col-sm-10">
           <div class="row">
-        <script>
-          for (var i=0;i<product_list.length; i++){
-            if (i==2 || i==3 || i==5 || i==6){
-              document.write('<div class="col-sm-3">');
-              document.write('<a onclick="linking('+i+')">');
-              document.write('<img src="picture/product/' + i + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />');
-              document.write('<div class="best-comment">' + product_list[i].comment + '</div>');
-              document.write('<div class="best-name">' + product_list[i].name + '</div>');
-              document.write('<div class="best-price">' + product_list[i].price + '</div>');
-              document.write('</a></div>');
-            }
-          }
-        </script>
+
+          <?php
+          while ($row=$best_products->fetch_assoc()) {
+                ?>
+                <div class="col-sm-3">
+                <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>"><img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />
+                <div class="best-comment">
+                    <?php echo $row["product_description"]?>
+                </div>
+                <div class="best-name">
+                    <?php echo $row["product_name"]?>
+                </div>
+                <div class="best-price">
+                    <?php echo $row["product_price"]?>
+                </div>
+                </a></div>
+                <?php }?>
+
         </div>
           </div>
         <div class="col-sm-2"></div>
@@ -128,19 +144,23 @@
         <div class="col-sm-1"></div>
         <div class ="col-sm-10">
         <div class="row">
-        <script>
-          for (var i=0;i<product_list.length; i++){
-            if (i==0 || i==7 || i==9 || i==14){
-              document.write('<div class="col-sm-3">');
-                document.write('<a onclick="linking('+i+')">');
-              document.write('<img src="picture/product/' + i + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale" class="img-responsive" />');
-              document.write('<div class="sale-comment">' + product_list[i].comment + '</div>');
-              document.write('<div class="sale-name">' + product_list[i].name + '</div>');
-              document.write('<div class="sale-price"><span class="original">' + product_list[i].original + '</span> ' + product_list[i].price + '</div>');
-              document.write('</a></div>');
-            }
-          }
-        </script>
+            <?php
+            while ($row=$sale_products->fetch_assoc()) {
+                  ?>
+                  <div class="col-sm-3">
+                  <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>"><img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />
+                  <div class="best-comment">
+                      <?php echo $row["product_description"]?>
+                  </div>
+                  <div class="best-name">
+                      <?php echo $row["product_name"]?>
+                  </div>
+                  <div class="best-price">
+                      <?php echo $row["product_price"]?>
+                  </div>
+                  </a></div>
+                  <?php }?>
+
         </div>
       </div>
       </div>
@@ -150,36 +170,49 @@
       <h2><strong>오늘같은 날, 꽃 선물은 어떠세요?</strong></h2>
       <h4>12월의 추천꽃 <strong>"장미"</strong></h4>
       <div class="item_list">
-        <script>
-          for (var i=0;i<4;i++){
-            document.write('<div class="row product-item">');
-              document.write('<div class="col-sm-1"></div><div class ="col-sm-10"><div class="row">');
-            for (var j=0; j<4; j++){
-              document.write('<div class="col-sm-3">');
-              document.write('<a onclick="linking('+(i*4+j)+')">');
-              document.write('<img src="picture/product/' + (i*4+j) + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale' + (i*4+j) + '" class="img-responsive" />');
-              document.write('<div class="comment">' + product_list[4*i+j].comment + '</div>');
-              document.write('<div class="name">' + product_list[4*i+j].name + '</div>');
-              if ((i*4+j)==0 || (i*4+j)==7 || (i*4+j)==9 || (i*4+j)==14){
-                document.write('<div class="sale-price"><span class="original">' + product_list[4*i+j].original + '</span> ' + product_list[4*i+j].price + '</div></a></div>');
-              }
-              else {
-                document.write('<div class="price">' + product_list[4*i+j].price + '</div></a></div>');
-              }
-            }
-            document.write('</div></div></div>');
-          }
-        </script>
-      </div>
-      <div class="page-control">
-        <p>
-          <span href="product2.php" class="glyphicon glyphicon-chevron-left" id="left"></span>
-          <span>
-            <a href="product2.php" class="glyphicon glyphicon-chevron-right" id="right"></a>
-          </span>
-        </p>
-      </div>
-    </div>
+
+        <?php
+        for ($i=0; $i<4; $i++){
+            ?>
+             <div class="row product-item">
+                 <div class="col-sm-1">
+                 </div>
+                 <div class ="col-sm-10">
+                     <div class="row">
+                         <?php
+                         for ($j=0;$j<4;$j++){
+                             ?>
+                         <?php while ($row=$all_products->fetch_assoc()) {
+                             ?>
+                             <div class="col-sm-3">
+                                 <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>">
+                                     <img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />
+                                     <div class="comment">
+                                         <?php echo $row["product_description"]?>
+                                     </div>
+                                     <div class="name">
+                                         <?php echo $row["product_name"]?>
+                                     </div>
+                                     <div class="price">
+                                         <?php echo $row["product_price"]?>
+                                     </div>
+                                 </a></div>
+                             <?php }?>
+                         <?php }?>
+                     </div></div></div>
+                 <?php }?>
+             </div>
+
+             <div class="page-control">
+                 <p>
+                     <span href="product2.php" class="glyphicon glyphicon-chevron-left" id="left"></span>
+                     <span>
+                         <a href="product2.php" class="glyphicon glyphicon-chevron-right" id="right"></a>
+                     </span>
+                 </p>
+             </div>
+         </div>
+
     <!-- footer -->
     <footer class="container-fluid bg-main-footer">
       <div class="row footer-container">

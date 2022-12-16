@@ -1,3 +1,7 @@
+<?php
+    include "connect.php";
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -92,6 +96,14 @@
       </div>
     <?php endif ?>
 
+    <?php
+    $id='';
+    $id=$_GET['product_id'];
+    $all_products=$mysqli->query("SELECT * FROM product") or die($mysqli->error);
+    $product_detail=$mysqli->query("SELECT * FROM product where product_id=$id") or die($mysqli->error);
+    $row=$product_detail->fetch_array();
+    ?>
+
     <!-- 헤더부분 -->
     <div class="header">
       <div class="container-fluid">
@@ -147,8 +159,7 @@
             </ol>
           <div class="carousel-inner">
             <div class="item active">
-              <script>document.write('<img src="picture/product/'+data+'.PNG" class="img-responsive" alt="pro-slide1" style="margin-left: auto; margin-right: auto;">')</script>
-
+                <img src="<?php echo $row["product_image"]?>" alt="pro-slide1" class="img-responsive" alt="pro-slide1" style="margin-left: auto; margin-right: auto;">
             </div>
             <div class="item">
               <img src="picture/f2.PNG" class="img-responsive" alt="pro-slide2" style="margin-left: auto; margin-right: auto;">
@@ -169,6 +180,7 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
+
         <div class="pro-thumbnail row">
           <span class="col-sm-2"></span>
           <script>document.write('<a role="button" data-target="#pro-carousel" data-slide-to="0"><img class="col-sm-2 thumbnail img-responsive" src="picture/product/'+data+'.PNG" alt="prod1" onclick="check_click(0)" style = "border:2px solid #aabbe5;"/></a>')</script>
@@ -181,13 +193,13 @@
         <div class="col-sm-5 product-img">
           <div class pro-info>
             <p class="pro-comment">
-              <script>document.write(product_list[data].comment);</script>
+                <?php echo $row["product_description"]?>
             </p>
            <h2 class="pro-name">
-              <script>document.write(product_list[data].name);</script>
+              <?php echo $row["product_name"]?>
             </h3>
             <hr>
-            <h4 class="pro-price"><script>document.write(product_list[data].price);</script></h4>
+            <h4 class="pro-price"><?php echo $row["product_price"]?></h4>
             <hr>
           </div>
           <div class="del-comment">

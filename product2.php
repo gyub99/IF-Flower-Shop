@@ -194,7 +194,7 @@
       </div>
       <div class="page-control">
         <p>
-          <a href="product.html" class="glyphicon glyphicon-chevron-left" id="left"></a>
+          <a href="product.php" class="glyphicon glyphicon-chevron-left" id="left"></a>
           <span class="glyphicon glyphicon-chevron-right" id="right"></span>
         </p>
       </div>
