@@ -30,12 +30,13 @@ if(mysqli_num_rows($result)==1){
       $_SESSION['message']="로그인에 성공했습니다!";
       $_SESSION['msg_type'] ='success';
       $_SESSION['login_alert']=true;
+      //echo "<script>alert('로그인에 성공하였습니다'); location.href =\"main.php\";</script>";
       header("location:main.php");
-      exit;
+    }elseif($row['person_pw']!=$input_pw){
+      echo "<script>alert('비밀번호를 잘못 입력하셨습니다'); location.href =\"index.php\";</script>";
     }
   }else{
-     echo '로그인에 실패하였습니다';
-     header("location:index.php");
+    echo "<script>alert('존재하지 않는 회원입니다'); location.href =\"index.php\";</script>";
   }
 
  ?>

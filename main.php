@@ -107,7 +107,8 @@
     if(!session_id()) {
   	session_start();
     }
-    if (isset($_SESSION['message']) && $_SESSION['is_login']==true && $_SESSION['login_alert']==true):
+    if(isset($_SESSION['login_alert'])){
+      if (isset($_SESSION['message']) && $_SESSION['is_login']==true && $_SESSION['login_alert']==true ):
      ?>
      <div class="alert alert-<?=$_SESSION['msg_type']?>">
        <?php
@@ -117,7 +118,7 @@
         ?>
 
       </div>
-    <?php endif ?>
+    <?php endif; } ?>
 
     <!-- 헤더부분 -->
     <div class="header">
