@@ -21,5 +21,7 @@ if (ini_get("session.use_cookies")) {
 
 // 세션 파일 삭제
 session_destroy();
-header("location:index.php");
+
+echo "<script>alert('로그아웃하였습니다 안녕하가세요'); location.href =\"index.php\";</script>";
+// header("location:index.php");
 ?>

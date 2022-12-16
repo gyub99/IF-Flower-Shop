@@ -1,8 +1,8 @@
 <?php
-
+include "connect.php";
 session_start();
 
-$mysqli=new mysqli('localhost:3306','root','root','dingadb') or die(mysqli_error($mysqli));
+//$mysqli=new mysqli('localhost:3306','root','1234','if_flower_db') or die(mysqli_error($mysqli));
 
 $id= '';
 $pw='';
@@ -16,7 +16,7 @@ $name=$_POST['name'];
 $email=$_POST['email'];
 $address=$_POST['address'];
 
-$mysqli->query("INSERT INTO person (person_id,person_pw,person_name,person_email,person_address) VALUES('$id','$pw','$name','$email','$address')") or die($mysqli->error);
+$mysqli->query("INSERT INTO customer (customer_id,customer_pw,customer_name,customer_email,customer_address) VALUES('$id','$pw','$name','$email','$address')") or die($mysqli->error);
 
 
 
