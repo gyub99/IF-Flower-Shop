@@ -6,13 +6,13 @@ function getParameterByName(name) {
 }
 
 function linking(m){
-    location.href="product_detail.html?index="+m;
+    location.href="product_detail.php?index="+m;
   }
 
   function linking_basket(m){
-    location.href="shopping basket.html?index="+m;
+    location.href="shopping basket.php?index="+m;
   }
 
   function linking_buy(m){
-    location.href="order.html?index="+m;
+    location.href="order.php?index="+m;
   }
