@@ -7,7 +7,7 @@ session_destroy();
 }
 
 
-$mysqli=new mysqli('localhost:3306','root','1234','dingadb') or die(mysqli_error($mysqli));
+$mysqli=new mysqli('localhost:3306','root','root','dingadb') or die(mysqli_error($mysqli));
 
 $input_id='';
 $input_pw='';
