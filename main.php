@@ -1,10 +1,6 @@
 <?php
-
-  $mysqli=new mysqli('localhost:3306','root','root','if_flower_db') or die(mysqli_error($mysqli));
-
-?>
-
-
+include "connect.php";
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -36,7 +32,7 @@
       m.style.transition = "all 0.5s";
     }
 
-    
+
   </script>
 <style>
 @font-face {

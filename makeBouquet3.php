@@ -1,4 +1,8 @@
 <?php include "connect.php" ?>
+<?php if(!session_id()) {
+session_start();
+}
+?>
 <!DOCTYPE html>
 
 <html>
@@ -27,13 +31,13 @@
     <script>
       var data=getParameterByName('index');
       function choose_bouquet(check_click_thumbnail){
-        mybouquet=document.getElementsByClassName('bouquet');
+        wrapping_paper=document.getElementsByClassName('bouquet');
         for (var i=0; i<6; i++){
-          if (mybouquet[i].style.border === '2px solid black') {
-            mybouquet[i].style.border = 'none';
+          if (wrapping_paper[i].style.border === '2px solid black') {
+            wrapping_paper[i].style.border = 'none';
           }
         }
-        mybouquet[check_click_thumbnail].style.border='2px solid black';
+        wrapping_paper[check_click_thumbnail].style.border='2px solid black';
       }
       function choose_ribbon(check_click_thumbnail){
         myribbon=document.getElementsByClassName('ribbon');
@@ -47,7 +51,7 @@
       }
       function check_order(){
         var myribbon;
-        var mybouquet;
+        var wrapping_paper;
         var i;
         var k;
         var ribbon=document.getElementsByClassName('ribbon');
@@ -60,7 +64,7 @@
         }
         for (k=0; k<6; k++){
           if (bouquet[k].style.border === '2px solid black'){
-            mybouquet=k;
+            wrapping_paper=k;
             break;
           }
         }
@@ -72,11 +76,24 @@
             alert('꽃을 선택해주세요!');
           }
           else {
-            alert('DIY 꽃다발을 ' + (mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.\n총 "+total_price.toLocaleString()+'원 입니다.');
+            alert('DIY 꽃다발을 ' + (wrapping_paper/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.\n총 "+total_price.toLocaleString()+'원 입니다.');
             linking_basket(total_price);
           }
         }
+        document.getElementById('myribbon').value = myribbon;
+        document.getElementById('wrapping_paper').value = wrapping_paper;
+        document.getElementById('total_price').value = total_price;
+        document.getElementById('flower1_count').value = flower1_count;
+        document.getElementById('flower2_count').value = flower2_count;
+        document.getElementById('flower3_count').value = flower3_count;
+        document.getElementById('flower4_count').value = flower4_count;
+        document.getElementById('flower5_count').value = flower5_count;
+        document.getElementById('flower6_count').value = flower6_count;
+        document.getElementById('flower7_count').value = flower7_count;
+        document.getElementById('flower8_count').value = flower8_count;
+
       }
+
       function plus_price(m){
         total_price=total_price/1+document.getElementById('flower'+m).innerHTML.replace(',',"").replace('원',"");
 
@@ -206,8 +223,8 @@
               while ($row=$all_custom_flowers->fetch_assoc()) {
                     ?>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button<?php echo $row['custom_flower_id'] ?>" class="select-flower"><a href="flower_making_process.php?id=<?php echo $row['custom_flower_id'] ?>"><img class="img-responsive" src="<?php echo $row["custom_flower_image"]?>" alt="flower1"/>
-                <div class="price" id="flower1"><?php echo $row["custom_flower_price"]?></div></button>
+                <button type="button" id="button<?php echo $row['custom_flower_id'] ?>" class="select-flower"><img class="img-responsive" src="<?php echo $row["custom_flower_image"]?>" alt="flower<?php echo $row['custom_flower_id'] ?>"/>
+                <div class="price" id="flower<?php echo $row['custom_flower_id'] ?>"><?php echo $row["custom_flower_price"]?></div></button>
               </div>
                 <?php }?>
 
@@ -252,7 +269,22 @@
 
             <div class="buy row">
               <div class="col-sm-5"></div>
-              <script>document.write('<button class="buy-item col-sm-5" onclick="check_order();">장바구니</button>')</script>
+
+              <form method="POST" action="process.php">
+              <button class="buy-item col-sm-5" onclick="check_order();">장바구니</button>
+              <input type="hidden" id="myribbon" name="myribbon">
+              <input type="hidden" id="wrapping_paper" name="wrapping_paper">
+              <input type="hidden" id="total_price" name="total_price">
+              <input type="hidden" id="flower1_count" name="flower1_count">
+              <input type="hidden" id="flower2_count" name="flower2_count">
+              <input type="hidden" id="flower3_count" name="flower3_count">
+              <input type="hidden" id="flower4_count" name="flower4_count">
+              <input type="hidden" id="flower5_count" name="flower5_count">
+              <input type="hidden" id="flower6_count" name="flower6_count">
+              <input type="hidden" id="flower7_count" name="flower7_count">
+              <input type="hidden" id="flower8_count" name="flower8_count">
+
+              </form>
             </div>
           </div>
         </div>
