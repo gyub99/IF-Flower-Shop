@@ -2,18 +2,18 @@ create database if_flower_db;
 
 use if_flower_db;
 
-create table if_flower_db.customer(
+create table customer(
    ssn int not null AUTO_INCREMENT,
    customer_id varchar(20) not null,
    customer_pw varchar(20) not null,
    customer_name varchar(20) not null,
    customer_email varchar(45) not null,
    customer_address varchar(100) not null,
-    primary key(ssn),
-    unique key uk_customer_id(customer_id)
+   primary key(ssn),
+   unique key(customer_id)
 );
 
-create table if_flower_db.product(
+create table product(
    product_id int not null AUTO_INCREMENT,
    product_name varchar(40) not null,
    product_description varchar(100),
@@ -26,7 +26,7 @@ create table if_flower_db.product(
 );
 
 
-insert into if_flower_db.product (product_name, product_price, product_description,product_image) values
+insert into product (product_name, product_price, product_description,product_image) values
   ("캄파눌라(초롱꽃)",20000, "종을 닮은 BELL FLOWER","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/0.PNG?raw=true"),
   ("스윗핑크 장미",25000, "선명한 핑크색상의 캔디","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/1.PNG?raw=true"),
   ("신지혜 파머 초이스",29000, "고민 많은 당신을 위한 제철 꽃 믹스","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/2.PNG?raw=true"),
@@ -51,8 +51,56 @@ insert into if_flower_db.product (product_name, product_price, product_descripti
   ("우리타워 백합",15000, "순결, 변함없는 사랑","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/21.PNG?raw=true"),
   ("알스트로메리아",13000, "남아메리카를 닮은 아름다움","https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/product/22.PNG?raw=true");
 
-UPDATE if_flower_db.product SET product_sale = true WHERE product_id in(1,8,10,15);
-UPDATE if_flower_db.product SET product_best = true WHERE product_id in(3,4,6,7);
-UPDATE if_flower_db.product SET product_recommendation = true WHERE product_id in(2,9,13,18);
+UPDATE product SET product_sale = true WHERE product_id in(1,8,10,15);
+UPDATE product SET product_best = true WHERE product_id in(3,4,6,7);
+UPDATE product SET product_recommendation = true WHERE product_id in(2,9,13,18);
+
+create table cart(
+   cart_id int not null AUTO_INCREMENT,
+   cart_total int,
+   customer_ssn int,
+   primary key(cart_id),
+   foreign key(customer_ssn) references customer(ssn)
+);
+
+create table cart_item(
+   cart_item_id int not null AUTO_INCREMENT,
+   product_id int,
+   cart_id int,
+   quantity int,
+   wrapping_color varchar(20),
+   ribbon_color varchar(20),
+   primary key(cart_item_id),
+   foreign key(cart_id) references cart(cart_id),
+   foreign key(product_id) references product(product_id)
+);
+
+create table custom_product(
+    custom_product_id int not null AUTO_INCREMENT,
+    customer_ssn int,
+    cart_id int,
+    quantity int,
+    custom_product_total int,
+    primary key(custom_product_id),
+    foreign key (customer_ssn) references customer(ssn),
+    foreign key (cart_id) references cart(cart_id)
+);
+
+create table custom_flower(
+    custom_flower_id int not null AUTO_INCREMENT,
+    custom_flower_name varchar(40),
+    custom_flower_price int,
+    primary key(custom_flower_id)
+);
 
 
+create table custom_making(
+    cutom_making_id int not null AUTO_INCREMENT,
+    custom_flower_id int,
+    custom_product_id int,
+    quantity int,
+    custom_making_total int,
+    primary key(cutom_making_id),
+    foreign key (custom_flower_id) references custom_flower(custom_flower_id),
+    foreign key (custom_product_id) references custom_product(custom_product_id)
+);
