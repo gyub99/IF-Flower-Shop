@@ -1,3 +1,9 @@
+<?php
+
+  $mysqli=new mysqli('localhost:3306','root','root','if_flower_db') or die(mysqli_error($mysqli));
+
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -30,30 +36,7 @@
       m.style.transition = "all 0.5s";
     }
 
-    function send_page(){
-      var name_form = document.getElementById("name").value;
-      var email_form = document.getElementById("email").value;
-      var send_content =document.getElementById("comments").value;
-
-      if(name_form.length == 0){
-        alert("이름을 입력해 주세요.");
-      }
-
-      else if(email_form.length == 0){
-        alert("이메일을 입력해 주세요.");
-      }
-      else if(send_content.length == 0){
-        alert("내용을 입력해 주세요.");
-      }
-
-      else if(name_form.length == 0 && email_form.length == 0){
-        alert("이름과 이메일을 입력해 주세요.");
-      }
-      else{
-        alert("문의가 접수되었습니다.");
-        location.href=("main.php")
-      }
-  }
+    
   </script>
 <style>
 @font-face {
@@ -210,6 +193,7 @@
 
       $best_products=$mysqli->query("SELECT * FROM product where product_best = true") or die($mysqli->error);
       $sale_products=$mysqli->query("SELECT * FROM product where product_sale = true") or die($mysqli->error);
+      $recommendation_products=$mysqli->query("SELECT * FROM product where product_recommendation = true") or die($mysqli->error);
       $all_products=$mysqli->query("SELECT * FROM product") or die($mysqli->error);
     ?>
 
@@ -223,15 +207,16 @@
                 ?>
                 <div class="col-sm-3">
                 <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>"><img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />
-                <div class="best-comment">
-                    <?php echo $row["product_description"]?>
-                </div>
-                <div class="best-name">
-                    <?php echo $row["product_name"]?>
-                </div>
-                <div class="best-price">
-                    <?php echo $row["product_price"]?>
-                </div>
+                <p class="title">
+                    <?php
+                    echo "[";
+                    echo $row["product_name"];
+                    echo "]";?>
+                </p>
+                <p class="bestprice">
+                    <?php echo number_format($row["product_price"]);
+                    echo "원"?>
+                </p>
                 </a></div>
                 <?php }?>
 
@@ -241,8 +226,25 @@
       <!-- 추천상품 -->
       <div class="container-fluid bg-main-suggest text-center">
         <h3 style="font-family: 'NanumSquare', sans-serif;"><strong>오늘의 추천상품</strong></h3>
-        <p style="font-family: 'Nanum Gothic', sans-serif;">12월의 추천꽃 라일락, 수련</p><br>
+        <p style="font-family: 'Nanum Gothic', sans-serif;">12월의 추천꽃 라일락, 장미</p><br>
         <div class="row pic-container">
+        <?php
+          while ($row=$best_products->fetch_assoc()) {
+                ?>
+                <div class="col-sm-3">
+                <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>"><img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />
+                <p class="title">
+                    <?php
+                    echo "[";
+                    echo $row["product_name"];
+                    echo "]";?>
+                </p>
+                <p class="bestprice">
+                    <?php echo number_format($row["product_price"]);
+                    echo "원"?>
+                </p>
+                </a></div>
+                <?php }?>
           <script>
             for (var i=0;i<product_list.length; i++){
               if (i==1 || i==8 || i==12 || i==17){
