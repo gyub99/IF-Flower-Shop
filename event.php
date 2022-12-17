@@ -102,15 +102,18 @@
     </nav>
 
       <div class="container-fluid bg-event">
-        <div id="title">
-        <h3 class="eventtitle">이달의 이벤트</h3>
-        </div>
+        <div class="container title">
+          <div class="eventtitle">
+            <h2 class="make-bouquet-title"><strong>이달의 이벤트</strong></h2>
+            <h5>이벤트에 참여하고 쿠폰을 획득하세요!</h5>
+          </div>
         <p style="text-align:center;">
-          <a href="event1.php"><img src="picture/event/first.png" alt="5월의 이벤트" class="img-responsive eventimg"></a>
-          <a href="event2.php"><img src="picture/event/second.png" alt="첫주문 이벤" class="img-responsive eventimg"></a>
+          <a href="event1.php"><img src="picture/event/first.jpg" alt="12월의 이벤트" class="img-responsive eventimg"></a>
+          <a href="event2.php"><img src="picture/event/second.png" alt="첫주문 이벤트" class="img-responsive eventimg"></a>
           <a href="event3.php"><img src="picture/event/third.png" alt="첫주문 이벤트" class="img-responsive eventimg"></a>
        </p>
       </div>
+    </div>
 
 
       <!-- footer -->

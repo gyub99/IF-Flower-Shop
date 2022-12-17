@@ -99,11 +99,11 @@
       <div class="container-fluid bg-event">
         <div id="title">
         <h3 class="eventtitle">지구지킴이 프로젝트</h3><br><br>
-          <img src="picture/event/event3.jpg" alt="event3" class="img-responsive" style="width:1300px; height:700px; margin-left: auto; margin-right: auto;">
-          <img src="picture/event/event3-2.jpg" alt="event3-2" class="img-responsive" style="width:1300px; height:700px; margin-left: auto; margin-right: auto;"><br><br>
-          <p style="text-align:center"><a href="donation.html">
+          <img src="picture/event/event3.png" alt="event3" class="img-responsive" style="width:1300px; height:700px; margin-left: auto; margin-right: auto;">
+          <img src="picture/event/event3-2.png" alt="event3-2" class="img-responsive" style="width:1300px; height:700px; margin-left: auto; margin-right: auto;"><br><br>
+          <!--<p style="text-align:center"><a href="donation.html">
             <img src="picture/event/go_donation.png" alt="button" class="img-responsive inlineimg" style="margin-left: auto; margin-right: auto;"></a>
-          </p>
+          </p>-->
       </div>
     </div>
 

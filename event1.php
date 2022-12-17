@@ -90,16 +90,12 @@
 
       <!-- 이벤트 부분 -->
 
-      <div class="row">
-      <div class="col-sm-12">
-        <div class="container-fluid bg-event">
-        <div id="title">
-        <h3 class="eventtitle">가정의 달 이벤트</h3><br><br>
-        <img src="picture/event/event1.jpg" alt="event1" class="img-responsive" style="margin-left: auto; margin-right: auto;">
+    <div class="container-fluid bg-event">
+      <div class="title">
+        <h3 class="eventtitle">나눔의 달 이벤트</h3><br><br>
       </div>
+      <div class="eventimg-container"><img src="picture/event/event1.png" alt="event1" class="img-responsive" style="max-width:1000px;margin:auto;"></div>
     </div>
-    </div>
-  </div>
 
       <!-- footer -->
       <footer class="container-fluid bg-main-footer">

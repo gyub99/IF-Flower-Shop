@@ -109,7 +109,7 @@
       <div class="container-fluid bg-event">
         <div id="title">
         <h3 class="eventtitle">첫주문 이벤트</h3><br><br><br>
-        <img src="picture/event/event2-1.png" alt="event1" class="img-responsive event2-1" style="margin-left: auto; margin-right: auto;">
+        <img src="picture/event/event2-1.png" alt="event1" class="img-responsive event2-1" style="margin-left: auto; margin-right: auto; max-width:1000px;">
         <img src="picture/event/event2-2.png" alt="event1" class="img-responsive event2-2" style="margin-left: auto; margin-right: auto;"><br>
         <p style="text-align:center"><a href="register.php">
           <img src="picture/event/go_register.png" alt="register" class="img-responsive inlineimg" style="margin-left: auto; margin-right: auto;"></a>

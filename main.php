@@ -152,13 +152,13 @@
         </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="picture/slide1.jpg" class="img-responsive" alt="slide1" style="margin-left: auto; margin-right: auto;">
+          <img src="picture/slide1.png" class="img-responsive" alt="slide1" style="margin-left: auto; margin-right: auto;">
         </div>
         <div class="item">
           <img src="picture/slide2.jpg" class="img-responsive" alt="slide2" style="margin-left: auto; margin-right: auto;">
         </div>
         <div class="item">
-          <img src="picture/slide3.jpg" class="img-responsive" alt="slide3" style="margin-left: auto; margin-right: auto;">
+          <img src="picture/slide3.png" class="img-responsive" alt="slide3" style="margin-left: auto; margin-right: auto;">
         </div>
       </div>
       <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
