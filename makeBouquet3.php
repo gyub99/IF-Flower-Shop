@@ -80,6 +80,9 @@ session_start();
             linking_basket(total_price);
           }
         }
+
+
+
         document.getElementById('myribbon').value = myribbon;
         document.getElementById('wrapping_paper').value = wrapping_paper;
         document.getElementById('total_price').value = total_price;

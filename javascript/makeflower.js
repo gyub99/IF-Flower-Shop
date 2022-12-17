@@ -4,14 +4,14 @@ var button3; //전역변수 선언
 var button4; //전역변수 선언
 
 
-var flower1_count=0;
-var flower2_count=0;
-var flower3_count=0;
-var flower4_count=0;
-var flower5_count=0;
-var flower6_count=0;
-var flower7_count=0;
-var flower8_count=0;
+var  flower1_count=0;
+var  flower2_count=0;
+var  flower3_count=0;
+var  flower4_count=0;
+var  flower5_count=0;
+var  flower6_count=0;
+var  flower7_count=0;
+var  flower8_count=0;
 
 
 var cancel_btn;
