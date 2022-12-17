@@ -77,7 +77,7 @@
           <a href="logout.php" style="margin:10px; color:black;">Logout</a>
 
 
-      <p style="text-align:center;"><a href="main.php"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
+        <p style="text-align:center;"><a href="main.php"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
         </div>
       </div>
     </div>
@@ -125,7 +125,8 @@
                     <?php echo $row["product_name"]?>
                 </div>
                 <div class="best-price">
-                    <?php echo $row["product_price"]?>
+                  <?php echo number_format($row["product_price"]);
+                    echo "원"?>
                 </div>
                 </a>
               </div>
@@ -149,15 +150,16 @@
             while ($row=$sale_products->fetch_assoc()) {
                   ?>
                   <div class="col-sm-3">
-                  <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>"><img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />
-                  <div class="best-comment">
+                  <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>"><img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="sale" class="img-responsive" />
+                  <div class="sale-comment">
                       <?php echo $row["product_description"]?>
                   </div>
-                  <div class="best-name">
+                  <div class="sale-name">
                       <?php echo $row["product_name"]?>
                   </div>
-                  <div class="best-price">
-                      <?php echo $row["product_price"]?>
+                  <div class="sale-price">
+                  <?php echo number_format($row["product_price"]);
+                    echo "원"?>
                   </div>
                   </a></div>
                   <?php }?>
@@ -185,7 +187,7 @@
                              ?>
                          <?php while ($row=$all_products->fetch_assoc()) {
                              ?>
-                             <div class="col-sm-3">
+                             <div class="col-sm-3 product-item">
                                  <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>">
                                      <img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />
                                      <div class="comment">
@@ -195,7 +197,8 @@
                                          <?php echo $row["product_name"]?>
                                      </div>
                                      <div class="price">
-                                         <?php echo $row["product_price"]?>
+                                     <?php echo number_format($row["product_price"]);
+                                        echo "원"?>
                                      </div>
                                  </a></div>
                              <?php }?>
@@ -204,14 +207,14 @@
                  <?php }?>
              </div>
 
-             <div class="page-control">
+             <!--<div class="page-control">
                  <p>
                      <span href="product2.php" class="glyphicon glyphicon-chevron-left" id="left"></span>
                      <span>
                          <a href="product2.php" class="glyphicon glyphicon-chevron-right" id="right"></a>
                      </span>
                  </p>
-             </div>
+             </div>-->
          </div>
 
     <!-- footer -->
