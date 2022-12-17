@@ -149,8 +149,8 @@
             <li class="nav-li"><a href="main.php" >Home</a></li>
             <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
             <li class="nav-li"><a href="product.php">Product</a></li>
-            <li class="nav-li"><a href="product.php" >Event</a></li>
-            <li class="nav-li"><a href="product.php" >Q & A</a></li>
+            <li class="nav-li"><a href="event.php" >Event</a></li>
+            <li class="nav-li"><a href="qna.php" >Q & A</a></li>
           </ul>
           <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
@@ -206,23 +206,35 @@
         </div>
       </div>
 
+         <?php
+
+      $best_products=$mysqli->query("SELECT * FROM product where product_best = true") or die($mysqli->error);
+      $sale_products=$mysqli->query("SELECT * FROM product where product_sale = true") or die($mysqli->error);
+      $all_products=$mysqli->query("SELECT * FROM product") or die($mysqli->error);
+    ?>
+
       <!-- 베스트상품 -->
       <div class="container-fluid bg-main-best text-center">
         <h3 style="font-family: 'NanumSquare', sans-serif;"><strong>IF Flower Shop의 베스트 상품</strong></h3>
         <p style="font-family: 'Nanum Gothic', sans-serif;"> 소중한 사람에게 꽃을 선물해보세요</p><br>
         <div class="row pic-container">
-          <script>
-            for (var i=0;i<product_list.length; i++){
-              if (i==2 || i==3 || i==5 || i==6){
-                document.write('<div class="col-sm-3">');
-                document.write('<a onclick="linking('+i+')">');
-                document.write('<img src="picture/product/' + i + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />');
-                document.write('<p class="title">[' + product_list[i].name + ']</p>');
-                document.write('<p class="bestprice">' + product_list[i].price + '</p>');
-                document.write('</a></div>');
-              }
-            }
-          </script>
+        <?php
+          while ($row=$best_products->fetch_assoc()) {
+                ?>
+                <div class="col-sm-3">
+                <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>"><img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />
+                <div class="best-comment">
+                    <?php echo $row["product_description"]?>
+                </div>
+                <div class="best-name">
+                    <?php echo $row["product_name"]?>
+                </div>
+                <div class="best-price">
+                    <?php echo $row["product_price"]?>
+                </div>
+                </a></div>
+                <?php }?>
+
         </div>
       </div>
 

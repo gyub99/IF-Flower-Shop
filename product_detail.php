@@ -21,11 +21,11 @@
       function check_click(check_click_thumbnail){
         mythumbnail=document.getElementsByClassName('thumbnail');
         for (var i=0; i<4; i++){
-          if (mythumbnail[i].style.border === '2px solid rgb(170, 187, 229)') {
+          if (mythumbnail[i].style.border === '2px solid rgb(115, 169, 173)') {
             mythumbnail[i].style.border = 'none';
           }
         }
-        mythumbnail[check_click_thumbnail].style.border='2px solid rgb(170, 187, 229)';
+        mythumbnail[check_click_thumbnail].style.border='2px solid rgb(115, 169, 173)';
       }
       function choose_bouquet(check_click_thumbnail){
         mybouquet=document.getElementsByClassName('bouquet');
@@ -133,8 +133,8 @@
             <li class="nav-li"><a href="main.php" >Home</a></li>
             <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
             <li class="nav-li"><a href="product.php">Product</a></li>
-            <li class="nav-li"><a href="product.php" >Event</a></li>
-            <li class="nav-li"><a href="product.php" >Q & A</a></li>
+            <li class="nav-li"><a href="event.php" >Event</a></li>
+            <li class="nav-li"><a href="qna.php" >Q & A</a></li>
           </ul>
           <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
@@ -145,8 +145,8 @@
     </nav>
 
     <div class="container contents">
-      <div class="row">
-        <h3 class="pro-det-title col-sm-6">Detail</h3>
+      <div class="title">
+        <h2 class="pro-det-title">Detail</h2>
       </div>
       <div class="product row">
         <div class="preview col-sm-6">
@@ -180,71 +180,73 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
+          <div class="more-preview-container">
+            <script>document.write('<a role="button" data-target="#pro-carousel" data-slide-to="0"><img class="col-sm-2 thumbnail img-responsive" src="picture/product/'+data+'.PNG" alt="prod1" onclick="check_click(0)" style = "border:2px solid #73a9ad;"/></a>')</script>
+            <a role="button" data-target="#pro-carousel" data-slide-to="1"><img class="col-sm-2 thumbnail img-responsive" src="picture/f2.PNG" alt="prod2" onclick="check_click(1)"/></a>
+            <a role="button" data-target="#pro-carousel" data-slide-to="2"><img class="col-sm-2 thumbnail img-responsive" src="picture/f3.PNG" alt="prod3" onclick="check_click(2)"/></a>
+            <a role="button" data-target="#pro-carousel" data-slide-to="3"><img class="col-sm-2 thumbnail img-responsive" src="picture/f4.PNG" alt="prod4" onclick="check_click(3)"/></a>
+          </div>
+        </div>
 
-        <div class="pro-thumbnail row">
-          <span class="col-sm-2"></span>
-          <script>document.write('<a role="button" data-target="#pro-carousel" data-slide-to="0"><img class="col-sm-2 thumbnail img-responsive" src="picture/product/'+data+'.PNG" alt="prod1" onclick="check_click(0)" style = "border:2px solid #aabbe5;"/></a>')</script>
-          <a role="button" data-target="#pro-carousel" data-slide-to="1"><img class="col-sm-2 thumbnail img-responsive" src="picture/f2.PNG" alt="prod2" onclick="check_click(1)"/></a>
-          <a role="button" data-target="#pro-carousel" data-slide-to="2"><img class="col-sm-2 thumbnail img-responsive" src="picture/f3.PNG" alt="prod3" onclick="check_click(2)"/></a>
-          <a role="button" data-target="#pro-carousel" data-slide-to="3"><img class="col-sm-2 thumbnail img-responsive" src="picture/f4.PNG" alt="prod4" onclick="check_click(3)"/></a>
-          <span class="col-sm-2"></span>
-        </div>
-        </div>
-        <div class="col-sm-5 product-img">
-          <div class pro-info>
+        <div class="col-sm-6">
+          <div class="pro-info">
             <p class="pro-comment">
                 <?php echo $row["product_description"]?>
             </p>
-           <h2 class="pro-name">
+            <h2 class="pro-name">
               <?php echo $row["product_name"]?>
-            </h3>
+            </h2>
+
             <hr>
+
             <h4 class="pro-price"><?php echo $row["product_price"]?></h4>
             <hr>
           </div>
+
           <div class="del-comment">
             <p>5만원 이상 구매시, <strong style="color: #DFCBE1">무료 배송!</strong></p>
             <p><strong style="color:#B2C773">충북 지역</strong>은 특히 빠르게 배송됩니다</p>
           </div>
+
           <hr>
           <div class="color-container">
             <table>
-              <tr>
-                <td style=" font-family: 'S-CoreDream-3Light';"><strong>포장지 색 선택</strong></td>
-                <td>
-                  <div class="row choose-bouquet">
-                    <a role='button' onclick="choose_bouquet(0)"><span id="c1" class="color col-sm-2 img-circle bouquet" style="background-color: #7ea8cc;"> </span></a>
-                    <a role='button' onclick="choose_bouquet(1)"><span id="c2" class="color col-sm-2 img-circle bouquet"  style="background-color: #E69A65"> </span></a>
-                    <a role='button' onclick="choose_bouquet(2)"><span id="c3" class="color col-sm-2 img-circle bouquet"  style="background-color: #D7E691"> </span></a>
-                    <a role='button' onclick="choose_bouquet(3)"><span id="c4" class="color col-sm-2 img-circle bouquet"  style="background-color: #87bdaa;"> </span></a>
-                    <a role='button' onclick="choose_bouquet(4)"><span id="c5" class="color col-sm-2 img-circle bouquet"  style="background-color: #F5F6CE;"> </span></a>
-                    <a role='button' onclick="choose_bouquet(5)"><span id="c6" class="color col-sm-2 img-circle bouquet"  style="background-color: #E65F4C"> </span></a>
-                  </div>
-                </td>
-              </tr>
                 <tr>
-                  <td style=" font-family: 'S-CoreDream-3Light';"><strong>리본 색 선택&nbsp&nbsp&nbsp&nbsp</strong></td>
+                  <td style=" font-family: 'S-CoreDream-3Light';"><strong>포장지 색 선택</strong></td>
                   <td>
-                    <div class="row choose-ribbon">
-                      <a role='button' onclick="choose_ribbon(0)"><span id="r1" class="color col-sm-2 img-circle ribbon" style="background-color: #5767E6"> </span></a>
-                      <a role='button' onclick="choose_ribbon(1)"><span id="r2" class="color col-sm-2 img-circle ribbon" style="background-color: #E68393"> </span></a>
-                      <a role='button' onclick="choose_ribbon(2)"><span id="r3" class="color col-sm-2 img-circle ribbon" style="background-color: #f7c934;"> </span></a>
-                      <a role='button' onclick="choose_ribbon(3)"><span id="r4" class="color col-sm-2 img-circle ribbon" style="background-color: #8BE67A"> </span></a>
-                      <a role='button' onclick="choose_ribbon(4)"><span id="r5" class="color col-sm-2 img-circle ribbon" style="background-color: #6CDEE6;"> </span></a>
-                      <a role='button' onclick="choose_ribbon(5)"><span id="r6" class="color col-sm-2 img-circle ribbon" style="background-color: #9f65fc;"> </span></a>
+                    <div class="row choose-bouquet">
+                      <a role='button' onclick="choose_bouquet(0)"><span id="c1" class="color col-sm-2 img-circle bouquet" style="background-color: #7ea8cc;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(1)"><span id="c2" class="color col-sm-2 img-circle bouquet"  style="background-color: #E69A65"> </span></a>
+                      <a role='button' onclick="choose_bouquet(2)"><span id="c3" class="color col-sm-2 img-circle bouquet"  style="background-color: #D7E691"> </span></a>
+                      <a role='button' onclick="choose_bouquet(3)"><span id="c4" class="color col-sm-2 img-circle bouquet"  style="background-color: #87bdaa;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(4)"><span id="c5" class="color col-sm-2 img-circle bouquet"  style="background-color: #F5F6CE;"> </span></a>
+                      <a role='button' onclick="choose_bouquet(5)"><span id="c6" class="color col-sm-2 img-circle bouquet"  style="background-color: #E65F4C"> </span></a>
                     </div>
                   </td>
                 </tr>
-              </table>
+                  <tr>
+                    <td style=" font-family: 'S-CoreDream-3Light';"><strong>리본 색 선택&nbsp&nbsp&nbsp&nbsp</strong></td>
+                    <td>
+                      <div class="row choose-ribbon">
+                        <a role='button' onclick="choose_ribbon(0)"><span id="r1" class="color col-sm-2 img-circle ribbon" style="background-color: #5767E6"> </span></a>
+                        <a role='button' onclick="choose_ribbon(1)"><span id="r2" class="color col-sm-2 img-circle ribbon" style="background-color: #E68393"> </span></a>
+                        <a role='button' onclick="choose_ribbon(2)"><span id="r3" class="color col-sm-2 img-circle ribbon" style="background-color: #f7c934;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(3)"><span id="r4" class="color col-sm-2 img-circle ribbon" style="background-color: #8BE67A"> </span></a>
+                        <a role='button' onclick="choose_ribbon(4)"><span id="r5" class="color col-sm-2 img-circle ribbon" style="background-color: #6CDEE6;"> </span></a>
+                        <a role='button' onclick="choose_ribbon(5)"><span id="r6" class="color col-sm-2 img-circle ribbon" style="background-color: #9f65fc;"> </span></a>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
             </div>
 
-          <div class="buy row">
-            <div class="col-sm-3"></div>
-            <script>document.write('<button class="buy-item col-sm-5" onclick="linking_basket('+data+'); check_order();">장바구니</button>')</script>
-           </div>
+            <div class="buy row">
+              <div class="col-sm-4"></div>
+              <script>document.write('<button class="buy-item col-sm-5" onclick="linking_basket('+data+'); check_order();">장바구니</button>')</script>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
     <!-- footer -->
     <footer class="container-fluid bg-main-footer">

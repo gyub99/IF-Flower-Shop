@@ -146,8 +146,8 @@
             <li class="nav-li"><a href="main.php" >Home</a></li>
             <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
             <li class="nav-li"><a href="product.php">Product</a></li>
-            <li class="nav-li"><a href="product.php" >Event</a></li>
-            <li class="nav-li"><a href="product.php" >Q & A</a></li>
+            <li class="nav-li"><a href="event.php" >Event</a></li>
+            <li class="nav-li"><a href="qna.php" >Q & A</a></li>
           </ul>
           <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">

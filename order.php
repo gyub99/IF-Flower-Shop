@@ -192,43 +192,43 @@ td,th{
 
   <!-- 헤더부분 -->
   <div class="header">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-10">
-          </div>
-          <div class="col-sm-2 register">
-            <a href="intro.php" style="margin-right:10px; color:black;">로그아웃</a>
-          </div>
+      <div class="container-fluid">
+        <div class="register">
+            <?php
+            echo $_SESSION['user_name']."님"
+            ?>
+          &nbsp;|&nbsp;
+          <a href="shopping basket.php" style="margin:10px; color:black;">My page</a>
+          &nbsp;|&nbsp;
+          <a href="logout.php" style="margin:10px; color:black;">Logout</a>
+
+
+      <p style="text-align:center;"><a href="main.php"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
         </div>
       </div>
-        <p style="text-align:center;"><a href="main.php"><img src="picture/logo/logo2.png" class="img-responsive img" id="logo_style"></a></p>
     </div>
+
 
 
       <!-- 네비게이션 -->
     <!-- 네비게이션 부분 -->
     <nav class="navbar navbar-default">
-        <div class="navcontainer">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
-                <li class="nav-li"><a href="makeBouquet.php">꽃제작</a></li>
-                <li class="nav-li"><a href="product.php">꽃상품</a></li>
-                <li class="nav-li"><a href="about.html">이모저모</a></li>
-                <li class="nav-li"><a href="event.html">이벤트</a></li>
-                <li class="nav-li"><a href="donation.html">기부현황</a></li>
-                <li class="nav-li"><a href="shopping basket.php">마이페이지</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
+      <div class="navcontainer row">
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav" >
+            <li class="nav-li"><a href="main.php" >Home</a></li>
+            <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
+            <li class="nav-li"><a href="product.php">Product</a></li>
+            <li class="nav-li"><a href="event.php" >Event</a></li>
+            <li class="nav-li"><a href="qna.php" >Q & A</a></li>
+          </ul>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
           <!-- 배송정보 -->
 
     <div class="container-fluid">

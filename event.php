@@ -1,3 +1,7 @@
+<?php
+    include "connect.php";
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -6,46 +10,39 @@
     <meta charset="utf-8">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="css/event.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-  @font-face {
-       font-family: 'S-CoreDream-3Light';
-       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
-       font-weight: normal;
-       font-style: normal;
-  }
+<style>
+/* .nanumsquare {
+    font-family: 'NanumSquare', sans-serif !important;
+} */
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
 
-  @font-face {
-      font-family: 'Cafe24Oneprettynight';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-  }
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
- .inlineimg{
-    display: inline;
-    width: 240px;
-    height: 60px;
-  }
 
-  .event2-1{
-    margin-bottom: 80px;
-  }
-
-  .event2-2{
-    width:650px;
-    height: 750px;
-    margin-bottom: 10px;
-  }
 </style>
+
   </head>
   <body>
 
+  
     <!-- 헤더부분 -->
     <?php
     //세션 스타트 해주여야 session전역변수 사용할 수 있다.
@@ -103,19 +100,18 @@
         </div>
       </div>
     </nav>
-    
-      <!-- 이벤트 부분 -->
 
       <div class="container-fluid bg-event">
         <div id="title">
-        <h3 class="eventtitle">첫주문 이벤트</h3><br><br><br>
-        <img src="picture/event/event2-1.png" alt="event1" class="img-responsive event2-1" style="margin-left: auto; margin-right: auto;">
-        <img src="picture/event/event2-2.png" alt="event1" class="img-responsive event2-2" style="margin-left: auto; margin-right: auto;"><br>
-        <p style="text-align:center"><a href="register.php">
-          <img src="picture/event/go_register.png" alt="register" class="img-responsive inlineimg" style="margin-left: auto; margin-right: auto;"></a>
-        </p>
+        <h3 class="eventtitle">이달의 이벤트</h3>
+        </div>
+        <p style="text-align:center;">
+          <a href="event1.php"><img src="picture/event/first.png" alt="5월의 이벤트" class="img-responsive eventimg"></a>
+          <a href="event2.php"><img src="picture/event/second.png" alt="첫주문 이벤" class="img-responsive eventimg"></a>
+          <a href="event3.php"><img src="picture/event/third.png" alt="첫주문 이벤트" class="img-responsive eventimg"></a>
+       </p>
       </div>
-    </div>
+
 
       <!-- footer -->
       <footer class="container-fluid bg-main-footer">
@@ -134,7 +130,6 @@
         </div>
       </div>
     </footer>
-
 
 
   </body>
