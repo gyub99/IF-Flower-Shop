@@ -95,6 +95,14 @@
         <h3 class="eventtitle">나눔의 달 이벤트</h3><br><br>
       </div>
       <div class="eventimg-container"><img src="picture/event/event1.png" alt="event1" class="img-responsive" style="max-width:1000px;margin:auto;"></div>
+      <div style="text-align:center">
+          <a class="event-button" href="makeBouquet.php">
+            <img src="picture/event/go_makebouquet.png" alt="makebouquet" class="img-responsive" style="max-width:300px;display:inline;padding:15px;text-decoration:none;">
+          </a>
+          <a class="event-button" href="product.php">
+            <img src="picture/event/go_product.png" alt="product" class="img-responsive" style="max-width:300px;display:inline;padding:15px;">
+          </a>
+        </div>
     </div>
 
       <!-- footer -->

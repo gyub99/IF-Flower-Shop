@@ -43,3 +43,9 @@
   text-align:center;
   
 }
+
+.event-button:hover{
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+}
