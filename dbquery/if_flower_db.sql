@@ -90,9 +90,19 @@ create table custom_flower(
     custom_flower_id int not null AUTO_INCREMENT,
     custom_flower_name varchar(40),
     custom_flower_price int,
+    custom_flower_image varchar(400),
     primary key(custom_flower_id)
 );
 
+insert into custom_flower (custom_flower_name, custom_flower_price, custom_flower_image) values
+  ("flower1",7000, "https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/makingFlower/yellow1.png?raw=true"),
+  ("flower2",9000, "https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/makingFlower/pink.png?raw=true"),
+  ("flower3",9000, "https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/makingFlower/white1.png?raw=true"),
+  ("flower4",7000, "https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/makingFlower/red1.png?raw=true"),
+  ("flower5",6000, "https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/makingFlower/purple1.png?raw=true"),
+  ("flower6",5000, "https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/makingFlower/orange.png?raw=true"),
+  ("flower7",6000, "https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/makingFlower/skyblue.png?raw=true"),
+  ("flower8",5000, "https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/makingFlower/blue2.png?raw=true");
 
 create table custom_making(
     cutom_making_id int not null AUTO_INCREMENT,
