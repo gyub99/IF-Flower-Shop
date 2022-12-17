@@ -181,7 +181,7 @@
           </a>
         </div>
           <div class="more-preview-container">
-            <script>document.write('<a role="button" data-target="#pro-carousel" data-slide-to="0"><img class="col-sm-2 thumbnail img-responsive" src="picture/product/'+data+'.PNG" alt="prod1" onclick="check_click(0)" style = "border:2px solid #73a9ad;"/></a>')</script>
+            <a role="button" data-target="#pro-carousel" data-slide-to="0"><img class="col-sm-2 thumbnail img-responsive" src="<?php echo $row["product_image"]?>" alt="prod1" onclick="check_click(0)" style = "border:2px solid #73a9ad;"/></a>
             <a role="button" data-target="#pro-carousel" data-slide-to="1"><img class="col-sm-2 thumbnail img-responsive" src="picture/f2.PNG" alt="prod2" onclick="check_click(1)"/></a>
             <a role="button" data-target="#pro-carousel" data-slide-to="2"><img class="col-sm-2 thumbnail img-responsive" src="picture/f3.PNG" alt="prod3" onclick="check_click(2)"/></a>
             <a role="button" data-target="#pro-carousel" data-slide-to="3"><img class="col-sm-2 thumbnail img-responsive" src="picture/f4.PNG" alt="prod4" onclick="check_click(3)"/></a>
@@ -199,13 +199,14 @@
 
             <hr>
 
-            <h4 class="pro-price"><?php echo $row["product_price"]?></h4>
+            <h4 class="pro-price"><?php echo number_format($row["product_price"]);
+                    echo "원"?></h4>
             <hr>
           </div>
 
           <div class="del-comment">
-            <p>5만원 이상 구매시, <strong style="color: #DFCBE1">무료 배송!</strong></p>
-            <p><strong style="color:#B2C773">충북 지역</strong>은 특히 빠르게 배송됩니다</p>
+            <p>5만원 이상 구매시, <strong style="color: #90c8ac">무료 배송!</strong></p>
+            <p><strong style="color:#c2dfaa">충북 지역</strong>은 특히 빠르게 배송됩니다</p>
           </div>
 
           <hr>
