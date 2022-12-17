@@ -2,6 +2,7 @@ var button1; //전역변수 선언
 var button2; //전역변수 선언
 var button3; //전역변수 선언
 var button4; //전역변수 선언
+
 var cancel_btn;
 
 var total_price=0;
@@ -22,6 +23,7 @@ window.onload=function(){
   m1=function makeImg1(){
     total_price=total_price+document.getElementById('flower1').innerHTML.replace(',',"").replace('원',"")/1;
     img=document.createElement("img");
+    img.id = "1"
     img.src="picture/makingFlower/yellow1.png"
     img.style="position: absloute; right:85px; bottom: 80px; width:300px; height:350px;";
     $("#preview").append(img);
@@ -30,6 +32,7 @@ window.onload=function(){
 
   m2=function makeImg2(){
     img=document.createElement("img");
+    img.id = "2"
     img.src="picture/makingFlower/pink.png"
     img.style="position: absloute; bottom: 70px; right:120px; width:250px; height:350px;";
     $("#preview").append(img);
@@ -38,6 +41,7 @@ window.onload=function(){
 
   m3=function makeImg3(){
     img=document.createElement("img");
+    img.id = "3"
     img.src="picture/makingFlower/white1.png"
     img.style="position: absloute; bottom: 55px; right:80px; width:300px; height:400px;";
     $("#preview").append(img);
@@ -46,6 +50,7 @@ window.onload=function(){
 
   m4=function makeImg4(){
     img=document.createElement("img");
+    img.id = "4"
     img.src="picture/makingFlower/red1.png"
     img.style="position: absloute; bottom: 70px; right:80px; width:250px; height:370px;";
     $("#preview").append(img);
@@ -54,6 +59,7 @@ window.onload=function(){
 
   m5=function makeImg5(){
     img=document.createElement("img");
+    img.id = "5"
     img.src="picture/makingFlower/purple1.png"
     img.style="position: absloute; bottom: 55px; right:70px; width:300px; height:400px;"
     $("#preview").append(img);
@@ -62,6 +68,7 @@ window.onload=function(){
 
   m6=function makeImg6(){
     img=document.createElement("img");
+    img.id = "6"
     img.src="picture/makingFlower/orange.png"
     img.style="position: absloute; bottom: 55px; right:65px; width:300px; height:400px;"
     $("#preview").append(img);
@@ -70,6 +77,7 @@ window.onload=function(){
 
   m7=function makeImg7(){
     img=document.createElement("img");
+    img.id = "7"
     img.src="picture/makingFlower/skyblue.png"
     img.style="position: absloute; bottom: 50px; right:70px; width:300px; height:400px;"
     $("#preview").append(img);
@@ -78,6 +86,7 @@ window.onload=function(){
 
   m8=function makeImg8(){
     img=document.createElement("img");
+    img.id = "8"
     img.src="picture/makingFlower/blue2.png"
     img.style="position: absloute; bottom: 65px; right:75px; width:260px; height:370px;"
     $("#preview").append(img);

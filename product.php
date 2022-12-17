@@ -134,7 +134,6 @@
 
             </div>
           </div>
-        <div class="col-sm-1"></div>
       </div>
     </div>
 
@@ -172,51 +171,36 @@
     <div class="container-fluid product-list text-center">
       <h2><strong>오늘같은 날, 꽃 선물은 어떠세요?</strong></h2>
       <h4>12월의 추천꽃 <strong>"장미"</strong></h4>
-      <div class="item_list">
-
-        <?php
-        for ($i=0; $i<4; $i++){
+      <div class="item_list row">
+        <?php while ($row=$all_products->fetch_assoc()) {
+          if($row['product_id']%4==1) {
+        ?>
+        <div class="row product-item">
+        <div class="col-sm-1"></div><div class ="col-sm-10"><div class="row">
+        <?php } ?>
+        <div class="col-sm-3">
+          <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>">
+          <img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="product" class="img-responsive" />
+          <div class="comment">
+            <?php echo $row["product_description"]?>
+          </div>
+          <div class="name">
+            <?php echo $row["product_name"]?>
+          </div>
+          <div class="price">
+            <?php echo number_format($row["product_price"]);
+              echo "원";?>
+              
+           </div></a></div>
+           <?php 
+            if($row['product_id']%4==0) {
             ?>
-             <div class="row product-item">
-                 <div class="col-sm-1">
-                 </div>
-                 <div class ="col-sm-10">
-                     <div class="row">
-                         <?php
-                         for ($j=0;$j<4;$j++){
-                             ?>
-                         <?php while ($row=$all_products->fetch_assoc()) {
-                             ?>
-                             <div class="col-sm-3 product-item">
-                                 <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>">
-                                     <img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />
-                                     <div class="comment">
-                                         <?php echo $row["product_description"]?>
-                                     </div>
-                                     <div class="name">
-                                         <?php echo $row["product_name"]?>
-                                     </div>
-                                     <div class="price">
-                                     <?php echo number_format($row["product_price"]);
-                                        echo "원"?>
-                                     </div>
-                                 </a></div>
-                             <?php }?>
-                         <?php }?>
-                     </div></div></div>
-                 <?php }?>
-             </div>
-
-             <!--<div class="page-control">
-                 <p>
-                     <span href="product2.php" class="glyphicon glyphicon-chevron-left" id="left"></span>
-                     <span>
-                         <a href="product2.php" class="glyphicon glyphicon-chevron-right" id="right"></a>
-                     </span>
-                 </p>
-             </div>-->
-         </div>
-
+            </div></div></div>
+            <?php } ?>
+          <?php }?>
+          </div></div></div>
+        </div>
+     </div>
     <!-- footer -->
     <footer class="container-fluid bg-main-footer">
       <div class="row footer-container">
