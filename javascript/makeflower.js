@@ -2,7 +2,9 @@ var button1; //전역변수 선언
 var button2; //전역변수 선언
 var button3; //전역변수 선언
 var button4; //전역변수 선언
+var cancel_btn;
 
+var total_price=0;
 
 var  flower1_count=0;
 var  flower2_count=0;
@@ -13,10 +15,81 @@ var  flower6_count=0;
 var  flower7_count=0;
 var  flower8_count=0;
 
+var data=getParameterByName('index');
 
-var cancel_btn;
+function choose_bouquet(check_click_thumbnail){
+  mybouquet=document.getElementsByClassName('bouquet');
+  for (var i=0; i<6; i++){
+    if (mybouquet[i].style.border === '2px solid black') {
+      mybouquet[i].style.border = 'none';
+    }
+  }
+  mybouquet[check_click_thumbnail].style.border='2px solid black';
+}
 
-var total_price=0;
+function choose_ribbon(check_click_thumbnail){
+  myribbon=document.getElementsByClassName('ribbon');
+  for (var i=0; i<6; i++){
+    if (myribbon[i].style.border === '2px solid black') {
+      myribbon[i].style.border = 'none';
+    }
+  }
+  myribbon[check_click_thumbnail].style.border='2px solid black';
+  return check_click_thumbnail;
+}
+
+function check_order(){
+  var myribbon;
+  var mybouquet;
+  var i;
+  var k;
+  var ribbon=document.getElementsByClassName('ribbon');
+  var bouquet=document.getElementsByClassName('bouquet');
+  for (i=0;i<6; i++){
+    if (ribbon[i].style.border === '2px solid black'){
+      myribbon=i;
+      break;
+    }
+  }
+  for (k=0; k<6; k++){
+    if (bouquet[k].style.border === '2px solid black'){
+      mybouquet=k;
+      break;
+    }
+  }
+  if ((i==6)||(k==6)){
+    alert("포장지 색과 리본 색을 모두 선택해주세요!");
+  }
+  else {
+    if (total_price==0){
+      alert('꽃을 선택해주세요!');
+    }
+    else {
+      alert('DIY 꽃다발을 ' + (mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.\n총 "+total_price.toLocaleString()+'원 입니다.');
+      linking_basket(total_price);
+    }
+  }
+
+
+
+  document.getElementById('myribbon').value = myribbon;
+  document.getElementById('mybouquet').value = mybouquet;
+  document.getElementById('total_price').value = total_price;
+  document.getElementById('flower1_count').value = flower1_count;
+  document.getElementById('flower2_count').value = flower2_count;
+  document.getElementById('flower3_count').value = flower3_count;
+  document.getElementById('flower4_count').value = flower4_count;
+  document.getElementById('flower5_count').value = flower5_count;
+  document.getElementById('flower6_count').value = flower6_count;
+  document.getElementById('flower7_count').value = flower7_count;
+  document.getElementById('flower8_count').value = flower8_count;
+
+}
+
+function plus_price(m){
+  total_price=total_price/1+document.getElementById('flower'+m).innerHTML.replace(',',"").replace('원',"");
+
+}
 
 window.onload=function(){
   main_button = document.getElementById("preivew");
@@ -32,84 +105,76 @@ window.onload=function(){
   refresh_btn=document.getElementById("refresh"); //초기화
 
   m1=function makeImg1(){
+    total_price=total_price+document.getElementById('flower1').innerHTML.replace(',',"").replace('원',"")/1;
     img=document.createElement("img");
-    img.id = "1"
     img.src="picture/makingFlower/yellow1.png"
     img.style="position: absloute; right:85px; bottom: 80px; width:300px; height:350px;";
     $("#preview").append(img);
-    flower1_count=((flower1_count/1)+1)/1;
-    total_price=total_price+document.getElementById('flower1').innerHTML.replace(',',"").replace('원',"")/1;
+    flower1_count=flower1_count+1;
 
   }
 
   m2=function makeImg2(){
     img=document.createElement("img");
-    img.id = "2"
     img.src="picture/makingFlower/pink.png"
     img.style="position: absloute; bottom: 70px; right:120px; width:250px; height:350px;";
     $("#preview").append(img);
-    flower2_count/1=flower2_count+1;
     total_price=total_price+document.getElementById('flower2').innerHTML.replace(',',"").replace('원',"")/1;
+    flower2_count=flower2_count+1;
   }
 
   m3=function makeImg3(){
     img=document.createElement("img");
-    img.id = "3"
     img.src="picture/makingFlower/white1.png"
     img.style="position: absloute; bottom: 55px; right:80px; width:300px; height:400px;";
     $("#preview").append(img);
-    flower3_count/1=flower3_count+1;
     total_price=total_price+document.getElementById('flower3').innerHTML.replace(',',"").replace('원',"")/1;
+    flower3_count=flower3_count+1;
   }
 
   m4=function makeImg4(){
     img=document.createElement("img");
-    img.id = "4"
     img.src="picture/makingFlower/red1.png"
     img.style="position: absloute; bottom: 70px; right:80px; width:250px; height:370px;";
     $("#preview").append(img);
-    flower4_count=flower4_count+1;
     total_price=total_price+document.getElementById('flower4').innerHTML.replace(',',"").replace('원',"")/1;
+    flower4_count=flower4_count+1;
   }
 
   m5=function makeImg5(){
     img=document.createElement("img");
-    img.id = "5"
     img.src="picture/makingFlower/purple1.png"
     img.style="position: absloute; bottom: 55px; right:70px; width:300px; height:400px;"
     $("#preview").append(img);
-    flower5_count=flower5_count+1;
     total_price=total_price+document.getElementById('flower5').innerHTML.replace(',',"").replace('원',"")/1;
+    flower5_count=flower5_count+1;
   }
 
   m6=function makeImg6(){
     img=document.createElement("img");
-    img.id = "6"
     img.src="picture/makingFlower/orange.png"
     img.style="position: absloute; bottom: 55px; right:65px; width:300px; height:400px;"
     $("#preview").append(img);
-    flower6_count=flower6_count+1;
     total_price=total_price+document.getElementById('flower6').innerHTML.replace(',',"").replace('원',"")/1;
+    flower6_count=flower6_count+1;
   }
 
   m7=function makeImg7(){
     img=document.createElement("img");
-    img.id = "7"
     img.src="picture/makingFlower/skyblue.png"
     img.style="position: absloute; bottom: 50px; right:70px; width:300px; height:400px;"
     $("#preview").append(img);
-    flower7_count=flower7_count+1;
     total_price=total_price+document.getElementById('flower7').innerHTML.replace(',',"").replace('원',"")/1;
+    flower7_count=flower7_count+1;
   }
 
   m8=function makeImg8(){
     img=document.createElement("img");
-    img.id = "8"
     img.src="picture/makingFlower/blue2.png"
     img.style="position: absloute; bottom: 65px; right:75px; width:260px; height:370px;"
     $("#preview").append(img);
-    flower8_count=flower8_count+1;
     total_price=total_price+document.getElementById('flower8').innerHTML.replace(',',"").replace('원',"")/1;
+    flower8_count=flower8_count+1;
   }
 
   refresh_f=function refreshImg(){
@@ -123,7 +188,6 @@ window.onload=function(){
     flower6_count=0;
     flower7_count=0;
     flower8_count=0;
-
   }
 
   // cancel_f=function cancelImg(){

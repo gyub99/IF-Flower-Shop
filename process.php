@@ -2,7 +2,7 @@
 if(!session_id()) {
 session_start();
 }
-$wrapping_paper=$_POST['wrapping_paper'];
+$mybouquet=$_POST['mybouquet'];
 $myribbon=$_POST['myribbon'];
 $total_price=$_POST['total_price'];
 $flower1_count=$_POST['flower1_count'];
@@ -14,7 +14,7 @@ $flower6_count=$_POST['flower6_count'];
 $flower7_count=$_POST['flower7_count'];
 $flower8_count=$_POST['flower8_count'];
 
-echo "포장지 번호: ".$wrapping_paper."<br>";
+echo "포장지 번호: ".$mybouquet."<br>";
 echo "리본 번호: ".$myribbon."<br>";
 echo "총 가격: ".$total_price."<br>";
 echo "1번 꽃 개수: ".$flower1_count."<br>";

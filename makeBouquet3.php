@@ -28,82 +28,7 @@ session_start();
     <script type="text/javascript" src="javascript/makeflower.js"></script>
 
     <script type="text/javascript" src="javascript/get_index.js"></script>
-    <script>
-      var data=getParameterByName('index');
-      function choose_bouquet(check_click_thumbnail){
-        wrapping_paper=document.getElementsByClassName('bouquet');
-        for (var i=0; i<6; i++){
-          if (wrapping_paper[i].style.border === '2px solid black') {
-            wrapping_paper[i].style.border = 'none';
-          }
-        }
-        wrapping_paper[check_click_thumbnail].style.border='2px solid black';
-      }
-      function choose_ribbon(check_click_thumbnail){
-        myribbon=document.getElementsByClassName('ribbon');
-        for (var i=0; i<6; i++){
-          if (myribbon[i].style.border === '2px solid black') {
-            myribbon[i].style.border = 'none';
-          }
-        }
-        myribbon[check_click_thumbnail].style.border='2px solid black';
-        return check_click_thumbnail;
-      }
-      function check_order(){
-        var myribbon;
-        var wrapping_paper;
-        var i;
-        var k;
-        var ribbon=document.getElementsByClassName('ribbon');
-        var bouquet=document.getElementsByClassName('bouquet');
-        for (i=0;i<6; i++){
-          if (ribbon[i].style.border === '2px solid black'){
-            myribbon=i;
-            break;
-          }
-        }
-        for (k=0; k<6; k++){
-          if (bouquet[k].style.border === '2px solid black'){
-            wrapping_paper=k;
-            break;
-          }
-        }
-        if ((i==6)||(k==6)){
-          alert("포장지 색과 리본 색을 모두 선택해주세요!");
-        }
-        else {
-          if (total_price==0){
-            alert('꽃을 선택해주세요!');
-          }
-          else {
-            alert('DIY 꽃다발을 ' + (wrapping_paper/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.\n총 "+total_price.toLocaleString()+'원 입니다.');
-            linking_basket(total_price);
-          }
-        }
 
-
-
-        document.getElementById('myribbon').value = myribbon;
-        document.getElementById('wrapping_paper').value = wrapping_paper;
-        document.getElementById('total_price').value = total_price;
-        document.getElementById('flower1_count').value = flower1_count;
-        document.getElementById('flower2_count').value = flower2_count;
-        document.getElementById('flower3_count').value = flower3_count;
-        document.getElementById('flower4_count').value = flower4_count;
-        document.getElementById('flower5_count').value = flower5_count;
-        document.getElementById('flower6_count').value = flower6_count;
-        document.getElementById('flower7_count').value = flower7_count;
-        document.getElementById('flower8_count').value = flower8_count;
-
-      }
-
-      function plus_price(m){
-        total_price=total_price/1+document.getElementById('flower'+m).innerHTML.replace(',',"").replace('원',"");
-
-      }
-
-
-    </script>
   </head>
   <style>
   @font-face {
@@ -276,7 +201,7 @@ session_start();
               <form method="POST" action="process.php">
               <button class="buy-item col-sm-5" onclick="check_order();">장바구니</button>
               <input type="hidden" id="myribbon" name="myribbon">
-              <input type="hidden" id="wrapping_paper" name="wrapping_paper">
+              <input type="hidden" id="mybouquet" name="mybouquet">
               <input type="hidden" id="total_price" name="total_price">
               <input type="hidden" id="flower1_count" name="flower1_count">
               <input type="hidden" id="flower2_count" name="flower2_count">
