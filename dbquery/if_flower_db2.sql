@@ -108,12 +108,12 @@ insert into custom_flower (custom_flower_name, custom_flower_price, custom_flowe
   ("flower8",5000, "https://github.com/gyub99/IF-Flower-Shop/blob/master/picture/makingFlower/blue2.png?raw=true");
 
 create table custom_making(
-    cutom_making_id int not null AUTO_INCREMENT,
+    custom_making_id int not null AUTO_INCREMENT,
     custom_flower_id int,
     custom_product_id int,
     quantity int,
     custom_making_total int,
-    primary key(cutom_making_id),
+    primary key(custom_making_id),
     foreign key (custom_flower_id) references custom_flower(custom_flower_id),
     foreign key (custom_product_id) references custom_product(custom_product_id)
 );

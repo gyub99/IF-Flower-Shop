@@ -58,29 +58,6 @@
         location.href="order.php";
       }
 
-        function send_page(){
-          var name_form = document.getElementById("name").value;
-          var email_form = document.getElementById("email").value;
-          var send_content =document.getElementById("contact-contents").value;
-
-          if(name_form.length == 0){
-            alert("이름을 입력해 주세요.");
-          }
-
-          else if(email_form.length == 0){
-          alert("이메일을 입력해 주세요.");
-          }
-          else if(send_content.length == 0){
-          alert("내용을 입력해 주세요.");
-          }
-
-          else if(name_form.length == 0 && email_form.length == 0){
-          alert("이름과 이메일을 입력해 주세요.");
-          }
-          else{
-            alert("문의가 접수되었습니다.");
-          }
-      }
 
   </script>
   <style>
