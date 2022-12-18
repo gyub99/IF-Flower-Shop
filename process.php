@@ -47,7 +47,6 @@ $all_custom_flowers=$mysqli->query("SELECT * FROM custom_flower") or die($mysqli
 
 //배열 쓰면 괜찮을거 같은데
 
-if($_SESSION['custom_product_id']!=0){
 if($flower1_count!=0){
     $mysqli->query("INSERT INTO custom_making (custom_flower_id,custom_product_id,quantity,custom_making_total) VALUES(1,'$custom_product_id','$flower1_count','$flower1_total')") or die($mysqli->error);
 }
@@ -82,7 +81,7 @@ if($flower8_count!=0){
 //
 // }
 // }
-}
+
 //$_SESSION['custom_product_id']=0;
 
 
