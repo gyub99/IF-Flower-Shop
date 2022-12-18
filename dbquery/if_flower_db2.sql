@@ -144,7 +144,7 @@ CREATE TABLE `if_flower_db`.`qna` (
     INSERT INTO `if_flower_db`.`coupon` (`coupon_id`, `coupon_content`) VALUES ('1', '주문제작 10%할인');
 INSERT INTO `if_flower_db`.`coupon` (`coupon_id`, `coupon_content`) VALUES ('2', '배송비 무료');
 
-CREATE TABLE `if_flower_db`.`custom_coupon_list` (
+CREATE TABLE `if_flower_db`.`customer_coupon_list` (
   `customer_id` INT NOT NULL,
   `coupon_id` INT NOT NULL,
   `expired_date` VARCHAR(45) NULL default null,
@@ -160,10 +160,6 @@ CREATE TABLE `if_flower_db`.`custom_coupon_list` (
     REFERENCES `if_flower_db`.`customer` (`ssn`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-
-    INSERT INTO customer_coupon_list (customer_id, coupon_id, expired_date) VALUES
-    ((Select ssn FROM CUSTOMER WHERE customer_id = '$id';),'$coupon_custom_discount_id','$expired_date_discount'),
-    ((Select ssn FROM CUSTOMER WHERE customer_id = '$id';),'$coupon_free_shipping_id','$expired_date_shipping');
 
 
   CREATE TABLE `if_flower_db`.`order_information` (
