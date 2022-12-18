@@ -131,8 +131,8 @@ include "connect.php";
             <li class="nav-li"><a href="event.php" >Event</a></li>
             <li class="nav-li"><a href="qna.php" >Q & A</a></li>
           </ul>
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
+          <form class="form-inline" method="post" action="search.php">
+            <input class="form-control mr-sm-2" name="search" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
