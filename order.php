@@ -269,6 +269,9 @@ td,th{
      </div>
    </div>
 
+
+  <form method="post" action="order.process">
+
    <div class="bigbox">
         <h2 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center;">배송지 입력</h2>
           <div class="title">
@@ -284,7 +287,7 @@ td,th{
                         <th scope="row">수령자 이름 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
                             <td>
                               <div class="re_box">
-                              <input type="text" class="re_name" placeholder="이름을 입력하세요" required autofocus>
+                              <input type="text" name="name" class="re_name" placeholder="이름을 입력하세요" required autofocus>
                               </div>
                             </td>
                     </tr>
@@ -294,10 +297,10 @@ td,th{
                         <th scope="row">주소 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
                           <td>
                             <div class="addr">
-                            <input type="text" class="zip_code" placeholder="우편번호" required><br>
-                            <input type="text" class="addr1" placeholder="주소" required>
+                            <input type="text" name="zip code" class="zip_code" placeholder="우편번호" required><br>
+                            <input type="text" name="address1" class="addr1" placeholder="주소" required>
                             <span style="font-size: 14px;" class="grid">기본 주소</span><br>
-                            <input type="text" class="addr1" placeholder="상세주소" required>
+                            <input type="text" name="address2" class="addr1" placeholder="상세주소" required>
                             <span style="font-size: 14px;" class="grid">나머지 주소</span>
                             </div>
                           </td>
@@ -306,18 +309,18 @@ td,th{
                         <th scope="row">휴대전화 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
                           <td>
                             <div class="ph_box">
-                            <input type="text" class="ph_num" placeholder="전화번호를 입력하세요" required>
+                            <input type="text" name="phone" class="ph_num" placeholder="전화번호를 입력하세요" required>
                             </div>
                           </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th scope="row">이메일 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
                           <td>
                             <div class="email_box">
-                            <input type="text" class="email" placeholder="이메일을 입력하세요">
+                            <input type="text" name="email_1" class="email" placeholder="이메일을 입력하세요">
                             @
                             <form name="join" action="join_post.php" method="post" class="email_form">
-                            <input type="text" name="mail" class="email">
+                            <input type="text" name="email_2" class="email">
                             <select name="mail_sel" onChange="mailcheck()">
                             <option selected>직접입력</option>
                             <option style="font-size: 15px;" value=google.com>google.com</option>
@@ -328,12 +331,12 @@ td,th{
                             </form>
                           </div>
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                       <th scope="row">배송메시지</th>
                           <td>
                             <div class="de_box">
-                            <textarea  class="de_message" name="message" rows="4" cols="80"></textarea>
+                            <textarea  class="de_message" name="delivery_message" rows="4" cols="80"></textarea>
                             </div>
                           </td>
                     </tr>
@@ -344,7 +347,7 @@ td,th{
         </div>
 
         <div class="bigbox">
-          <h2 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center; margin-bottom:50px;">결제수단</h2>
+          <!-- <h2 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center; margin-bottom:50px;">결제수단</h2>
           <table border="1">
               <form name="credit">
               <th rowspan="2"><input type="checkbox" name="check" onclick='checkOnlyOne(this)' id="card" style="margin-right:5px;">신용카드</th>
@@ -433,12 +436,13 @@ td,th{
 
               </td>
             </tr>
-        </table>
+        </table> -->
 
         <div class="container text-center">
         <button class="btn btn-lg btn-login" type="submit" onclick="order();">결제하기</button>
       </div>
       </div>
+    </form>
 
 
 

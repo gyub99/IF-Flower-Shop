@@ -55,7 +55,7 @@
         var total=document.getElementById('foot_total').innerHTML.replace(/ /g,"").replace("\n","");
         var count=document.getElementById('count').innerHTML;
         alert("주문하신 상품 : "+name+" "+count+"개\n 총 " +total+ " 입니다.");
-        location.href="order.html";
+        location.href="order.php";
       }
 
         function send_page(){
@@ -259,7 +259,7 @@
                     </script>
                     </span></td>
                   <td>
-                    <button class="btn default" onclick="location.href='product.html'">취소하기</button>
+                    <button class="btn default" onclick="location.href='product.php'">취소하기</button>
                   </td>
 
                 </tr>
@@ -287,36 +287,8 @@
             </div>
           </div>
         </div>
-          <hr style="margin:50px 100px 50px 100px; border: 1px dotted">
-        <div class="container-fluid contact-form text-center ">
-          <form>
-          <h3><strong>문의하기</strong></h3>
-          <p>빠르고 신속하게 답변해드리겠습니다</p>
-          <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3 form-group">
-            <input class="form-control" id="name" name="name" placeholder="Name" type="text">
-            </div>
-            <div class="col-sm-3 form-group">
-            <input class="form-control" id="email" name="email" placeholder="email" type="text">
-            </div>
-            <div class="col-sm-3"></div>
-          </div>
-          <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6 form-group">
-              <textarea class="form-control" id="contact-contents" name="comments" placeholder="문의할 내용을 입력하세요" rows="7"></textarea><br>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6 form-group">
-              <button class="btn btn-default pull-center" style="font-size:16px;" type="submit" onclick="send_page();">Send</button>
-            </div>
-            <div class="col-sm-3"></div>
-          </div>
-        </form>
-        </div>
+
+
 
         <!-- footer -->
         <footer class="container-fluid bg-main-footer">

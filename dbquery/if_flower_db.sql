@@ -144,3 +144,18 @@ CREATE TABLE `if_flower_db`.`qna` (
     ON DELETE CASCADE
     ON UPDATE CASCADE
   );
+
+
+  CREATE TABLE `if_flower_db`.`order_information` (
+  `order_id` INT NOT NULL AUTO_INCREMENT,
+  `ssn` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `zip_code` VARCHAR(45) NOT NULL,
+  `delivery_address` VARCHAR(45) NOT NULL,
+  `phone` VARCHAR(45) NOT NULL,
+  `delivery_message` VARCHAR(500) NOT NULL,
+    PRIMARY KEY (`order_id`),
+    CONSTRAINT `ORDER_INFO_SSN` FOREIGN KEY (`ssn`) REFERENCES `if_flower_db`.`customer` (`ssn`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+  );

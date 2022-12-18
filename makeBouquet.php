@@ -214,27 +214,30 @@ session_start();
 
               </form>
             </div>
+
+
           </div>
         </div>
       </div>
         </div>
+      </div>
 
       <!-- footer -->
       <footer class="container-fluid bg-main-footer">
-        <div class="row footer-container">
-          <div class="col-sm-6">
-            <h2 style="font-family: 'Cafe24Oneprettynight';">IF 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
-            <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
-            <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
-          </div>
-          <div class="col-sm-6">
-            <h2 style="font-family: 'Cafe24Oneprettynight';">IF 꽃집</h2><br>
-            <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 123-45-6789<br>
-              통신판매업 신고번호 : 2022-청주 충북대-99999<br>
-              주소 : 충북 청주시 서원구 충대로 1, 전자정보대학 소프트웨어학부 S4-1동(전자정보 3관)<br>
-              COPYRIGHTⓒ 2022 IF FLOWER. ALL RIGHTS RESERVED</p>
-          </div>
-        </div>
-      </footer>
+    <div class="row footer-container">
+      <div class="col-sm-6">
+        <h2 style="font-family: 'Cafe24Oneprettynight';">IF 고객센터</h2><h4>&#128222; 1644-1777</h4><br>
+        <p style="font-family: 'S-CoreDream-3Light';"><strong>365 고객센터</strong>: 오전 7시 - 오후 7시</p>
+        <p style="font-family: 'S-CoreDream-3Light';"><strong>24시간 접수가능</strong> : 고객센터 운영시간에 순차적으로 답변해드리겠습니다.</p>
+      </div>
+      <div class="col-sm-6">
+        <h2 style="font-family: 'Cafe24Oneprettynight';">IF 꽃집</h2><br>
+        <p style="font-family: 'S-CoreDream-3Light';">사업자 등록번호 : 123-45-6789<br>
+          통신판매업 신고번호 : 2022-청주 충북대-99999<br>
+          주소 : 충북 청주시 서원구 충대로 1, 전자정보대학 소프트웨어학부 S4-1동(전자정보 3관)<br>
+          COPYRIGHTⓒ 2022 IF FLOWER. ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+  </footer>
   </body>
 </html>
