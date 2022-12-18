@@ -1,7 +1,3 @@
-<?php
-    include "connect.php";
-?>
-
 <!DOCTYPE html>
 
 <html>
@@ -99,9 +95,13 @@
   </head>
   <body>
 
+  <?php
+    include "connect.php";
+  ?>
 
     <!-- 헤더부분 -->
     <?php
+
     //세션 스타트 해주여야 session전역변수 사용할 수 있다.
     if(!session_id()) {
   	session_start();
@@ -116,10 +116,13 @@
         ?>
 
       </div>
-    <?php endif ;
-    $ssn = $_SESSION['ssn'];
-    $coupon_count=$mysqli->query("SELECT Count(*) FROM customer_coupon_list WHERE customer_id = $ssn") or die($mysqli->error);
-    $row=$coupon_count->fetch_assoc()
+    <?php endif; 
+    
+    
+  $ssn = $_SESSION['ssn'];
+  $get_coupon=$mysqli->query("SELECT coupon.coupon_content as content, customer_coupon_list.expired_date as expired_date FROM coupon, customer_coupon_list WHERE coupon.coupon_id = customer_coupon_list.coupon_id AND customer_coupon_list.customer_id = $ssn") or die($mysqli->error);
+  $coupon_count=$mysqli->query("SELECT Count(*) FROM customer_coupon_list WHERE customer_id = $ssn") or die($mysqli->error);
+  $row=$coupon_count->fetch_assoc()
     ?>
 
     <!-- 헤더부분 -->
@@ -195,9 +198,7 @@
             <div class="col-sm-3 order_list">
               <span class="glyphicon glyphicon-envelope mypage-icon"></span>
               <p><strong>쿠폰</strong></p>
-              <div class="state-count">
-                <a href="show_coupon.php"><?php echo $row["Count(*)"]?></a>
-              </div>
+              <div class="state-count"><a href="show_coupon.php"><?php echo $row["Count(*)"]?></a></div>
             </div>
         </ul>
       </div>
@@ -207,92 +208,24 @@
         <div class="sh_bigbox row">
           <div>
             <table class="sh_main">
-              <thead>
                 <tr>
-                  <th colspan='9' class="sh_box_title">상품 정보</th>
+                  <th colspan='2' class="sh_box_title">쿠폰 정보</th>
                 </tr>
                 <tr>
-                  <th><span>상품 번호</span></th>
-                  <th><span>이미지</span></th>
-                  <th><span>상품 정보</span></th>
-                  <th>가격</th>
-                  <th>수량</th>
-                  <th>배송비</th>
-                  <th>합계</th>
-                  <th>선택</th>
+                  <th><span>쿠폰 내용</span></th>
+                  <th><span>만료일</span></th>
                 </tr>
-              </thead>
-
-              <tbody>
-                <tr class="inbox_tr" id="flexible">
-                  <td class="inbox_td">
-                  <script>
-                    if (data==""){
-                      document.getElementById('flexible').style.display="none";
-                    }
-                    if (data>30){
-                      document.write('-');
-                    }
-                    else {
-                      document.write(data);
-                    }
-                  </script>
-                  </td>
-                  <script>
-                    if (data>30) {
-                      document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/product/6.PNG" alt="f1" class="sh_img"></td>')
-                      document.write('<td class="inbox_td3">DIY 꽃다발</td>')
-                      document.write('<td>'+data+'</td>');
-                    }
-                    else {
-                      document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/product/'+data+'.png" alt="f1" class="sh_img"></td>');
-                      document.write('<td class="inbox_td3">'+product_list[data].name+'</td>');
-                      document.write('<td>'+product_list[data].price+'</td>');
-                    }
-                  </script>
-                    <td>
-                  <a role="button" onclick="minus()">
-                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                  </a>
-                  <span id="count">1</span>
-                  <a role="button" onclick="plus()">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                  </a>
-                  </td>
-                  <td>2,500원</td>
-                  <td>
-                    <span id="product_info_total">
-                    <script>
-                      get_total();
-                    </script>
-                    </span></td>
-                  <td>
-                    <button class="btn default" onclick="location.href='product.php'">취소하기</button>
-                  </td>
-
-                </tr>
-              </tbody>
-
-              <tfoot>
-                <tr style="height:60px;">
-                  <td colspan="9" class="foot_bt" style="text-align:center;">상품금액 <span id="foot_price">
-                    <script>
-                       total = get_total();
-                       document.write(total.toLocaleString() + '원');
-                    </script>
-                  </span>
-                  <span> + 배송비 2,500원 = 합계</span>&nbsp;<span id="foot_total">
-                    <script>
-                      total=get_total()/1+2500;
-                    </script>
-                  </span></td>
-                </tr>
-              </tfoot>
+                <?php
+          while($row=$get_coupon->fetch_assoc()):
+         ?>
+         <tr>
+           <td class="table-content" style="background-color:white;font-size:15px;padding:10px;"><?php echo $row['content']; ?></td>
+           <td class="table-content" style="background-color:white;font-size:15px;padding:10px;"><?php echo $row['expired_date']; ?></td>
+         </tr>
+       <?php endwhile; ?>
             </table> <br><br>
 
-            <div class="bt_btn">
-              <button class="btn" id="return-buy" onClick="buy_confirm();">구매하기</button>
-            </div>
+            
           </div>
         </div>
 
