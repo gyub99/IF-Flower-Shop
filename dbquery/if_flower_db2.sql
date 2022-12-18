@@ -75,12 +75,15 @@ create table cart_item(
    foreign key(product_id) references product(product_id)
 );
 
+
 create table custom_product(
     custom_product_id int not null AUTO_INCREMENT,
     customer_ssn int,
     cart_id int,
     quantity int,
     custom_product_total int,
+    wrapping_color varchar(20),
+    ribbon_color varchar(20),
     primary key(custom_product_id),
     foreign key (customer_ssn) references customer(ssn),
     foreign key (cart_id) references cart(cart_id)
@@ -110,7 +113,7 @@ create table custom_making(
     custom_product_id int,
     quantity int,
     custom_making_total int,
-    primary key(cutom_making_id),
+    primary key(custom_making_id),
     foreign key (custom_flower_id) references custom_flower(custom_flower_id),
     foreign key (custom_product_id) references custom_product(custom_product_id)
 );
@@ -133,17 +136,30 @@ CREATE TABLE `if_flower_db`.`qna` (
 
 
 
--- 쿠폰 테이블 추가
   CREATE TABLE `if_flower_db`.`coupon` (
-  `coupon_id` INT NOT NULL AUTO_INCREMENT,
-  `user_id` VARCHAR(45) NOT NULL,
-  `coupon_contents` VARCHAR(500) NOT NULL,
-  `expired_date` date,
-    PRIMARY KEY (`coupon_id`),
-    CONSTRAINT `COUPON_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `if_flower_db`.`customer` (`customer_id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-  );
+    `coupon_id` INT NOT NULL,
+    `coupon_content` VARCHAR(45) NULL,
+    PRIMARY KEY (`coupon_id`));
+
+    INSERT INTO `if_flower_db`.`coupon` (`coupon_id`, `coupon_content`) VALUES ('1', '주문제작 10%할인');
+INSERT INTO `if_flower_db`.`coupon` (`coupon_id`, `coupon_content`) VALUES ('2', '배송비 무료');
+
+CREATE TABLE `if_flower_db`.`customer_coupon_list` (
+  `customer_id` INT NOT NULL,
+  `coupon_id` INT NOT NULL,
+  `expired_date` VARCHAR(45) NULL default null,
+  PRIMARY KEY (`customer_id`, `coupon_id`),
+  INDEX `fk_coupon_idx` (`coupon_id` ASC) VISIBLE,
+  CONSTRAINT `fk_coupon`
+    FOREIGN KEY (`coupon_id`)
+    REFERENCES `if_flower_db`.`coupon` (`coupon_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_customer`
+    FOREIGN KEY (`customer_id`)
+    REFERENCES `if_flower_db`.`customer` (`ssn`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
 
 
   CREATE TABLE `if_flower_db`.`order_information` (

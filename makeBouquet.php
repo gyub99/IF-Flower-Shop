@@ -112,7 +112,7 @@ session_start();
       <div class="navcontainer row">
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav" >
-            <li class="nav-li"><a href="main.php" >Home</a></li>
+            <li class="nav-li"><a href="main.php">Home</a></li>
             <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
             <li class="nav-li"><a href="product.php">Product</a></li>
             <li class="nav-li"><a href="event.php" >Event</a></li>
@@ -211,7 +211,6 @@ session_start();
               <input type="hidden" id="flower6_count" name="flower6_count">
               <input type="hidden" id="flower7_count" name="flower7_count">
               <input type="hidden" id="flower8_count" name="flower8_count">
-
               </form>
             </div>
 

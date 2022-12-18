@@ -15,9 +15,9 @@ if(mysqli_num_rows($custom_making_check)==0){
 }elseif(mysqli_num_rows($custom_making_check)==1){
     $mysqli->query("update custom_making set quantity=quantity+1") or die($mysqli->error);
 }else {
-    echo "<script>alert('오류입니다'); location.href =\"makeBouquet2.php\";</script>";
+    echo "<script>alert('오류입니다'); location.href =\"makeBouquet.php\";</script>";
 }
 
-echo "<script>location.href =\"makeBouquet2.php\";</script>";
+echo "<script>location.href =\"makeBouquet.php\";</script>";
 
 ?>
