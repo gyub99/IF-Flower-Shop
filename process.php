@@ -13,8 +13,9 @@ $ssn=$_SESSION['ssn'];
 
 $custom_product_id=$_SESSION['custom_product_id'];
 
-$mybouquet=$_POST['mybouquet'];
-$myribbon=$_POST['myribbon'];
+//0부터 시작하는 배열인덱스 때문에 +1 해줌
+$mybouquet=$_POST['mybouquet']+1;
+$myribbon=$_POST['myribbon']+1;
 $total_price=$_POST['total_price'];
 $flower1_count=$_POST['flower1_count'];
 $flower2_count=$_POST['flower2_count'];

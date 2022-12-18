@@ -39,9 +39,7 @@
 
   if(!session_id()) {
   session_start();
-  $_SESSION = array();
-  session_destroy();
-  }
+}
   ?>
 
   <!-- 헤더부분 -->

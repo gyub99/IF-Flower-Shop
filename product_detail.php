@@ -1,6 +1,16 @@
 <?php
     include "connect.php";
 ?>
+<?php
+session_start();
+$id='';
+$id=$_GET['product_id'];
+$_SESSION['product_id']=$id;
+
+$all_products=$mysqli->query("SELECT * FROM product") or die($mysqli->error);
+$product_detail=$mysqli->query("SELECT * FROM product where product_id=$id") or die($mysqli->error);
+$row=$product_detail->fetch_array();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -67,11 +77,12 @@
         }
         if ((i==6)||(k==6)){
           alert("포장지 색과 리본 색을 모두 선택해주세요!");
-          location.href="product_detail.php?index="+data;
         }
         else {
-          alert('"'+product_list[data].name + '"을(를) ' + (mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.");
+          alert((mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.");
         }
+        document.getElementById('myribbon').value = myribbon;
+        document.getElementById('mybouquet').value = mybouquet;
       }
 
     </script>
@@ -81,9 +92,9 @@
     <!-- 헤더부분 -->
     <?php
     //세션 스타트 해주여야 session전역변수 사용할 수 있다.
-    if(!session_id()) {
-  	session_start();
-    }
+
+
+
     if (isset($_SESSION['message']) && $_SESSION['is_login']==true && $_SESSION['login_alert']==true):
      ?>
      <div class="alert alert-<?=$_SESSION['msg_type']?>">
@@ -96,13 +107,7 @@
       </div>
     <?php endif ?>
 
-    <?php
-    $id='';
-    $id=$_GET['product_id'];
-    $all_products=$mysqli->query("SELECT * FROM product") or die($mysqli->error);
-    $product_detail=$mysqli->query("SELECT * FROM product where product_id=$id") or die($mysqli->error);
-    $row=$product_detail->fetch_array();
-    ?>
+
 
     <!-- 헤더부분 -->
     <div class="header">
@@ -243,7 +248,12 @@
 
             <div class="buy row">
               <div class="col-sm-4"></div>
-              <script>document.write('<button class="buy-item col-sm-5" onclick="linking_basket('+data+'); check_order();">장바구니</button>')</script>
+              <form method="POST" action="product_process.php">
+              <button class="buy-item col-sm-5" onclick="check_order();">장바구니</button>
+              <input type="hidden" id="myribbon" name="myribbon">
+              <input type="hidden" id="mybouquet" name="mybouquet">
+              </form>
+
             </div>
           </div>
         </div>

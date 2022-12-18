@@ -67,7 +67,7 @@ create table cart_item(
    cart_item_id int not null AUTO_INCREMENT,
    product_id int,
    cart_id int,
-   quantity int,
+   quantity int default 1,
    wrapping_color varchar(20),
    ribbon_color varchar(20),
    primary key(cart_item_id),
@@ -116,7 +116,7 @@ create table custom_making(
 );
 
 
-## QNA 테이블 추가
+-- QNA 테이블 추가
 CREATE TABLE `if_flower_db`.`qna` (
   `question_id` INT NOT NULL AUTO_INCREMENT,
   `user_id` VARCHAR(45) NOT NULL,
@@ -133,7 +133,7 @@ CREATE TABLE `if_flower_db`.`qna` (
 
 
 
-## 쿠폰 테이블 추가
+-- 쿠폰 테이블 추가
   CREATE TABLE `if_flower_db`.`coupon` (
   `coupon_id` INT NOT NULL AUTO_INCREMENT,
   `user_id` VARCHAR(45) NOT NULL,
