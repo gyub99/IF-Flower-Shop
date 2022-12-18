@@ -19,7 +19,7 @@ include "connect.php";
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="javascript/product.js"></script>
-  <script type="text/javascript" src="javascript/get_index.js"></script>
+  <!--<script type="text/javascript" src="javascript/get_index.js"></script>-->
   <script>
     function img_mouseover(m){
       m.style.transform = "scale(1.05)";
@@ -225,7 +225,7 @@ include "connect.php";
         <p style="font-family: 'Nanum Gothic', sans-serif;">12월의 추천꽃 라일락, 장미</p><br>
         <div class="row pic-container">
         <?php
-          while ($row=$best_products->fetch_assoc()) {
+          while ($row=$recommendation_products->fetch_assoc()) {
                 ?>
                 <div class="col-sm-3">
                 <a href="product_detail.php?product_id=<?php echo $row['product_id']; ?>"><img src="<?php echo $row["product_image"]?>" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="best" class="img-responsive" />
@@ -241,18 +241,6 @@ include "connect.php";
                 </p>
                 </a></div>
                 <?php }?>
-          <script>
-            for (var i=0;i<product_list.length; i++){
-              if (i==1 || i==8 || i==12 || i==17){
-                document.write('<div class="col-sm-3">');
-                document.write('<a onclick="linking('+i+')">');
-                document.write('<img src="picture/product/' + i + '.PNG" onmouseover="img_mouseover(this)" onmouseout="img_mouseout(this)" alt="flower" class="img-responsive" />');
-                document.write('<p class="title">[' + product_list[i].name + ']</p>');
-                document.write('<p class="bestprice">' + product_list[i].price + '</p>');
-                document.write('</a></div>');
-              }
-            }
-          </script>
         </div>
       </div>
 

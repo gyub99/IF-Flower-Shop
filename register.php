@@ -65,7 +65,7 @@ body{
               <label style="font-family: 'S-CoreDream-3Light'; font-size:18px;">비밀번호</label><br>
               <input id="PW" type="password" name="pw" class="input1"  placeholder="  비밀번호를 입력해주세요" required><br><br>
               <label style="font-family: 'S-CoreDream-3Light'; font-size:18px;">이메일</label><br>
-              <input id="EMAIL" type="email" name="email" class="input1"  placeholder="  이메일을 입력해주세요" required><br>
+              <input id="EMAIL" type="email" name="email" class="input1"  placeholder="  이메일을 입력해주세요" required><br><br>
               <label style="font-family: 'S-CoreDream-3Light'; font-size:18px;">주소</label><br>
               <input id="ADDRESS" type="text" name="address" class="input1"  placeholder="  주소를 입력해주세요" required><br><br>
               <input type="submit" class="log" value="가입하기"><br><br>
