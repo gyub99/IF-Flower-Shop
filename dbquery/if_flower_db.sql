@@ -114,3 +114,33 @@ create table custom_making(
     foreign key (custom_flower_id) references custom_flower(custom_flower_id),
     foreign key (custom_product_id) references custom_product(custom_product_id)
 );
+
+
+## QNA 테이블 추가
+CREATE TABLE `if_flower_db`.`qna` (
+  `question_id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` VARCHAR(45) NOT NULL,
+  `question_contents` VARCHAR(500) NOT NULL,
+  `answer_contents` VARCHAR(500) NULL,
+    PRIMARY KEY (`question_id`),
+    INDEX `FK_QNA_idx` (`user_id` ASC) VISIBLE,
+    CONSTRAINT `FK_QNA`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `if_flower_db`.`customer` (`customer_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+  );
+
+
+
+## 쿠폰 테이블 추가
+  CREATE TABLE `if_flower_db`.`coupon` (
+  `coupon_id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` VARCHAR(45) NOT NULL,
+  `coupon_contents` VARCHAR(500) NOT NULL,
+  `expired_date` date,
+    PRIMARY KEY (`coupon_id`),
+    CONSTRAINT `COUPON_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `if_flower_db`.`customer` (`customer_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+  );

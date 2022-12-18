@@ -1,8 +1,3 @@
-<?php include "connect.php" ?>
-<?php if(!session_id()) {
-session_start();
-}
-?>
 <!DOCTYPE html>
 
 <html>
@@ -23,12 +18,66 @@ session_start();
     <link rel="stylesheet" href="css/makeBouquet.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
     <script type="text/javascript" src="javascript/makeflower.js"></script>
-
     <script type="text/javascript" src="javascript/get_index.js"></script>
+    <script>
+      var data=getParameterByName('index');
+      function choose_bouquet(check_click_thumbnail){
+        mybouquet=document.getElementsByClassName('bouquet');
+        for (var i=0; i<6; i++){
+          if (mybouquet[i].style.border === '2px solid black') {
+            mybouquet[i].style.border = 'none';
+          }
+        }
+        mybouquet[check_click_thumbnail].style.border='2px solid black';
+      }
+      function choose_ribbon(check_click_thumbnail){
+        myribbon=document.getElementsByClassName('ribbon');
+        for (var i=0; i<6; i++){
+          if (myribbon[i].style.border === '2px solid black') {
+            myribbon[i].style.border = 'none';
+          }
+        }
+        myribbon[check_click_thumbnail].style.border='2px solid black';
+        return check_click_thumbnail;
+      }
+      function check_order(){
+        var myribbon;
+        var mybouquet;
+        var i;
+        var k;
+        var ribbon=document.getElementsByClassName('ribbon');
+        var bouquet=document.getElementsByClassName('bouquet');
+        for (i=0;i<6; i++){
+          if (ribbon[i].style.border === '2px solid black'){
+            myribbon=i;
+            break;
+          }
+        }
+        for (k=0; k<6; k++){
+          if (bouquet[k].style.border === '2px solid black'){
+            mybouquet=k;
+            break;
+          }
+        }
+        if ((i==6)||(k==6)){
+          alert("포장지 색과 리본 색을 모두 선택해주세요!");
+        }
+        else {
+          if (total_price==0){
+            alert('꽃을 선택해주세요!');
+          }
+          else {
+            alert('DIY 꽃다발을 ' + (mybouquet/1+1) + "번 색 포장지와 " + (myribbon/1+1) + "번 색 리본으로 선택하셨습니다.\n총 "+total_price.toLocaleString()+'원 입니다.');
+            linking_basket(total_price);
+          }
+        }
+      }
+      function plus_price(m){
+        total_price=total_price/1+document.getElementById('flower'+m).innerHTML.replace(',',"").replace('원',"");
 
+      }
+    </script>
   </head>
   <style>
   @font-face {
@@ -67,24 +116,6 @@ session_start();
 
       </div>
     <?php endif ?>
-
-
-
-    <?php
-    $all_custom_flowers=$mysqli->query("SELECT * FROM custom_flower") or die($mysqli->error);
-    ?>
-
-    <?php
-    $cart_id=$_SESSION['cart_id'];
-    $ssn=$_SESSION['ssn'];
-    $custom_product_check=$mysqli->query("SELECT * FROM custom_product WHERE customer_ssn='{$ssn}'") or die($mysqli->error());
-    if(mysqli_num_rows($custom_product_check)==0){
-    $mysqli->query("INSERT INTO custom_product (customer_ssn,cart_id) VALUES('$ssn','$cart_id')") or die($mysqli->error);
-    }
-    $row_custom_product=$custom_product_check->fetch_array();
-    $_SESSION['custom_product_id']=$row_custom_product['custom_product_id'];
-
-    ?>
 
     <!-- 헤더부분 -->
     <div class="header">
@@ -137,30 +168,50 @@ session_start();
     <div class="contents" >
       <div class="product row">
         <div class="preview-container col-sm-6">
-          <div id="preview" class="preview">
-
-          </div>
+          <div id="preview" class="preview"></div>
           <div class="refresh-button" style="padding:10px;"><button id="refresh" class="btn" style="font-size:20px;"><i class="glyphicon glyphicon-refresh" style="color:#73a9ad;margin-right:15px;"></i>초기화</button></div>
         </div>
 
         <div class="choosing col-sm-6">
 
           <div class="row">
-
-              <?php
-              while ($row=$all_custom_flowers->fetch_assoc()) {
-                    ?>
               <div class="col-sm-3 choose-flower">
-                <button type="button" id="button<?php echo $row['custom_flower_id'] ?>" class="select-flower"><img class="img-responsive" src="<?php echo $row["custom_flower_image"]?>" alt="flower<?php echo $row['custom_flower_id'] ?>"/>
-                <div class="price" id="flower<?php echo $row['custom_flower_id'] ?>"><?php echo $row["custom_flower_price"]?></div></button>
+                <button type="button" id="button1" class="select-flower"><img class="img-responsive" src="picture/makingFlower/yellow1.png" alt="flower1"/>
+                <div class="price" id="flower1"> 7,000원</div></button>
               </div>
-                <?php }?>
-
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button2" class="select-flower"><img class="img-responsive" src="picture/makingFlower/pink.png" alt="flower2"/>
+                <div class="price" id="flower2"> 9,000원</div></button>
+              </div>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button3" class="select-flower"><img class="img-responsive" src="picture/makingFlower/white1.png" alt="flower3"/>
+                <div class="price" id="flower3"> 9,000원</div></button>
+              </div>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button4" class="select-flower"><img class="img-responsive" src="picture/makingFlower/red1.png" alt="flower4"/>
+                <div class="price" id="flower4"> 7,000원</div></button>
+              </div>
             </div>
 
             <!-- // 구분선 -->
             <div class="image-gallery-thumbnails-wrapper row" style="margin-top:10px;">
-
+              <div class="col-sm-3 choose-flower">
+              <button type="button" id="button5" class="select-flower"><img class="img-responsive" src="picture/makingFlower/purple1.png" alt="flower5"/>
+                <div class="price" id="flower5"> 6,000원</div></button>
+              </div>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button6" class="select-flower"><img class="img-responsive" src="picture/makingFlower/orange.png" alt="flower6"/>
+                  <div class="price" id="flower6"> 5,000원</div></button>
+              </div>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button7" class="select-flower"><img class="img-responsive" src="picture/makingFlower/skyblue.png" alt="flower7"/>
+                  <div class="price" id="flower7"> 6,000원</div></button>
+                </div>
+              <div class="col-sm-3 choose-flower">
+                <button type="button" id="button8" class="select-flower"><img class="img-responsive" src="picture/makingFlower/blue2.png" alt="flower8"/>
+                  <div class="price" id="flower8"> 5,000원</d></button>
+              </div>
+            </div>
 
             <hr>
             <div class="color-container">
@@ -197,22 +248,7 @@ session_start();
 
             <div class="buy row">
               <div class="col-sm-5"></div>
-
-              <form method="POST" action="process.php">
-              <button class="buy-item col-sm-5" onclick="check_order();">장바구니</button>
-              <input type="hidden" id="myribbon" name="myribbon">
-              <input type="hidden" id="mybouquet" name="mybouquet">
-              <input type="hidden" id="total_price" name="total_price">
-              <input type="hidden" id="flower1_count" name="flower1_count">
-              <input type="hidden" id="flower2_count" name="flower2_count">
-              <input type="hidden" id="flower3_count" name="flower3_count">
-              <input type="hidden" id="flower4_count" name="flower4_count">
-              <input type="hidden" id="flower5_count" name="flower5_count">
-              <input type="hidden" id="flower6_count" name="flower6_count">
-              <input type="hidden" id="flower7_count" name="flower7_count">
-              <input type="hidden" id="flower8_count" name="flower8_count">
-
-              </form>
+              <script>document.write('<button class="buy-item col-sm-5" onclick="check_order();">장바구니</button>')</script>
             </div>
           </div>
         </div>

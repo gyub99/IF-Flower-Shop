@@ -180,14 +180,16 @@
               <div class="state-count">0</div>
             </div>
             <div class="col-sm-3 order_list">
-              <span class="glyphicon glyphicon-send mypage-icon"></span>
-              <p><strong>배송중</strong></p>
-              <div class="state-count">0</div>
-            </div>
-            <div class="col-sm-3 order_list">
               <span class="glyphicon glyphicon-ok mypage-icon"></span>
               <p><strong>배송완료</strong></p>
               <div class="state-count">2</div>
+            </div>
+            <div class="col-sm-3 order_list">
+              <span class="glyphicon glyphicon-envelope mypage-icon"></span>
+              <p><strong>쿠폰</strong></p>
+              <div class="state-count">
+
+              3</div>
             </div>
         </ul>
       </div>
