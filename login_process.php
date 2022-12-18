@@ -35,6 +35,7 @@ if(mysqli_num_rows($result)==1){
       $_SESSION['msg_type'] ='success';
       $_SESSION['login_alert']=true;
       $_SESSION['ssn']=$row['ssn'];
+      $_SESSION['id']=$input_id;
       $ssn=$row['ssn'];
       $cart_check=$mysqli->query("SELECT * FROM cart WHERE customer_ssn='{$ssn}'") or die($mysqli->error());
 

@@ -6,7 +6,7 @@ if(!session_id()) {
   }
 
 
-$user_id= $_SESSION['user_name'];
+$user_id= $_SESSION['id'];
 $content='';
 
 $content=$_POST['question'];
