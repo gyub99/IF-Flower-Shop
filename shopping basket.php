@@ -97,7 +97,7 @@
     $ssn = $_SESSION['ssn'];
     $coupon_count=$mysqli->query("SELECT Count(*) FROM customer_coupon_list WHERE customer_id = $ssn") or die($mysqli->error);
     $cart_count=$mysqli->query("SELECT Count(*) FROM cart_item, cart WHERE cart_item.cart_id = cart.cart_id") or die($mysqli->error);
-    $cart = $mysqli->query("SELECT cart_item.product_id, product.product_image, product.product_name, product.product_price, cart_item.quantity FROM cart_item, product Where cart_item.product_id=product.product_id;");
+    $cart = $mysqli->query("SELECT * FROM mypage_cart");
     $row = $coupon_count->fetch_assoc();
     $cart_row = $cart_count->fetch_assoc();
     $cart_result = $cart->fetch_assoc();
@@ -223,7 +223,7 @@
                     </script>
                     </span></td>
                   <td>
-                    <button class="btn default" onclick="location.href='product.php'">취소하기</button>
+                    <a href="shopping_basket_process.php?delete=<?php echo $cart_result['product_id']?>" class="btn default">취소하기</a>
                   </td>
 
                 </tr>
