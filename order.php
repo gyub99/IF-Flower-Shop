@@ -32,84 +32,6 @@
       document.join.mail.value=mail
   }
 
-  function order(){
-    var p_number = document.getElementById("p_tel");
-    var c_num = document.getElementById("card_num");
-    var chk1 = document.getElementById("card").checked;
-    var chk2 = document.getElementById("bankbook").checked;
-    var chk3 = document.getElementById("account").checked;
-    var chk4 = document.getElementById("cellphone").checked;
-
-    j=document.credit.cards.selectedIndex
-    var card_type=document.credit.cards.options[j].value
-
-    k=document.credit.months.selectedIndex
-    var month_type=document.credit.months.options[k].value
-
-    m=document.bank_type.banks.selectedIndex
-    var bank_type=document.bank_type.banks.options[m].value
-
-    n=document.account_type.banks2.selectedIndex
-    var account_type=document.account_type.banks2.options[n].value
-
-    l=document.phone_type.phones.selectedIndex
-    var phone_type=document.phone_type.phones.options[l].value
-
-    if(chk1)
-    {
-      if(card_type=="카드"||c_num==null)
-      {
-        alert(document.write(c_num));
-      }
-      else{
-        alert(card_type+" 신용카드를 선택하셨습니다. 할부 개월수는 "+month_type+" 입니다.\n" +"카드번호 : "+c_num.value+"로 결제됩니다.");
-        document.location.href="main.php";
-      }
-
-    }
-
-    else if(chk2)
-    {
-      if(bank_type=="은행")
-      {
-        alert("정보를 모두 입력해주세요.");
-      }
-      else{
-        alert("무통장입금을 선택하셨습니다.\n"+bank_type+" 계좌 : 8813512-562-54122 로 입금해주세요");
-        document.location.href="main.php";
-      }
-
-    }
-
-    else if(chk3)
-    {
-      if(account_type=="은행")
-      {
-        alert("정보를 모두 입력해주세요.");
-      }
-      else{
-        alert("실시간 계좌이체를 선택하셨습니다.\n"+account_type+" 계좌 : 8813512-562-54122 로 입금해주세요");
-        document.location.href="main.php";
-      }
-    }
-
-    else if(chk4)
-    {
-      if(phone_type=="통신사"||p_number==null)
-      {
-        alert(document.write(p_number.value));
-      }
-      else{
-        alert(phone_type+" 통신사 휴대폰결제를 선택하셨습니다\n"+p_number.value+"번호로 결제금액이 청구됩니다.");
-        document.location.href="main.php";
-      }
-
-    }
-    else{
-      alert("정보를 모두 입력해주세요.");
-    }
-
-}
 
   </script>
   <style>
@@ -270,7 +192,7 @@ td,th{
    </div>
 
 
-  <form method="post" action="order.process">
+
 
    <div class="bigbox">
         <h2 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center;">배송지 입력</h2>
@@ -280,7 +202,7 @@ td,th{
           </div>
 
           <div class="tb_box">
-            <form>
+            <form method="post" action="order_process.php">
               <table border="1">
                 <thead>
                     <tr>
@@ -313,25 +235,7 @@ td,th{
                             </div>
                           </td>
                     </tr>
-                    <!-- <tr>
-                        <th scope="row">이메일 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수" /></th>
-                          <td>
-                            <div class="email_box">
-                            <input type="text" name="email_1" class="email" placeholder="이메일을 입력하세요">
-                            @
-                            <form name="join" action="join_post.php" method="post" class="email_form">
-                            <input type="text" name="email_2" class="email">
-                            <select name="mail_sel" onChange="mailcheck()">
-                            <option selected>직접입력</option>
-                            <option style="font-size: 15px;" value=google.com>google.com</option>
-                            <option style="font-size: 15px;" value=naver.com>naver.com</option>
-                            <option style="font-size: 15px;" value=nate.com>nate.com</option>
-                            <option style="font-size: 15px;" value=daum.net>daum.net</option>
-                            </select>
-                            </form>
-                          </div>
-                        </td>
-                    </tr> -->
+
                     <tr>
                       <th scope="row">배송메시지</th>
                           <td>
@@ -342,107 +246,19 @@ td,th{
                     </tr>
                 <tbody>
                 </table>
-              </form>
+
             </div>
         </div>
 
-        <div class="bigbox">
-          <!-- <h2 style="font-family: 'NEXON Lv1 Gothic OTF'; text-align:center; margin-bottom:50px;">결제수단</h2>
-          <table border="1">
-              <form name="credit">
-              <th rowspan="2"><input type="checkbox" name="check" onclick='checkOnlyOne(this)' id="card" style="margin-right:5px;">신용카드</th>
-            <tr style="height:90px;">
-              <td>
-                <select style="width:210px; padding-right:7px; margin-left:7px; font-size:15px;" id="card_type" name="cards" required autofocus>
-                    <option value="카드">카드를 선택해주세요</option>
-                    <option value="현대">현대</option>
-                    <option value="신한">신한</option>
-                    <option value="비씨">비씨</option>
-                    <option value="KB국민">KB국민</option>
-                    <option value="NH채움">NH채움</option>
-                    <option value="삼성">삼성</option>
-                    <option value="롯데">롯데</option>
-                    <option value="하나">하나</option>
-                    <option value="우리">우리</option>
-                    <option value="우체국카드">우체국카드</option>
-                  </select>
 
 
-                  <select style="width:160px; padding-right:auto; padding-left:auto; display:inline-block; font-size:15px;" name="months" required autofocus>
-                      <option value="일시불">일시불</option>
-                      <option value="2개월">2개월</option>
-                      <option value="3개월">3개월</option>
-                    </select>
-                <br><br>
-
-                  <input style="width:210px; margin-left:7px; font-size:15px;" type="text" id="card_num" placeholder="카드번호를 입력하세요" required>
-                  <input type="month" placeholder="카드 유효번호를 입력하세요" required>
-                  <input type="text" id="cvc" placeholder="CVC 번호를 입력하세요" required>
-                    </form>
-                </td>
-            </tr>
-
-            <tr style="height:50px;">
-              <form name="bank_type">
-              <th><input type="checkbox" name="check" onclick='checkOnlyOne(this)' id="bankbook" style="margin-right:5px;">무통장 입금</th>
-              <td><label style="font-family: 'GmarketSansLight'; font-size:15px; margin-left:5px;">
-                <select style="width:210px; padding-right:7px; padding-left:7px;" name="banks" required autofocus>
-                    <option value="은행">은행을 선택해주세요</option>
-                    <option value="신한">신한</option>
-                    <option value="KB국민">KB국민</option>
-                    <option value="NH농협">NH채움</option>
-                    <option value="하나">하나</option>
-                    <option value="신협">신협</option>
-                    <option value="수협">수협</option>
-                    <option value="우리">우리</option>
-                    <option value="우체국">우체국카드</option>
-                  </select>
-                </form>
-              </td>
-            </tr>
-
-            <tr style="height:50px;">
-              <form name="account_type">
-              <th><input type="checkbox" name="check" onclick='checkOnlyOne(this)' id="account" style="margin-right:5px;">계좌이체</th>
-              <td><label style=" font-family: 'GmarketSansLight';font-size:15px; margin-left:5px;">
-                <select style=" width:210px; padding-right:7px; padding-left:7px;" name="banks2" required autofocus>
-                    <option value="은행">은행을 선택해주세요</option>
-                    <option value="신한">신한</option>
-                    <option value="KB국민">KB국민</option>
-                    <option value="NH농협">NH채움</option>
-                    <option value="하나">하나</option>
-                    <option value="신협">신협</option>
-                    <option value="수협">수협</option>
-                    <option value="우리">우리</option>
-                    <option value="우체국">우체국카드</option>
-                  </select>
-                </form>
-              </td>
-            </tr>
-
-            <tr style="height:50px;">
-              <form name="phone_type">
-              <th><input type="checkbox" name="check" onclick='checkOnlyOne(this)' id="cellphone" style="margin-right:5px;">휴대폰 결제</th>
-              <td><label style="font-family: 'GmarketSansLight'; font-size:15px; margin-left:5px;">
-                <select style="width:210px; padding-right:7px; padding-left:7px;" id="phone" name="phones" required autofocus>
-                    <option value="통신사">통신사를 선택해주세요</option>
-                    <option value="SKT">SKT</option>
-                    <option value="KT">KT</option>
-                    <option value="LG U+">LG U+</option>
-                    <option value="알뜰폰">알뜰폰</option>
-                  </select>
-                    <input type="tel" id="p_tel" placeholder="휴대폰 번호 입력">
-                </form>
-
-              </td>
-            </tr>
-        </table> -->
 
         <div class="container text-center">
-        <button class="btn btn-lg btn-login" type="submit" onclick="order();">결제하기</button>
+        <button class="btn btn-lg btn-login" type="submit">결제하기</button>
+        </form>
       </div>
       </div>
-    </form>
+
 
 
 
