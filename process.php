@@ -85,7 +85,6 @@ if($flower8_count!=0){
 //$_SESSION['custom_product_id']=0;
 
 
-
 echo "<script>location.href =\"shopping basket.php\";</script>";
 
 // echo "포장지 번호: ".$mybouquet."<br>";
