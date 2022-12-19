@@ -165,3 +165,9 @@ table.sh_bottom td{
 .contact-form{
   margin-bottom:50px;
 }
+
+.table-content{
+  background-color:white;
+  font-size:20px;
+  padding:10px;
+}
