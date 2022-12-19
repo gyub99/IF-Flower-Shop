@@ -1,9 +1,9 @@
 <?php
 include "connect.php";
 
-if(!session_id()) {
+
 session_start();
-}
+
 $cart_id=$_SESSION['cart_id'];
 $ssn=$_SESSION['ssn'];
 
@@ -26,6 +26,7 @@ $flower6_count=$_POST['flower6_count'];
 $flower7_count=$_POST['flower7_count'];
 $flower8_count=$_POST['flower8_count'];
 
+//가격 db에서 가져와서 하는걸로 변경해아함
 $flower1_total=7000*$flower1_count;
 $flower2_total=9000*$flower2_count;
 $flower3_total=9000*$flower3_count;
@@ -34,6 +35,8 @@ $flower5_total=6000*$flower5_count;
 $flower6_total=5000*$flower6_count;
 $flower7_total=6000*$flower7_count;
 $flower8_total=5000*$flower8_count;
+
+//$total=$flower1_total+$flower2_total+$flower3_total+$flower4_total+$flower5_total+$flower6_total+$flower7_total+$flower8_total;
 
 $all_custom_flowers=$mysqli->query("SELECT * FROM custom_flower") or die($mysqli->error);
 
@@ -71,6 +74,10 @@ if($flower7_count!=0){
 if($flower8_count!=0){
     $mysqli->query("INSERT INTO custom_making (custom_flower_id,custom_product_id,quantity,custom_making_total) VALUES(8,'$custom_product_id','$flower8_count','$flower8_total')") or die($mysqli->error);
 }
+
+  $sql="UPDATE custom_product SET custom_product_total=$total_price, wrapping_color=$mybouquet, ribbon_color=$myribbon where custom_product_id=$custom_product_id/1";
+
+$mysqli->query($sql) or die($mysqli->error);
 
 // while($row_flowers=$all_custom_flowers->fetch_assoc()){
 //     $total=$row_flowers['custom_flower_price'];
