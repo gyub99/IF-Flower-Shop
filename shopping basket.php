@@ -96,7 +96,8 @@
     <?php endif ;
     $ssn = $_SESSION['ssn'];
     $coupon_count=$mysqli->query("SELECT Count(*) FROM customer_coupon_list WHERE customer_id = $ssn") or die($mysqli->error);
-    $cart_count=$mysqli->query("SELECT Count(*) FROM cart_item, cart WHERE cart_item.cart_id = cart.cart_id") or die($mysqli->error);
+    
+    $cart_count=$mysqli->query("SELECT count(distinct product_id) as count FROM cart_item, cart WHERE cart_item.cart_id = (Select cart_id From cart Where customer_ssn = $ssn)") or die($mysqli->error);
     $cart = $mysqli->query("SELECT * FROM mypage_cart");
     $row = $coupon_count->fetch_assoc();
     $cart_row = $cart_count->fetch_assoc();
@@ -157,7 +158,7 @@
                 <span class="glyphicon glyphicon-shopping-cart mypage-icon"></span>
                 <p><strong>장바구니</strong></p>
                   <div class="state-count">
-                    <a href="shopping basket.php"><?php echo $cart_row["Count(*)"]?></a></div>
+                    <a href="shopping basket.php"><?php echo $cart_row["count"]?></a></div>
             </div>
             <div class="col-sm-3 order_list">
               <span class="glyphicon glyphicon-list-alt mypage-icon"></span>
