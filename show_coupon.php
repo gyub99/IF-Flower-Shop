@@ -116,10 +116,17 @@
         ?>
 
       </div>
-    <?php endif; 
-    
-    
+    <?php endif;
+
+
   $ssn = $_SESSION['ssn'];
+
+  $cart_count=$mysqli->query("SELECT Count(*) FROM cart_item, cart WHERE cart_item.cart_id = cart.cart_id") or die($mysqli->error);
+  $cart_row = $cart_count->fetch_assoc();
+
+  $order_count=$mysqli->query("SELECT Count(*) FROM order_information WHERE ssn = $ssn") or die($mysqli->error);
+  $order_row = $order_count->fetch_assoc();
+
   $get_coupon=$mysqli->query("SELECT coupon.coupon_content as content, customer_coupon_list.expired_date as expired_date FROM coupon, customer_coupon_list WHERE coupon.coupon_id = customer_coupon_list.coupon_id AND customer_coupon_list.customer_id = $ssn") or die($mysqli->error);
   $coupon_count=$mysqli->query("SELECT Count(*) FROM customer_coupon_list WHERE customer_id = $ssn") or die($mysqli->error);
   $row=$coupon_count->fetch_assoc()
@@ -178,17 +185,17 @@
                 <p><strong>장바구니</strong></p>
                 <script>
                   if (data==""){
-                    document.write('<div class="state-count">0</div>')
+                    document.write('<div class="state-count"><a href="shopping basket.php">0</a></div>')
                   }
                   else {
-                    document.write('<div class="state-count">1</div>')
+                    document.write('<div class="state-count"><a href="shopping basket.php">1</a></div>')
                   }
                 </script>
             </div>
             <div class="col-sm-3 order_list">
               <span class="glyphicon glyphicon-list-alt mypage-icon"></span>
               <p><strong>구매한 상품</strong></p>
-              <div class="state-count">0</div>
+              <div class="state-count"><a href="my_order.php"><?php echo $order_row['Count(*)']?></a></div>
             </div>
             <div class="col-sm-3 order_list">
               <span class="glyphicon glyphicon-ok mypage-icon"></span>
@@ -225,7 +232,7 @@
        <?php endwhile; ?>
             </table> <br><br>
 
-            
+
           </div>
         </div>
 

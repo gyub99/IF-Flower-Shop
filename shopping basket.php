@@ -101,6 +101,8 @@
     $row = $coupon_count->fetch_assoc();
     $cart_row = $cart_count->fetch_assoc();
     $cart_result = $cart->fetch_assoc();
+    $order_count=$mysqli->query("SELECT Count(*) FROM order_information WHERE ssn = $ssn") or die($mysqli->error);
+    $order_row = $order_count->fetch_assoc();
     ?>
 
     <!-- 헤더부분 -->
@@ -154,12 +156,13 @@
             <div class="col-sm-3 order_list">
                 <span class="glyphicon glyphicon-shopping-cart mypage-icon"></span>
                 <p><strong>장바구니</strong></p>
-                  <div class="state-count"><?php echo $cart_row["Count(*)"]?></div>
+                  <div class="state-count">
+                    <a href="shopping basket.php"><?php echo $cart_row["Count(*)"]?></a></div>
             </div>
             <div class="col-sm-3 order_list">
               <span class="glyphicon glyphicon-list-alt mypage-icon"></span>
               <p><strong>구매한 상품</strong></p>
-              <div class="state-count"><?php echo $cart_row["Count(*)"]?></div>
+              <div class="state-count"><a href="my_order.php"><?php echo $order_row['Count(*)']?></a></div>
             </div>
             <div class="col-sm-3 order_list">
               <span class="glyphicon glyphicon-ok mypage-icon"></span>
@@ -248,7 +251,7 @@
             </table> <br><br>
 
             <div class="bt_btn">
-              <button class="btn" id="return-buy" onClick="buy_confirm();">구매하기</button>
+              <button class="btn" id="return-buy"  onClick="location.href='order.php';">구매하기</button>
             </div>
           </div>
         </div>

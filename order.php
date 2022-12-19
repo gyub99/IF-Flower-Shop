@@ -113,6 +113,25 @@ td,th{
   <!-- <body  style="overflow-x:hidden;"> -->
 
   <!-- 헤더부분 -->
+  <?php
+  //세션 스타트 해주여야 session전역변수 사용할 수 있다.
+  if(!session_id()) {
+  session_start();
+  }
+  if(isset($_SESSION['login_alert'])){
+    if (isset($_SESSION['message']) && $_SESSION['is_login']==true && $_SESSION['login_alert']==true ):
+   ?>
+   <div class="alert alert-<?=$_SESSION['msg_type']?>">
+     <?php
+      echo $_SESSION['message'];
+      echo "<br>".$_SESSION['user_name']."님 안녕하세요 IF 꽃집입니다";
+      $_SESSION['login_alert']=false;
+      ?>
+
+    </div>
+  <?php endif; } ?>
+
+  <!-- 헤더부분 -->
   <div class="header">
       <div class="container-fluid">
         <div class="register">
@@ -258,6 +277,7 @@ td,th{
         </form>
       </div>
       </div>
+      <br><br><br>
 
 
 
