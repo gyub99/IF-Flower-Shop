@@ -175,3 +175,7 @@ CREATE TABLE `if_flower_db`.`customer_coupon_list` (
     ON DELETE CASCADE
     ON UPDATE CASCADE
   );
+  
+create view mypage_cart as select
+cart_item.product_id, product.product_image, product.product_name, product.product_price, cart_item.quantity from cart_item,
+product where cart_item.product_id=product.product_id;
