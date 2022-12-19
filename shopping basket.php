@@ -96,7 +96,11 @@
     <?php endif ;
     $ssn = $_SESSION['ssn'];
     $coupon_count=$mysqli->query("SELECT Count(*) FROM customer_coupon_list WHERE customer_id = $ssn") or die($mysqli->error);
-    $row=$coupon_count->fetch_assoc()
+    $cart_count=$mysqli->query("SELECT Count(*) FROM cart_item, cart WHERE cart_item.cart_id = cart.cart_id") or die($mysqli->error);
+    $cart = $mysqli->query("SELECT cart_item.product_id, product.product_image, product.product_name, product.product_price, cart_item.quantity FROM cart_item, product Where cart_item.product_id=product.product_id;");
+    $row = $coupon_count->fetch_assoc();
+    $cart_row = $cart_count->fetch_assoc();
+    $cart_result = $cart->fetch_assoc();
     ?>
 
     <!-- 헤더부분 -->
@@ -150,19 +154,12 @@
             <div class="col-sm-3 order_list">
                 <span class="glyphicon glyphicon-shopping-cart mypage-icon"></span>
                 <p><strong>장바구니</strong></p>
-                <script>
-                  if (data==""){
-                    document.write('<div class="state-count">0</div>')
-                  }
-                  else {
-                    document.write('<div class="state-count">1</div>')
-                  }
-                </script>
+                  <div class="state-count"><?php echo $cart_row["Count(*)"]?></div>
             </div>
             <div class="col-sm-3 order_list">
               <span class="glyphicon glyphicon-list-alt mypage-icon"></span>
               <p><strong>구매한 상품</strong></p>
-              <div class="state-count">0</div>
+              <div class="state-count"><?php echo $cart_row["Count(*)"]?></div>
             </div>
             <div class="col-sm-3 order_list">
               <span class="glyphicon glyphicon-ok mypage-icon"></span>
@@ -201,32 +198,14 @@
               </thead>
 
               <tbody>
+                  <?php
+                    while ($cart_result=$cart->fetch_assoc()) {
+                  ?>
                 <tr class="inbox_tr" id="flexible">
-                  <td class="inbox_td">
-                  <script>
-                    if (data==""){
-                      document.getElementById('flexible').style.display="none";
-                    }
-                    if (data>30){
-                      document.write('-');
-                    }
-                    else {
-                      document.write(data);
-                    }
-                  </script>
-                  </td>
-                  <script>
-                    if (data>30) {
-                      document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/product/6.PNG" alt="f1" class="sh_img"></td>')
-                      document.write('<td class="inbox_td3">DIY 꽃다발</td>')
-                      document.write('<td>'+data+'</td>');
-                    }
-                    else {
-                      document.write('<td style="padding: 10px;" class="inbox_td2"><img src="picture/product/'+data+'.png" alt="f1" class="sh_img"></td>');
-                      document.write('<td class="inbox_td3">'+product_list[data].name+'</td>');
-                      document.write('<td>'+product_list[data].price+'</td>');
-                    }
-                  </script>
+                  <td class="inbox_td"><?php echo $cart_result['product_id']?></td>
+                  <td style="padding: 10px;" class="inbox_td2"><img src="<?php echo $cart_result['product_image']?>" alt="f1" class="sh_img"></td>
+                  <td class="inbox_td3"><?php echo $cart_result['product_name']?></td>
+                  <td><?php echo $cart_result['product_price']?></td>
                     <td>
                   <a role="button" onclick="minus()">
                     <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
@@ -248,6 +227,7 @@
                   </td>
 
                 </tr>
+                <?php } ?>
               </tbody>
 
               <tfoot>

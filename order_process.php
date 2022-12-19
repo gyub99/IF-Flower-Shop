@@ -22,7 +22,7 @@ $address2=$_POST['address2'];
 $phone=$_POST['phone'];
 $delivery_message=$_POST['delivery_message'];
 
-$address = $address1.$address2
+$address = $address1 . $address2;
 
 $mysqli->query("INSERT INTO order_information (ssn,name,zip_code,delivery_address,phone,delivery_message) VALUES('$ssn','$name','$zip_code','$address','$phone','$delivery_message')") or die($mysqli->error);
 
