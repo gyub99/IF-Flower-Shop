@@ -80,7 +80,7 @@ create table custom_product(
     custom_product_id int not null AUTO_INCREMENT,
     customer_ssn int,
     cart_id int,
-    quantity int,
+    quantity int default 1,
     custom_product_total int,
     wrapping_color varchar(20),
     ribbon_color varchar(20),
