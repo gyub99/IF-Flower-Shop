@@ -96,7 +96,7 @@
     <?php endif ;
     $ssn = $_SESSION['ssn'];
     $coupon_count=$mysqli->query("SELECT Count(*) FROM customer_coupon_list WHERE customer_id = $ssn") or die($mysqli->error);
-    
+
     $cart_count=$mysqli->query("SELECT count(distinct product_id) as count FROM cart_item, cart WHERE cart_item.cart_id = (Select cart_id From cart Where customer_ssn = $ssn)") or die($mysqli->error);
     $cart = $mysqli->query("SELECT * FROM mypage_cart");
     $row = $coupon_count->fetch_assoc();
@@ -125,26 +125,25 @@
     </div>
 
 
-
-      <!-- 네비게이션 -->
-    <!-- 네비게이션 부분 -->
-    <nav class="navbar navbar-default">
-      <div class="navcontainer row">
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav" >
-            <li class="nav-li"><a href="main.php" >Home</a></li>
-            <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
-            <li class="nav-li"><a href="product.php">Product</a></li>
-            <li class="nav-li"><a href="event.php" >Event</a></li>
-            <li class="nav-li"><a href="qna.php" >Q & A</a></li>
-          </ul>
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
+    <!-- 네비게이션 -->
+  <!-- 네비게이션 부분 -->
+  <nav class="navbar navbar-default">
+    <div class="navcontainer row">
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav" >
+          <li class="nav-li"><a href="main.php" >Home</a></li>
+          <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
+          <li class="nav-li"><a href="product.php">Product</a></li>
+          <li class="nav-li"><a href="event.php" >Event</a></li>
+          <li class="nav-li"><a href="qna.php" >Q & A</a></li>
+        </ul>
+        <form class="form-inline" method="post" action="search.php">
+          <input class="form-control mr-sm-2" name="search" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
-    </nav>
+    </div>
+  </nav>
 
         <div class="container outbox">
           <div style="text-align:center; margin-bottom:40px;">

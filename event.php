@@ -42,7 +42,7 @@
   </head>
   <body>
 
-  
+
     <!-- 헤더부분 -->
     <?php
     //세션 스타트 해주여야 session전역변수 사용할 수 있다.
@@ -81,25 +81,25 @@
 
 
 
-      <!-- 네비게이션 -->
-    <!-- 네비게이션 부분 -->
-    <nav class="navbar navbar-default">
-      <div class="navcontainer row">
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav" >
-            <li class="nav-li"><a href="main.php" >Home</a></li>
-            <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
-            <li class="nav-li"><a href="product.php">Product</a></li>
-            <li class="nav-li"><a href="event.php" >Event</a></li>
-            <li class="nav-li"><a href="qna.php" >Q & A</a></li>
-          </ul>
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
+    <!-- 네비게이션 -->
+  <!-- 네비게이션 부분 -->
+  <nav class="navbar navbar-default">
+    <div class="navcontainer row">
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav" >
+          <li class="nav-li"><a href="main.php" >Home</a></li>
+          <li class="nav-li"><a href="makeBouquet.php" >Make Flower</a></li>
+          <li class="nav-li"><a href="product.php">Product</a></li>
+          <li class="nav-li"><a href="event.php" >Event</a></li>
+          <li class="nav-li"><a href="qna.php" >Q & A</a></li>
+        </ul>
+        <form class="form-inline" method="post" action="search.php">
+          <input class="form-control mr-sm-2" name="search" type="search" placeholder="찾으시는 꽃의 이름을 검색해주세요" aria-label="Search" style = "border: 1.5px solid #c4dfaa; width:300px;">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
-    </nav>
+    </div>
+  </nav>
 
       <div class="container-fluid bg-event">
         <div class="container title">
